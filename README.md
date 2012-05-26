@@ -11,4 +11,6 @@ AGPL
 
 Installation:
 -------------
-Abhängigkeiten: webpy
+Abhängigkeiten: webpy, sqlite3
+
+http://docs.python.org/library/sqlite3.html
