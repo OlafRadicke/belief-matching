@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: latin-1 -
+
+# -*- coding: utf_8 -*-
+
 
 import sys
 import sqlite3
@@ -33,7 +34,7 @@ class HtmlTemplate:
     
     def top(self, aktivtab):
     
-        top =     '<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
+        top =     u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
         top +=    '<div class="all">'
         top +=    '    <div class="bannerbox" >'
         top +=    '        <h1>BELIEF MATCHING - Was gaubst du?</h1>'
@@ -85,43 +86,70 @@ class test:
     def GET(self):
         _form = test_form()
         #return render.index(my_form)
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute("SELECT question_id, kat, question FROM questions order by kat;")
         
-        htmlcode = htemp.top("test")
+        htmlcode = htemp.top("test") 
         htmlcode += '        <h2>Test</h2>'
-        htmlcode += '            <form method="POST" name="test">'
-        #htmlcode += _form.render()
-        htmlcode += '<input type="checkbox" name="yes_or_no" value="yes_or_no" /> '
+        htmlcode += '          <form method="POST" name="test">'      
+        htmlcode += '            <table>'
+        htmlcode += '              <tr>'
+        htmlcode += '                <th>Kategorie</th>'
+        htmlcode += u'                <th>&Uuml;berzeugnung</th>'
+        htmlcode += '                <th>Trift zu</th>'
+        htmlcode += '                <th>Gewichtung</th>'
+        htmlcode += '              </tr>'
+        for row in cur:
+            print row
+            htmlcode += '          <tr>'
+            htmlcode += '            <td>' + row[1] + '</td>'
+            htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
+            htmlcode += '            <td><input type="checkbox" name="' + str(row[0]) \
+                + '" value="' + str(row[0]) + '" /></td>'
+            htmlcode += '            <td><select name="' + str(row[0]) + '-wichtung" size="1">'
+            htmlcode += '                  <option value="1">mittel</option>'
+            htmlcode += '                  <option value="2">sehr wichtig</option>'
+            htmlcode += '                  <option value="0">unwichtig</option>'
+            htmlcode += '                  <option>Nina Hagen</option>'
+            htmlcode += '                </select>'
+            htmlcode += '            </td>'
+            htmlcode += '          </tr>'  
+        htmlcode += '           </table>'
         htmlcode += form.Button('go').render()
         htmlcode += '            </form>'
         htmlcode += htemp.bottom
-        return htmlcode       
+        return htmlcode  
         
     def POST(self): 
-        _form = test_form() 
-        if not _form.validates(): 
-            htmlcode = htemp.top("test")
-            htmlcode += '        <h2>Test</h2>'
-            htmlcode += '            <form method="POST" name="test">'
-            htmlcode +=  _form.render()
-            htmlcode += '            </form>'
-            htmlcode += htemp.bottom
-            return htmlcode        
-        else:
-            #hiltirepo = _form['source'].value
-            yes_or_no = _form['yes_or_no'].value
-            #searchTerms = web.input()
-            widgetlist = web.input(groups = []) 
-            #print widgetlist["yes_or_no"]
-            
-            htmlcode = htemp.top("test")
-            htmlcode += '        <h2>Ergebnis</h2>'
-            #htmlcode +=  "yes_or_no=" + yes_or_no  
-            if "yes_or_no" in widgetlist: 
-                htmlcode += 'yes_or_no=YES'
+        #_form = test_form() 
+
+        #hiltirepo = _form['source'].value
+        #yes_or_no = _form['yes_or_no'].value
+        #print "value:" + yes_or_no
+        #searchTerms = web.input()
+        
+        htmlcode = htemp.top("test")
+        htmlcode += '        <h2>Ergebnis</h2>'
+        
+        widgetlist = web.input(groups = []) 
+        print "widgetlist: " 
+        print  widgetlist
+        for i in range(1, 6):  
+            if str(i) in widgetlist: 
+                htmlcode += 'YES' + str(i) + '<br>'
             else:
-                htmlcode += 'yes_or_no=NO'
-            htmlcode += htemp.bottom
-            return htmlcode        
+                htmlcode += 'NO' + str(i) + '<br>'
+            htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
+                
+            #str(i) + "-wichtung"
+                #-wichtung
+                #htmlcode += 'YES' + str(i) + '<br>'
+            #else:
+                #htmlcode += 'NO' + str(i) + '<br>'
+                
+        htmlcode += htemp.bottom
+        return htmlcode        
          
         
         
