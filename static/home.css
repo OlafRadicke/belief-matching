@@ -11,7 +11,7 @@ body {
 }
 
 
-div.all {
+/*div.all {
     width: 95%;
     margin: 5;
     padding: 5;
@@ -19,7 +19,7 @@ div.all {
     background: #000080;
     background:  -moz-linear-gradient(top, #B3D7FF, #000080);
     background:  -webkit-gradient(linear, left top, left bottom, from(#B3D7FF), to(#000080));
-}
+}*/
 
 /* ------------ banner -----------------*/
 
@@ -30,12 +30,13 @@ div.bannerbox {
 }
 
 div.bannerbox {
-    border-width: 10px;
+/*     border-width: 10px; */
     border-style: solid;
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
-/*    border-radius: 10px;*/
-    background-color: blue;
+    border-radius: 10px;
+    border-color: rgba( 192, 192, 192, .90 );
+    background-color: #FFFFFF;
 /*     margin:5px 5px 5px 5px; */
     padding: 0px;
     margin: 5px;
@@ -57,32 +58,109 @@ div.mainmenue{
     align: center;
 }*/
 div.line {
-    background: #FFA601;
+    background: black;
     padding: 2px;
-    margin: 5px 5px 0px 5px;
+    margin: 5px 5px 5px 5px;
 }
 
 div.mainmenue ul {
+    display: inline-block;
     list-style: none;
     padding: 0px;
     margin: 0px 5px 0px 5px;
 /*     background:#000000 */
 }
 
-div.mainmenue li {
+/* -------- left -----------------*/
+
+
+div.mainmenue li#tableft {
     display: inline-block;
     padding: 0 0 0 0 ;
-    background:#373737;
-    -moz-border-radius-topright:5px;
+    margin: 5px 0 5px 5px ;
+    background:black;
+/*    background:#373737;*/
     -moz-border-radius-topleft:5px;
-    -webkit-border-top-right-radius:5px;
+    -moz-border-radius-bottomleft:5px;
     -webkit-border-top-left-radius:5px;
-    border-top-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
     border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
     background: linear-gradient( top, #373737, #A0A0A0);
     background: -webkit-linear-gradient( top, #373737, #A0A0A0);
     background: -moz-linear-gradient( top, #373737, #A0A0A0);
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.mainmenue li#tableft_activ {
+    display: inline-block;
+    margin: 5px 0 5px 5px ;
+    background: #c1c1c1;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+}
+
+/* ---------  middle -----------------*/
+
+div.mainmenue li#tabmiddle {
+    display: inline-block;
+    padding: 0 0 0 0 ;
+    background:#373737;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.mainmenue li#tabmiddle_activ {
+    display: inline-block;
+    background: #c1c1c1;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+}
+/* ---------------- right ---------------- */
+
+div.mainmenue li#tabright {
+    display: inline-block;
+    padding: 0 0 0 0 ;
+    background:#373737;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.mainmenue li.#tabright_activ {
+    display: inline-block;
+    padding-left: 0px;
+    background: #c1c1c1;
+    margin: 5px 0 5px 5px ;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
 }
 
 div.mainmenue li a {
@@ -99,49 +177,23 @@ div.mainmenue li a span {
     padding: 0px;
 }
 
-div.mainmenue li#activ {
-    padding-left: 0px;
-    background: #c1c1c1;
-    font: 120% Arial; 
-    margin: 5px 0 5px 5px ;
-    -moz-border-radius-topright:5px;
-    -moz-border-radius-topleft:5px;
-    -webkit-border-top-right-radius:5px;
-    -webkit-border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    border-top-left-radius:5px;
-    background: linear-gradient( top, #fff, #c1c1c1);
-    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
-    background: -moz-linear-gradient( top, #fff, #c1c1c1);
-    background: -ms-linear-gradient( top, #fff, #c1c1c1);
-}
-
-div.mainmenue li#activ span {
-    padding-left: 15px;
-}
-
-
-div.mainmenue li#activ {
-    margin: 0 5px 0 0;
-    padding: 0 ;
-}
-
-div.mainmenue li#activ span {
+/*div.mainmenue li#activ span {
     display: block;
     margin: 0;
     padding: 15px;
-}
+}*/
 
 
 /* ----- application box ----------------*/
 
 div.appbox {
 /*     width: 95%; */
-    border-width: 10px;
+/*     border-width: 10px; */
     border-style: solid;
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     background-color: #FFFFFF;
+    border-radius: 10px;
     padding: 10px;
     margin: 0px 5px 5px 5px;
 }
@@ -153,7 +205,9 @@ div.footer {
     text-align: center;
     padding: 0px;
     margin: 5px 5px 5px 5px;
-    color: #FFFFFF;
-    background-color: #000080;
+    border-radius: 10px;
+    color: #000080;
+    background-color: #c1c1c1;
+    border-color: #000080;
     
 }
