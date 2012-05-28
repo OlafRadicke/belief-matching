@@ -110,13 +110,12 @@ class test:
             htmlcode += '          <tr>'
             htmlcode += '            <td>' + row[1] + '</td>'
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
-            htmlcode += '            <td>Trift zu:<input type="checkbox" name="' + str(row[0]) \
-                + '" value="' + str(row[0]) + '" /></td>'
+            htmlcode += '            <td>Trift zu:<input type="checkbox" name="question-' + str(row[0]) \
+                + '" value="question-' + str(row[0]) + '" /></td>'
             htmlcode += '            <td><select name="' + str(row[0]) + '-wichtung" size="1">'
             htmlcode += '                  <option value="1">mittel</option>'
             htmlcode += '                  <option value="2">sehr wichtig</option>'
             htmlcode += '                  <option value="0">unwichtig</option>'
-            htmlcode += '                  <option>Nina Hagen</option>'
             htmlcode += '                </select>'
             htmlcode += '            </td>'
             htmlcode += '          </tr>'  
@@ -141,7 +140,7 @@ class test:
         print "widgetlist: " 
         print  widgetlist
         for i in range(1, 6):  
-            if str(i) in widgetlist: 
+            if "question-" + str(i) in widgetlist: 
                 htmlcode += 'YES' + str(i) + '<br>'
             else:
                 htmlcode += 'NO' + str(i) + '<br>'
@@ -156,42 +155,56 @@ class test:
         htmlcode += htemp.bottom
         return htmlcode        
          
-class basisdaten:      
-    def GET(self):
-        _form = test_form()
-        #return render.index(my_form)
+class datenbasis:      
+
+    def getIntro(self):
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT question_id, kat, question FROM questions order by kat;")
+        cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
+        intro = u'        <h2>Basisdaten des Test</h2>'
+        intro += u'Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
+        intro += u'und mit welchen &Uuml;berzeugungen. Gut m&ouml;glich das du einen Fehler entdeckst,'
+        intro += u'oder du noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft hinterlegen willst.'
+        intro += u'Dann nimmt mit mir Kontakt auf: <a href="mailto:briefkasten@olaf-radicke.de">'
+        intro += u'briefkasten@olaf-radicke.de</a> <br>'
+        intro += u'          <form method="POST" name="test">'   
+        intro += u'Glaubensgemeinschaft:'   
+        intro += u'            <select name="glaubensgemeinschaft" size="1">'
+        for row in cur:
+            print row    
+            intro += u'              <option value="' + str(row[0]) + '">' + row[0] + '</option>'
+        intro += u'            </select>'
+        intro += form.Button('anzeigen').render()
+        intro += u'          </form>'
+        conn.close()
+        return intro
+
+    def GET(self):
+        widgetlist = web.input(groups = []) 
+        print "widgetlist: " 
+        print  widgetlist
+        #for i in range(1, 6):  
+            #if str(i) in widgetlist: 
+                #htmlcode += 'YES' + str(i) + '<br>'
+            #else:
+                #htmlcode += 'NO' + str(i) + '<br>'
+            #htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
+            
+        id = 1
+        sqlcommand = "SELECT questions.question, weightings.description "
+        sqlcommand += " FROM answers, questions, weightings "
+        sqlcommand += " WHERE answers.denomination_id = "  + str(id )
+        sqlcommand += " AND answers.question_id = questions.question_id"
+        sqlcommand += " AND answers.weighting_nr = weightings.weighting_nr"
+        sqlcommand += " ORDER BY questions.kat, questions.question;"
+        print "sql: " + sqlcommand
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute ( sqlcommand )
         
         htmlcode = htemp.top("datenbasis") 
-        htmlcode += '        <h2>Test</h2>'
-        htmlcode += '          <form method="POST" name="test">'      
-        htmlcode += '            <table>'
-        htmlcode += '              <tr>'
-        htmlcode += '                <th>Kategorie</th>'
-        htmlcode += u'                <th>&Uuml;berzeugnung</th>'
-        htmlcode += '                <th>Trift zu</th>'
-        htmlcode += '                <th>Gewichtung</th>'
-        htmlcode += '              </tr>'
-        for row in cur:
-            print row
-            htmlcode += '          <tr>'
-            htmlcode += '            <td>' + row[1] + '</td>'
-            htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
-            htmlcode += '            <td>Trift zu:<input type="checkbox" name="' + str(row[0]) \
-                + '" value="' + str(row[0]) + '" /></td>'
-            htmlcode += '            <td><select name="' + str(row[0]) + '-wichtung" size="1">'
-            htmlcode += '                  <option value="1">mittel</option>'
-            htmlcode += '                  <option value="2">sehr wichtig</option>'
-            htmlcode += '                  <option value="0">unwichtig</option>'
-            htmlcode += '                  <option>Nina Hagen</option>'
-            htmlcode += '                </select>'
-            htmlcode += '            </td>'
-            htmlcode += '          </tr>'  
-        htmlcode += '           </table>'
-        htmlcode += form.Button('go').render()
-        htmlcode += '            </form>'
+        htmlcode += self.getIntro()
+        
         htmlcode += htemp.bottom
         return htmlcode  
         

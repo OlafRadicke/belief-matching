@@ -146,7 +146,7 @@ div.mainmenue li#tabright {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
-div.mainmenue li.#tabright_activ {
+div.mainmenue li#tabright_activ {
     display: inline-block;
     padding-left: 0px;
     background: #c1c1c1;
@@ -199,15 +199,26 @@ div.appbox {
 }
 
 
-div.footer {
-/*     width: 100%; */
+div.footer {/*
+    width: 100%;*/
     align: center;
     text-align: center;
-    padding: 0px;
-    margin: 5px 5px 5px 5px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 10px;
-    color: #000080;
+/*    color: #000080;
     background-color: #c1c1c1;
-    border-color: #000080;
+    border-color: #000080;*/
+    color:#fff;
+    background: #c1c1c1;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
     
+}
+
+div.footer li a {
+    color:#fff;
+    text-decoration: none;
 }

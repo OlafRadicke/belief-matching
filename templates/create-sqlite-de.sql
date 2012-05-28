@@ -8,16 +8,26 @@ CREATE TABLE questions (
     kat         TEXT    NOT NULL
 );
 
-CREATE TABLE answer (
+CREATE TABLE denominations (
+    denomination_id INTEGER PRIMARY KEY NOT NULL,
+    denomination    TEXT    NOT NULL
+);
+
+CREATE TABLE answers (
     answer_id      INTEGER PRIMARY KEY AUTOINCREMENT,
     question_id    INTEGER NOT NULL,
+    denomination_id    INTEGER NOT NULL,
 -- value is "y" or "n"
     yes_or_no      TEXT    NOT NULL,
--- value is "y" or "n"
-    important      TEXT    NOT NULL,
--- value is "y" or "n"
-    disregard      TEXT    NOT NULL,
-    FOREIGN KEY ( question_id ) REFERENCES question ( question_id )
+-- wichtung
+    weighting_nr     INTEGER NOT NULL,
+    FOREIGN KEY ( question_id ) REFERENCES question ( question_id ),
+    FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
+);
+
+CREATE TABLE weightings (
+    weighting_nr INTEGER PRIMARY KEY NOT NULL,
+    description  TEXT    NOT NULL
 );
 
 -- ######### insert questions #############
