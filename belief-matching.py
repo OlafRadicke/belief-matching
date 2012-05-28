@@ -37,26 +37,27 @@ class HtmlTemplate:
     
         top =     u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
         top +=    '<div class="all">'
+        top +=    '    <div class="line" ></div>'
         top +=    '    <div class="bannerbox" >'
-        top +=    '        <h1>BELIEF MATCHING - Was gaubst du?</h1>'
-        top +=    '        <h3>Und welche Glaubensgemeinschaft passt dazu?</h3>'
+        top +=    '        <h1>Mit was deckt sich dein Glaube?</h1>'
+        top +=    '        <h3>BELIEF MATCHING (beta)</h3>'
         #top +=    '        <img src="static/image.jpg" >'
         top +=    '    </div>'
+        top +=    '    <div class="line" ></div>'
         top +=    '    <div class="mainmenue" >'
-        top +=    '        <div class="line" ></div>'
         top +=    '           <ul id="portal-globalnav">'
         if ( aktivtab == "home"):
             top +=    '            <li id="tableft_activ"><a href="/">Start</a></li>'
         else:
-            top +=    '            <li id="tableft" ><a href="/">home</a></li>'
+            top +=    '            <li id="tableft" ><a href="/">Start</a></li>'
         if ( aktivtab == "test"):
             top +=    '            <li id="tabmiddle_activ"><a href="test">Test</a></li>'
         else:
-            top +=    '            <li id="tabmiddle"><a href="test">test</a></li>'
+            top +=    '            <li id="tabmiddle"><a href="test">Test</a></li>'
         if ( aktivtab == "datenbasis"):
-            top +=    '            <li id="tabright_activ"><a href="datenbasis">datenbasis</a></li>'
+            top +=    '            <li id="tabright_activ"><a href="datenbasis">Datenbasis</a></li>'
         else:
-            top +=    '            <li id="tabright"><a href="datenbasis">datenbasis</a></li>'
+            top +=    '            <li id="tabright"><a href="datenbasis">Datenbasis</a></li>'
         top +=    '           </ul>'
         top +=    '        </div>'
         top +=    '    <div class="appbox">'  
@@ -82,7 +83,7 @@ class index:
         htmlcode = htemp.top("home")
         htmlcode += '        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
         htmlcode += 'Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
-        htmlcode += u'deine eigene Überzeugeng am meisten übereinstimmt.'
+        htmlcode += u'deine eigene &Uuml;berzeugeng am meisten &uuml;bereinstimmt.'
         htmlcode += htemp.bottom
         return htmlcode 
 
@@ -102,12 +103,18 @@ class test:
         htmlcode += '              <tr>'
         htmlcode += '                <th>Kategorie</th>'
         htmlcode += u'                <th>&Uuml;berzeugnung</th>'
-        htmlcode += '                <th>Trift zu</th>'
+        htmlcode += '                <th>Ja/Nein</th>'
         htmlcode += '                <th>Gewichtung</th>'
         htmlcode += '              </tr>'
+        odd = 0
         for row in cur:
             print row
-            htmlcode += '          <tr>'
+            if odd == 1:
+                htmlcode += '          <tr id="odd">'
+                odd = 0
+            else:
+                htmlcode += '          <tr>'
+                odd = 1
             htmlcode += '            <td>' + row[1] + '</td>'
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
             htmlcode += '            <td>Trift zu:<input type="checkbox" name="question-' + str(row[0]) \
@@ -161,7 +168,7 @@ class datenbasis:
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
-        intro = u'        <h2>Basisdaten des Test</h2>'
+        intro = u'        <h2>Datenbasis des Test</h2>'
         intro += u'Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
         intro += u'und mit welchen &Uuml;berzeugungen. Gut m&ouml;glich das du einen Fehler entdeckst,'
         intro += u'oder du noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft hinterlegen willst.'
