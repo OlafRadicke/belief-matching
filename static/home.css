@@ -224,7 +224,16 @@ div.appbox td {
 /*    margin: 0px 0px 0px 0px;*/
     margin: 10px;
 }
-
+div.appbox form{
+    align: center;
+    text-align: center;
+}
+div.appbox button {
+    align: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
 
 /* -------- Footer --------------------------------*/
 div.footer {/*

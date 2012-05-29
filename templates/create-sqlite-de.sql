@@ -331,5 +331,9 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 "Erl&ouml;sung",
 "Wehrdienst lehne ich ab.");
 
+INSERT INTO questions (question_id, kat, question) VALUES (
+1910,
+"Erl&ouml;sung",
+"Ich schw&ouml;re nicht und lege keine Eide ab.");
 
 COMMIT;
