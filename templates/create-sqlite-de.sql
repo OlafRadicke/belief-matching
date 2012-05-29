@@ -17,10 +17,10 @@ CREATE TABLE answers (
     answer_id           INTEGER PRIMARY KEY AUTOINCREMENT,
     question_id         INTEGER NOT NULL,
     denomination_id     INTEGER NOT NULL,
--- value is "y" or "n"
-    yes_or_no           TEXT    NOT NULL,
--- wichtung
-    weighting_nr        INTEGER NOT NULL,
+-- -- value is "y" or "n"
+--     yes_or_no           TEXT    NOT NULL,
+-- -- wichtung
+--     weighting_nr        INTEGER NOT NULL,
     FOREIGN KEY ( question_id ) REFERENCES question ( question_id ),
     FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
 );
@@ -30,270 +30,306 @@ CREATE TABLE weightings (
     description         TEXT    NOT NULL
 );
 
+
 -- ###########################################################################
--- ######### insert questions ################################################
+-- ##-----------------------------------------------------------------------##
+-- ##------------------ inserts --------------------------------------------##
+-- ##-----------------------------------------------------------------------##
 -- ###########################################################################
 
--- ======= kat "Gott" ========================================================
+-- ############ Weigthtings ##################################################
+
+INSERT INTO weightings ( weightings_nr, description ) VALUES (
+0,
+"unwichtig");
+
+INSERT INTO weightings ( weightings_nr, description ) VALUES (
+1,
+"mittel");
+
+INSERT INTO weightings ( weightings_nr, description ) VALUES (
+2,
+"sehr wichtig");
+
+-- ##################### insert questions ####################################
+-- ======= kat "Gott" beginnend mit 11... ====================================
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-1,
+111,
 "Gott",
 "Ich glaube an die dreifaltigkeit");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-2,
+112,
 "Gott",
 "Jesus ist nicht Gott sondern nur ein (besonderer) Mensch");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-3,
+113,
 "Gott",
 "Gott offenbart sich direkt, auch ohne die Bibel und Klerus");
 
--- ======== Kat "Taufe" ======================================================
+-- ======== Kat "Taufe" beginnend mit 12... ==================================
 INSERT INTO questions (question_id, kat, question) VALUES (
-4,
+121,
 "Taufe",
 "Die Taufe ist Voraussetzung f&uuml;r die Erl&ouml;sung/Errettung");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-5,
+125,
 "Taufe",
 "Die Taufe wird &auml;u&szuml;erlich durch Wasser vollzogen");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-6,
+123,
 "Taufe",
 "Ich lehne Kindertaufe ab");
 
--- ============ Kat Abendmahl ================================================
+INSERT INTO questions (question_id, kat, question) VALUES (
+124,
+"Taufe",
+"Ich lehne die &uuml;ussere Taufe ab.");
+
+-- ============ Kat Abendmahl beginnend mit 13... ============================
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-7,
+131,
 "Abendmahl",
 "Bei dem Abendmahl findet eine Umwandlung des Brotes in den Leib Christi statt");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-8,
+132,
 "Abendmahl",
 "Zum Abendmahl sollten nur Mitglieder der eigenen Konfession zugelassen sein");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-9,
+133,
 "Abendmahl",
 "Zum Abendmahl sollten nur wer getauft ist zugelassen werden");
 
--- ======================= Bibel =============================================
+INSERT INTO questions (question_id, kat, question) VALUES (
+134,
+"Abendmahl",
+"Das Abendmahl messe ich keine Bedeutung zu.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-10,
+135,
+"Abendmahl",
+"Das Abendmahl ist heilig (ein Sakrament).");
+
+-- ======================= Bibel beginnend mit 14... =========================
+
+INSERT INTO questions (question_id, kat, question) VALUES (
+141,
 "Bibel",
 "Als <i>Bibeltreu</i> kann sich nur jemand bezeichnen, der ich die Bibel wortw&ouml;rtlich nimmt.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-11,
+142,
 "Bibel",
-"Ich akzeptiere die Bibel ist Grundlage des Glaubens und als alleiniger Ma&szuml;stab.");
+"Ich akzeptiere nur die Bibel als Grundlage des Glaubens und als alleiniger Ma&szuml;stab.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-12,
+143,
 "Bibel",
 "F&uuml;r mich gibt es noch &uuml;ber den Bibelkanon hinaus B&uuml;cher die von Gott inspiriert sind.");
 
--- ==================== Kat Gemeinde =========================================
+INSERT INTO questions (question_id, kat, question) VALUES (
+144,
+"Bibel",
+"Die Bibel bedarf immer einer Auslegung. Dabei muss der historische Kontext beachtet werden.");
+
+INSERT INTO questions (question_id, kat, question) VALUES (
+145,
+"Bibel",
+"Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel öffnen.");
+
+-- ==================== Kat Gemeinde beginnend mit 15... =====================
 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-13,
+151,
 "Gemeinde",
 "Ich glaube an das Priestertum Aller und will das die Gemeinde von Allen gemeinsam geleitet wird.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-14,
+152,
 "Gemeinde",
 "Mir ist wichtig, das eine Gemeinde autonom ist.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-15,
+153,
 "Gemeinde",
 "Ich glaube ein Gottesdienst sollte von Priestern (oder Hauptamtlichen) geleitet werden.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-16,
+154,
 "Gemeinde",
 "Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglied auch aus der Gemeinde ausgeschlossen werden.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-17,
+155,
 "Gemeinde",
 "Frauen sollen alle Aufgabe in der Gemeinde (einschlie&szlig;lich das Predigen) &uuml;bernehmen k&ouml;nnen.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-18,
+156,
 "Gemeinde",
 "Zu den Pflichten in der Gemeinde geh&ouml;rt auch das man regelm&auml;&szuml;ig in Erscheinung tritt und sich aktiv einbringt.");
 
--- ###################### Sexualität #########################################
+-- ==================== Kat. Sexualität beginnend mit 16... ===================
        
 INSERT INTO questions (question_id, kat, question) VALUES (
-19,
+161,
 "Sexualit&auml;t",
 "Sex vor der Ehe lehene ich ab.");
        
 INSERT INTO questions (question_id, kat, question) VALUES (
-20,
+162,
 "Sexualit&auml;t",
-"Die Ehe muss von/vor einer bestimmten Person (Priester) geschlossen werden."); 
+"Die Ehe ist heilig."); 
        
 INSERT INTO questions (question_id, kat, question) VALUES (
-21,
+163,
 "Sexualit&auml;t",
 "Erneutes heiraten nach einer Scheidung lehne ich ab."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-22,
+164,
 "Sexualit&auml;t",
 "Gleichgeschlechtliche Ehen lehne ich ab."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-23,
+165,
 "Sexualit&auml;t",
 "Ich halte (gelebte) Homosexualit&auml;t f&uuml;r eine S&uuml;nde."); 
 
--- ############################# Gottesdienst ###############################
+-- ============================= Kat. Gottesdienst beginnend mit 17... =======
         
 INSERT INTO questions (question_id, kat, question) VALUES (
-24,
+171,
 "Gottesdienst",
 "Ein Gottesdienst muss ein bestimmten Ablauf folgen."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-25,
+172,
 "Gottesdienst",
 "Stille und Besinnung sind auch im Gottesdienst sehr wichtig."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-26,
+173,
 "Gottesdienst",
-"Stille und Besinnung sind auch im Gottesdienst sehr wichtig."); 
+"Stille und Besinnung sind mir auch im Gottesdienst sehr wichtig."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-27,
-"Gottesdienst",
-"Stille und Besinnung sind auch im Gottesdienst sehr wichtig.");
-
-INSERT INTO questions (question_id, kat, question) VALUES (
-28,
+174,
 "Gottesdienst",
 "Mir ist wichtig das Musik (Worship) modern ist, ber&uuml;hrt und mitrei&szuml;t.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-29,
+175,
 "Gottesdienst",
-"Freise Gebet im Gottesdienst ist f&uuml;r mich Zeichen von lebendigen und authentischem Glauben.");
+"Freies Gebet im Gottesdienst ist f&uuml;r mich Zeichen von lebendigen und authentischem Glauben.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-30,
+176,
 "Gottesdienst",
 "In <i>Zungenreden</i> ist f&uuml;r mich ein Zeichen der Gnadengabe des Heiligen Geistes.");
 
--- ##################### Erlösung ############################################
+-- ====================== Kat. Erlösung beginnend mit 18... ==================
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-31,
+181,
 "Erl&ouml;sung",
 "Ich glaube das f&uuml;r jeden Menschen kommt eine Zeit, wo er von Gott gerichtet wird.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-32,
+182,
 "Erl&ouml;sung",
 "Ich glaube es gibt eine H&ouml;lle mit ewiger Verdammnis.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-33,
+183,
 "Erl&ouml;sung",
 "Menschen k&ouml;nnen auch noch nach ihrem Tod Busse tun um der Verdammnis zu entgehen (Fegefeuer).");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-34,
+184,
 "Erl&ouml;sung",
 "Auf die Erl&ouml;sung hat man keinen Einfluss, Sie wird einem durch die Gnade Gottes zu Teil.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-35,
+185,
 "Erl&ouml;sung",
 "Wirtschaftlicher Erfolg ist ein Zeichen das man in der Gnade Gottes steht.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-36,
+186,
 "Erl&ouml;sung",
 "Leid ist eine Strafe Gottes.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-37,
+187,
 "Erl&ouml;sung",
 "Es kann nur eine Wahrheit geben und deshalb nur ein Weg zur Erl&ouml;sung f&uuml;hren.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-38,
+188,
 "Erl&ouml;sung",
 "Das Reich Gottes ist schon da. Es ist aber (noch) nicht (f&uuml;r alle) sichtbar.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-39,
+189,
 "Erl&ouml;sung",
 "Eine Erl&ouml;sung ist schon im Diesseits m&ouml;glich.");
 
-INSERT INTO questions (question_id, kat, question) VALUES (
-40,
-"Erl&ouml;sung",
-"Wehrdienst lehne ich ab.");
 
--- ######################### Kat. Sonstiges ##################################
+-- ========================= Kat. Sonstiges beginnend mit 19... ==============
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-41,
+191,
 "Sonstiges",
 "Politische Aktivit&auml;ten oder Themen haben in der Gemeinde keinen Platz.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-42,
+192,
 "Sonstiges",
 "Soziales angemahnt sind existenzieller Bestandteil des Evangeliums.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-43,
+193,
 "Sonstiges",
 "Der Missionsauftrag ist ein wichtiger Bestandteil des Evangeliums.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-44,
+194,
 "Sonstiges",
 "Ich glaube an Geistheilung.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-45,
+195,
 "Sonstiges",
 "Kino, Theater, Konzerte und andere K&uuml;nste bergen immer die Gefahr von wichtigen Dingen abgelenkt zu werden.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-46,
+196,
 "Sonstiges",
 "Alkohol und andere Drogen versperren den Weg zu spiritueller Entwicklung.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-47,
+197,
 "Sonstiges",
 "Gl&auml;ubige Menschen sollten sich von Weltlichen Dingen fern halten.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-48,
+198,
 "Sonstiges",
 "In Heilgenbilder und -Skulpturen kann ich Halt und Trost finden.");
 
-
--- ########### insert answer ################
+INSERT INTO questions (question_id, kat, question) VALUES (
+199,
+"Erl&ouml;sung",
+"Wehrdienst lehne ich ab.");
 
 
 COMMIT;
