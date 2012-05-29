@@ -1,8 +1,0 @@
-$def with (form)
-<form name="test" method="POST"> 
-$if not form.valid: <p>Sorry, your input was invalid.</p>
-$:form.render()
-<input type="submit" value="Check" />
-</form>
-<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>
-

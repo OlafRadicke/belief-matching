@@ -68,6 +68,9 @@ INSERT INTO answers ( question_id, denomination_id ) VALUES (
 INSERT INTO answers ( question_id, denomination_id ) VALUES (
 196,
 1);
+INSERT INTO answers ( question_id, denomination_id ) VALUES (
+1910,
+1);
 
 
 COMMIT;
