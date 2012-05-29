@@ -119,7 +119,7 @@ class test:
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
             htmlcode += '            <td>Trift zu:<input type="checkbox" name="question-' + str(row[0]) \
                 + '" value="question-' + str(row[0]) + '" /></td>'
-            htmlcode += '            <td><select name="' + str(row[0]) + '-wichtung" size="1">'
+            htmlcode += '            <td><select name="wichtung-' + str(row[0]) + '" size="1">'
             htmlcode += '                  <option value="1">mittel</option>'
             htmlcode += '                  <option value="2">sehr wichtig</option>'
             htmlcode += '                  <option value="0">unwichtig</option>'
@@ -133,12 +133,10 @@ class test:
         return htmlcode  
         
     def POST(self): 
-        #_form = test_form() 
-
-        #hiltirepo = _form['source'].value
-        #yes_or_no = _form['yes_or_no'].value
-        #print "value:" + yes_or_no
-        #searchTerms = web.input()
+        
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute("SELECT question_id FROM questions;")  
         
         htmlcode = htemp.top("test")
         htmlcode += '        <h2>Ergebnis</h2>'
@@ -146,12 +144,13 @@ class test:
         widgetlist = web.input(groups = []) 
         print "widgetlist: " 
         print  widgetlist
-        for i in range(1, 6):  
+        for row in cur:  
+            i = row[0]
             if "question-" + str(i) in widgetlist: 
                 htmlcode += 'YES' + str(i) + '<br>'
             else:
                 htmlcode += 'NO' + str(i) + '<br>'
-            htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
+            htmlcode += 'WICHTUNG: wichtung-' + widgetlist['wichtung-' + str(i)] + '<br>'
                 
             #str(i) + "-wichtung"
                 #-wichtung
@@ -187,30 +186,8 @@ class datenbasis:
         return intro
 
     def GET(self):
-        widgetlist = web.input(groups = []) 
-        print "widgetlist: " 
-        print  widgetlist
-        #for i in range(1, 6):  
-            #if str(i) in widgetlist: 
-                #htmlcode += 'YES' + str(i) + '<br>'
-            #else:
-                #htmlcode += 'NO' + str(i) + '<br>'
-            #htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
-            
-        id = 1
-        sqlcommand = "SELECT questions.question "
-        sqlcommand += " FROM answers, questions "
-        sqlcommand += " WHERE answers.denomination_id = "  + str(id )
-        sqlcommand += " AND answers.question_id = questions.question_id"
-        sqlcommand += " ORDER BY questions.kat, questions.question;"
-        print "sql: " + sqlcommand
-        conn = sqlite3.connect('belief-matching.sqlite')
-        cur = conn.cursor()
-        cur.execute ( sqlcommand )
-        
         htmlcode = htemp.top("datenbasis") 
         htmlcode += self.getIntro()
-        
         htmlcode += htemp.bottom
         return htmlcode  
         
