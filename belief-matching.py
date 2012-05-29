@@ -20,12 +20,7 @@ test_form = form.Form(
                   description="trifft zu", 
                   class_="standard", 
                   value="", 
-                  checked=False),                      
-    #form.Textbox('source',
-                 #form.notnull,
-                 ##form.regexp('^-?\d+$', 'Not a number.'),
-                 ##form.Validator('Not greater 10.', lambda x: int(x)>10),
-                 #description='Enter a source:'),
+                  checked=False), 
     form.Button('go')
     )
     
@@ -37,7 +32,7 @@ class HtmlTemplate:
     
         top =     u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
         top +=    '<div class="all">'
-        top +=    '    <div class="line" ></div>'
+        #top +=    '    <div class="line" ></div>'
         top +=    '    <div class="bannerbox" >'
         top +=    '        <h1>Mit was deckt sich dein Glaube?</h1>'
         top +=    '        <h3>BELIEF MATCHING (beta)</h3>'
@@ -60,6 +55,7 @@ class HtmlTemplate:
             top +=    '            <li id="tabright"><a href="datenbasis">Datenbasis</a></li>'
         top +=    '           </ul>'
         top +=    '        </div>'
+        top +=    '    <div class="line" ></div>'
         top +=    '    <div class="appbox">'  
         return top
     
@@ -79,13 +75,12 @@ htemp = HtmlTemplate()
 class index:
     
        def GET(self):
-        
-        htmlcode = htemp.top("home")
-        htmlcode += '        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
-        htmlcode += 'Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
-        htmlcode += u'deine eigene &Uuml;berzeugeng am meisten &uuml;bereinstimmt.'
-        htmlcode += htemp.bottom
-        return htmlcode 
+            htmlcode = htemp.top("home")
+            htmlcode += '        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
+            htmlcode += 'Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
+            htmlcode += u'deine eigene &Uuml;berzeugeng am meisten &uuml;bereinstimmt.'
+            htmlcode += htemp.bottom
+            return htmlcode 
 
 class test:
  
@@ -108,7 +103,6 @@ class test:
         htmlcode += '              </tr>'
         odd = 0
         for row in cur:
-            print row
             if odd == 1:
                 htmlcode += '          <tr id="odd">'
                 odd = 0
@@ -133,32 +127,28 @@ class test:
         return htmlcode  
         
     def POST(self): 
-        
+        user_selection = dict()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute("SELECT question_id FROM questions;")  
         
+        widgetlist = web.input(groups = []) 
+       
         htmlcode = htemp.top("test")
         htmlcode += '        <h2>Ergebnis</h2>'
-        
-        widgetlist = web.input(groups = []) 
-        print "widgetlist: " 
-        print  widgetlist
+        htmlcode += '<b>Ihre Auswahl:</b> <br>'
+        htmlcode += '<ul>'
         for row in cur:  
             i = row[0]
             if "question-" + str(i) in widgetlist: 
-                htmlcode += 'YES' + str(i) + '<br>'
-            else:
-                htmlcode += 'NO' + str(i) + '<br>'
-            htmlcode += 'WICHTUNG: wichtung-' + widgetlist['wichtung-' + str(i)] + '<br>'
-                
-            #str(i) + "-wichtung"
-                #-wichtung
-                #htmlcode += 'YES' + str(i) + '<br>'
-            #else:
-                #htmlcode += 'NO' + str(i) + '<br>'
-                
+                htmlcode += '<li>Aussage Nr.: ' + str(i) + ' '
+                htmlcode += 'WICHTUNG: id ' + widgetlist['wichtung-' + str(i)] + '</li>'
+                user_selection[str(i)] =  widgetlist['wichtung-' + str(i)]
+
+        htmlcode += '</ul>'
         htmlcode += htemp.bottom
+        print "user_selection: "
+        print user_selection
         return htmlcode        
          
 class datenbasis:      
@@ -177,7 +167,6 @@ class datenbasis:
         intro += u'Glaubensgemeinschaft:'   
         intro += u'            <select name="glaubensgemeinschaft" size="1">'
         for row in cur:
-            print row    
             intro += u'              <option value="' + str(row[0]) + '">' + str(row[1]) + '</option>'
         intro += u'            </select>'
         intro += form.Button('anzeigen').render()
@@ -193,15 +182,12 @@ class datenbasis:
         
     def POST(self):
         widgetlist = web.input(groups = []) 
-        print "widgetlist: " 
-        print  widgetlist
         id = widgetlist['glaubensgemeinschaft']
         sqlcommand = "SELECT questions.question "
         sqlcommand += " FROM answers, questions "
         sqlcommand += " WHERE answers.denomination_id = "  + str(id )
         sqlcommand += " AND answers.question_id = questions.question_id"
         sqlcommand += " ORDER BY questions.kat, questions.question;"
-        print "sql: " + sqlcommand
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute ( sqlcommand )        
@@ -214,7 +200,6 @@ class datenbasis:
         htmlcode += '              </tr>'
         odd = 0
         for row in cur:
-            print row
             if odd == 1:
                 htmlcode += '       <tr id="odd">'
                 odd = 0

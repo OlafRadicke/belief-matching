@@ -28,7 +28,7 @@ div.bannerbox {
     background-color: #FFFFFF;
 /*     margin:5px 5px 5px 5px; */
     padding: 0px;
-    margin: 5px;
+    margin: 15px 5px 5px 5px;
 }
 
 div.bannerbox img{
@@ -41,6 +41,7 @@ div.line {
     background: black;
     padding: 2px;
     margin: 5px 5px 5px 5px;
+    border-radius: 5px;
 }
 /* --------------- main menue -------------------- */
 div.mainmenue{
