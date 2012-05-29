@@ -39,15 +39,15 @@ CREATE TABLE weightings (
 
 -- ############ Weigthtings ##################################################
 
-INSERT INTO weightings ( weightings_nr, description ) VALUES (
+INSERT INTO weightings ( weighting_nr, description ) VALUES (
 0,
 "unwichtig");
 
-INSERT INTO weightings ( weightings_nr, description ) VALUES (
+INSERT INTO weightings ( weighting_nr, description ) VALUES (
 1,
 "mittel");
 
-INSERT INTO weightings ( weightings_nr, description ) VALUES (
+INSERT INTO weightings ( weighting_nr, description ) VALUES (
 2,
 "sehr wichtig");
 
@@ -78,7 +78,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 125,
 "Taufe",
-"Die Taufe wird &auml;u&szuml;erlich durch Wasser vollzogen");
+"Die Taufe wird &auml;u&szlig;erlich durch Wasser vollzogen");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 123,
@@ -88,7 +88,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 124,
 "Taufe",
-"Ich lehne die &uuml;ussere Taufe ab.");
+"Ich lehne die &auml;ussere Taufe ab.");
 
 -- ============ Kat Abendmahl beginnend mit 13... ============================
 
@@ -127,7 +127,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 142,
 "Bibel",
-"Ich akzeptiere nur die Bibel als Grundlage des Glaubens und als alleiniger Ma&szuml;stab.");
+"Ich akzeptiere nur die Bibel als Grundlage des Glaubens und als alleiniger Ma&szlig;stab.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 143,
@@ -142,7 +142,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 145,
 "Bibel",
-"Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel öffnen.");
+"Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel &ouml;ffnen.");
 
 -- ==================== Kat Gemeinde beginnend mit 15... =====================
 
@@ -175,7 +175,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 156,
 "Gemeinde",
-"Zu den Pflichten in der Gemeinde geh&ouml;rt auch das man regelm&auml;&szuml;ig in Erscheinung tritt und sich aktiv einbringt.");
+"Zu den Pflichten in der Gemeinde geh&ouml;rt auch das man regelm&auml;&szlig;ig in Erscheinung tritt und sich aktiv einbringt.");
 
 -- ==================== Kat. Sexualität beginnend mit 16... ===================
        
@@ -224,7 +224,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 174,
 "Gottesdienst",
-"Mir ist wichtig das Musik (Worship) modern ist, ber&uuml;hrt und mitrei&szuml;t.");
+"Mir ist wichtig das Musik (Worship) modern ist, ber&uuml;hrt und mitrei&szlig;t.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 175,

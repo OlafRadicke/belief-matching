@@ -179,7 +179,7 @@ class datenbasis:
         intro += u'            <select name="glaubensgemeinschaft" size="1">'
         for row in cur:
             print row    
-            intro += u'              <option value="' + str(row[0]) + '">' + row[0] + '</option>'
+            intro += u'              <option value="' + str(row[0]) + '">' + str(row[1]) + '</option>'
         intro += u'            </select>'
         intro += form.Button('anzeigen').render()
         intro += u'          </form>'
@@ -198,11 +198,10 @@ class datenbasis:
             #htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
             
         id = 1
-        sqlcommand = "SELECT questions.question, weightings.description "
-        sqlcommand += " FROM answers, questions, weightings "
+        sqlcommand = "SELECT questions.question "
+        sqlcommand += " FROM answers, questions "
         sqlcommand += " WHERE answers.denomination_id = "  + str(id )
         sqlcommand += " AND answers.question_id = questions.question_id"
-        sqlcommand += " AND answers.weighting_nr = weightings.weighting_nr"
         sqlcommand += " ORDER BY questions.kat, questions.question;"
         print "sql: " + sqlcommand
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -215,34 +214,39 @@ class datenbasis:
         htmlcode += htemp.bottom
         return htmlcode  
         
-    def POST(self): 
-    
-        #_form = test_form() 
-
-        #hiltirepo = _form['source'].value
-        #yes_or_no = _form['yes_or_no'].value
-        #print "value:" + yes_or_no
-        #searchTerms = web.input()
-        
-        htmlcode = htemp.top("datenbasis")
-        htmlcode += '        <h2>Datenbasis</h2>'
-        
+    def POST(self):
         widgetlist = web.input(groups = []) 
         print "widgetlist: " 
         print  widgetlist
-        for i in range(1, 6):  
-            if str(i) in widgetlist: 
-                htmlcode += 'YES' + str(i) + '<br>'
+        id = widgetlist['glaubensgemeinschaft']
+        sqlcommand = "SELECT questions.question "
+        sqlcommand += " FROM answers, questions "
+        sqlcommand += " WHERE answers.denomination_id = "  + str(id )
+        sqlcommand += " AND answers.question_id = questions.question_id"
+        sqlcommand += " ORDER BY questions.kat, questions.question;"
+        print "sql: " + sqlcommand
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute ( sqlcommand )        
+
+        htmlcode = htemp.top("datenbasis")
+        htmlcode += self.getIntro()       
+        htmlcode += '            <table>'
+        htmlcode += '              <tr>'
+        htmlcode += '                <th>Aussage zum Glauben</th>'
+        htmlcode += '              </tr>'
+        odd = 0
+        for row in cur:
+            print row
+            if odd == 1:
+                htmlcode += '       <tr id="odd">'
+                odd = 0
             else:
-                htmlcode += 'NO' + str(i) + '<br>'
-            htmlcode += 'WICHTUNG: ' + widgetlist[ str(i) + '-wichtung'] + '<br>'
-                
-            #str(i) + "-wichtung"
-                #-wichtung
-                #htmlcode += 'YES' + str(i) + '<br>'
-            #else:
-                #htmlcode += 'NO' + str(i) + '<br>'
-                
+                htmlcode += '       <tr>'
+                odd = 1
+            htmlcode += '            <td>' + row[0] + '</td>'
+            htmlcode += '          </tr>'  
+        htmlcode += '           </table>'        
         htmlcode += htemp.bottom
         return htmlcode           
 
