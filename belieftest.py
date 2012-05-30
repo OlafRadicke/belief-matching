@@ -22,15 +22,18 @@ class belieftest:
     htemp = HtmlTemplate.HtmlTemplate()
  
     # Gibt ein dict mit Konfessions-id und Konfessionsnamen zurück.
-    def getDictOfDenominationNames (self):
+    def getDenominationName (self, _id):
         
-        denominationNames = dict()
+        denominationName = "unbekannter Name"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
+        sqlcommand = "SELECT denomination "
+        sqlcommand += "FROM denominations WHERE denomination_id = " + str( _id  ) + " ;"
+        cur.execute( sqlcommand )
         for row in cur:
-             denominationNames [ str(row[1]) ] = str(row[0]) 
-        return denominationNames
+             denominationName = str(row[0]) 
+        print "denominationName:" + denominationName
+        return denominationName
         
     # Gibt ein dict zurück mit gewichtungsnummer und gewichtungsbeschreibung.   
     def getWeightings ( self ):
@@ -113,13 +116,14 @@ class belieftest:
         _htmlcode += '              </tr>'    
         odd = 0
         for denomination_points_key in denomination_points.keys():
+            
             if odd == 1:
                 _htmlcode += '       <tr id="odd">'
                 odd = 0
             else:
                 _htmlcode += '       <tr>'
                 odd = 1
-            _htmlcode += '            <td>' + str(denomination_points_key) + '</td>'
+            _htmlcode += '            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
             _htmlcode += '            <td>' + str(denomination_points [denomination_points_key]) + '</td>'
             _htmlcode += '          </tr>'  
         _htmlcode += '           </table>'          
