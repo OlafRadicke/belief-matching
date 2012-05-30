@@ -14,17 +14,17 @@ CREATE TABLE denominations (
     url                 TEXT    NOT NULL
 );
 
-CREATE TABLE answers (
+CREATE TABLE denomination_answers (
     answer_id           INTEGER PRIMARY KEY AUTOINCREMENT,
     question_id         INTEGER NOT NULL,
     denomination_id     INTEGER NOT NULL,
 -- 0 = trifft nicht zu
 -- 1 = trifft zu
--- 3 = keine Meinung
+-- 2 = keine Meinung
     answer_nr           INTEGER NOT NULL,
-    FOREIGN KEY ( question_id ) REFERENCES question ( question_id ),
-    FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
-    FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
+    FOREIGN KEY ( question_id )     REFERENCES question ( question_id ),
+    FOREIGN KEY ( denomination_id ) REFERENCES denominations ( denomination_id )
+    FOREIGN KEY ( answer_nr )       REFERENCES answers ( answer_nr )
 );
 
 CREATE TABLE weightings (
@@ -32,6 +32,10 @@ CREATE TABLE weightings (
     description         TEXT    NOT NULL
 );
 
+CREATE TABLE answers (
+    answers_nr        INTEGER PRIMARY KEY NOT NULL,
+    description         TEXT    NOT NULL
+);
 
 -- ###########################################################################
 -- ##-----------------------------------------------------------------------##
@@ -46,12 +50,26 @@ CREATE TABLE weightings (
 -- "unwichtig");
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
-1,
+0,
 "normal");
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
-2,
+1,
 "sehr wichtig");
+
+-- ############ Answers ##################################################
+
+INSERT INTO answers ( answers_nr, description ) VALUES (
+0,
+"trifft nicht zu");
+
+INSERT INTO answers ( answers_nr, description ) VALUES (
+1,
+"trifft zu");
+
+INSERT INTO answers ( answers_nr, description ) VALUES (
+2,
+"keine Meinung");
 
 -- ##################### insert questions ####################################
 -- ======= kat "Gott" beginnend mit 11... ====================================

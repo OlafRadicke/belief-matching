@@ -12,7 +12,7 @@ class datenbasis:
 
     htemp = HtmlTemplate.HtmlTemplate()  
     
-    def getUrlOfDenomination ( _id ):
+    def getUrlOfDenomination ( self, _id ):
         
         sqlcommand = "SELECT url  "
         sqlcommand += " FROM denominations "
@@ -21,7 +21,8 @@ class datenbasis:
         cur = conn.cursor()
         cur.execute ( sqlcommand )       
         for row in cur:
-            return str( row[0] )
+            return row[0] 
+        return ""
 
     def getIntro(self):
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -54,9 +55,9 @@ class datenbasis:
         widgetlist = web.input(groups = []) 
         _id = widgetlist['glaubensgemeinschaft']
         sqlcommand = "SELECT questions.question  "
-        sqlcommand += " FROM answers, questions "
-        sqlcommand += " WHERE answers.denomination_id = "  + str( _id )
-        sqlcommand += " AND answers.question_id = questions.question_id"
+        sqlcommand += " FROM denomination_answers, questions "
+        sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
+        sqlcommand += " AND denomination_answers.question_id = questions.question_id"
         sqlcommand += " ORDER BY questions.kat, questions.question;"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
@@ -67,9 +68,9 @@ class datenbasis:
         htmlcode += '            <table>'
         htmlcode += '              <tr>'
         htmlcode += '                <th>Aussage zum Glauben (Mehr Infos unter '
-        htmlcode += '                  <a href="' + self.getUrlOfDenomination ( _id )  += '">'
-        htmlcode +=                      self.getUrlOfDenomination ()
-        htmlcode += '                  </a>'
+        htmlcode += '                  <a href="' + self.getUrlOfDenomination ( _id )  + '">'
+        htmlcode +=                      self.getUrlOfDenomination ( _id )
+        htmlcode += '                  </a>)'
         htmlcode += '              </th>'
         htmlcode += '              </tr>'
         odd = 0
