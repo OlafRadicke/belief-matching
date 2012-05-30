@@ -1,0 +1,39 @@
+#!/bin/sh
+# Name: belief maching
+# init-scrip
+
+DAEMON="belief-maching.py"
+BASEPATH="/usr/opt/belief-maching/"
+PID="/var/run/belief-maching"
+
+cd $BASEPATH
+#test -f $DAEMON || exit 0
+
+
+case "$1" in
+  start)
+    echo -n "Start belief-maching"
+    python $DAEMON 9999 2>&1 &
+    echo $! > ${PID}
+    echo "."
+    ;;
+  stop)
+    echo -n "Stoppe belief-maching"
+    kill `cat ${PID}`
+    echo  > ${PID}
+    echo "."
+    ;;
+  restart)
+    echo -n "Stoppe belief-maching"
+    kill `cat ${PID}`
+    echo "."
+    echo -n "Start hcmt-web"
+    python $DAEMON 9999 2>&1 &
+    echo  $! > ${PID}
+    echo "."
+    ;;
+  *)
+    echo "Usage: ${0} {start|stop|restart}"
+    exit 1
+    ;;
+esac

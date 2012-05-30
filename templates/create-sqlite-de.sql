@@ -10,18 +10,20 @@ CREATE TABLE questions (
 
 CREATE TABLE denominations (
     denomination_id     INTEGER PRIMARY KEY NOT NULL,
-    denomination        TEXT    NOT NULL
+    denomination        TEXT    NOT NULL,
+    url                 TEXT    NOT NULL
 );
 
 CREATE TABLE answers (
     answer_id           INTEGER PRIMARY KEY AUTOINCREMENT,
     question_id         INTEGER NOT NULL,
     denomination_id     INTEGER NOT NULL,
--- -- value is "y" or "n"
---     yes_or_no           TEXT    NOT NULL,
--- -- wichtung
---     weighting_nr        INTEGER NOT NULL,
+-- 0 = trifft nicht zu
+-- 1 = trifft zu
+-- 3 = keine Meinung
+    answer_nr           INTEGER NOT NULL,
     FOREIGN KEY ( question_id ) REFERENCES question ( question_id ),
+    FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
     FOREIGN KEY ( question_id ) REFERENCES denominations ( denomination_id )
 );
 
@@ -39,13 +41,13 @@ CREATE TABLE weightings (
 
 -- ############ Weigthtings ##################################################
 
-INSERT INTO weightings ( weighting_nr, description ) VALUES (
-0,
-"unwichtig");
+-- INSERT INTO weightings ( weighting_nr, description ) VALUES (
+-- 0,
+-- "unwichtig");
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
 1,
-"mittel");
+"normal");
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
 2,

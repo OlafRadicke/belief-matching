@@ -11,6 +11,17 @@ import HtmlTemplate
 class datenbasis:    
 
     htemp = HtmlTemplate.HtmlTemplate()  
+    
+    def getUrlOfDenomination ( _id ):
+        
+        sqlcommand = "SELECT url  "
+        sqlcommand += " FROM denominations "
+        sqlcommand += " WHERE denomination_id = "  + str( _id ) + ";"
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute ( sqlcommand )       
+        for row in cur:
+            return str( row[0] )
 
     def getIntro(self):
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -41,10 +52,10 @@ class datenbasis:
         
     def POST(self):
         widgetlist = web.input(groups = []) 
-        id = widgetlist['glaubensgemeinschaft']
-        sqlcommand = "SELECT questions.question "
+        _id = widgetlist['glaubensgemeinschaft']
+        sqlcommand = "SELECT questions.question  "
         sqlcommand += " FROM answers, questions "
-        sqlcommand += " WHERE answers.denomination_id = "  + str(id )
+        sqlcommand += " WHERE answers.denomination_id = "  + str( _id )
         sqlcommand += " AND answers.question_id = questions.question_id"
         sqlcommand += " ORDER BY questions.kat, questions.question;"
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -55,7 +66,11 @@ class datenbasis:
         htmlcode += self.getIntro()       
         htmlcode += '            <table>'
         htmlcode += '              <tr>'
-        htmlcode += '                <th>Aussage zum Glauben</th>'
+        htmlcode += '                <th>Aussage zum Glauben (Mehr Infos unter '
+        htmlcode += '                  <a href="' + self.getUrlOfDenomination ( _id )  += '">'
+        htmlcode +=                      self.getUrlOfDenomination ()
+        htmlcode += '                  </a>'
+        htmlcode += '              </th>'
         htmlcode += '              </tr>'
         odd = 0
         for row in cur:

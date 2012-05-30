@@ -31,6 +31,15 @@ class belieftest:
              denominationNames [ str(row[1]) ] = str(row[0]) 
         return denominationNames
         
+    def getWeightings ( self ):
+        
+        weightingsNames = dict()
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute("SELECT weighting_nr, description FROM weightings ORDER BY weighting_nr;")
+        for row in cur:
+             weightingsNames [ str(row[0]) ] = str(row[1]) 
+        return weightingsNames        
         
     def getAnswersOfDenomination(self, question_id):
         questionAnswers = []
@@ -49,8 +58,8 @@ class belieftest:
         
         
     def GET(self):
-        #_form = self.test_form()
-        #return render.index(my_form)
+
+        weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute("SELECT question_id, kat, question FROM questions order by kat;")
@@ -75,16 +84,22 @@ class belieftest:
                 odd = 1
             htmlcode += '            <td>' + row[1] + '</td>'
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
-            htmlcode += '            <td>Trift zu:<input type="checkbox" name="question-' + str(row[0]) \
-                + '" value="question-' + str(row[0]) + '" /></td>'
-            htmlcode += '            <td><select name="wichtung-' + str(row[0]) + '" size="1">'
-            htmlcode += '                  <option value="1">mittel</option>'
-            htmlcode += '                  <option value="2">sehr wichtig</option>'
-            htmlcode += '                  <option value="0">unwichtig</option>'
+            htmlcode += '            <td>'
+            htmlcode += '                <select name="question-' + str(row[0]) + '" size="1">'
+            htmlcode += '                  <option value="0">trifft nicht zu</option>'
+            htmlcode += '                  <option value="1">trifft zu</option>'
+            htmlcode += '                  <option value="3">keine Meinung</option>'
+            htmlcode += '                </select>'
+                
+            htmlcode += '</td>'
+            htmlcode += '            <td>'
+            htmlcode += '                <select name="wichtung-' + str(row[0]) + '" size="1">'
+            for key in weightingsDict.keys():
+                htmlcode += '              <option value="' + key + '">' +  weightingsDict[key] + '</option>'
             htmlcode += '                </select>'
             htmlcode += '            </td>'
             htmlcode += '          </tr>'  
-        htmlcode += '           </table>'
+        htmlcode += '           </table><br>'
         htmlcode += form.Button('Anfrage abschicken').render()
         htmlcode += '            </form>'
         htmlcode += self.htemp.bottom
@@ -104,7 +119,7 @@ class belieftest:
         htmlcode += '<ul>'
         for row in cur:  
             i = row[0]
-            if "question-" + str(i) in widgetlist: 
+            if widgetlist["question-" + str(i)] == "1": 
                 htmlcode += '<li>Aussage Nr.: ' + str(i) + ' '
                 htmlcode += 'WICHTUNG: id ' + widgetlist['wichtung-' + str(i)] + '</li>'
                 user_selection[str(i)] =  widgetlist['wichtung-' + str(i)]

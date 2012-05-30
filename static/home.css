@@ -38,7 +38,8 @@ div.bannerbox img{
 
 /* ----------- line ---------------------*/
 div.line {
-    background: black;
+/*     background: black; */
+    background: #c1c1c1;
     padding: 2px;
     margin: 5px 5px 5px 5px;
     border-radius: 5px;
@@ -231,8 +232,8 @@ div.appbox form{
 div.appbox button {
     align: center;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+/*    padding: 10px;
+    margin: 10px;*/
 }
 
 /* -------- Footer --------------------------------*/
