@@ -3,7 +3,7 @@
 # init-scrip
 
 DAEMON="belief-maching.py"
-BASEPATH="/usr/opt/belief-maching/"
+BASEPATH="/usr/local/bin/belief-maching/"
 PID="/var/run/belief-maching"
 
 cd $BASEPATH

@@ -93,10 +93,10 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 121,
 "Taufe",
-"Die Taufe ist Voraussetzung f&uuml;r die Erl&ouml;sung/Errettung");
+"Die Taufe (mit Wasser/liturgisch) ist Voraussetzung f&uuml;r die Erl&ouml;sung/Errettung");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-125,
+122,
 "Taufe",
 "Die Taufe wird &auml;u&szlig;erlich durch Wasser vollzogen");
 
@@ -130,7 +130,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 134,
 "Abendmahl",
-"Das Abendmahl messe ich keine Bedeutung zu.");
+"Dem Abendmahl messe ich keine Bedeutung zu.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 135,
@@ -165,7 +165,6 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 "Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel &ouml;ffnen.");
 
 -- ==================== Kat Gemeinde beginnend mit 15... =====================
-
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 151,
@@ -229,7 +228,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 171,
 "Gottesdienst",
-"Ein Gottesdienst muss ein bestimmten Ablauf folgen."); 
+"Ein Gottesdienst muss ein bestimmten Ablauf (Liturgie) folgen."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 172,
@@ -314,7 +313,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 192,
 "Sonstiges",
-"Soziales angemahnt sind existenzieller Bestandteil des Evangeliums.");
+"Soziales angemahnt (in der Welt) sind existenzieller Bestandteil des Evangeliums.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 193,
@@ -339,7 +338,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 197,
 "Sonstiges",
-"Gl&auml;ubige Menschen sollten sich von Weltlichen Dingen fern halten.");
+"Gl&auml;ubige Menschen sollten sich von Weltlichen Dingen/Gesellschaft fern halten.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 198,

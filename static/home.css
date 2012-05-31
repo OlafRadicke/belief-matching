@@ -218,6 +218,15 @@ div.appbox tr {
 div.appbox tr#odd {
     background-color: #F5F5F5;
 }
+div.appbox tr#yes {
+    background-color: #7EFFB4;
+}
+div.appbox tr#no {
+    background-color: #FFBDBC;
+}
+div.appbox tr#void {
+    background-color: #DCDCDC;
+}
 div.appbox td { 
     vertical-align:top; 
 

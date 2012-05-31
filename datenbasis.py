@@ -54,7 +54,7 @@ class datenbasis:
     def POST(self):
         widgetlist = web.input(groups = []) 
         _id = widgetlist['glaubensgemeinschaft']
-        sqlcommand = "SELECT questions.question  "
+        sqlcommand = "SELECT questions.question, denomination_answers.answer_nr "
         sqlcommand += " FROM denomination_answers, questions "
         sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
         sqlcommand += " AND denomination_answers.question_id = questions.question_id"
@@ -73,16 +73,28 @@ class datenbasis:
         htmlcode += '                  </a>)'
         htmlcode += '              </th>'
         htmlcode += '              </tr>'
-        odd = 0
+        #odd = 0
+        #for row in cur:
+            #if odd == 1:
+                #htmlcode += '       <tr id="odd">'
+                #odd = 0
+            #else:
+                #htmlcode += '       <tr>'
+                #odd = 1
+            #htmlcode += '            <td>' + row[0] + '</td>'
+            #htmlcode += '          </tr>'  
+            
         for row in cur:
-            if odd == 1:
-                htmlcode += '       <tr id="odd">'
-                odd = 0
+            if int(row[1]) == 0:
+                htmlcode += '       <tr id="no">'
+                htmlcode += '            <td><b>Trift nicht zu:</b> ' + row[0] + '</td>'
+            elif int(row[1]) == 1:
+                htmlcode += '       <tr id="yes">'
+                htmlcode += '            <td><b>Trift zu:</b> ' + row[0] + '</td>'
             else:
-                htmlcode += '       <tr>'
-                odd = 1
-            htmlcode += '            <td>' + row[0] + '</td>'
-            htmlcode += '          </tr>'  
+                htmlcode += '       <tr id="void">'
+                htmlcode += '            <td><b>Keine Aussage:</b> ' + row[0] + '</td>'
+            htmlcode += '          </tr>'              
         htmlcode += '           </table>'        
         htmlcode += self.htemp.bottom
         return htmlcode           
