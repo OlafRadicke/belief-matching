@@ -231,11 +231,6 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 "Ein Gottesdienst muss ein bestimmten Ablauf (Liturgie) folgen."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
-172,
-"Gottesdienst",
-"Stille und Besinnung sind auch im Gottesdienst sehr wichtig."); 
-
-INSERT INTO questions (question_id, kat, question) VALUES (
 173,
 "Gottesdienst",
 "Stille und Besinnung sind mir auch im Gottesdienst sehr wichtig."); 

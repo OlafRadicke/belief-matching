@@ -131,9 +131,6 @@ VALUES ( 165, 2, 2 );
 --- "Ein Gottesdienst muss ein bestimmten Ablauf (Liturgie) folgen."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 171, 2, 0 );
--- "Stille und Besinnung sind auch im Gottesdienst sehr wichtig."
-INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
-VALUES ( 172, 2, 0 );
 -- "Stille und Besinnung sind mir auch im Gottesdienst sehr wichtig."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 173, 2, 1 );
