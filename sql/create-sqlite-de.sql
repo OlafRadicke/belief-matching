@@ -61,7 +61,7 @@ INSERT INTO weightings ( weighting_nr, description ) VALUES (
 
 INSERT INTO answers ( answers_nr, description ) VALUES (
 0,
-"trifft nicht zu");
+"trifft NICHT zu");
 
 INSERT INTO answers ( answers_nr, description ) VALUES (
 1,
@@ -69,7 +69,7 @@ INSERT INTO answers ( answers_nr, description ) VALUES (
 
 INSERT INTO answers ( answers_nr, description ) VALUES (
 2,
-"keine Meinung");
+"Pers&ouml;nliche Entscheidung");
 
 -- ##################### insert questions ####################################
 -- ======= kat "Gott" beginnend mit 11... ====================================

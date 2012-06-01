@@ -66,8 +66,10 @@ class belieftest:
     # vergleicht die Antworten des Benutzer mit den der Konfessionen.
     def matching (self):
         _htmlcode = ""
+        _max_weighting_points = 0
         max_points = 0
         denomination_points = dict()
+        denomination_weighting_points = dict()
         user_answers = dict()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
@@ -81,16 +83,17 @@ class belieftest:
                                      'wichtung' :  str( widgetlist['wichtung-' + str(i)] ) }
         print "user_answers: "
         print user_answers
-        cur.execute("SELECT COUNT( question_id ) FROM questions;") 
-        for row in cur:  
-            max_points = row[0]
-            print "Anzahl Fragen: " + str( max_points )
+        #cur.execute("SELECT COUNT( question_id ) FROM questions;") 
+        #for row in cur:  
+            #max_points = row[0]
+            #print "Anzahl Fragen: " + str( max_points )
             
         cur.execute("SELECT denomination_id FROM denominations;") 
         # denomination loop
         for row in cur:  
             _denomination_id = row[0]
             denomination_points [ str(_denomination_id) ] = 0
+            denomination_weighting_points [ str(_denomination_id) ] = 0
             # user answer loop
             for user_answer_key in user_answers.keys() :
                 print "frage: "
@@ -98,25 +101,39 @@ class belieftest:
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
                 print "antwort von Kofession: " + str( deno_answer )
                 print "antwort user: " + str( user_answers [ user_answer_key ] [ "answer" ] )
+                if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
+                    _max_weighting_points = _max_weighting_points + 1
                 if user_answers [ user_answer_key ] [ "answer" ] == deno_answer :
                     if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
                         denomination_points [ str(_denomination_id) ] = \
-                            int(denomination_points [ str(_denomination_id) ]) + 5
+                            int( denomination_points [ str(_denomination_id) ]) + 1
+                        denomination_weighting_points [ str(_denomination_id) ] = \
+                            int( denomination_weighting_points [ str(_denomination_id) ]) + 1
                     else:
                         denomination_points [ str(_denomination_id) ] = \
                             int(denomination_points [ str(_denomination_id) ]) + 1
-                else:
-                    denomination_points [ str(_denomination_id) ] = \
-                        int(denomination_points [ str(_denomination_id) ]) + 0
+                            
                      
         _htmlcode += '            <table>'
         _htmlcode += '              <tr>'
         _htmlcode += '                <th>Konfession </th>'
-        _htmlcode += '                <th>Punkte</th>'
+        _htmlcode += '                <th>&Uuml;bereinstimmung</th>'
+        _htmlcode += '                <th>In wichtigen Fragen</th>'
         _htmlcode += '              </tr>'    
         odd = 0
         for denomination_points_key in denomination_points.keys():
+
+            _all = len ( user_answers.keys() )
+            _sum_denomination_points = int ( denomination_points [denomination_points_key] )
+            print "ein prozent: " +  str ( float( _all ) / float ( 100 ) )
+            _relativ =  _sum_denomination_points / ( float( _all ) / float ( 100 ) ) 
+            #
+            _sum_denomination_weighting_points = int ( denomination_weighting_points [denomination_points_key] )
+            print "_sum_denomination_weighting_points: " + str( _sum_denomination_weighting_points )
+            print "ein prozent: " +  str ( float( _max_weighting_points ) / float ( 100 ) )
+            _weighting_relativ =  _sum_denomination_weighting_points / ( float( _max_weighting_points ) / float ( 100 ) )             
             
+            #
             if odd == 1:
                 _htmlcode += '       <tr id="odd">'
                 odd = 0
@@ -124,13 +141,15 @@ class belieftest:
                 _htmlcode += '       <tr>'
                 odd = 1
             _htmlcode += '            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
-            _bigest_value = int ( max ( denomination_points.values() ) )
-            _sum_denomination_points = int ( denomination_points [denomination_points_key] )
-            print "ein prozent: " +  str ( float(_bigest_value) / float ( 100 ) )
-            _relativ =  _sum_denomination_points / ( float(_bigest_value) / float ( 100 ) ) 
-            _htmlcode += '            <td>' 
-            _htmlcode += '            <div class="points" style="width:' + str ( _relativ ) + '%;">'
-            _htmlcode +=                  str ( _bigest_value ) + ' Punkte </div></td>'
+
+            _htmlcode += '            <td  class="tabpoints" >' 
+            _htmlcode += '              <div class="points" style="width:' + str (int( _relativ )) + '%;">&nbsp;</div>'
+            _htmlcode +=                  str ( int(_relativ) ) + ' %'
+            _htmlcode += '            </td>'
+            _htmlcode += '            <td  class="tabpoints-weighting">' 
+            _htmlcode += '              <div class="points-weighting"  style="width:' + str (int( _weighting_relativ )) + '%;">&nbsp;</div>'
+            _htmlcode +=                  str ( int(_weighting_relativ) ) + ' %'
+            _htmlcode += '            </td>'
             _htmlcode += '          </tr>'  
         _htmlcode += '           </table>'          
         

@@ -244,18 +244,46 @@ div.appbox button {
     margin: 10px;*/
 }
 
+div.appbox td.tabpoints {
+    align: right;
+    text-align: right;
+}
+
 div.appbox div.points {
-/*    border-radius: 10px;
+    align: right;
+    text-align: right;
+    float:right;
+    
     color:#fff;
-    background: #c1c1c1;
+    padding-right: 15px;
+    margin-right: -15px;
+    background:#373737;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
     background: linear-gradient( top, #373737, #A0A0A0);
     background: -webkit-linear-gradient( top, #373737, #A0A0A0);
     background: -moz-linear-gradient( top, #373737, #A0A0A0);
-    background: -ms-linear-gradient( top, #373737, #A0A0A0);*/
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.appbox td.tabpoints-weighting {
+    align: left;
+    text-align: left;
+}
+
+div.appbox div.points-weighting {
+    text-align: left;
+    text-align: left;
+    float:left;
     
-    color:#fff;
-    padding-left: 15px;
-    margin-left: -15px;
+/*     color:#fff; 
+    color:#C3C4FF;*/
+
+
     background:#373737;
     -moz-border-radius-topright:5px;
     -moz-border-radius-bottomright:5px;
