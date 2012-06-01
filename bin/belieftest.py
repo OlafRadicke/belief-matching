@@ -124,7 +124,7 @@ class belieftest:
                 _htmlcode += '       <tr>'
                 odd = 1
             _htmlcode += '            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
-            _htmlcode += '            <td>' + str(denomination_points [denomination_points_key]) + '</td>'
+            _htmlcode += '            <td>' + str( denomination_points [denomination_points_key] ) + '</td>'
             _htmlcode += '          </tr>'  
         _htmlcode += '           </table>'          
         

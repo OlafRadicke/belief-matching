@@ -87,7 +87,7 @@ VALUES ( 145, 2, 2 );
 -- ==================== Kat Gemeinde beginnend mit 15... =====================
 
 -- "Ich glaube an das Priestertum Aller und will das die Gemeinde von Allen 
--- gemeinsam geleitet wird."
+-- gemeinsam geleitet wird (demokratische Abstimmungenen oder &auml;hnliches).")."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 151, 2, 1 );
 -- "Mir ist wichtig, das eine Gemeinde autonom ist."
@@ -109,6 +109,13 @@ VALUES ( 155, 2, 1 );
 -- regelm&auml;&szlig;ig in Erscheinung tritt und sich aktiv einbringt."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 156, 2, 0 );
+-- "Die Gemeinde sollte von den &Auml;ltesten und/oder Predigern und/oder 
+-- Diakonen geleitete werden."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 157, 1, 0 );
+-- "Die Gemeindeleitung sollte von einer H&ouml;heren Instanz bestimmt werden."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 158, 1, 0 );
 
 -- ==================== Kat. Sexualität beginnend mit 16... ===================
 -- "Sex vor der Ehe lehene ich ab."
@@ -186,7 +193,7 @@ VALUES ( 189, 2, 2 );
 -- Platz."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 191, 2, 0 );
--- "Soziales angemahnt (in der Welt) sind existenzieller 
+-- "Soziales Engagement (in der Welt) sind existenzieller 
 -- Bestandteil des Evangeliums."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 192, 2, 1 );

@@ -169,7 +169,8 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 151,
 "Gemeinde",
-"Ich glaube an das Priestertum Aller und will das die Gemeinde von Allen gemeinsam geleitet wird.");
+"Ich glaube an das Priestertum Aller und will das die Gemeinde von Allen 
+gemeinsam geleitet wird (demokratische Abstimmungenen oder &auml;hnliches).");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 152,
@@ -196,6 +197,15 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 "Gemeinde",
 "Zu den Pflichten in der Gemeinde geh&ouml;rt auch das man regelm&auml;&szlig;ig in Erscheinung tritt und sich aktiv einbringt.");
 
+INSERT INTO questions (question_id, kat, question) VALUES (
+157,
+"Gemeinde",
+"Die Gemeinde sollte von den &Auml;ltesten und/oder Predigern und/oder Diakonen geleitete werden.");
+
+INSERT INTO questions (question_id, kat, question) VALUES (
+158,
+"Gemeinde",
+"Die Gemeindeleitung sollte von einer H&ouml;heren Instanz bestimmt werden.");
 -- ==================== Kat. Sexualität beginnend mit 16... ===================
        
 INSERT INTO questions (question_id, kat, question) VALUES (
@@ -308,7 +318,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 192,
 "Sonstiges",
-"Soziales angemahnt (in der Welt) sind existenzieller Bestandteil des Evangeliums.");
+"Soziales Engagement (in der Welt) sind existenzieller Bestandteil des Evangeliums.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 193,
@@ -328,7 +338,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 196,
 "Sonstiges",
-"Alkohol und andere Drogen versperren den Weg zu spiritueller Entwicklung.");
+"Alkohol und/oder andere Drogen versperren den Weg zu spiritueller Entwicklung.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 197,
