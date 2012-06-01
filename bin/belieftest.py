@@ -84,7 +84,7 @@ class belieftest:
         cur.execute("SELECT COUNT( question_id ) FROM questions;") 
         for row in cur:  
             max_points = row[0]
-            print "Anzahl Fragen: " + str( max_points)
+            print "Anzahl Fragen: " + str( max_points )
             
         cur.execute("SELECT denomination_id FROM denominations;") 
         # denomination loop
@@ -124,7 +124,13 @@ class belieftest:
                 _htmlcode += '       <tr>'
                 odd = 1
             _htmlcode += '            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
-            _htmlcode += '            <td>' + str( denomination_points [denomination_points_key] ) + '</td>'
+            _bigest_value = int ( max ( denomination_points.values() ) )
+            _sum_denomination_points = int ( denomination_points [denomination_points_key] )
+            print "ein prozent: " +  str ( float(_bigest_value) / float ( 100 ) )
+            _relativ =  _sum_denomination_points / ( float(_bigest_value) / float ( 100 ) ) 
+            _htmlcode += '            <td>' 
+            _htmlcode += '            <div class="points" style="width:' + str ( _relativ ) + '%;">'
+            _htmlcode +=                  str ( _bigest_value ) + ' Punkte </div></td>'
             _htmlcode += '          </tr>'  
         _htmlcode += '           </table>'          
         

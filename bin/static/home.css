@@ -229,7 +229,6 @@ div.appbox tr#void {
 }
 div.appbox td { 
     vertical-align:top; 
-
     padding: 10px;
 /*    margin: 0px 0px 0px 0px;*/
     margin: 10px;
@@ -245,6 +244,31 @@ div.appbox button {
     margin: 10px;*/
 }
 
+div.appbox div.points {
+/*    border-radius: 10px;
+    color:#fff;
+    background: #c1c1c1;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);*/
+    
+    color:#fff;
+    padding-left: 15px;
+    margin-left: -15px;
+    background:#373737;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
 /* -------- Footer --------------------------------*/
 div.footer {/*
     width: 100%;*/
@@ -257,7 +281,7 @@ div.footer {/*
     background-color: #c1c1c1;
     border-color: #000080;*/
     color:#fff;
-    background: #c1c1c1;
+    background: #373737;
     background: linear-gradient( top, #373737, #A0A0A0);
     background: -webkit-linear-gradient( top, #373737, #A0A0A0);
     background: -moz-linear-gradient( top, #373737, #A0A0A0);
@@ -268,4 +292,8 @@ div.footer {/*
 div.footer li a {
     color:#fff;
     text-decoration: none;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-radius: 10px;
 }
