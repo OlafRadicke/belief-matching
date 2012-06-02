@@ -10,16 +10,19 @@ import HtmlTemplate
 
 class belieftest:
     
-    #test_form = form.Form( 
-    #form.Checkbox("yes_or_no", 
-                  #description="trifft zu", 
-                  #class_="standard", 
-                  #value="", 
-                  #checked=False), 
-    #form.Button('go')
-    #)
-    
     htemp = HtmlTemplate.HtmlTemplate()
+    
+    # get back a array of anser options
+    def getAnswers (self):
+        _answers = list()
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        sqlcommand = "SELECT answers_nr, description "
+        sqlcommand += "FROM answers ORDER BY answers_nr ;"
+        cur.execute( sqlcommand )
+        for row in cur:
+             _answers.append( [ row[0], row[1] ] )
+        return _answers
  
     # Gibt ein dict mit Konfessions-id und Konfessionsnamen zurück.
     def getDenominationName (self, _id):
@@ -32,7 +35,6 @@ class belieftest:
         cur.execute( sqlcommand )
         for row in cur:
              denominationName = str(row[0]) 
-        print "denominationName:" + denominationName
         return denominationName
         
     # Gibt ein dict zurück mit gewichtungsnummer und gewichtungsbeschreibung.   
@@ -81,13 +83,7 @@ class belieftest:
             i = row[0]
             user_answers[str(i)] =  {'answer'   :  str( widgetlist['answer-'   + str(i)] ), \
                                      'wichtung' :  str( widgetlist['wichtung-' + str(i)] ) }
-        print "user_answers: "
-        print user_answers
-        #cur.execute("SELECT COUNT( question_id ) FROM questions;") 
-        #for row in cur:  
-            #max_points = row[0]
-            #print "Anzahl Fragen: " + str( max_points )
-            
+          
         cur.execute("SELECT denomination_id FROM denominations;") 
         # denomination loop
         for row in cur:  
@@ -96,10 +92,7 @@ class belieftest:
             denomination_weighting_points [ str(_denomination_id) ] = 0
             # user answer loop
             for user_answer_key in user_answers.keys() :
-                print "frage: "
-                print user_answer_key
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
-                print "antwort von Kofession: " + str( deno_answer )
 
                 if user_answers [ user_answer_key ] [ "answer" ] == deno_answer :
                     if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
@@ -111,10 +104,13 @@ class belieftest:
                         denomination_points [ str(_denomination_id) ] = \
                             int( denomination_points [ str(_denomination_id) ] ) + 1
                             
+        print "PRE _max_weighting_points: " + str(_max_weighting_points)
         for _key in user_answers.keys() :
-            print '_answer [ "wichtung" ]: ' +  str ( user_answers [_key]  [ "wichtung" ] )
-            if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
-                _max_weighting_points = _max_weighting_points + 1         
+            print '_answer [ "wichtung" ]: ' +  str ( user_answers [_key][ "wichtung" ] )
+            if int( user_answers [_key][ "wichtung" ] ) == 1 :
+                print "....true"
+                _max_weighting_points = _max_weighting_points + 1        
+        print "RESULT _max_weighting_points: " + str(_max_weighting_points)
                 
         _htmlcode += '            <table>'
         _htmlcode += '              <tr>'
@@ -124,19 +120,21 @@ class belieftest:
         _htmlcode += '              </tr>'    
         odd = 0
         for denomination_points_key in denomination_points.keys():
-
+            # Prozent zahlen allgemein
             _all = len ( user_answers.keys() )
             _sum_denomination_points = int ( denomination_points [denomination_points_key] )
-            print "ein prozent: " +  str ( float( _all ) / float ( 100 ) )
             _relativ =  _sum_denomination_points / ( float( _all ) / float ( 100 ) ) 
-            #
+            
+            # Prozentzahl der Gewichtung
             _sum_denomination_weighting_points = float ( denomination_weighting_points [denomination_points_key] )
-            print "_sum_denomination_weighting_points: " + str( _sum_denomination_weighting_points )
-            print "ein prozent: " +  str ( float( _max_weighting_points ) / float ( 100 ) )
+            #print "_sum_denomination_weighting_points: " + str( _sum_denomination_weighting_points )
+            #print "_max_weighting_points: " + str(_max_weighting_points)
             if _max_weighting_points == 0 :
                 _weighting_relativ = 0
             else :
+                #print "_max_weighting_points : " + str(_max_weighting_points)
                 _one_procent = float( _max_weighting_points ) / float ( 100 ) 
+                #print "ein prozent: " +  str(_one_procent)
                 _weighting_relativ =  _sum_denomination_weighting_points / _one_procent             
             
             #
@@ -165,7 +163,8 @@ class belieftest:
         
         
     def GET(self):
-
+        _answer_optionen = self.getAnswers()
+        _last_kat = ""
         weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
@@ -189,25 +188,25 @@ class belieftest:
             else:
                 htmlcode += '          <tr>'
                 odd = 1
-            htmlcode += '            <td>' + row[1] + '</td>'
+            if _last_kat == row[1] :
+                htmlcode += '            <td></td>'
+            else:
+                htmlcode += '            <td>' + row[1] + '</td>'
+                _last_kat = row[1]
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
             htmlcode += '            <td>'
             htmlcode += '                <select name="answer-' + str(row[0]) + '"'
             htmlcode += '                        size="1">'
-            htmlcode += '                  <option value="0">trifft NICHT zu</option>'
-            htmlcode += '                  <option value="1">trifft zu</option>'
-            htmlcode += '                  <option value="2">Pers&ouml;nliche Entscheidung</option>'
+            for line in _answer_optionen :
+                htmlcode += '                  <option value="' + str(line[0]) + '">' 
+                htmlcode +=                        str(line[1])  + '</option>'
+
             htmlcode += '                </select>'
-                
-            htmlcode += '</td>'
+            htmlcode += '            </td>'
             htmlcode += '            <td>'
             htmlcode += '                <select name="wichtung-' + str(row[0]) + '" size="1">'
             htmlcode += '                   <option value="0">normal</option>'
             htmlcode += '                   <option value="1">sehr wichtig</option>'
-            
-#            for key in weightingsDict.keys():
-#                htmlcode += '              <option value="' + key + '">' 
-#                htmlcode +=                     weightingsDict[key] + '</option>'
             htmlcode += '                </select>'
             htmlcode += '            </td>'
             htmlcode += '          </tr>'  

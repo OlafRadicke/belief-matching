@@ -228,7 +228,8 @@ div.appbox tr#void {
     background-color: #DCDCDC;
 }
 div.appbox td { 
-    vertical-align:top; 
+    vertical-align: top; 
+    text-align: left;
     padding: 10px;
 /*    margin: 0px 0px 0px 0px;*/
     margin: 10px;
