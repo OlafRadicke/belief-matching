@@ -194,9 +194,9 @@ class belieftest:
             htmlcode += '            <td>'
             htmlcode += '                <select name="answer-' + str(row[0]) + '"'
             htmlcode += '                        size="1">'
-            htmlcode += '                  <option value="0">trifft nicht zu</option>'
+            htmlcode += '                  <option value="0">trifft NICHT zu</option>'
             htmlcode += '                  <option value="1">trifft zu</option>'
-            htmlcode += '                  <option value="2">keine Meinung</option>'
+            htmlcode += '                  <option value="2">Pers&ouml;nliche Entscheidung</option>'
             htmlcode += '                </select>'
                 
             htmlcode += '</td>'
