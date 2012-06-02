@@ -9,7 +9,7 @@ class HtmlTemplate:
         top +=    '    <meta http-equiv="content-type" content="text/html; charset=utf-8">'
         top +=    '  <head>'
         top +=    '<html>'
-        top =     u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
+        top +=     u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8"/>'
         top +=    '<div class="all">'
         #top +=    '    <div class="line" ></div>'
         top +=    '    <div class="bannerbox" >'

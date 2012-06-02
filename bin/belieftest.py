@@ -100,20 +100,22 @@ class belieftest:
                 print user_answer_key
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
                 print "antwort von Kofession: " + str( deno_answer )
-                print "antwort user: " + str( user_answers [ user_answer_key ] [ "answer" ] )
-                if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
-                    _max_weighting_points = _max_weighting_points + 1
+
                 if user_answers [ user_answer_key ] [ "answer" ] == deno_answer :
                     if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
                         denomination_points [ str(_denomination_id) ] = \
                             int( denomination_points [ str(_denomination_id) ]) + 1
                         denomination_weighting_points [ str(_denomination_id) ] = \
-                            int( denomination_weighting_points [ str(_denomination_id) ]) + 1
+                            int( denomination_weighting_points [ str(_denomination_id) ] ) + 1
                     else:
                         denomination_points [ str(_denomination_id) ] = \
-                            int(denomination_points [ str(_denomination_id) ]) + 1
+                            int( denomination_points [ str(_denomination_id) ] ) + 1
                             
-                     
+        for _key in user_answers.keys() :
+            print '_answer [ "wichtung" ]: ' +  str ( user_answers [_key]  [ "wichtung" ] )
+            if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
+                _max_weighting_points = _max_weighting_points + 1         
+                
         _htmlcode += '            <table>'
         _htmlcode += '              <tr>'
         _htmlcode += '                <th>Konfession </th>'
@@ -128,10 +130,14 @@ class belieftest:
             print "ein prozent: " +  str ( float( _all ) / float ( 100 ) )
             _relativ =  _sum_denomination_points / ( float( _all ) / float ( 100 ) ) 
             #
-            _sum_denomination_weighting_points = int ( denomination_weighting_points [denomination_points_key] )
+            _sum_denomination_weighting_points = float ( denomination_weighting_points [denomination_points_key] )
             print "_sum_denomination_weighting_points: " + str( _sum_denomination_weighting_points )
             print "ein prozent: " +  str ( float( _max_weighting_points ) / float ( 100 ) )
-            _weighting_relativ =  _sum_denomination_weighting_points / ( float( _max_weighting_points ) / float ( 100 ) )             
+            if _max_weighting_points == 0 :
+                _weighting_relativ = 0
+            else :
+                _one_procent = float( _max_weighting_points ) / float ( 100 ) 
+                _weighting_relativ =  _sum_denomination_weighting_points / _one_procent             
             
             #
             if odd == 1:
