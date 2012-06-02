@@ -29,19 +29,21 @@ class datenbasis:
         cur = conn.cursor()
         cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
         intro = u'        <h2>Datenbasis des Test</h2>'
-        intro += u'Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
+        intro += u'<p>Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
         intro += u'und mit welchen &Uuml;berzeugungen. Gut m&ouml;glich das du einen Fehler entdeckst,'
         intro += u'oder du noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft hinterlegen willst.'
         intro += u'Dann nimmt mit mir Kontakt auf: <a href="mailto:briefkasten@olaf-radicke.de">'
-        intro += u'briefkasten@olaf-radicke.de</a> <br>'
+        intro += u'briefkasten@olaf-radicke.de</a></p>'
+        
+        intro += u'        <h2>Hinterlegte Datens&auml;tze ansehen</h2></p>'
         intro += u'          <form method="POST" name="test">'   
-        intro += u'Glaubensgemeinschaft:'   
+        intro += u'W&auml;hle die Glaubensgemeinschaft:'   
         intro += u'            <select name="glaubensgemeinschaft" size="1">'
         for row in cur:
             intro += u'              <option value="' + str(row[0]) + '">' + str(row[1]) + '</option>'
         intro += u'            </select>'
         intro += form.Button('anzeigen').render()
-        intro += u'          </form>'
+        intro += u'          </form> <br>'
         conn.close()
         return intro
 
