@@ -29,7 +29,7 @@ class HtmlTemplate:
         top +=    '<div class="all">'
         #top +=    '    <div class="line" ></div>'
         top +=    '    <div class="bannerbox" >'
-        top +=    u'        <h1>Mit was deckt sich dein Glaube?</h1>'
+        top +=    u'        <h1>Womit deckt sich dein Glaube?</h1>'
         top +=    '        <h3><i>BELIEF MATCHING</i> (beta)</h3>'
         #top +=    '        <img src="static/image.jpg" >'
         top +=    '    </div>'

@@ -83,6 +83,13 @@ VALUES ( 144, 2, 2 );
 -- Bibel &ouml;ffnen."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 145, 2, 2 );
+-- "Ich glaube, dass die Welt in 7 Tagen erschaffen wurde und nicht &auml;lter 
+-- ist als 10.000 Jahre."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 146, 2, 0 );
+-- "Ich glaube an eine von Gott gesteuerte Evolution."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 147, 2, 3 );
 
 -- ==================== Kat Gemeinde beginnend mit 15... =====================
 

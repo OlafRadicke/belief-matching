@@ -71,13 +71,17 @@ INSERT INTO answers ( answers_nr, description ) VALUES (
 2,
 "Pers&ouml;nliche Entscheidung");
 
+INSERT INTO answers ( answers_nr, description ) VALUES (
+3,
+"Keine Meinung");
+
 -- ##################### insert questions ####################################
 -- ======= kat "Gott" beginnend mit 11... ====================================
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 111,
 "Gott",
-"Ich glaube an die dreifaltigkeit");
+"Ich glaube an die Dreifaltigkeit");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 112,
@@ -125,7 +129,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 133,
 "Abendmahl",
-"Zum Abendmahl sollten nur wer getauft ist zugelassen werden");
+"Zum Abendmahl sollte nur wer getauft ist zugelassen werden");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 134,
@@ -142,7 +146,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 141,
 "Bibel",
-"Als <i>Bibeltreu</i> kann sich nur jemand bezeichnen, der ich die Bibel wortw&ouml;rtlich nimmt.");
+"Als <i>bibeltreu</i> kann sich nur jemand bezeichnen, der ich die Bibel wortw&ouml;rtlich nimmt.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 142,
@@ -164,33 +168,43 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 "Bibel",
 "Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel &ouml;ffnen.");
 
+INSERT INTO questions (question_id, kat, question) VALUES (
+146,
+"Bibel",
+"Ich glaube, dass die Welt in 7 Tagen erschaffen wurde und nicht &auml;lter ist als 10.000 Jahre.");
+
+INSERT INTO questions (question_id, kat, question) VALUES (
+147,
+"Bibel",
+"Ich glaube an eine von Gott gesteuerte Evolution.");
+
 -- ==================== Kat Gemeinde beginnend mit 15... =====================
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 151,
 "Gemeinde",
-"Ich glaube an das Priestertum Aller und will das die Gemeinde von Allen 
+"Ich glaube an das Priestertum aller und will dass die Gemeinde von allen 
 gemeinsam geleitet wird (demokratische Abstimmungenen oder &auml;hnliches).");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 152,
 "Gemeinde",
-"Mir ist wichtig, das eine Gemeinde autonom ist.");
+"Mir ist wichtig, dass eine Gemeinde autonom ist.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 153,
 "Gemeinde",
-"Ich glaube ein Gottesdienst sollte von Priestern (oder Hauptamtlichen) geleitet werden.");
+"Ich glaube, dass ein Gottesdienst von Priestern (oder Hauptamtlichen) geleitet werden sollte.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 154,
 "Gemeinde",
-"Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglied auch aus der Gemeinde ausgeschlossen werden.");
+"Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglieder aus der Gemeinde ausgeschlossen werden.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 155,
 "Gemeinde",
-"Frauen sollen alle Aufgabe in der Gemeinde (einschlie&szlig;lich das Predigen) &uuml;bernehmen k&ouml;nnen.");
+"Frauen sollen alle Aufgabe in der Gemeinde (einschlie&szlig;lich des Predigen) &uuml;bernehmen k&ouml;nnen.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 156,
@@ -221,7 +235,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 163,
 "Sexualit&auml;t",
-"Erneutes heiraten nach einer Scheidung lehne ich ab."); 
+"Erneutes Heiraten nach einer Scheidung lehne ich ab."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 164,
@@ -231,29 +245,29 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 165,
 "Sexualit&auml;t",
-"Ich halte (gelebte) Homosexualit&auml;t f&uuml;r eine S&uuml;nde."); 
+"Ich halte (gelebte) Homosexualit&auml;t f&uuml;r eine S&uuml;nde.");
 
 -- ============================= Kat. Gottesdienst beginnend mit 17... =======
         
 INSERT INTO questions (question_id, kat, question) VALUES (
 171,
 "Gottesdienst",
-"Ein Gottesdienst muss ein bestimmten Ablauf (Liturgie) folgen."); 
+"Ein Gottesdienst muss einem bestimmten Ablauf (Liturgie) folgen."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 173,
 "Gottesdienst",
-"Stille und Besinnung sind mir auch im Gottesdienst sehr wichtig."); 
+"Stille und Besinnung sind mir im Gottesdienst sehr wichtig."); 
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 174,
 "Gottesdienst",
-"Mir ist wichtig das Musik (Worship) modern ist, ber&uuml;hrt und mitrei&szlig;t.");
+"Mir ist wichtig, dass Musik (Worship) modern ist, ber&uuml;hrt und mitrei&szlig;t.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 175,
 "Gottesdienst",
-"Freies Gebet im Gottesdienst ist f&uuml;r mich Zeichen von lebendigen und authentischem Glauben.");
+"Freies Gebet im Gottesdienst ist f&uuml;r mich Zeichen von lebendigem und authentischem Glauben.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 176,
@@ -265,27 +279,27 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 181,
 "Erl&ouml;sung",
-"Ich glaube das f&uuml;r jeden Menschen kommt eine Zeit, wo er von Gott gerichtet wird.");
+"Ich glaube, dass f&uuml;r jeden Menschen kommt eine Zeit, wo er von Gott gerichtet wird.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 182,
 "Erl&ouml;sung",
-"Ich glaube es gibt eine H&ouml;lle mit ewiger Verdammnis.");
+"Ich glaube, dass es eine H&ouml;lle mit ewiger Verdammnis gibt.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 183,
 "Erl&ouml;sung",
-"Menschen k&ouml;nnen auch noch nach ihrem Tod Busse tun um der Verdammnis zu entgehen (Fegefeuer).");
+"Menschen k&ouml;nnen auch noch nach ihrem Tod Busse tun, um der Verdammnis zu entgehen (Fegefeuer).");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 184,
 "Erl&ouml;sung",
-"Auf die Erl&ouml;sung hat man keinen Einfluss, Sie wird einem durch die Gnade Gottes zu Teil.");
+"Auf die Erl&ouml;sung hat man keinen Einfluss, sie wird einem durch die Gnade Gottes zuteil.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 185,
 "Erl&ouml;sung",
-"Wirtschaftlicher Erfolg ist ein Zeichen das man in der Gnade Gottes steht.");
+"Wirtschaftlicher Erfolg ist ein Zeichen dafür, dass man in der Gnade Gottes steht.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 186,
@@ -295,7 +309,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 187,
 "Erl&ouml;sung",
-"Es kann nur eine Wahrheit geben und deshalb nur ein Weg zur Erl&ouml;sung f&uuml;hren.");
+"Es kann nur eine Wahrheit geben und deshalb nur einen Weg zur Erl&ouml;sung f&uuml;hren.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 188,
@@ -318,7 +332,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 192,
 "Sonstiges",
-"Soziales Engagement (in der Welt) sind existenzieller Bestandteil des Evangeliums.");
+"Soziales Engagement (in der Welt) ist existenzieller Bestandteil des Evangeliums.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 193,
@@ -343,7 +357,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 197,
 "Sonstiges",
-"Gl&auml;ubige Menschen sollten sich von Weltlichen Dingen/Gesellschaft fern halten.");
+"Gl&auml;ubige Menschen sollten sich von weltlichen Dingen/Gesellschaft fern halten.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 198,
