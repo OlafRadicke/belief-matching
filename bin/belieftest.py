@@ -83,7 +83,7 @@ class belieftest:
         
     # vergleicht die Antworten des Benutzer mit den der Konfessionen.
     def matching (self):
-        _htmlcode = ""
+        _htmlcode = u''
         _max_weighting_points = 0
         max_points = 0
         denomination_points = dict()
@@ -128,12 +128,12 @@ class belieftest:
                 _max_weighting_points = _max_weighting_points + 1        
         print "RESULT _max_weighting_points: " + str(_max_weighting_points)
                 
-        _htmlcode += '            <table>'
-        _htmlcode += '              <tr>'
-        _htmlcode += '                <th>Konfession </th>'
-        _htmlcode += '                <th>&Uuml;bereinstimmung</th>'
-        _htmlcode += '                <th>In wichtigen Fragen</th>'
-        _htmlcode += '              </tr>'    
+        _htmlcode += u'            <table>'
+        _htmlcode += u'              <tr>'
+        _htmlcode += u'                <th>Konfession </th>'
+        _htmlcode += u'                <th>&Uuml;bereinstimmung</th>'
+        _htmlcode += u'                <th>In wichtigen Fragen</th>'
+        _htmlcode += u'              </tr>'    
         odd = 0
         for denomination_points_key in denomination_points.keys():
             # Prozent zahlen allgemein
@@ -155,23 +155,23 @@ class belieftest:
             
             #
             if odd == 1:
-                _htmlcode += '       <tr id="odd">'
+                _htmlcode += u'       <tr id="odd">'
                 odd = 0
             else:
-                _htmlcode += '       <tr>'
+                _htmlcode += u'       <tr>'
                 odd = 1
-            _htmlcode += '            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
+            _htmlcode += u'            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
 
-            _htmlcode += '            <td  class="tabpoints" >' 
-            _htmlcode += '              <div class="points" style="width:' + str (int( _relativ )) + '%;">&nbsp;</div>'
+            _htmlcode += u'            <td  class="tabpoints" >' 
+            _htmlcode += u'              <div class="points" style="width:' + str (int( _relativ )) + '%;">&nbsp;</div>'
             _htmlcode +=                  str ( int(_relativ) ) + ' %'
-            _htmlcode += '            </td>'
-            _htmlcode += '            <td  class="tabpoints-weighting">' 
-            _htmlcode += '              <div class="points-weighting"  style="width:' + str (int( _weighting_relativ )) + '%;">&nbsp;</div>'
+            _htmlcode += u'            </td>'
+            _htmlcode += u'            <td  class="tabpoints-weighting">' 
+            _htmlcode += u'              <div class="points-weighting"  style="width:' + str (int( _weighting_relativ )) + '%;">&nbsp;</div>'
             _htmlcode +=                  str ( int(_weighting_relativ) ) + ' %'
-            _htmlcode += '            </td>'
-            _htmlcode += '          </tr>'  
-        _htmlcode += '           </table>'          
+            _htmlcode += u'            </td>'
+            _htmlcode += u'          </tr>'  
+        _htmlcode += u'           </table>'          
         
             
         
@@ -184,69 +184,80 @@ class belieftest:
         weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT question_id, kat, question FROM questions order by kat;")
+        cur.execute("SELECT question_id, kat, question, commentary FROM questions order by kat;")
         
         htmlcode = self.htemp.top("test") 
-        htmlcode += '        <h2>Test</h2>'
-        htmlcode += '          <form method="POST" name="test">'      
-        htmlcode += '            <table>'
-        htmlcode += '              <tr>'
-        htmlcode += '                <th>Nr.</th>'
-        htmlcode += '                <th>Kategorie</th>'
+        htmlcode += u'        <h2>Test</h2>'
+        htmlcode += u'          <form method="POST" name="test">'      
+        htmlcode += u'            <table>'
+        htmlcode += u'              <tr>'
+        htmlcode += u'                <th>Nr.</th>'
+        htmlcode += u'                <th>Kategorie</th>'
         htmlcode += u'                <th>&Uuml;berzeugnung</th>'
-        htmlcode += '                <th>Ja/Nein</th>'
-        htmlcode += '                <th>Gewichtung</th>'
-        htmlcode += '              </tr>'
+        htmlcode += u'                <th>Ja/Nein</th>'
+        htmlcode += u'                <th>Gewichtung</th>'
+        htmlcode += u'              </tr>'
         odd = 0
         _line_count = 1
         for row in cur:
             
             if odd == 1:
-                htmlcode += '          <tr id="odd">'
+                htmlcode += u'          <tr id="odd">'
                 odd = 0
             else:
-                htmlcode += '          <tr>'
+                htmlcode += u'          <tr>'
                 odd = 1
-            # Nummerierung
+            # column: number
             htmlcode += u'<td>' + str(_line_count) + '.</td>'
             _line_count = _line_count + 1
-            # Kategorie
+            # column: category
             if _last_kat == row[1] :
-                htmlcode += '            <td></td>'
+                htmlcode += u'            <td></td>'
             else:
-                htmlcode += '            <td>' + row[1] + '</td>'
+                htmlcode += u'            <td>' + row[1] + '</td>'
                 _last_kat = row[1]
-            # Frage
-            htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
-            # Antwort
-            htmlcode += '            <td>'
-            htmlcode += '                <select name="answer-' + str(row[0]) + '"'
-            htmlcode += '                        size="1">'
+            # column: question
+#            htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
+            
+            htmlcode += u'             <td>'
+            htmlcode += u'                 <a href="#hint" class="tooltip">'
+            htmlcode += u'                    ' + unicode(row[2])
+            htmlcode += u'                    <span class="info">'
+            htmlcode += u'                    <b>Erläuterung:</b> ' + unicode(row[3])
+            htmlcode += u'                    </span>'
+            htmlcode += u'                 </a>'
+            htmlcode += u'             </td>'
+            
+            # column: answer
+            htmlcode += u'            <td>'
+            htmlcode += u'                <select name="answer-' + str(row[0]) + '"'
+            htmlcode += u'                        size="1">'
             for line in _answer_optionen :
-                htmlcode += '                  <option value="' + str(line[0]) + '">' 
-                htmlcode +=                        str(line[1])  + '</option>'
+                htmlcode += u'                  <option value="' + str(line[0]) + u'">' 
+                htmlcode +=                       line[1]  + u'</option>'
 
-            htmlcode += '                </select>'
-            htmlcode += '            </td>'
-            # Wichtung
-            htmlcode += '            <td>'
-            htmlcode += '                <select name="wichtung-' + str(row[0]) + '" size="1">'
-            htmlcode += '                   <option value="0">normal</option>'
-            htmlcode += '                   <option value="1">sehr wichtig</option>'
-            htmlcode += '                </select>'
-            htmlcode += '            </td>'
-            htmlcode += '          </tr>'  
-        htmlcode += '           </table><br>'
+            htmlcode += u'                </select>'
+            htmlcode += u'            </td>'
+            # column: wight
+            htmlcode += u'            <td>'
+            htmlcode += u'                <select name="wichtung-' + str(row[0]) + '" size="1">'
+            htmlcode += u'                   <option value="0">normal</option>'
+            htmlcode += u'                   <option value="1">sehr wichtig</option>'
+            htmlcode += u'                </select>'
+            htmlcode += u'            </td>'
+            htmlcode += u'          </tr>'  
+            
+        htmlcode += u'           </table><br>'
         htmlcode += form.Button('Anfrage abschicken').render()
-        htmlcode += '            </form>'
+        htmlcode += u'            </form>'
         htmlcode += self.htemp.bottom
-        return htmlcode  
+        return self.htemp.convertGermanChar( htmlcode )
         
     def POST(self): 
 
        
         htmlcode = self.htemp.top("test")
-        htmlcode += '        <h2>Ergebnis</h2>'
+        htmlcode += u'        <h2>Ergebnis</h2>'
         htmlcode += self.matching()
         htmlcode += self.htemp.bottom
-        return htmlcode
+        return self.htemp.convertGermanChar( htmlcode )

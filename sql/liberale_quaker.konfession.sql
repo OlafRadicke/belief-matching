@@ -15,9 +15,10 @@ INSERT INTO denominations ( denomination_id, denomination, url ) VALUES (
 "http://de.wikipedia.org/wiki/Qu&auml;kertum");
 
 -- ################  Frage mit Konfession verknüpfen. #######################
--- 0 = trifft nicht zu
--- 1 = trifft zu
--- 2 = keine Meinung
+-- 0 = Trifft nicht zu
+-- 1 = Trifft zu
+-- 2 = Persönliche Entscheidung
+-- 3 = Keine Meinung
 
 -- ======= kat "Gott" beginnend mit 11... ====================================
 -- "Ich glaube an die dreifaltigkeit"
@@ -26,9 +27,16 @@ VALUES ( 111, 2, 2 );
 -- "Jesus ist nicht Gott sondern nur ein (besonderer) Mensch"
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr ) 
 VALUES ( 112, 2, 2 );
--- "Gott offenbart sich direkt, auch ohne die Bibel und Klerus"
+-- "Gott offenbart sich direkt jedem Menschen."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr ) 
 VALUES ( 113, 2, 1 );
+--"Gott offenbart sich durch die Bibel."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr ) 
+VALUES ( 114, 2, 2 );
+-- "Gottes offenbart sich nur bestimmten Menschen (Propheten) und diese dienen 
+-- haben die Aufgabe den Anderen Gotteswillen zu verkünden."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr ) 
+VALUES ( 115, 2, 0 );
 
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
 -- "Die Taufe (mit Wasser/liturgisch) ist Voraussetzung f&uuml;r die 

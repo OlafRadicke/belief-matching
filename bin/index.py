@@ -27,31 +27,42 @@ class index:
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
-        
+  
         htmlcode = self.htemp.top("home")
-        htmlcode += '        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
-        htmlcode += '<p>Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
-        htmlcode += u'deine eigene &Uuml;berzeugeng am meisten &uuml;bereinstimmt.</p>'
-        htmlcode += '<p>Es gibt bekanntlich <i>sehr</i> verschiedene Glaubensgemeinschaften. '
-        htmlcode += 'Diese Programm konzentriert sich auf die christlichen Konfessionen, '
-        htmlcode += 'die im deutschsprachigem Raum anzutreffen sind. Und auch das d&uuml;rften '
-        htmlcode += 'schon dutzende sein. </p>'
-        htmlcode += '<p>Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:</p>'
-        htmlcode += '<ul>'
+        htmlcode += u'        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
+        htmlcode += u'<h2>Über dieser Projekt</h2>'
+        htmlcode += u'<p>Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
+        htmlcode += u'deine eigene Überzeugeng am meisten übereinstimmt.'
+        htmlcode += u' Inspiriert ist das Projekt von dem '
+        htmlcode += u'<a href="http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx">'
+        htmlcode += u'<i>Belief-O-Matic</i></a> (einer eingetragenen Marke).</p>'
+        
+        htmlcode += u'<p>Es gibt bekanntlich <i>sehr</i> viele verschiedene Glaubensgemeinschaften. '
+        htmlcode += u'Diese Programm konzentriert sich auf die christlichen Konfessionen, '
+        htmlcode += u'die im deutschsprachigem Raum anzutreffen sind. Und auch das dürften '
+        htmlcode += u'schon viele dutzende sein. </p>'
+        
+        htmlcode += u'<p>Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:</p>'
+        htmlcode += u'<ul>'
         for row in cur:
             htmlcode += u'    <li>' + str(row[1]) + '</li>'
-        htmlcode += '</ul>'
-        htmlcode += '<p>Es wird noch einige Zeit brauchen bis alle oder die meisten Konfessionen in '
-        htmlcode += 'die Datenbank eingepflegt sind. Du kannst aber mithelfen den Prozess zu beschleunigen'
-        htmlcode += 'und die Quallit&auml; zu verbessern, in dem du deine Anmerkungen und'
-        htmlcode += 'Voerschl&auml;ge an mich schickst (<a href=mailto:briefkasten@olaf-radicke.de">'
-        htmlcode += 'briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen kannst,'
-        htmlcode += 'kannst du auch direkt &uuml;ber '
-        htmlcode += '<a href="https://github.com/OlafRadicke/belief-matching">GitHub'
+        htmlcode += u'</ul>'
+        
+        htmlcode += u'<h2>Stand der Arbeit</h2>'
+        htmlcode += u'<p>Es wird noch einige Zeit brauchen bis alle oder die meisten Konfessionen in '
+        htmlcode += u'die Datenbank eingepflegt sind. Du kannst aber mithelfen den Prozess zu beschleunigen'
+        htmlcode += u'und die Quallitä zu verbessern, in dem du deine Anmerkungen und'
+        htmlcode += u'Voerschläge an mich schickst (<a href=mailto:briefkasten@olaf-radicke.de">'
+        htmlcode += u'briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen kannst,'
+        htmlcode += u'kannst du auch direkt über '
+        htmlcode += u'<a href="https://github.com/OlafRadicke/belief-matching">GitHub'
         htmlcode += u'</a> am Code mitarbeiten. Die Software steht unter der '
         htmlcode += u'<a href="http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License">'
         htmlcode += u'GNU Affero General Public License</a>, also also eine freie Software, '
-        htmlcode += u'die du benutzen, ver&auml;ndern und weitergeben darfst. Vorausgesetzt, das '
-        htmlcode += u'du allen Anderen die selben rechte einr&auml;umst.</p>'
+        htmlcode += u'die du benutzen, verändern und weitergeben darfst. Vorausgesetzt, das '
+        htmlcode += u'du allen Anderen die selben rechte einräumst.</p>'
+        htmlcode += u'<p>Der Name des Projektes <i>belief-matching</i> ist nur ein '
+        htmlcode += u'vorläufiger Arbeitstitel. Die suche nach einem geeigneten Namen ist noch'
+        htmlcode += u'nicht abgeschlossen und für Vorschläge bin ich hier dankbar.</p>'
         htmlcode += self.htemp.bottom
-        return htmlcode 
+        return self.htemp.convertGermanChar( htmlcode )

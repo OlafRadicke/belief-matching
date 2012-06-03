@@ -15,8 +15,21 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import string 
 
 class HtmlTemplate:
+    
+    #  convert german characters
+    def convertGermanChar(self, _input ) :
+        string.replace( _input, u"ä", "&auml;")
+        string.replace( _input, u"Ä", "&Auml;")
+        string.replace( _input, u"ö", "&ouml;")
+        string.replace( _input, u"Ö", "&Ouml;")
+        string.replace( _input, u"ü", "&uuml;")
+        string.replace( _input, u"Ü", "&Uuml;")
+        string.replace( _input, u"ß", "&szlig;")
+        return _input
+        
     
     def top(self, aktivtab):
         top =     u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"'

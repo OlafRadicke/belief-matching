@@ -200,6 +200,34 @@ div.appbox {
     margin: 5px 5px 5px 5px;
 }
 
+/*----------- Tooltip ---------------*/
+div.appbox a.tooltip {
+    text-decoration:none;
+}
+div.appbox .tooltip span.info{
+    display:none;
+    
+}
+div.appbox .tooltip:hover span.info{
+    display:block;
+    position:absolute; 
+    width:200px; 
+    height:200px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-color: rgba( 192, 192, 192, .90 );
+    background-color: #FFFFFF;
+}
+
+div.appbox a:link{
+color: black;
+}
+div.appbox a:visited{
+color: black;
+}
+
 div.appbox table { 
     width:100%;
     border-spacing:0px;
@@ -218,9 +246,13 @@ div.appbox th {
 div.appbox tr { 
     background-color: #FFFFFF;
 }
+
+/* --- Jede zweite Zeile ---*/
 div.appbox tr#odd {
     background-color: #F5F5F5;
 }
+
+/* --- verschiedene Antworten ---*/
 div.appbox tr#yes {
     background-color: #7EFFB4;
 }
@@ -241,13 +273,8 @@ div.appbox form{
     align: center;
     text-align: center;
 }
-div.appbox button {
-    align: center;
-    text-align: center;
-/*    padding: 10px;
-    margin: 10px;*/
-}
 
+/* --------- Prozentbalken ----------------*/
 div.appbox td.tabpoints {
     align: right;
     text-align: right;
@@ -301,6 +328,12 @@ div.appbox div.points-weighting {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
+
+div.appbox button {
+    align: center;
+    text-align: center;
+}
+
 /* -------- Footer --------------------------------*/
 div.footer {/*
     width: 100%;*/
@@ -328,4 +361,11 @@ div.footer li a {
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     border-radius: 10px;
+}
+
+div.footer  a:link{
+    color: #fff;
+}
+div.footer  a:visited{
+    color: #fff;
 }

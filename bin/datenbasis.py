@@ -66,7 +66,7 @@ class datenbasis:
         htmlcode = self.htemp.top("datenbasis") 
         htmlcode += self.getIntro()
         htmlcode += self.htemp.bottom
-        return htmlcode  
+        return self.htemp.convertGermanChar( htmlcode )
         
     def POST(self):
         widgetlist = web.input(groups = []) 
@@ -75,43 +75,46 @@ class datenbasis:
         sqlcommand += " FROM denomination_answers, questions "
         sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
         sqlcommand += " AND denomination_answers.question_id = questions.question_id"
-        sqlcommand += " ORDER BY questions.kat, questions.question;"
+        sqlcommand += " ORDER BY denomination_answers.answer_nr, questions.kat, questions.question;"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute ( sqlcommand )        
 
         htmlcode = self.htemp.top("datenbasis")
         htmlcode += self.getIntro()       
-        htmlcode += '            <table>'
-        htmlcode += '              <tr>'
-        htmlcode += '                <th>Aussage zum Glauben (Mehr Infos unter '
-        htmlcode += '                  <a href="' + self.getUrlOfDenomination ( _id )  + '">'
+        htmlcode += u'            <table>'
+        htmlcode += u'              <tr>'
+        htmlcode += u'                <th>Aussage zum Glauben (Mehr Infos unter '
+        htmlcode += u'                  <a href="' + self.getUrlOfDenomination ( _id )  + '">'
         htmlcode +=                      self.getUrlOfDenomination ( _id )
-        htmlcode += '                  </a>)'
-        htmlcode += '              </th>'
-        htmlcode += '              </tr>'
+        htmlcode += u'                  </a>)'
+        htmlcode += u'              </th>'
+        htmlcode += u'              </tr>'
         #odd = 0
         #for row in cur:
             #if odd == 1:
-                #htmlcode += '       <tr id="odd">'
+                #htmlcode += u'       <tr id="odd">'
                 #odd = 0
             #else:
-                #htmlcode += '       <tr>'
+                #htmlcode += u'       <tr>'
                 #odd = 1
-            #htmlcode += '            <td>' + row[0] + '</td>'
-            #htmlcode += '          </tr>'  
+            #htmlcode += u'            <td>' + row[0] + '</td>'
+            #htmlcode += u'          </tr>'  
             
         for row in cur:
             if int(row[1]) == 0:
-                htmlcode += '       <tr id="no">'
-                htmlcode += '            <td><b>Trift nicht zu:</b> ' + row[0] + '</td>'
+                htmlcode += u'       <tr id="no">'
+                htmlcode += u'            <td><b>Trift nicht zu:</b> ' + row[0] + '</td>'
             elif int(row[1]) == 1:
-                htmlcode += '       <tr id="yes">'
-                htmlcode += '            <td><b>Trift zu:</b> ' + row[0] + '</td>'
+                htmlcode += u'       <tr id="yes">'
+                htmlcode += u'            <td><b>Trift zu:</b> ' + row[0] + '</td>'
+            elif int(row[1]) == 2:
+                htmlcode += u'       <tr id="void">'
+                htmlcode += u'            <td><b>Persönliche Entscheidung:</b> ' + row[0] + '</td>'
             else:
-                htmlcode += '       <tr id="void">'
-                htmlcode += '            <td><b>Keine Aussage:</b> ' + row[0] + '</td>'
-            htmlcode += '          </tr>'              
-        htmlcode += '           </table>'        
+                htmlcode += u'       <tr id="void">'
+                htmlcode += u'            <td><b>Keine Aussage:</b> ' + row[0] + '</td>'
+            htmlcode += u'          </tr>'              
+        htmlcode += u'           </table>'        
         htmlcode += self.htemp.bottom
-        return htmlcode           
+        return self.htemp.convertGermanChar( htmlcode )
