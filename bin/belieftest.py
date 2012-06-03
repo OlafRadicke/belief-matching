@@ -191,25 +191,34 @@ class belieftest:
         htmlcode += '          <form method="POST" name="test">'      
         htmlcode += '            <table>'
         htmlcode += '              <tr>'
+        htmlcode += '                <th>Nr.</th>'
         htmlcode += '                <th>Kategorie</th>'
         htmlcode += u'                <th>&Uuml;berzeugnung</th>'
         htmlcode += '                <th>Ja/Nein</th>'
         htmlcode += '                <th>Gewichtung</th>'
         htmlcode += '              </tr>'
         odd = 0
+        _line_count = 1
         for row in cur:
+            
             if odd == 1:
                 htmlcode += '          <tr id="odd">'
                 odd = 0
             else:
                 htmlcode += '          <tr>'
                 odd = 1
+            # Nummerierung
+            htmlcode += u'<td>' + str(_line_count) + '.</td>'
+            _line_count = _line_count + 1
+            # Kategorie
             if _last_kat == row[1] :
                 htmlcode += '            <td></td>'
             else:
                 htmlcode += '            <td>' + row[1] + '</td>'
                 _last_kat = row[1]
+            # Frage
             htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
+            # Antwort
             htmlcode += '            <td>'
             htmlcode += '                <select name="answer-' + str(row[0]) + '"'
             htmlcode += '                        size="1">'
@@ -219,6 +228,7 @@ class belieftest:
 
             htmlcode += '                </select>'
             htmlcode += '            </td>'
+            # Wichtung
             htmlcode += '            <td>'
             htmlcode += '                <select name="wichtung-' + str(row[0]) + '" size="1">'
             htmlcode += '                   <option value="0">normal</option>'

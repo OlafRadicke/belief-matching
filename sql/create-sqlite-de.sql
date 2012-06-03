@@ -171,7 +171,7 @@ INSERT INTO questions (question_id, kat, question) VALUES (
 INSERT INTO questions (question_id, kat, question) VALUES (
 146,
 "Bibel",
-"Ich glaube, dass die Welt in 7 Tagen erschaffen wurde und nicht &auml;lter ist als 10.000 Jahre.");
+"Ich glaube, dass die Welt in 7 Tagen erschaffen wurde und nicht &auml;lter als 10.000 Jahre ist.");
 
 INSERT INTO questions (question_id, kat, question) VALUES (
 147,
