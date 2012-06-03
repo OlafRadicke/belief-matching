@@ -196,14 +196,14 @@ div.appbox {
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     margin: 5px 5px 5px 5px;
 }
 
 div.appbox table { 
     width:100%;
     border-spacing:0px;
-    radius: 5px;     
+    border-radius: 5px;     
     background-color:  #FFFFFF;         
     border-top:1px solid #686868;    
     border-left:1px solid #686868;
