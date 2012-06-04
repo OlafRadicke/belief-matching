@@ -7,7 +7,6 @@ install:
 	cp ./bin/*.py $(BINPATH)
 	cp ./bin/*.sqlite $(BINPATH)
 	cp ./bin/static/ $(BINPATH)
-	cp ./bin/templates/belief-matching /etc/init.d/
 	chmod a+x /etc/init.d/belief-matching
 
 create-db:

@@ -5,6 +5,7 @@
 DAEMON="belief-maching.py"
 BASEPATH="/usr/local/bin/belief-maching/"
 PID="/var/run/belief-maching"
+PORT="80"
 
 cd $BASEPATH
 #test -f $DAEMON || exit 0
@@ -13,7 +14,7 @@ cd $BASEPATH
 case "$1" in
   start)
     echo -n "Start belief-maching"
-    python $DAEMON 9999 2>&1 &
+    python $DAEMON $PORT 2>&1 &
     echo $! > ${PID}
     echo "."
     ;;
@@ -28,7 +29,7 @@ case "$1" in
     kill `cat ${PID}`
     echo "."
     echo -n "Start hcmt-web"
-    python $DAEMON 9999 2>&1 &
+    python $DAEMON $PORT 2>&1 &
     echo  $! > ${PID}
     echo "."
     ;;
