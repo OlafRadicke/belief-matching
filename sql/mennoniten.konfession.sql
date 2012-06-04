@@ -146,6 +146,12 @@ VALUES ( 164, 3, 2 );
 -- "Ich halte (gelebte) Homosexualit&auml;t f&uuml;r eine S&uuml;nde.");
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 165, 3, 2 );
+-- "Schwangerschaftsverhütung lehne ich ab."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 166, 3, 2 );
+-- "Schwangerschaftsabbrüche lehne ich kategorisch ab."
+INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
+VALUES ( 167, 3, 2 );
 
 -- ============================= Kat. Gottesdienst beginnend mit 17... =======
 --- "Ein Gottesdienst muss ein bestimmten Ablauf (Liturgie) folgen."

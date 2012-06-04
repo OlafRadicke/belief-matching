@@ -255,13 +255,13 @@ div.appbox tr#odd {
 
 /* --- verschiedene Antworten ---*/
 div.appbox tr#yes {
-    background-color: #7EFFB4;
+    background-color: #D9FFD3;
 }
 div.appbox tr#no {
-    background-color: #FFBDBC;
+    background-color: #FFDDDC;
 }
 div.appbox tr#void {
-    background-color: #DCDCDC;
+    background-color: #EBEBEB;
 }
 div.appbox td { 
     vertical-align: top; 

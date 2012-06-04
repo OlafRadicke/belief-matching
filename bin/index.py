@@ -31,9 +31,9 @@ class index:
         htmlcode = self.htemp.top("home")
         htmlcode += u'        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
         htmlcode += u'<h2>Über dieser Projekt</h2>'
-        htmlcode += u'<p>Ein Tool um herauszufinden mit welchen Glaubensgemeinschaften '
-        htmlcode += u'deine eigene Überzeugeng am meisten übereinstimmt.'
-        htmlcode += u' Inspiriert ist das Projekt von dem '
+        htmlcode += u'<p>Diese Programm ist ein Tool um herauszufinden mit welchen '
+        htmlcode += u' Glaubensgemeinschaften deine eigene Überzeugeng am meisten '
+        htmlcode += u' übereinstimmt. Inspiriert ist das Projekt von dem '
         htmlcode += u'<a href="http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx">'
         htmlcode += u'<i>Belief-O-Matic</i></a> (einer eingetragenen Marke).</p>'
         
@@ -47,9 +47,15 @@ class index:
         for row in cur:
             htmlcode += u'    <li>' + str(row[1]) + '</li>'
         htmlcode += u'</ul>'
+        htmlcode += u'<p><b>Bitte nimm das Ergebnis des Test nicht all zu ernst!</b> Ein Computer-Programm'
+        htmlcode += u' kann nur ein sehr begrenztes Spektrum der realen Welt abstrahieren. '
+        htmlcode += u' Selbstverständlich ist eine (Glaubens-)Gemeinschaft mehr als die Summe'
+        htmlcode += u' ihre Grundsätze. Das Programm soll viel mehr anregen über die eigenen'
+        htmlcode += u' Anschauungen und die der anderen nachzudenken; Gemeinsamkeiten aber auch'
+        htmlcode += u' Unterschiede zu entdecken.</p>'
         
         htmlcode += u'<h2>Stand der Arbeit</h2>'
-        htmlcode += u'<p>Es wird noch einige Zeit brauchen bis alle oder die meisten Konfessionen in '
+        htmlcode += u'<p>Es wird noch einige Zeit brauchen bis alle - oder die meisten - Konfessionen in '
         htmlcode += u'die Datenbank eingepflegt sind. Du kannst aber mithelfen den Prozess zu beschleunigen'
         htmlcode += u'und die Quallitä zu verbessern, in dem du deine Anmerkungen und'
         htmlcode += u'Voerschläge an mich schickst (<a href=mailto:briefkasten@olaf-radicke.de">'
