@@ -6,8 +6,8 @@ install:
 	mkdir -p $(BINPATH)
 	cp ./bin/*.py $(BINPATH)
 	cp ./bin/*.sqlite $(BINPATH)
-	mkdir $(BINPATH)bin/static/
-	cp ./bin/static/home.css $(BINPATH)bin/static/
+	mkdir $(BINPATH)static/
+	cp ./bin/static/home.css $(BINPATH)static/
 	chmod a+x /etc/init.d/belief-matching
 
 create-db:
