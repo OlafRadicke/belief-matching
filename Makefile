@@ -5,7 +5,7 @@ all: clean create-db install
 install:
 	mkdir -p $(BINPATH)
 	cp ./bin/*.py $(BINPATH)
-	cp ./bin/*.sqlite3 $(BINPATH)
+	cp ./bin/*.sqlite $(BINPATH)
 	cp ./bin/static/ $(BINPATH)
 	cp ./bin/templates/belief-matching /etc/init.d/
 	chmod a+x /etc/init.d/belief-matching
