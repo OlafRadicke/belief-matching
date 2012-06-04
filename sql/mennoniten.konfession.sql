@@ -49,9 +49,7 @@ VALUES ( 122, 3, 1 );
 -- "Ich lehne Kindertaufe ab"
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
 VALUES ( 123, 3, 1 );
--- "Ich lehne die &auml;ussere Taufe ab."
-INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr )
-VALUES ( 124, 3, 0 );
+
 -- ============ Kat Abendmahl beginnend mit 13... ============================
 
 -- "Bei dem Abendmahl findet eine Umwandlung des Brotes in den Leib Christi statt"

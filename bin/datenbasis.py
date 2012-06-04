@@ -71,7 +71,7 @@ class datenbasis:
     def POST(self):
         widgetlist = web.input(groups = []) 
         _id = widgetlist['glaubensgemeinschaft']
-        sqlcommand = "SELECT questions.question, denomination_answers.answer_nr "
+        sqlcommand = "SELECT questions.question, denomination_answers.answer_nr, questions.commentary "
         sqlcommand += " FROM denomination_answers, questions "
         sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
         sqlcommand += " AND denomination_answers.question_id = questions.question_id"
@@ -104,17 +104,26 @@ class datenbasis:
         for row in cur:
             if int(row[1]) == 0:
                 htmlcode += u'       <tr id="no">'
-                htmlcode += u'            <td><b>Trift nicht zu:</b> ' + row[0] + '</td>'
+                htmlcode += u'            <td><b>Trift nicht zu:</b> ' 
             elif int(row[1]) == 1:
                 htmlcode += u'       <tr id="yes">'
-                htmlcode += u'            <td><b>Trift zu:</b> ' + row[0] + '</td>'
+                htmlcode += u'            <td><b>Trift zu:</b> ' 
             elif int(row[1]) == 2:
                 htmlcode += u'       <tr id="void">'
-                htmlcode += u'            <td><b>Persönliche Entscheidung:</b> ' + row[0] + '</td>'
+                htmlcode += u'            <td><b>Persönliche Entscheidung:</b> ' 
             else:
                 htmlcode += u'       <tr id="void">'
-                htmlcode += u'            <td><b>Keine Aussage:</b> ' + row[0] + '</td>'
-            htmlcode += u'          </tr>'              
+                htmlcode += u'            <td><b>Keine Aussage:</b> ' 
+
+            htmlcode += u'                 <a href="#hint" class="tooltip">'
+            htmlcode += u'                    ' + unicode(row[0])
+            htmlcode += u'                    <span class="info">'
+            htmlcode += u'                    <b>Erläuterung:</b> ' + unicode(row[2])
+            htmlcode += u'                    </span>'
+            htmlcode += u'                 </a>'
+            
+            htmlcode += u'                </td>'    
+            htmlcode += u'           </tr>'              
         htmlcode += u'           </table>'        
         htmlcode += self.htemp.bottom
         return self.htemp.convertGermanChar( htmlcode )

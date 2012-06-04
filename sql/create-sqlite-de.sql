@@ -80,66 +80,68 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 111,
 "Gott",
 "Ich glaube an die Dreifaltigkeit",
-"Die Frage implizieren das Jesus Teil des von Gott ist, was z.B. die Zeugen Jehovas 
-verneinen werden.");
+"Die Frage implizieren das Jesus Teil von Gott oder Gott selbst ist, was z.B. 
+die Zeugen Jehovas verneinen werden.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 112,
 "Gott",
 "Jesus ist nicht Gott sondern nur ein (besonderer) Mensch",
-"");
+"Die Dreifaltigkeit wird hier verneint.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 113,
 "Gott",
-"Gott offenbart sich direkt jedem Menschen.",
-"");
+"Gott offenbart sich direkt und jedem Menschen.",
+"Das zielt u.a. auf die Auffassungen der Quaker ab. Das sich Gott jedem Menschen
+offenbart, heißt nicht, das jeder Mensch bereit ist, dem Willen Gottes zu folgen.
+Die innere Stimme oder das eigene Gewissen könnte man als eine solche göttliche
+Offenbarung verstehen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 114,
 "Gott",
-"Gott offenbart sich durch die Bibel.",
-"");
+"Gott offenbart sich in erster Linie durch die Bibel und Diese überwiegt alles Andere.",
+"Das zielt u.a. auf die Protestanten ab und den Glaubenssatz: <i>allen die Schrift</i>.
+die Quaker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel
+also die Unmittelbare Offenbarung, die dem meisten Gewicht beigemessen wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 115,
 "Gott",
 "Gottes offenbart sich nur bestimmten Menschen (Propheten) und diese dienen 
 haben die Aufgabe den Anderen Gotteswillen zu verkünden.",
-"");
+"Das ist im Grunde die alt testamentarische Sicht.");
 
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 121,
 "Taufe",
 "Die Taufe (mit Wasser/liturgisch) ist Voraussetzung für die Erlösung/Errettung",
-"");
+"Die konservative Quaker z.B. praktizieren die Taufe nicht als äußerlichen Vorgang. 
+Sie sehen die Taufe in erster Linie als inneren Vorgang. Sie glauben an die Taufe mit
+dem Heiligen Geist (Mt 3,11). Andere werden der Taufe gar keine Bedeutung zumessen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 122,
 "Taufe",
 "Die Taufe wird äußerlich durch Wasser vollzogen",
-"");
+"Einige Konfessionen werden die Taufe als Brauch weiterführen, auch wenn ihr keine
+Relevanz für die Errettung/Erlösung verneint wird. Also er als Segnung verstanden wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 123,
 "Taufe",
 "Ich lehne Kindertaufe ab",
-"");
-
-INSERT INTO questions (question_id, kat, question, commentary) VALUES (
-124,
-"Taufe",
-"Ich lehne die äussere Taufe ab.",
-"");
+"Also die Befürwortung einer <i>Glaubenstaufe</i>.");
 
 -- ============ Kat Abendmahl beginnend mit 13... ============================
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 131,
 "Abendmahl",
-"Bei dem Abendmahl findet eine Umwandlung des Brotes in den Leib Christi statt",
-"");
+"Bei dem Abendmahl findet eine Umwandlung des Brotes in den Leib Christi statt (Transsubstantiation).",
+"Zielt auf den Katholizismus ab.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 132,
