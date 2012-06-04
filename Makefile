@@ -8,6 +8,7 @@ install:
 	cp ./bin/*.sqlite $(BINPATH)
 	mkdir $(BINPATH)static/
 	cp ./bin/static/home.css $(BINPATH)static/
+	cp ./templates/belief-matching /etc/init.d/belief-matching
 	chmod a+x /etc/init.d/belief-matching
 
 create-db:
