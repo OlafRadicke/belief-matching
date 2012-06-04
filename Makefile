@@ -3,10 +3,10 @@ BINPATH="/usr/local/bin/belief-maching/"
 
 install: clean create-db
 	mkdir -p $(BINPATH)
-	$(CP) ./bin/*.py $(BINPATH)
-	$(CP) ./bin/*.sqlite3 $(BINPATH)
-	$(CP) ./bin/static/ $(BINPATH)
-	$(CP) ./bin/templates/belief-matching /etc/init.d/
+	cp ./bin/*.py $(BINPATH)
+	cp ./bin/*.sqlite3 $(BINPATH)
+	cp ./bin/static/ $(BINPATH)
+	cp ./bin/templates/belief-matching /etc/init.d/
 	chmod a+x /etc/init.d/belief-matching
 
 create-db:
