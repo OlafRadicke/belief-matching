@@ -1,7 +1,7 @@
 BINPATH="/usr/local/bin/belief-maching/"
 
 
-instal: clean create-db
+install: clean create-db
 	mkdir -p $(BINPATH)
 	$(cp) ./bin/*.py $(BINPATH)
 	$(cp) ./bin/*.sqlite3 $(BINPATH)
