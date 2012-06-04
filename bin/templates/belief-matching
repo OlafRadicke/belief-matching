@@ -4,7 +4,6 @@
 
 DAEMON="belief-matching.py"
 BASEPATH="/usr/local/bin/belief-maching/"
-BASEPATH="/usr/local/bin/belief-maching/belief-matching.py"
 PID="/var/run/belief-maching"
 PORT="80"
 
