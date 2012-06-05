@@ -71,14 +71,26 @@ class datenbasis:
     def POST(self):
         widgetlist = web.input(groups = []) 
         _id = widgetlist['glaubensgemeinschaft']
-        sqlcommand = "SELECT questions.question, denomination_answers.answer_nr, questions.commentary "
-        sqlcommand += " FROM denomination_answers, questions "
-        sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
-        sqlcommand += " AND denomination_answers.question_id = questions.question_id"
-        sqlcommand += " ORDER BY denomination_answers.answer_nr, questions.kat, questions.question;"
+        #sqlcommand = "SELECT questions.question, denomination_answers.answer_nr, questions.commentary "
+        #sqlcommand += " FROM denomination_answers, questions "
+        #sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( _id )
+        #sqlcommand += " AND denomination_answers.question_id = questions.question_id"
+        #sqlcommand += " ORDER BY denomination_answers.answer_nr, questions.kat, questions.question;"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute ( sqlcommand )        
+        #cur.execute ( sqlcommand )    
+        cur.execute ( '''
+            SELECT questions.question, 
+                denomination_answers.answer_nr, 
+                questions.commentary 
+            FROM denomination_answers, 
+                questions 
+            WHERE denomination_answers.denomination_id = ?
+            AND denomination_answers.question_id = questions.question_id
+            ORDER BY denomination_answers.answer_nr, 
+                    questions.kat, 
+                    questions.question;
+                    ''', (  _id ))
 
         htmlcode = self.htemp.top("datenbasis")
         htmlcode += self.getIntro()       
