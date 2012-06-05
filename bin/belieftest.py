@@ -68,13 +68,14 @@ class belieftest:
     # Ist keine Antwort hinterlegt wird "egal" also "2" zurückgegeben.
     def getAnswersOfDenomination( self, denomination_id, question_id ):
         questionAnswers = dict()
-        sqlcommand = "SELECT denomination_answers.answer_nr "
-        sqlcommand += " FROM denomination_answers, questions "
-        sqlcommand += " WHERE denomination_answers.denomination_id = "  + str( denomination_id )
-        sqlcommand += " AND denomination_answers.question_id = " + str( question_id ) + ";"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute ( sqlcommand )
+        cur.execute ( '''
+            SELECT denomination_answers.answer_nr
+            FROM denomination_answers, questions 
+            WHERE denomination_answers.denomination_id = ?
+            AND denomination_answers.question_id = ? ;     
+        ''', ( denomination_id, question_id ))
         # set default value
         _denomination_answer = "2"
         for row in cur:
