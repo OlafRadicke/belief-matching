@@ -1,0 +1,11 @@
+# A systemd start config
+
+
+[Unit]
+Discription=Python Webapplication Belief Matching
+
+[Service]
+ExecStart=/usr/local/bin/belief-maching/belief-matching.py
+
+[Install]
+WantedBy=multi-user.target
