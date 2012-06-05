@@ -45,7 +45,7 @@ class index:
         htmlcode += u'<p>Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:</p>'
         htmlcode += u'<ul>'
         for row in cur:
-            htmlcode += u'    <li>' + str(row[1]) + '</li>'
+            htmlcode += u'    <li>' + row[1] + '</li>'
         htmlcode += u'</ul>'
         htmlcode += u'<p><b>Bitte nimm das Ergebnis des Test nicht all zu ernst!</b> Ein Computer-Programm'
         htmlcode += u' kann nur ein sehr begrenztes Spektrum der realen Welt abstrahieren. '
