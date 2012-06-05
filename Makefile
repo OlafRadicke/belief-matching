@@ -25,4 +25,4 @@ uninstall:
 clean:
 	$(RM) ./bin/*~
 	$(RM) ./bin/*.pyc
-	$(RM) ./bin/*.sqlite3
+	$(RM) ./bin/*.sqlite
