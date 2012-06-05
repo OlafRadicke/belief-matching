@@ -14,7 +14,7 @@ cd $BASEPATH
 case "$1" in
   start)
     echo -n "Start belief-maching"
-    python $DAEMON $PORT 2>&1 &
+    nohup python $DAEMON $PORT 2>&1 &
     echo $! > ${PID}
     echo "."
     ;;
@@ -29,7 +29,7 @@ case "$1" in
     kill `cat ${PID}`
     echo "."
     echo -n "Start hcmt-web"
-    python $DAEMON $PORT 2>&1 &
+    nohup python $DAEMON $PORT 2>&1 &
     echo  $! > ${PID}
     echo "."
     ;;
