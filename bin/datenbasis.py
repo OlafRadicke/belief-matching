@@ -45,17 +45,17 @@ class datenbasis:
         cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
         intro = u'        <h2>Datenbasis des Test</h2>'
         intro += u'<p>Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
-        intro += u'und mit welchen &Uuml;berzeugungen. Gut m&ouml;glich das du einen Fehler entdeckst,'
+        intro += u'und mit welchen Überzeugungen. Gut möglich das du einen Fehler entdeckst,'
         intro += u'oder du noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft hinterlegen willst.'
         intro += u'Dann nimmt mit mir Kontakt auf: <a href="mailto:briefkasten@olaf-radicke.de">'
         intro += u'briefkasten@olaf-radicke.de</a></p>'
         
-        intro += u'        <h2>Hinterlegte Datens&auml;tze ansehen</h2></p>'
+        intro += u'        <h2>Hinterlegte Datensätze ansehen</h2></p>'
         intro += u'          <form method="POST" name="test">'   
-        intro += u'W&auml;hle die Glaubensgemeinschaft:'   
+        intro += u'Wähle die Glaubensgemeinschaft:'   
         intro += u'            <select name="glaubensgemeinschaft" size="1">'
         for row in cur:
-            intro += u'              <option value="' + str(row[0]) + '">' + str(row[1]) + '</option>'
+            intro += u'              <option value="' + str( row[0] ) + '">' + row[1] + '</option>'
         intro += u'            </select>'
         intro += form.Button('anzeigen').render()
         intro += u'          </form> <br>'

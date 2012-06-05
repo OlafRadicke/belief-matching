@@ -46,11 +46,16 @@ class belieftest:
         denominationName = "unbekannter Name"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        sqlcommand = "SELECT denomination "
-        sqlcommand += "FROM denominations WHERE denomination_id = " + str( _id  ) + " ;"
-        cur.execute( sqlcommand )
+        #sqlcommand = "SELECT denomination "
+        #sqlcommand += "FROM denominations WHERE denomination_id = " + str( _id  ) + " ;"
+        #cur.execute( sqlcommand )
+        cur.execute( '''
+            SELECT denomination 
+            FROM denominations 
+            WHERE denomination_id = ?;
+            ''', ( _id ) )
         for row in cur:
-             denominationName = str(row[0]) 
+             denominationName = row[0]
         return denominationName
         
     # Gibt ein dict zurück mit gewichtungsnummer und gewichtungsbeschreibung.   

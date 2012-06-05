@@ -11,13 +11,22 @@ AGPL
 
 Installation:
 -------------
-Abhängigkeiten: webpy, sqlite3
+    Abhängigkeiten: 
+* webpy 
+* sqlite3
 
-http://docs.python.org/library/sqlite3.html
+    Neuinstallation:
 
-Datenbank erstellen:
+Als root den Befehl "make" ausführen und danach mit 
+"/etc/init.d/belief-matching start" den Server starten. Danach im Browser unter
+"http://localhost/"  aufrufen.
 
-cat ./templates/create-sqlite-de.sql | sqlite3 ./belief-matching.sqlite
+    Update
+
+Server stoppen mit: "/etc/init.d/belief-matching stop" dann im Verzeichnis des
+herunter geladenen Programms "make uninstall && make" aufrufen und danach den 
+starten mit: "/etc/init.d/belief-matching start"
+
 
 TODOs
 -----
