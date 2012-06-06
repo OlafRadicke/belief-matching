@@ -17,6 +17,57 @@
 
 import string 
 
+class Tag:
+    
+    ## tag type
+    m_type = "div"
+    ## tag attributes
+    m_attribute = None
+    ## content
+    m_content = None
+    
+    ## constructor
+    ## @param _type typ of tag as string.
+    def __init__ ( self, _type ) :
+        self.m_type = _type
+        self.m_attribute = dict()
+        self.m_content = list()
+        
+        
+    ## set type of tag.
+    def setType (self, _type ) :
+        self.m_type = _type
+
+    ## add a content 
+    def addContent( self, _cont ):
+        self.m_content.append ( _cont )
+        
+    ## add a attribute
+    ## @parm _attName name of attribute
+    ## @parm _attValue value of attribute
+    def setAttribute ( self, _attName, _attValue ) :
+        self.m_attribute [_attName] = _attValue
+        
+    def getHTML ( self ) :
+        _outString = u''
+        _outString += u'<' + self.m_type 
+        for _key in self.m_attribute.keys() :
+            _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
+        _outString += u'>'
+        print "self.self.m_content.count: " + str ( len( self.m_content ) )
+        _count = 0
+        for _cont in self.m_content :
+            _count += 1
+            print _count
+            if isinstance(_cont, Tag ) :
+                _outString += _cont.getHTML ()
+                #_outString += "..."
+            else:
+                _outString += _cont
+        _outString += u'<' + self.m_type + u'>'
+        return _outString
+
+
 class HtmlTemplate:
     
     #  convert german characters

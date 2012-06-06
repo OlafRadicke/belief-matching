@@ -26,7 +26,11 @@ class index:
     def GET(self):
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
+        cur.execute('''
+            SELECT denomination_id, denomination 
+            FROM denominations 
+            ORDER BY denomination;
+            ''' )
   
         htmlcode = self.htemp.top("home")
         htmlcode += u'        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
@@ -34,9 +38,18 @@ class index:
         htmlcode += u'<p>Diese Programm ist ein Tool um herauszufinden mit welchen '
         htmlcode += u' Glaubensgemeinschaften deine eigene Überzeugeng am meisten '
         htmlcode += u' übereinstimmt. Inspiriert ist das Projekt von dem '
-        htmlcode += u'<a href="http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx">'
-        htmlcode += u'<i>Belief-O-Matic</i></a> (einer eingetragenen Marke).</p>'
+        _link = HtmlTemplate.Tag ( "a" )
+        _link.setAttribute ( "href" , "http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx" )
+        _name = HtmlTemplate.Tag ( "i" )
+        _name.addContent ( "Belief-O-Matic" )
+        _link.addContent ( _name )
+        _link.addContent ( " (einer eingetragenen Marke)." )
         
+        #htmlcode += u'<a href="http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx">'
+        #htmlcode += u'<i>Belief-O-Matic</i></a>>'
+        #htmlcode += u' (einer eingetragenen Marke).</p>'
+        
+        htmlcode += _link.getHTML ()
         htmlcode += u'<p>Es gibt bekanntlich <i>sehr</i> viele verschiedene Glaubensgemeinschaften. '
         htmlcode += u'Diese Programm konzentriert sich auf die christlichen Konfessionen, '
         htmlcode += u'die im deutschsprachigem Raum anzutreffen sind. Und auch das dürften '
