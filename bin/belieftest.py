@@ -329,6 +329,7 @@ class belieftest:
             _table.addContent ( _rowTag )
             
         _form.addContent ( _table )
+        _form.addContent ( u'<br/>' )
         _form.addContent ( form.Button('Anfrage abschicken').render() )
         _appbox.addContent ( _form )
             
