@@ -81,13 +81,14 @@ class datenbasis:
         _select = HtmlTemplate.Tag ( "select" )
         _select.setAttribute ( "name", "glaubensgemeinschaft" )
         _select.setAttribute ( "size", "1" )
-        _form.addContent ( _select )
         
         for row in cur:
             _option = HtmlTemplate.Tag ( "option" )
             _option.setAttribute ( "value", str( row[0] ) )
             _option.addContent ( row[1] )
             _select.addContent ( _option )
+            
+        _form.addContent ( _select )
 
         _form.addContent ( form.Button('anzeigen').render() )
         

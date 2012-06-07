@@ -33,9 +33,10 @@ class belieftest:
         _answers = list()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        sqlcommand = "SELECT answers_nr, description "
-        sqlcommand += "FROM answers ORDER BY answers_nr ;"
-        cur.execute( sqlcommand )
+        cur.execute( ''' 
+            SELECT answers_nr, description 
+            FROM answers 
+            ORDER BY answers_nr ; ''' )
         for row in cur:
              _answers.append( [ row[0], row[1] ] )
         return _answers
@@ -46,9 +47,6 @@ class belieftest:
         denominationName = "unbekannter Name"
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        #sqlcommand = "SELECT denomination "
-        #sqlcommand += "FROM denominations WHERE denomination_id = " + str( _id  ) + " ;"
-        #cur.execute( sqlcommand )
         cur.execute( '''
             SELECT denomination 
             FROM denominations 
@@ -64,7 +62,10 @@ class belieftest:
         weightingsNames = dict()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT weighting_nr, description FROM weightings ORDER BY weighting_nr ASC;")
+        cur.execute( '''
+            SELECT weighting_nr, description 
+            FROM weightings 
+            ORDER BY weighting_nr ASC; ''')
         for row in cur:
              weightingsNames [ str(row[0]) ] = str(row[1]) 
         return weightingsNames        
@@ -88,7 +89,7 @@ class belieftest:
         return _denomination_answer
         
     # vergleicht die Antworten des Benutzer mit den der Konfessionen.
-    def matching (self):
+    def matchingTable (self):
         _htmlcode = u''
         _max_weighting_points = 0
         max_points = 0
@@ -126,20 +127,29 @@ class belieftest:
                         denomination_points [ str(_denomination_id) ] = \
                             int( denomination_points [ str(_denomination_id) ] ) + 1
                             
-        print "PRE _max_weighting_points: " + str(_max_weighting_points)
         for _key in user_answers.keys() :
-            print '_answer [ "wichtung" ]: ' +  str ( user_answers [_key][ "wichtung" ] )
             if int( user_answers [_key][ "wichtung" ] ) == 1 :
                 print "....true"
                 _max_weighting_points = _max_weighting_points + 1        
-        print "RESULT _max_weighting_points: " + str(_max_weighting_points)
                 
-        _htmlcode += u'            <table>'
-        _htmlcode += u'              <tr>'
-        _htmlcode += u'                <th>Konfession </th>'
-        _htmlcode += u'                <th>&Uuml;bereinstimmung</th>'
-        _htmlcode += u'                <th>In wichtigen Fragen</th>'
-        _htmlcode += u'              </tr>'    
+        _table = HtmlTemplate.Tag ( "table" )
+        
+        _table_titles =   HtmlTemplate.Tag ( "tr" )
+        
+        _title_1 =   HtmlTemplate.Tag ( "th" )  
+        _title_1.addContent ( u'Konfession' )   
+        _table_titles.addContent ( _title_1 )
+        
+        _title_2 =   HtmlTemplate.Tag ( "th" )  
+        _title_2.addContent ( u'Übereinstimmung' )   
+        _table_titles.addContent ( _title_2 )
+        
+        _title_3 =   HtmlTemplate.Tag ( "th" )  
+        _title_3.addContent ( u'In wichtigen Fragen' )   
+        _table_titles.addContent ( _title_3 )
+        
+        _table.addContent ( _table_titles )
+        
         odd = 0
         for denomination_points_key in denomination_points.keys():
             # Prozent zahlen allgemein
@@ -149,39 +159,46 @@ class belieftest:
             
             # Prozentzahl der Gewichtung
             _sum_denomination_weighting_points = float ( denomination_weighting_points [denomination_points_key] )
-            #print "_sum_denomination_weighting_points: " + str( _sum_denomination_weighting_points )
-            #print "_max_weighting_points: " + str(_max_weighting_points)
             if _max_weighting_points == 0 :
                 _weighting_relativ = 0
             else :
-                #print "_max_weighting_points : " + str(_max_weighting_points)
                 _one_procent = float( _max_weighting_points ) / float ( 100 ) 
-                #print "ein prozent: " +  str(_one_procent)
                 _weighting_relativ =  _sum_denomination_weighting_points / _one_procent             
             
-            #
+            _row  =  HtmlTemplate.Tag ( "tr" )
             if odd == 1:
-                _htmlcode += u'       <tr id="odd">'
+                _row.setAttribute ( "id", "odd" )
                 odd = 0
             else:
-                _htmlcode += u'       <tr>'
                 odd = 1
-            _htmlcode += u'            <td>' + self.getDenominationName( denomination_points_key ) + '</td>'
-
-            _htmlcode += u'            <td  class="tabpoints" >' 
-            _htmlcode += u'              <div class="points" style="width:' + str (int( _relativ )) + '%;">&nbsp;</div>'
-            _htmlcode +=                  str ( int(_relativ) ) + ' %'
-            _htmlcode += u'            </td>'
-            _htmlcode += u'            <td  class="tabpoints-weighting">' 
-            _htmlcode += u'              <div class="points-weighting"  style="width:' + str (int( _weighting_relativ )) + '%;">&nbsp;</div>'
-            _htmlcode +=                  str ( int(_weighting_relativ) ) + ' %'
-            _htmlcode += u'            </td>'
-            _htmlcode += u'          </tr>'  
-        _htmlcode += u'           </table>'          
-        
+                
+            _col_1 =  HtmlTemplate.Tag ( "td" )
+            _col_1.addContent ( self.getDenominationName( denomination_points_key ) )
+            _row.addContent ( _col_1 )
             
-        
-        return _htmlcode
+            _col_2 = HtmlTemplate.Tag ( "td" )
+            _col_2.setAttribute ( "class", "tabpoints" )
+            _bar_le = HtmlTemplate.Tag ( "div" )
+            _bar_le.setAttribute ( "class", "points" )
+            _bar_le.setAttribute ( "style", 'width:' + str ( int ( _relativ ) ) + '%;' )
+            _bar_le.addContent ( u'&nbsp;' )
+            _col_2.addContent ( _bar_le )
+            _col_2.addContent ( str ( int ( _relativ ) ) + ' %' )
+            _row.addContent ( _col_2 )
+
+            _col_3 = HtmlTemplate.Tag ( "td" )
+            _col_3.setAttribute ( "class", "tabpoints-weighting" )
+            _bar_ri = HtmlTemplate.Tag ( "div" )
+            _bar_ri.setAttribute ( "class", "points-weighting" )
+            _bar_ri.setAttribute ( "style", 'width:' + str ( int ( _weighting_relativ ) ) + '%;' )
+            _bar_ri.addContent ( u'&nbsp;' )
+            _col_3.addContent ( _bar_ri )
+            _col_3.addContent ( str ( int ( _weighting_relativ ) ) + ' %' )
+            _row.addContent ( _col_3 )
+            
+            _table.addContent ( _row)
+              
+        return _table
         
         
     def GET(self):
@@ -190,80 +207,140 @@ class belieftest:
         weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT question_id, kat, question, commentary FROM questions order by kat;")
+        cur.execute( '''
+            SELECT question_id, kat, question, commentary 
+            FROM questions 
+            ORDER BY kat; ''')
         
-        htmlcode = self.htemp.top("test") 
-        htmlcode += u'        <h2>Test</h2>'
-        htmlcode += u'          <form method="POST" name="test">'      
-        htmlcode += u'            <table>'
-        htmlcode += u'              <tr>'
-        htmlcode += u'                <th>Nr.</th>'
-        htmlcode += u'                <th>Kategorie</th>'
-        htmlcode += u'                <th>&Uuml;berzeugnung</th>'
-        htmlcode += u'                <th>Ja/Nein</th>'
-        htmlcode += u'                <th>Gewichtung</th>'
-        htmlcode += u'              </tr>'
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        
+        _section_1 = HtmlTemplate.Tag ( "h2" )      
+        _section_1.addContent ( u'''Test''')
+        _appbox.addContent ( _section_1 )        
+        
+        _form = HtmlTemplate.Tag ( "form" )
+        _form.setAttribute ( "method", "POST" )
+        _form.setAttribute ( "name", "test" )
+        
+        _table =  HtmlTemplate.Tag ( "table" )
+        
+        _table_titles =   HtmlTemplate.Tag ( "tr" )
+        
+        _title_1 =   HtmlTemplate.Tag ( "th" )  
+        _title_1.addContent ( u'Nr.' )   
+        _table_titles.addContent ( _title_1 )
+        
+        _title_2 =   HtmlTemplate.Tag ( "th" )  
+        _title_2.addContent ( u'Kategorie' )   
+        _table_titles.addContent ( _title_2 )
+        
+        _title_3 =   HtmlTemplate.Tag ( "th" )  
+        _title_3.addContent ( u'Überzeugnung' )   
+        _table_titles.addContent ( _title_3 )
+        
+        _title_4 =   HtmlTemplate.Tag ( "th" )  
+        _title_4.addContent ( u'Ja/Nein' )   
+        _table_titles.addContent ( _title_4 )
+        
+        _title_5 =   HtmlTemplate.Tag ( "th" )  
+        _title_5.addContent ( u'Gewichtung' )   
+        _table_titles.addContent ( _title_5 )
+        
+        _table.addContent ( _table_titles )        
+    
+    
         odd = 0
         _line_count = 1
         for row in cur:
+            _rowTag  =  HtmlTemplate.Tag ( "tr" )
             
             if odd == 1:
-                htmlcode += u'          <tr id="odd">'
+                _rowTag.setAttribute ( "id", "odd" )
                 odd = 0
             else:
-                htmlcode += u'          <tr>'
                 odd = 1
             # column: number
-            htmlcode += u'<td>' + str(_line_count) + '.</td>'
+            _col_1 =  HtmlTemplate.Tag ( "td" )
+            _col_1.addContent ( str(_line_count) )
+            _rowTag.addContent ( _col_1 )            
             _line_count = _line_count + 1
-            # column: category
-            if _last_kat == row[1] :
-                htmlcode += u'            <td></td>'
-            else:
-                htmlcode += u'            <td>' + row[1] + '</td>'
-                _last_kat = row[1]
-            # column: question
-#            htmlcode += u'            <td>' + unicode(row[2]) + '</td>'
             
-            htmlcode += u'             <td>'
-            htmlcode += u'                 <a href="#hint" class="tooltip">'
-            htmlcode += u'                    ' + unicode(row[2])
-            htmlcode += u'                    <span class="info">'
-            htmlcode += u'                    <b>Erläuterung:</b> ' + unicode(row[3])
-            htmlcode += u'                    </span>'
-            htmlcode += u'                 </a>'
-            htmlcode += u'             </td>'
+            # column: category
+            _col_2 =  HtmlTemplate.Tag ( "td" )
+            if _last_kat == row[1] :
+                pass
+            else:
+                _col_2.addContent ( row[1] ) 
+                _last_kat = row[1]
+            _rowTag.addContent ( _col_2 )   
+            
+            # column: question
+            _col_3 =  HtmlTemplate.Tag ( "td" )
+            _tooltip = HtmlTemplate.Tag ( "a" )
+            _tooltip.setAttribute ( "href", "#hint" )
+            _tooltip.setAttribute ( "class", "tooltip" )
+            _tooltip.addContent ( unicode( row[2] ) )
+            
+            _info = HtmlTemplate.Tag ( "span" )
+            _info.setAttribute ( "class", "info" )
+            _info.addContent ( u'<b>Erläuterung:</b> ')
+            _info.addContent ( unicode ( row[3] ) )
+            _tooltip.addContent ( _info )
+            
+            _col_3.addContent ( _tooltip )
+            _rowTag.addContent ( _col_3 )   
             
             # column: answer
-            htmlcode += u'            <td>'
-            htmlcode += u'                <select name="answer-' + str(row[0]) + '"'
-            htmlcode += u'                        size="1">'
-            for line in _answer_optionen :
-                htmlcode += u'                  <option value="' + str(line[0]) + u'">' 
-                htmlcode +=                       line[1]  + u'</option>'
-
-            htmlcode += u'                </select>'
-            htmlcode += u'            </td>'
-            # column: wight
-            htmlcode += u'            <td>'
-            htmlcode += u'                <select name="wichtung-' + str(row[0]) + '" size="1">'
-            htmlcode += u'                   <option value="0">normal</option>'
-            htmlcode += u'                   <option value="1">sehr wichtig</option>'
-            htmlcode += u'                </select>'
-            htmlcode += u'            </td>'
-            htmlcode += u'          </tr>'  
+            _col_4 =  HtmlTemplate.Tag ( "td" )
             
-        htmlcode += u'           </table><br>'
-        htmlcode += form.Button('Anfrage abschicken').render()
-        htmlcode += u'            </form>'
-        htmlcode += self.htemp.bottom
-        return self.htemp.convertGermanChar( htmlcode )
+            _select = HtmlTemplate.Tag ( "select" )
+            _select.setAttribute ( "name", u'answer-' + str ( row[0] ) )
+            _select.setAttribute ( "size", "1" )
+            
+            for _optionenline in _answer_optionen :
+                _option = HtmlTemplate.Tag ( "option" )
+                _option.setAttribute ( "value", str ( _optionenline[0] ) )
+                _option.addContent ( _optionenline[1] )
+                _select.addContent ( _option )
+                
+            _col_4.addContent ( _select ) 
+            _rowTag.addContent ( _col_4 )            
+
+            # column: wight
+            _col_5 =  HtmlTemplate.Tag ( "td" )
+            
+            _select_wight = HtmlTemplate.Tag ( "select" )
+            _select_wight.setAttribute ( "name", u'wichtung-' + str ( row[0] ) )
+            _select_wight.setAttribute ( "size", "1" )
+            
+            _option_1 = HtmlTemplate.Tag ( "option" )
+            _option_1.setAttribute ( "value","0" )
+            _option_1.addContent ( u'normal' )
+            _select_wight.addContent ( _option_1 )
+            
+            _option_2 = HtmlTemplate.Tag ( "option" )
+            _option_2.setAttribute ( "value","1" )
+            _option_2.addContent ( u'sehr wichtig' )
+            _select_wight.addContent ( _option_2 )
+            
+            _col_5.addContent ( _select_wight ) 
+            _rowTag.addContent ( _col_5 )    
+            _table.addContent ( _rowTag )
+            
+        _form.addContent ( _table )
+        _form.addContent ( form.Button('Anfrage abschicken').render() )
+        _appbox.addContent ( _form )
+            
+
+        _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self): 
 
-       
-        htmlcode = self.htemp.top("test")
-        htmlcode += u'        <h2>Ergebnis</h2>'
-        htmlcode += self.matching()
-        htmlcode += self.htemp.bottom
-        return self.htemp.convertGermanChar( htmlcode )
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        _table = self.matchingTable()
+        _appbox.addContent ( _table )
+        _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        return self.htemp.convertGermanChar( _htmlcode )
