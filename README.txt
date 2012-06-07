@@ -31,4 +31,17 @@ starten mit: "/etc/init.d/belief-matching start"
 TODOs
 -----
 
-Makefile
+Konfessionen in die Datenbank einpflegen. Z.B.:
+
+
+- Baptisten
+- Mormonen
+- Methodisten
+- Orthodoxe Kirchen
+- Pfingstbewegung
+- Neuapostolische Kirche
+- Christliche Wissenschaft
+- Unitarier
+- Pietisten
+- Altkatholische Kirchen
+- Anglikanische Kirchen 
