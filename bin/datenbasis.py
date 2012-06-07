@@ -29,12 +29,13 @@ class datenbasis:
     
     def getUrlOfDenomination ( self, _id ):
         
-        sqlcommand = "SELECT url  "
-        sqlcommand += " FROM denominations "
-        sqlcommand += " WHERE denomination_id = "  + str( _id ) + ";"
         conn = sqlite3.connect('belief-matching.sqlite')
-        cur = conn.cursor()
-        cur.execute ( sqlcommand )       
+        cur = conn.cursor()  
+        cur.execute ( u'''
+            SELECT url
+            FROM denominations 
+            WHERE denomination_id = ? ;        
+        ''', str( _id ) )       
         for row in cur:
             return row[0] 
         return ""
@@ -42,31 +43,65 @@ class datenbasis:
     def getIntro(self):
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT denomination_id, denomination FROM denominations ORDER BY denomination;")
-        intro = u'        <h2>Datenbasis des Test</h2>'
-        intro += u'<p>Hier kannst du sehen, welche Glaubensgemeinschaften in der Datenbank erfasst sind,'
-        intro += u'und mit welchen Überzeugungen. Gut möglich das du einen Fehler entdeckst,'
-        intro += u'oder du noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft hinterlegen willst.'
-        intro += u'Dann nimmt mit mir Kontakt auf: <a href="mailto:briefkasten@olaf-radicke.de">'
-        intro += u'briefkasten@olaf-radicke.de</a></p>'
+        cur.execute(''' SELECT denomination_id, 
+                               denomination 
+                        FROM denominations 
+                        ORDER BY denomination;''')
+                        
         
-        intro += u'        <h2>Hinterlegte Datensätze ansehen</h2></p>'
-        intro += u'          <form method="POST" name="test">'   
-        intro += u'Wähle die Glaubensgemeinschaft:'   
-        intro += u'            <select name="glaubensgemeinschaft" size="1">'
+        _intro = HtmlTemplate.Tag ( "div" )
+        _intro.setAttribute ( "class", "intro" )
+        
+        _section_1 = HtmlTemplate.Tag ( "h2" )      
+        _section_1.addContent ( u'''Datenbasis des Test''')
+        _intro.addContent ( _section_1 )
+        
+        _p_1 = HtmlTemplate.Tag ( "p" )
+        _p_1.addContent ( u'''Hier kannst du sehen, welche 
+            Glaubensgemeinschaften in der Datenbank erfasst sind, und mit welchen 
+            Überzeugungen. Gut möglich das du einen Fehler entdeckst, oder du 
+            noch Daten &uuml;ber eine noch fehlende Glaubensgemeinschaft 
+            hinterlegen willst. Dann nimmt mit mir Kontakt auf: 
+            <a href="mailto:briefkasten@olaf-radicke.de">briefkasten@olaf-radicke.de</a>''')
+        _intro.addContent ( _p_1 )
+
+        _section_2 = HtmlTemplate.Tag ( "h2" )      
+        _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
+        _intro.addContent ( _section_2 )
+        
+        _p_2 = HtmlTemplate.Tag ( "p" )
+        _p_2.addContent ( u'''   ''')
+        _intro.addContent ( _p_2 )
+        
+        _form = HtmlTemplate.Tag ( "form" )
+        _form.setAttribute ( "method", "POST" )
+        _form.setAttribute ( "name", "test" )
+        _form.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
+       
+        _select = HtmlTemplate.Tag ( "select" )
+        _select.setAttribute ( "name", "glaubensgemeinschaft" )
+        _select.setAttribute ( "size", "1" )
+        _form.addContent ( _select )
+        
         for row in cur:
-            intro += u'              <option value="' + str( row[0] ) + '">' + row[1] + '</option>'
-        intro += u'            </select>'
-        intro += form.Button('anzeigen').render()
-        intro += u'          </form> <br>'
+            _option = HtmlTemplate.Tag ( "option" )
+            _option.setAttribute ( "value", str( row[0] ) )
+            _option.addContent ( row[1] )
+            _select.addContent ( _option )
+
+        _form.addContent ( form.Button('anzeigen').render() )
+        
+        _intro.addContent ( _form ) 
         conn.close()
-        return intro
+        return _intro
 
     def GET(self):
-        htmlcode = self.htemp.top("datenbasis") 
-        htmlcode += self.getIntro()
-        htmlcode += self.htemp.bottom
-        return self.htemp.convertGermanChar( htmlcode )
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        _intro = self.getIntro()
+        _appbox.addContent ( _intro )
+        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self):
         widgetlist = web.input(groups = []) 
@@ -75,10 +110,10 @@ class datenbasis:
         cur = conn.cursor()  
         cur.execute ( '''
             SELECT questions.question, 
-                denomination_answers.answer_nr, 
-                questions.commentary 
+                   denomination_answers.answer_nr, 
+                   denomination_answers.commentary
             FROM denomination_answers, 
-                questions 
+                 questions 
             WHERE denomination_answers.denomination_id = ?
             AND denomination_answers.question_id = questions.question_id
             ORDER BY denomination_answers.answer_nr, 
@@ -86,50 +121,58 @@ class datenbasis:
                     questions.question;
                     ''', (  _id ))
 
-        htmlcode = self.htemp.top("datenbasis")
-        htmlcode += self.getIntro()       
-        htmlcode += u'            <table>'
-        htmlcode += u'              <tr>'
-        htmlcode += u'                <th>Aussage zum Glauben (Mehr Infos unter '
-        htmlcode += u'                  <a href="' + self.getUrlOfDenomination ( _id )  + '">'
-        htmlcode +=                      self.getUrlOfDenomination ( _id )
-        htmlcode += u'                  </a>)'
-        htmlcode += u'              </th>'
-        htmlcode += u'              </tr>'
-        #odd = 0
-        #for row in cur:
-            #if odd == 1:
-                #htmlcode += u'       <tr id="odd">'
-                #odd = 0
-            #else:
-                #htmlcode += u'       <tr>'
-                #odd = 1
-            #htmlcode += u'            <td>' + row[0] + '</td>'
-            #htmlcode += u'          </tr>'  
+        htmlcode = ""
+        
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        
+        _intro = self.getIntro()
+        _appbox.addContent ( _intro )
+        _appbox.addContent ( u'<br/>' )
+       
+        _table =   HtmlTemplate.Tag ( "table" )
+        
+        _table_titles =   HtmlTemplate.Tag ( "tr" )
+        _title =   HtmlTemplate.Tag ( "th" )
+        _title.addContent ( u'Aussage zum Glauben (Mehr Infos unter ' )
+        
+        _titleLink =  HtmlTemplate.Tag ( "a" )
+        _titleLink.setAttribute ( "href", self.getUrlOfDenomination ( _id ) )
+        _titleLink.addContent ( self.getUrlOfDenomination ( _id ) )
+        _title.addContent ( _titleLink )
+        _table_titles.addContent ( _title )
             
         for row in cur:
+            _row  =  HtmlTemplate.Tag ( "tr" )
+            _col =  HtmlTemplate.Tag ( "td" )
             if int(row[1]) == 0:
-                htmlcode += u'       <tr id="no">'
-                htmlcode += u'            <td><b>Trift nicht zu:</b> ' 
+                _row.setAttribute ( "id", "no" )
+                _col.addContent ( u'<b>Trift nicht zu:</b> ')
             elif int(row[1]) == 1:
-                htmlcode += u'       <tr id="yes">'
-                htmlcode += u'            <td><b>Trift zu:</b> ' 
+                _row.setAttribute ( "id", "yes" )
+                _col.addContent ( u'<b>Trift zu:</b> ')
             elif int(row[1]) == 2:
-                htmlcode += u'       <tr id="void">'
-                htmlcode += u'            <td><b>Persönliche Entscheidung:</b> ' 
+                _row.setAttribute ( "id", "void" )
+                _col.addContent ( u'<b>Persönliche Entscheidung:</b> ')
             else:
-                htmlcode += u'       <tr id="void">'
-                htmlcode += u'            <td><b>Keine Aussage:</b> ' 
-
-            htmlcode += u'                 <a href="#hint" class="tooltip">'
-            htmlcode += u'                    ' + unicode(row[0])
-            htmlcode += u'                    <span class="info">'
-            htmlcode += u'                    <b>Erläuterung:</b> ' + unicode(row[2])
-            htmlcode += u'                    </span>'
-            htmlcode += u'                 </a>'
+                _row.setAttribute ( "id", "void" )
+                _col.addContent ( u'<b>Keine Aussage:</b> ') 
+                
+            _tooltip = HtmlTemplate.Tag ( "a" )
+            _tooltip.setAttribute ( "href", "#hint" )
+            _tooltip.setAttribute ( "class", "tooltip" )
+            _tooltip.addContent ( unicode(row[0] ) )
             
-            htmlcode += u'                </td>'    
-            htmlcode += u'           </tr>'              
-        htmlcode += u'           </table>'        
-        htmlcode += self.htemp.bottom
+            _info = HtmlTemplate.Tag ( "span" )
+            _info.setAttribute ( "class", "info" )
+            _info.addContent ( u'<b>Erläuterung:</b> ')
+            _info.addContent ( unicode(row[2]) )
+            _tooltip.addContent ( _info )
+            
+            _col.addContent ( _tooltip )
+            _row.addContent ( _col ) 
+            _table.addContent ( _row )   
+
+        _appbox.addContent ( _table )
+        htmlcode += self.htemp.getCompleteSite( "datenbasis", _appbox )
         return self.htemp.convertGermanChar( htmlcode )

@@ -47,6 +47,14 @@ div.line {
     margin: 5px 5px 5px 5px;
     border-radius: 5px;
 }
+
+div.small_line {
+/*     background: black; */
+    background: #c1c1c1;
+    padding: 1px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
 /* --------------- main menue -------------------- */
 div.mainmenue{
 /*     width: 100%; */

@@ -24,6 +24,7 @@ CREATE TABLE denomination_answers (
 -- 2 = Persönliche Entscheidung
 -- 3 = Keine Meinung
     answer_nr           INTEGER NOT NULL,
+    commentary          TEXT NOT NULL,
     FOREIGN KEY ( question_id )     REFERENCES question ( question_id ),
     FOREIGN KEY ( denomination_id ) REFERENCES denominations ( denomination_id )
     FOREIGN KEY ( answer_nr )       REFERENCES answers ( answer_nr )
@@ -93,7 +94,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 113,
 "Gott",
 "Gott offenbart sich direkt und jedem Menschen.",
-"Das zielt u.a. auf die Auffassungen der Quaker ab. Das sich Gott jedem Menschen
+"Das zielt u.a. auf die Auffassungen der Quäker ab. Das sich Gott jedem Menschen
  offenbart, heißt nicht, das jeder Mensch bereit ist, dem Willen Gottes zu folgen.
  Die innere Stimme oder das eigene Gewissen könnte man als eine solche göttliche
  Offenbarung verstehen.");
@@ -103,7 +104,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Gott",
 "Gott offenbart sich in erster Linie durch die Bibel und Diese überwiegt alles Andere.",
 "Das zielt u.a. auf die Protestanten ab und den Glaubenssatz: <i>allen die Schrift</i>.
- die Quaker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel
+ die Quäker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel
  also die Unmittelbare Offenbarung, die dem meisten Gewicht beigemessen wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -118,7 +119,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 121,
 "Taufe",
 "Die Taufe (mit Wasser/liturgisch) ist Voraussetzung für die Erlösung/Errettung",
-"Die konservative Quaker z.B. praktizieren die Taufe nicht als äußerlichen Vorgang. 
+"Die konservative Quäker z.B. praktizieren die Taufe nicht als äußerlichen Vorgang. 
  Sie sehen die Taufe in erster Linie als inneren Vorgang. Sie glauben an die Taufe mit
  dem Heiligen Geist (Mt 3,11). Andere werden der Taufe gar keine Bedeutung zumessen.");
 
@@ -160,7 +161,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 134,
 "Abendmahl",
 "Dem Abendmahl messe ich keine Bedeutung zu.",
-"Das werden z.B. die Quaker bejahen.");
+"Das werden z.B. die Quäker bejahen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 135,
@@ -174,7 +175,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 141,
 "Bibel",
 "Als <i>bibeltreu</i> kann sich nur jemand bezeichnen, der ich die Bibel wortwörtlich nimmt.",
-"Quaker werden diese Aussage z.B. verneinen, da sie den <i>Geist der Bibel</i> 
+"Quäker werden diese Aussage z.B. verneinen, da sie den <i>Geist der Bibel</i> 
  für entscheidend halten. Nach ihrem Verständnis ist <i>bibeltreu</i> wer in 
  diesem Geist lebt und handelt.");
 
@@ -189,7 +190,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 143,
 "Bibel",
 "Für mich gibt es noch über den Bibelkanon hinaus Bücher die von Gott inspiriert sind.",
-"Liberale Quaker und Mormonen dürfen hier zustimmen.");
+"Liberale Quäker und Mormonen dürfen hier zustimmen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 144,
@@ -333,7 +334,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 173,
 "Gottesdienst",
 "Stille und Besinnung sind mir im Gottesdienst sehr wichtig.",
-"Die Quaker halten ihre Gottesdienste in einer meditativen Haltung und mit langen
+"Die Quäker halten ihre Gottesdienste in einer meditativen Haltung und mit langen
  Phasen der Stille ab."); 
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -411,7 +412,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Erlösung",
 "Das Reich Gottes ist schon da. Es ist aber (noch) nicht (für alle) sichtbar.",
 "Das entspricht der Auffassung vom Reich Gottes wie es z.B. bei konservativen
- Quakern zu finden ist.");
+ Quäkern zu finden ist.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 189,
@@ -419,7 +420,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Eine Erlösung ist schon im Diesseits möglich.",
 "Gemeint ist, das ein Leben ohne Sünde möglich ist. Also an ein <i>Perfektionismus</i>
  geglaubt und angestrebt wird. Zu finden u.a. im Pietismus und konservativen
- Quakertum.");
+ Quäkertum.");
 
 
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============

@@ -32,56 +32,84 @@ class index:
             ORDER BY denomination;
             ''' )
   
-        htmlcode = self.htemp.top("home")
-        htmlcode += u'        <h2>Willkommen auf dem BELIEF MATCHING</h2>'
-        htmlcode += u'<h2>Über dieser Projekt</h2>'
-        htmlcode += u'<p>Diese Programm ist ein Tool um herauszufinden mit welchen '
-        htmlcode += u' Glaubensgemeinschaften deine eigene Überzeugeng am meisten '
-        htmlcode += u' übereinstimmt. Inspiriert ist das Projekt von dem '
+        htmlcode = ""
+        
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        
+        _h2 = HtmlTemplate.Tag ( "h2" )
+        _h2.addContent ( u'Willkommen auf dem BELIEF MATCHING' )
+        _appbox.addContent ( _h2 )
+        
+        _h3_aboud = HtmlTemplate.Tag ( "h3" )
+        _h3_aboud.addContent ( u'Über dieser Projekt' )
+        _appbox.addContent ( _h3_aboud )        
+        
+        _p_1 = HtmlTemplate.Tag ( "p" )
+        _p_1.addContent ( u'''Diese Programm ist ein Tool um herauszufinden mit 
+            welchen Glaubensgemeinschaften deine eigene Überzeugeng am meisten 
+            übereinstimmt. Inspiriert ist das Projekt von dem ''' )
+        
         _link = HtmlTemplate.Tag ( "a" )
         _link.setAttribute ( "href" , "http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx" )
-        _name = HtmlTemplate.Tag ( "i" )
-        _name.addContent ( "Belief-O-Matic" )
-        _link.addContent ( _name )
+        _link.addContent ( u'<i>Belief-O-Matic</i>' )
         _link.addContent ( " (einer eingetragenen Marke)." )
+        _p_1.addContent ( _link )
+        _appbox.addContent ( _p_1 )         
         
-        #htmlcode += u'<a href="http://www.beliefnet.com/Entertainment/Quizzes/BeliefOMatic.aspx">'
-        #htmlcode += u'<i>Belief-O-Matic</i></a>>'
-        #htmlcode += u' (einer eingetragenen Marke).</p>'
+        _p_2 = HtmlTemplate.Tag ( "p" )
+        _p_2.addContent ( u'''Es gibt bekanntlich <i>sehr</i> viele verschiedene 
+            Glaubensgemeinschaften. Diese Programm konzentriert sich auf die 
+            christlichen Konfessionen, die im deutschsprachigem Raum anzutreffen 
+            sind. Und auch das dürften schon viele dutzende sein.''' )
+        _appbox.addContent ( _p_2 )   
+
+        _p_3 = HtmlTemplate.Tag ( "p" )
+        _p_3.addContent ( u'Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:' )
+        _appbox.addContent ( _p_3 )   
         
-        htmlcode += _link.getHTML ()
-        htmlcode += u'<p>Es gibt bekanntlich <i>sehr</i> viele verschiedene Glaubensgemeinschaften. '
-        htmlcode += u'Diese Programm konzentriert sich auf die christlichen Konfessionen, '
-        htmlcode += u'die im deutschsprachigem Raum anzutreffen sind. Und auch das dürften '
-        htmlcode += u'schon viele dutzende sein. </p>'
-        
-        htmlcode += u'<p>Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:</p>'
-        htmlcode += u'<ul>'
+        _list = HtmlTemplate.Tag ( "ul" )
         for row in cur:
-            htmlcode += u'    <li>' + row[1] + '</li>'
-        htmlcode += u'</ul>'
-        htmlcode += u'<p><b>Bitte nimm das Ergebnis des Test nicht all zu ernst!</b> Ein Computer-Programm'
-        htmlcode += u' kann nur ein sehr begrenztes Spektrum der realen Welt abstrahieren. '
-        htmlcode += u' Selbstverständlich ist eine (Glaubens-)Gemeinschaft mehr als die Summe'
-        htmlcode += u' ihre Grundsätze. Das Programm soll viel mehr anregen über die eigenen'
-        htmlcode += u' Anschauungen und die der anderen nachzudenken; Gemeinsamkeiten aber auch'
-        htmlcode += u' Unterschiede zu entdecken.</p>'
+            _item = HtmlTemplate.Tag ( "li" )
+            _item.addContent ( row[1] ) 
+            _list.addContent ( _item ) 
+        _appbox.addContent ( _list )
         
-        htmlcode += u'<h2>Stand der Arbeit</h2>'
-        htmlcode += u'<p>Es wird noch einige Zeit brauchen bis alle - oder die meisten - Konfessionen in '
-        htmlcode += u'die Datenbank eingepflegt sind. Du kannst aber mithelfen den Prozess zu beschleunigen'
-        htmlcode += u'und die Quallitä zu verbessern, in dem du deine Anmerkungen und'
-        htmlcode += u'Voerschläge an mich schickst (<a href=mailto:briefkasten@olaf-radicke.de">'
-        htmlcode += u'briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen kannst,'
-        htmlcode += u'kannst du auch direkt über '
-        htmlcode += u'<a href="https://github.com/OlafRadicke/belief-matching">GitHub'
-        htmlcode += u'</a> am Code mitarbeiten. Die Software steht unter der '
-        htmlcode += u'<a href="http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License">'
-        htmlcode += u'GNU Affero General Public License</a>, also also eine freie Software, '
-        htmlcode += u'die du benutzen, verändern und weitergeben darfst. Vorausgesetzt, das '
-        htmlcode += u'du allen Anderen die selben rechte einräumst.</p>'
-        htmlcode += u'<p>Der Name des Projektes <i>belief-matching</i> ist nur ein '
-        htmlcode += u'vorläufiger Arbeitstitel. Die suche nach einem geeigneten Namen ist noch'
-        htmlcode += u'nicht abgeschlossen und für Vorschläge bin ich hier dankbar.</p>'
-        htmlcode += self.htemp.bottom
+        _p_4 = HtmlTemplate.Tag ( "p" )
+        _p_4.addContent ( u'''<b>Bitte nimm das Ergebnis des Test nicht all zu 
+            ernst!</b> Ein Computer-Programm' kann nur ein sehr begrenztes 
+            Spektrum der realen Welt abstrahieren. Selbstverständlich ist eine 
+            (Glaubens-)Gemeinschaft mehr als die Summe ihre Grundsätze. Das 
+            Programm soll viel mehr anregen über die eigenen Anschauungen und 
+            die der anderen nachzudenken; Gemeinsamkeiten aber auch Unterschiede 
+            zu entdecken.''' )
+        _appbox.addContent ( _p_4 )
+      
+        _h3_todo = HtmlTemplate.Tag ( "h3" )
+        _h3_todo.addContent ( u'Stand der Arbeit' )
+        _appbox.addContent ( _h3_todo )
+        
+        _p_5 = HtmlTemplate.Tag ( "p" )
+        _p_5.addContent ( u'''Es wird noch einige Zeit brauchen bis alle - oder 
+            die meisten - Konfessionen in die Datenbank eingepflegt sind. Du 
+            kannst aber mithelfen den Prozess zu beschleunigen und die Quallität 
+            zu verbessern, in dem du deine Anmerkungen und Vorschläge an mich 
+            schickst (<a href=mailto:briefkasten@olaf-radicke.de">
+            briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen 
+            kannst, kannst du auch direkt über 
+            <a href="https://github.com/OlafRadicke/belief-matching">GitHub</a> 
+            am Code mitarbeiten. Die Software steht unter der 
+            <a href="http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License">
+            GNU Affero General Public License</a>, also also eine freie Software, 
+            die du benutzen, verändern und weitergeben darfst. Vorausgesetzt, 
+            das du allen Anderen die selben rechte einräumst.'''  )
+        _appbox.addContent ( _p_5 )
+
+        _p_6 = HtmlTemplate.Tag ( "p" )
+        _p_6.addContent ( u'''Der Name des Projektes <i>belief-matching</i> ist nur ein
+            vorläufiger Arbeitstitel. Die suche nach einem geeigneten Namen ist noch   
+            nicht abgeschlossen und für Vorschläge bin ich hier dankbar.'''   )  
+        _appbox.addContent ( _p_6 )
+
+        htmlcode += self.htemp.getCompleteSite( "home", _appbox )
         return self.htemp.convertGermanChar( htmlcode )

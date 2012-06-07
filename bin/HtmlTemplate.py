@@ -53,7 +53,7 @@ class Tag:
         _outString += u'<' + self.m_type 
         for _key in self.m_attribute.keys() :
             _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
-        _outString += u'>'
+        _outString += u'>\n'
         print "self.self.m_content.count: " + str ( len( self.m_content ) )
         _count = 0
         for _cont in self.m_content :
@@ -64,7 +64,7 @@ class Tag:
                 #_outString += "..."
             else:
                 _outString += _cont
-        _outString += u'<' + self.m_type + u'>'
+        _outString += u'</' + self.m_type + u'>\n'
         return _outString
 
 
@@ -82,47 +82,114 @@ class HtmlTemplate:
         return _input
         
     
-    def top(self, aktivtab):
-        top =     u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"'
-        top +=    '       "http://www.w3.org/TR/html4/loose.dtd">'
-        top +=    '<html>'
-        top +=    '  <head>'
-        top +=    '    <meta http-equiv="content-type" content="text/html; charset=utf-8" />'
-        top +=    '  </head>'
-        top +=   u'<body>'
-        top +=   u'<link rel="stylesheet" href="static/home.css" type="text/css" media="screen" charset="utf-8" />'
-        top +=    '<div class="all">'
-        #top +=    '    <div class="line" ></div>'
-        top +=    '    <div class="bannerbox" >'
-        top +=    u'        <h1>Womit deckt sich dein Glaube?</h1>'
-        top +=    '        <h3><i>BELIEF MATCHING</i> (beta)</h3>'
-        #top +=    '        <img src="static/image.jpg" >'
-        top +=    '    </div>'
-        top +=    '    <div class="line" ></div>'
-        top +=    '    <div class="mainmenue" >'
-        top +=    '           <ul id="portal-globalnav">'
+    def getCompleteSite(self, aktivtab, _appBoxValue ):
+        _htmlcode =     u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"'
+        _htmlcode +=    '       "http://www.w3.org/TR/html4/loose.dtd">'
+        _htmlcode +=    '<html>'
+        _head = Tag ( "head" )
+        _head.addContent( u'<meta http-equiv="content-type" content="text/html"; charset="utf-8" />' )
+        _htmlcode +=  _head.getHTML ()
+        
+        _body = Tag ( "body" )
+        
+        _link = Tag ( "link" )
+        _link.setAttribute ( "rel", "stylesheet" )
+        _link.setAttribute ( "href", "static/home.css" )
+        _link.setAttribute ( "type", "text/css" )
+        _link.setAttribute ( "type", "text/css" )
+        _link.setAttribute ( "charset", "utf-8" )
+        _htmlcode +=  _link.getHTML ()
+        
+        _all = Tag ( "div" )
+        _all.setAttribute ( "class", "all" )
+        
+        _bannerbox = Tag ( "div" )
+        _bannerbox.setAttribute ( "class", "bannerbox" )
+        
+        _h1 = Tag ( "h1" )
+        _h1.addContent ( u'Womit deckt sich dein Glaube?' )
+        _bannerbox.addContent ( _h1 )
+        
+        _h3 = Tag ( "h3" )
+        _h3.addContent ( u'<i>BELIEF MATCHING</i> (beta)' )
+        _bannerbox.addContent ( _h3 )
+        
+        _all.addContent ( _bannerbox )
+
+        _line = Tag ( "div" )
+        _line.setAttribute ( "class", "small_line" )
+        _all.addContent ( _line )
+        
+        _line = Tag ( "div" )
+        _line.setAttribute ( "class", "line" )
+        _all.addContent ( _line )
+
+        _menu = Tag ( "div" )
+        _menu.setAttribute ( "class", "mainmenue" )
+        
+        _liste = Tag ( "ul" )
+        _liste.setAttribute ( "id", "portal-globalnav" )
+        
+        # home 
+        _item_home = Tag ( "li" )
         if ( aktivtab == "home"):
-            top +=    '            <li id="tableft_activ"><a href="/">Start</a></li>'
+            _item_home.setAttribute ( "id", "tableft_activ" )
         else:
-            top +=    '            <li id="tableft" ><a href="/">Start</a></li>'
+            _item_home.setAttribute ( "id", "tableft" )
+        _item_home.addContent ( u'<a href="/">Start</a>' )
+        _liste.addContent ( _item_home )
+        
+        # test
+        _item_test = Tag ( "li" )
         if ( aktivtab == "test"):
-            top +=    '            <li id="tabmiddle_activ"><a href="test">Test</a></li>'
+            _item_test.setAttribute ( "id", "tabmiddle_activ" )
         else:
-            top +=    '            <li id="tabmiddle"><a href="test">Test</a></li>'
+            _item_test.setAttribute ( "id", "tabmiddle" )
+        _item_test.addContent ( u'<a href="test">Test</a>' )
+        _liste.addContent ( _item_test )
+            
+        # database
+        _item_database = Tag ( "li" )
         if ( aktivtab == "datenbasis"):
-            top +=    '            <li id="tabright_activ"><a href="datenbasis">Datenbasis</a></li>'
+            _item_database.setAttribute ( "id", "tabright_activ" )
         else:
-            top +=    '            <li id="tabright"><a href="datenbasis">Datenbasis</a></li>'
-        top +=    '           </ul>'
-        top +=    '        </div>'
-        top +=    '    <div class="line" ></div>'
-        top +=    '    <div class="appbox">'  
-        return top
-    
-    bottom =  '    </div>'
-    bottom += '    <div class="footer">'
-    bottom += 'BELIEF MATCHING | <a href="https://github.com/OlafRadicke/belief-matching">'
-    bottom += 'Auf GitHub</a> | <a href="mailto:briefkasten@olaf-radicke.de">'
-    bottom += 'briefkasten@olaf-radicke.de</a>'
-    bottom += '    </div>'
-    bottom += '</div></body></html>'
+            _item_database.setAttribute ( "id", "tabright" )
+        _item_database.addContent ( u'<a href="datenbasis">Datenbasis</a>' )
+        _liste.addContent ( _item_database )
+        
+        _menu.addContent ( _liste )
+        _all.addContent ( _menu )
+        
+        _line = Tag ( "div" )
+        _line.setAttribute ( "class", "line" )
+        _all.addContent ( _line )
+        
+        _line = Tag ( "div" )
+        _line.setAttribute ( "class", "small_line" )
+        _all.addContent ( _line )
+        
+
+        _all.addContent ( _appBoxValue )
+        
+        _footer = Tag ( "div" )
+        _footer.setAttribute ( "class", "footer" )
+        _footer.addContent ( u'BELIEF MATCHING | ' )
+        
+        _gitHub = Tag ( "a" )
+        _gitHub.setAttribute ( "href", "https://github.com/OlafRadicke/belief-matching" )
+        _gitHub.addContent ( u'Auf GitHub' )
+        _footer.addContent ( _gitHub )
+        
+        _footer.addContent ( u' | ' )
+        
+        _mail = Tag ( "a" )
+        _mail.setAttribute ( "href", "mailto:briefkasten@olaf-radicke.de" )
+        _mail.addContent ( u'briefkasten@olaf-radicke.de' )
+        _footer.addContent ( _mail )
+        _all.addContent ( _footer )
+        
+        _body.addContent ( _all )
+        _htmlcode +=  _body.getHTML ()
+        return _htmlcode
+        
+        
