@@ -1,6 +1,6 @@
 BINPATH="/usr/local/bin/belief-maching/"
 
-all: clean create-db install
+all: clean create-db
 
 install:
 	mkdir -p $(BINPATH)
