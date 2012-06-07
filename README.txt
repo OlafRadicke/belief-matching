@@ -33,7 +33,8 @@ TODOs
 
 Konfessionen in die Datenbank einpflegen. Z.B.:
 
-
+- Lutheraner 
+- Reformierten/Calvinismus
 - Baptisten
 - Mormonen
 - Methodisten
