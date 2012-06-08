@@ -69,13 +69,9 @@ class datenbasis:
         _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
         _intro.addContent ( _section_2 )
         
-        _p_2 = HtmlTemplate.Tag ( "p" )
-        _p_2.addContent ( u'''   ''')
-        _intro.addContent ( _p_2 )
-        
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
-        _form.setAttribute ( "name", "test" )
+        _form.setAttribute ( "name", "database" )
         _form.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
        
         _select = HtmlTemplate.Tag ( "select" )

@@ -16,20 +16,17 @@ body p {
 /* ------------ banner -----------------*/
 
 div.bannerbox {
-/*     width: 95%; */
     align: center;
     text-align: center;
 }
 
 div.bannerbox {
-/*     border-width: 10px; */
     border-radius: 10px;
     border-style: solid;
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     border-color: rgba( 192, 192, 192, .90 );
     background-color: #FFFFFF;
-/*     margin:5px 5px 5px 5px; */
     padding: 0px;
     margin: 15px 5px 5px 5px;
 }
@@ -57,18 +54,9 @@ div.small_line {
 }
 /* --------------- main menue -------------------- */
 div.mainmenue{
-/*     width: 100%; */
-/*     align: center; */
     text-align: center;
     padding: 0px;
     margin: 5px;
-/*    border-radius: 10px;
-    border-style: solid;
-    border-color: black;*/
-/*    border-color: #c1c1c1;
-    border-color: rgba( 192, 192, 192, .90 );
-    border-color: rgba( 192, 192, 192, .90 );*/
-/*    background-color: #FFFFFF;*/
 }
 
 div.mainmenue ul {
@@ -76,8 +64,6 @@ div.mainmenue ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
-/*     margin: 0px 5px 0px 5px; */
-/*     background:#000000 */
 }
 
 /* -------- left -----------------*/
@@ -87,19 +73,17 @@ div.mainmenue li.tableft {
     display: inline-block;
     padding: 0 0 0 0 ;
     margin:  0px  ;
-/*     margin: 5px 0 5px 5px ; */
     background:black;
-/*    background:#373737;*/
     -moz-border-radius-topleft:5px;
     -moz-border-radius-bottomleft:5px;
     -webkit-border-top-left-radius:5px;
     -webkit-border-bottom-left-radius:5px;
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
-    background: linear-gradient( top, #373737, #A0A0A0);
-    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
-    background: -moz-linear-gradient( top, #373737, #A0A0A0);
-    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
 }
 
 div.mainmenue li.tableft_activ {
@@ -124,10 +108,10 @@ div.mainmenue li.tabmiddle {
     display: inline-block;
     padding: 0 0 0 0 ;
     background:#373737;
-    background: linear-gradient( top, #373737, #A0A0A0);
-    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
-    background: -moz-linear-gradient( top, #373737, #A0A0A0);
-    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
 }
 
 div.mainmenue li.tabmiddle_activ {
@@ -150,10 +134,11 @@ div.mainmenue li.tabright {
     -webkit-border-bottom-right-radius:5px;
     border-top-right-radius:5px;
     border-bottom-right-radius:5px;
-    background: linear-gradient( top, #373737, #A0A0A0);
-    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
-    background: -moz-linear-gradient( top, #373737, #A0A0A0);
-    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
 }
 
 div.mainmenue li.tabright_activ {
@@ -187,18 +172,9 @@ div.mainmenue li a span {
     padding: 0px;
 }
 
-/*div.mainmenue li#activ span {
-    display: block;
-    margin: 0;
-    padding: 15px;
-}*/
-
-
 /* ----- application box ----------------*/
 
 div.appbox {
-/*     width: 95%; */
-/*     border-width: 10px; */
     background-color: #FFFFFF;
     border-style: solid;
     border-color: #c1c1c1;
@@ -220,7 +196,7 @@ div.appbox .tooltip span.info{
 div.appbox .tooltip:hover span.info{
     display:block;
     position:absolute; 
-    width:300px; 
+    width:400px; 
 /*     height:200px; */
     padding: 5px;
     border-radius: 10px;
@@ -276,9 +252,9 @@ div.appbox td {
     vertical-align: top; 
     text-align: left;
     padding: 10px;
-/*    margin: 0px 0px 0px 0px;*/
     margin: 10px;
 }
+
 div.appbox form{
     align: center;
     text-align: center;
@@ -294,7 +270,6 @@ div.appbox div.points {
     align: right;
     text-align: right;
     float:right;
-    
     color:#fff;
     padding-right: 15px;
     margin-right: -15px;
@@ -320,11 +295,6 @@ div.appbox div.points-weighting {
     text-align: left;
     text-align: left;
     float:left;
-    
-/*     color:#fff; 
-    color:#C3C4FF;*/
-
-
     background:#373737;
     -moz-border-radius-topright:5px;
     -moz-border-radius-bottomright:5px;
@@ -346,7 +316,6 @@ div.appbox button {
 
 div.appbox img.participate_img {
     width: 330px; 
-/*     border: 4px; */
     border-radius: 10px;
     border-style: solid;
     border-color: #c1c1c1;
@@ -356,7 +325,6 @@ div.appbox img.participate_img {
 
 div.appbox img.participate_img_left{
     width: 330px; 
-/*     border: 4px; */
     border-radius: 10px;
     border-style: solid;
     border-color: #c1c1c1;
@@ -371,16 +339,12 @@ div.appbox li{
 }
 
 /* -------- Footer --------------------------------*/
-div.footer {/*
-    width: 100%;*/
+div.footer {
     align: center;
     text-align: center;
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
-/*    color: #000080;
-    background-color: #c1c1c1;
-    border-color: #000080;*/
     color:#fff;
     background: #373737;
     background: linear-gradient( top, #373737, #A0A0A0);

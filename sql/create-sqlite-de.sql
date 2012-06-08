@@ -417,7 +417,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 189,
 "Erlösung",
-"Eine Erlösung ist schon im Diesseits möglich.",
+"Eine Erlösung (vom Bösen/ der Sünde) ist schon im Diesseits möglich.",
 "Gemeint ist, das ein Leben ohne Sünde möglich ist. Also an ein <i>Perfektionismus</i>
  geglaubt und angestrebt wird. Zu finden u.a. im Pietismus und konservativen
  Quäkertum.");
@@ -463,7 +463,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 196,
 "Sonstiges",
 "Alkohol und/oder andere Drogen versperren den Weg zu spiritueller Entwicklung.",
-"");
+"Hier ist gemeint, das Abstinenz spirituell geboten ist.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 197,

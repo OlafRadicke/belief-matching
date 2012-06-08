@@ -184,7 +184,7 @@ class participate:
             natürlich zurück in das Projekt fließen. Das geht auf zweierlei Weise:''' )        
         _appbox.addContent ( _p_7 )              
         
-        _p_8 = HtmlTemplate.Tag ( "p" ) 
+        _p_8 = HtmlTemplate.Tag ( "p" )     
            
         _p_8.addContent ( u'''<b>A) Über Webinterface:</b> Dazu klickst du auf
             den Knopf <b>"Pull Request"</b>, so wie es in dem untersten Bild zusehen
@@ -195,8 +195,6 @@ class participate:
             ob ich deine Änderungen übernommen habe, und wenn nicht, warum ich
             sie nicht übernommen habe.''' )      
         _appbox.addContent ( _p_8 )    
-   
-        _p_9 = HtmlTemplate.Tag ( "p" )        
         
         # bild
         
@@ -208,7 +206,9 @@ class participate:
         _img_05.setAttribute ( "src", "static/05_pull_request.png" )
         _img_05.setAttribute ( "alt", "pull request" )
         _link_img5.addContent ( _img_05 ) 
-        _p_9.addContent ( _link_img5 )             
+        _p_8.addContent ( _link_img5 )             
+   
+        _p_9 = HtmlTemplate.Tag ( "p" )                    
         
         _p_9.addContent ( u'''<b>B) Per E-Mail:</b> Wem der erste Weg noch zu
             anspruchsvoll ist, der kann mir auch einfach eine Mail schicken mit

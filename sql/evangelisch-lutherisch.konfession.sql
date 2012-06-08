@@ -23,34 +23,22 @@ INSERT INTO denominations ( denomination_id, denomination, url ) VALUES (
 -- ======= kat "Gott" beginnend mit 11... ====================================
 -- "Ich glaube an die Dreifaltigkeit"
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
-VALUES ( 
-111, 
-6, 
-1, 
+VALUES ( 111, 6, 1, 
 "Es wird die Lehre der Dreifaltigkeit vertreten.");
 
 -- "Jesus ist nicht Gott sondern nur ein (besonderer) Mensch"
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
-VALUES ( 
-112, 
-6, 
-0, 
+VALUES ( 112, 6, 0, 
 "Nein er ist Teil der Dreifaltigkeit.");
 
 -- "Gott offenbart sich direkt jedem Menschen."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
-VALUES ( 
-113, 
-6, 
-0, 
+VALUES ( 113, 6, 0, 
 "Nein. Der persönliche Offenbarung wird keine große Rolle beigemessen.");
 
 --"Gott offenbart sich durch die Bibel."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
-VALUES ( 
-114, 
-6, 
-1, 
+VALUES ( 114, 6, 1, 
 "Die Bibel ist die einzige Grundlage für das theologische Urteilen oder Verurteilen. ");
 
 -- "Gottes offenbart sich nur bestimmten Menschen (Propheten) und diese dienen 
@@ -78,7 +66,7 @@ VALUES ( 123, 6, 0, "Die Kindertaufe ist sehr gebräuchlich und die Regel.");
 
 -- "Bei dem Abendmahl findet eine Umwandlung des Brotes in den Leib Christi statt"
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 131, 6, 0, "Die Gegenwart Christi im Heiligen Abendmahl wird als 
+VALUES ( 131, 6, 1, "Die Gegenwart Christi im Heiligen Abendmahl wird als 
  <i>Realpräsenz</i> verstanden: Christi Leib und Blut werden unter Brot und Wein 
  ausgeteilt und empfangen. ");
 
@@ -181,7 +169,7 @@ VALUES ( 155, 6, 1, "Frauen können alle Ämter bekleiden.");
 -- regelmäßig in Erscheinung tritt und sich aktiv einbringt."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 156, 6, 0, "Die meisten Mitglieder gehen selten bis gar nicht zum
- Gottesdienst oder beteiligen sich am Gemeinde Leben. Oft werden wur die wichtigen
+ Gottesdienst oder beteiligen sich nicht am Gemeinde Leben. Oft werden nur die wichtigen
  Veranstaltungen wahrgenommen: Taufe, Heirat, Weihnachten und Beerdigung...");
 
 -- "Die Gemeinde sollte von den Ältesten und/oder Predigern und/oder 

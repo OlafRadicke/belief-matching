@@ -94,7 +94,7 @@ class index:
             die meisten - Konfessionen in die Datenbank eingepflegt sind. Du 
             kannst aber mithelfen den Prozess zu beschleunigen und die Quallität 
             zu verbessern, in dem du deine Anmerkungen und Vorschläge an mich 
-            schickst (<a href=mailto:briefkasten@olaf-radicke.de">
+            schickst (<a href="mailto:briefkasten@olaf-radicke.de">
             briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen 
             kannst, kannst du auch direkt über 
             <a href="https://github.com/OlafRadicke/belief-matching">GitHub</a> 

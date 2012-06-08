@@ -41,7 +41,7 @@ class belieftest:
              _answers.append( [ row[0], row[1] ] )
         return _answers
  
-    # Gibt ein dict mit Konfessions-id und Konfessionsnamen zurück.
+    # Gibt den Namen einer Konfessions-id zurück.
     def getDenominationName (self, _id):
         
         denominationName = "unbekannter Name"
@@ -107,7 +107,9 @@ class belieftest:
             user_answers[str(i)] =  {'answer'   :  str( widgetlist['answer_'   + str(i)] ), \
                                      'wichtung' :  str( widgetlist['wichtung_' + str(i)] ) }
           
-        cur.execute("SELECT denomination_id FROM denominations;") 
+        cur.execute( '''SELECT denomination_id 
+                        FROM denominations
+                        ORDER BY denomination;''') 
         # denomination loop
         for row in cur:  
             _denomination_id = row[0]
@@ -222,6 +224,7 @@ class belieftest:
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
         _form.setAttribute ( "name", "test" )
+        _form.setAttribute ( "action", "test" )
         
         _table =  HtmlTemplate.Tag ( "table" )
         
