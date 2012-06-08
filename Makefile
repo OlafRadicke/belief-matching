@@ -7,7 +7,11 @@ install:
 	cp ./bin/*.py $(BINPATH)
 	cp ./bin/*.sqlite $(BINPATH)
 	mkdir $(BINPATH)static/
-	cp ./bin/static/home.css $(BINPATH)static/
+	cp ./bin/static/home.css               $(BINPATH)static/
+	cp ./bin/static/01_create_account.png  $(BINPATH)static/
+	cp ./bin/static/02_fork_project.png    $(BINPATH)static/
+	cp ./bin/static/04_edit_file.png       $(BINPATH)static/
+	cp ./bin/static/05_pull_request.png    $(BINPATH)static/
 	cp ./templates/belief-matching    /etc/init.d/belief-matching
 	chmod a+x /etc/init.d/belief-matching
 
