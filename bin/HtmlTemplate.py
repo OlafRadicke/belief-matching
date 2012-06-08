@@ -17,6 +17,39 @@
 
 import string 
 
+
+class TagSingle:
+    
+    ## tag type
+    m_type = "div"
+    ## tag attributes
+    m_attribute = None
+    
+    ## constructor
+    ## @param _type typ of tag as string.
+    def __init__ ( self, _type ) :
+        self.m_type = _type
+        self.m_attribute = dict()
+        
+        
+    ## set type of tag.
+    def setType (self, _type ) :
+        self.m_type = _type
+        
+    ## add a attribute
+    ## @parm _attName name of attribute
+    ## @parm _attValue value of attribute
+    def setAttribute ( self, _attName, _attValue ) :
+        self.m_attribute [_attName] = _attValue
+        
+    def getHTML ( self ) :
+        _outString = u''
+        _outString += u'<' + self.m_type 
+        for _key in self.m_attribute.keys() :
+            _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
+        _outString += u' />\n'
+        return _outString
+
 class Tag:
     
     ## tag type
@@ -54,16 +87,15 @@ class Tag:
         for _key in self.m_attribute.keys() :
             _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
         _outString += u'>\n'
-        print "self.self.m_content.count: " + str ( len( self.m_content ) )
-        _count = 0
         for _cont in self.m_content :
-            _count += 1
-            print _count
             if isinstance(_cont, Tag ) :
                 _outString += _cont.getHTML ()
                 #_outString += "..."
+            elif isinstance(_cont, TagSingle ) :
+                _outString += _cont.getHTML ()
             else:
                 _outString += _cont
+
         _outString += u'</' + self.m_type + u'>\n'
         return _outString
 
@@ -83,22 +115,34 @@ class HtmlTemplate:
         
     
     def getCompleteSite(self, aktivtab, _appBoxValue ):
-        _htmlcode =     u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"'
-        _htmlcode +=    '       "http://www.w3.org/TR/html4/loose.dtd">'
+
+        _htmlcode = u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
         _htmlcode +=    '<html>'
         _head = Tag ( "head" )
-        _head.addContent( u'<meta http-equiv="content-type" content="text/html"; charset="utf-8" />' )
+        #_head.addContent( u'<meta http-equiv="content-type" content="text/html" charset="utf-8" />' )
+       
+        # css
+        _link = TagSingle ( "link" )
+        _link.setAttribute ( "rel", "stylesheet" )
+        _link.setAttribute ( "href", "static/home.css" )
+        _link.setAttribute ( "type", "text/css" )
+        #_link.setAttribute ( "charset", "utf-8" )
+        _head.addContent ( _link )
+        
+        _title = Tag ( "title" )
+        _title.addContent ( u'belief-matching' )
+        _head.addContent ( _title )
+        
+        _charset = TagSingle ( "meta" )
+        _charset.setAttribute ( "http-equiv", "content-type" )
+        _charset.setAttribute ( "content", "text/html;  charset=utf-8" )
+        _head.addContent ( _charset )
+        
         _htmlcode +=  _head.getHTML ()
         
         _body = Tag ( "body" )
         
-        _link = Tag ( "link" )
-        _link.setAttribute ( "rel", "stylesheet" )
-        _link.setAttribute ( "href", "static/home.css" )
-        _link.setAttribute ( "type", "text/css" )
-        _link.setAttribute ( "type", "text/css" )
-        _link.setAttribute ( "charset", "utf-8" )
-        _htmlcode +=  _link.getHTML ()
+
         
         _all = Tag ( "div" )
         _all.setAttribute ( "class", "all" )
@@ -190,6 +234,7 @@ class HtmlTemplate:
         
         _body.addContent ( _all )
         _htmlcode +=  _body.getHTML ()
+        _htmlcode +=    '</html>'
         return _htmlcode
         
         

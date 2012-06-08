@@ -112,4 +112,6 @@ class index:
         _appbox.addContent ( _p_6 )
 
         htmlcode += self.htemp.getCompleteSite( "home", _appbox )
-        return self.htemp.convertGermanChar( htmlcode )
+        #return self.htemp.convertGermanChar( htmlcode )
+        #print htmlcode
+        return htmlcode
