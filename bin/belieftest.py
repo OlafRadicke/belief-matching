@@ -167,7 +167,7 @@ class belieftest:
             
             _row  =  HtmlTemplate.Tag ( "tr" )
             if _odd == 1:
-                _row.setAttribute ( "id", "oddrow" )
+                _row.setAttribute ( "class", "oddrow" )
                 _odd = 0
             else:
                 _odd = 1
@@ -256,7 +256,7 @@ class belieftest:
             _rowTag  =  HtmlTemplate.Tag ( "tr" )
             
             if _odd == 1:
-                _rowTag.setAttribute ( "id", "oddrow" )
+                _rowTag.setAttribute ( "class", "oddrow" )
                 _odd = 0
             else:
                 _odd = 1
