@@ -25,11 +25,13 @@ import HtmlTemplate
 import index
 import belieftest
 import datenbasis
+import participate
 
 urls = (
   '/', 'index.index',
   '/test', 'belieftest.belieftest',
-  '/datenbasis','datenbasis.datenbasis')
+  '/datenbasis','datenbasis.datenbasis',
+  '/participate','participate.participate')
 
 app = web.application(urls, globals())#, web.reloader)
 render = web.template.render('templates/')

@@ -83,7 +83,7 @@ div.mainmenue ul {
 /* -------- left -----------------*/
 
 
-div.mainmenue li#tableft {
+div.mainmenue li.tableft {
     display: inline-block;
     padding: 0 0 0 0 ;
     margin:  0px  ;
@@ -102,7 +102,7 @@ div.mainmenue li#tableft {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
-div.mainmenue li#tableft_activ {
+div.mainmenue li.tableft_activ {
     display: inline-block;
     margin: 0px ;
     background: #c1c1c1;
@@ -120,7 +120,7 @@ div.mainmenue li#tableft_activ {
 
 /* ---------  middle -----------------*/
 
-div.mainmenue li#tabmiddle {
+div.mainmenue li.tabmiddle {
     display: inline-block;
     padding: 0 0 0 0 ;
     background:#373737;
@@ -130,7 +130,7 @@ div.mainmenue li#tabmiddle {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
-div.mainmenue li#tabmiddle_activ {
+div.mainmenue li.tabmiddle_activ {
     display: inline-block;
     background: #c1c1c1;
     background: linear-gradient( top, #fff, #c1c1c1);
@@ -140,7 +140,7 @@ div.mainmenue li#tabmiddle_activ {
 }
 /* ---------------- right ---------------- */
 
-div.mainmenue li#tabright {
+div.mainmenue li.tabright {
     display: inline-block;
     padding: 0 0 0 0 ;
     background:#373737;
@@ -156,7 +156,7 @@ div.mainmenue li#tabright {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
-div.mainmenue li#tabright_activ {
+div.mainmenue li.tabright_activ {
     display: inline-block;
     padding-left: 0px;
     background: #c1c1c1;
@@ -206,6 +206,7 @@ div.appbox {
     border-radius: 10px;
     padding: 20px;
     margin: 5px 5px 5px 5px;
+    min-height:1000px;
 }
 
 /*----------- Tooltip ---------------*/
@@ -262,13 +263,13 @@ div.appbox tr.oddrow {
 }
 
 /* --- verschiedene Antworten ---*/
-div.appbox tr#yes {
+div.appbox tr.yes {
     background-color: #D9FFD3;
 }
-div.appbox tr#no {
+div.appbox tr.no {
     background-color: #FFDDDC;
 }
-div.appbox tr#void {
+div.appbox tr.void {
     background-color: #EBEBEB;
 }
 div.appbox td { 
@@ -341,6 +342,32 @@ div.appbox div.points-weighting {
 div.appbox button {
     align: center;
     text-align: center;
+}
+
+div.appbox img.participate_img {
+    width: 330px; 
+/*     border: 4px; */
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    float: right;
+    margin: 15px;
+}
+
+div.appbox img.participate_img_left{
+    width: 330px; 
+/*     border: 4px; */
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    float: left;
+    margin: 15px;
+}
+
+
+div.appbox li{
+    width: 50%; 
+    margin: 15px;
 }
 
 /* -------- Footer --------------------------------*/

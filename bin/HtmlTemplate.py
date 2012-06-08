@@ -18,37 +18,6 @@
 import string 
 
 
-class TagSingle:
-    
-    ## tag type
-    m_type = "div"
-    ## tag attributes
-    m_attribute = None
-    
-    ## constructor
-    ## @param _type typ of tag as string.
-    def __init__ ( self, _type ) :
-        self.m_type = _type
-        self.m_attribute = dict()
-        
-        
-    ## set type of tag.
-    def setType (self, _type ) :
-        self.m_type = _type
-        
-    ## add a attribute
-    ## @parm _attName name of attribute
-    ## @parm _attValue value of attribute
-    def setAttribute ( self, _attName, _attValue ) :
-        self.m_attribute [_attName] = _attValue
-        
-    def getHTML ( self ) :
-        _outString = u''
-        _outString += u'<' + self.m_type 
-        for _key in self.m_attribute.keys() :
-            _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
-        _outString += u' />\n'
-        return _outString
 
 class Tag:
     
@@ -100,6 +69,72 @@ class Tag:
         return _outString
 
 
+class TagSingle:
+    
+    ## tag type
+    m_type = "div"
+    ## tag attributes
+    m_attribute = None
+    
+    ## constructor
+    ## @param _type typ of tag as string.
+    def __init__ ( self, _type ) :
+        self.m_type = _type
+        self.m_attribute = dict()
+        
+        
+    ## set type of tag.
+    def setType (self, _type ) :
+        self.m_type = _type
+        
+    ## add a attribute
+    ## @parm _attName name of attribute
+    ## @parm _attValue value of attribute
+    def setAttribute ( self, _attName, _attValue ) :
+        self.m_attribute [_attName] = _attValue
+        
+    def getHTML ( self ) :
+        _outString = u''
+        _outString += u'<' + self.m_type 
+        for _key in self.m_attribute.keys() :
+            _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
+        _outString += u' >\n'
+        return _outString
+        
+        
+
+class TagSingleXHTML:
+    
+    ## tag type
+    m_type = "div"
+    ## tag attributes
+    m_attribute = None
+    
+    ## constructor
+    ## @param _type typ of tag as string.
+    def __init__ ( self, _type ) :
+        self.m_type = _type
+        self.m_attribute = dict()
+        
+        
+    ## set type of tag.
+    def setType (self, _type ) :
+        self.m_type = _type
+        
+    ## add a attribute
+    ## @parm _attName name of attribute
+    ## @parm _attValue value of attribute
+    def setAttribute ( self, _attName, _attValue ) :
+        self.m_attribute [_attName] = _attValue
+        
+    def getHTML ( self ) :
+        _outString = u''
+        _outString += u'<' + self.m_type 
+        for _key in self.m_attribute.keys() :
+            _outString += u' ' + _key + u'="' + self.m_attribute [ _key ] + u'" '
+        _outString += u' />\n'
+        return _outString
+        
 class HtmlTemplate:
     
     #  convert german characters
@@ -175,29 +210,41 @@ class HtmlTemplate:
         # home 
         _item_home = Tag ( "li" )
         if ( aktivtab == "home"):
-            _item_home.setAttribute ( "id", "tableft_activ" )
+            _item_home.setAttribute ( "class", "tableft_activ" )
         else:
-            _item_home.setAttribute ( "id", "tableft" )
+            _item_home.setAttribute ( "class", "tableft" )
         _item_home.addContent ( u'<a href="/">Start</a>' )
         _liste.addContent ( _item_home )
         
         # test
         _item_test = Tag ( "li" )
         if ( aktivtab == "test"):
-            _item_test.setAttribute ( "id", "tabmiddle_activ" )
+            _item_test.setAttribute ( "class", "tabmiddle_activ" )
         else:
-            _item_test.setAttribute ( "id", "tabmiddle" )
+            _item_test.setAttribute ( "class", "tabmiddle" )
         _item_test.addContent ( u'<a href="test">Test</a>' )
         _liste.addContent ( _item_test )
             
         # database
         _item_database = Tag ( "li" )
         if ( aktivtab == "datenbasis"):
-            _item_database.setAttribute ( "id", "tabright_activ" )
+            _item_database.setAttribute ( "class", "tabmiddle_activ" )
         else:
-            _item_database.setAttribute ( "id", "tabright" )
+            _item_database.setAttribute ( "class", "tabmiddle" )
         _item_database.addContent ( u'<a href="datenbasis">Datenbasis</a>' )
         _liste.addContent ( _item_database )
+        
+        # participate
+
+        _item_database = Tag ( "li" )
+        if ( aktivtab == "participate"):
+            _item_database.setAttribute ( "class", "tabright_activ" )
+        else:
+            _item_database.setAttribute ( "class", "tabright" )
+        _item_database.addContent ( u'<a href="participate">Mitmachen</a>' )
+        _liste.addContent ( _item_database )        
+        
+        #
         
         _menu.addContent ( _liste )
         _all.addContent ( _menu )

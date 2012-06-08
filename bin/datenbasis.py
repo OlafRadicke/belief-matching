@@ -147,16 +147,16 @@ class datenbasis:
             _row  =  HtmlTemplate.Tag ( "tr" )
             _col =  HtmlTemplate.Tag ( "td" )
             if int(row[1]) == 0:
-                _row.setAttribute ( "id", "no" )
+                _row.setAttribute ( "class", "no" )
                 _col.addContent ( u'<b>Trift nicht zu:</b> ')
             elif int(row[1]) == 1:
-                _row.setAttribute ( "id", "yes" )
+                _row.setAttribute ( "class", "yes" )
                 _col.addContent ( u'<b>Trift zu:</b> ')
             elif int(row[1]) == 2:
-                _row.setAttribute ( "id", "void" )
+                _row.setAttribute ( "class", "void" )
                 _col.addContent ( u'<b>Persönliche Entscheidung:</b> ')
             else:
-                _row.setAttribute ( "id", "void" )
+                _row.setAttribute ( "class", "void" )
                 _col.addContent ( u'<b>Keine Aussage:</b> ') 
                 
             _tooltip = HtmlTemplate.Tag ( "a" )
