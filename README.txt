@@ -33,16 +33,20 @@ TODOs
 
 Konfessionen in die Datenbank einpflegen. Z.B.:
 
-- Lutheraner 
-- Reformierten/Calvinismus
-- Baptisten
-- Mormonen
-- Methodisten
-- Orthodoxe Kirchen
-- Pfingstbewegung
-- Neuapostolische Kirche
-- Christliche Wissenschaft
-- Unitarier
-- Pietisten
-- Altkatholische Kirchen
-- Anglikanische Kirchen 
+* Röm.-Kath.-Kirche 
+ - Review / Überprüfung steht noch aus
+ - Kommentare fehlen
+* Lutheraner 
+ - Review / Überprüfung steht noch aus
+* Reformierten/Calvinismus
+* Baptisten
+* Mormonen
+* Methodisten
+* Orthodoxe Kirchen
+* Pfingstbewegung
+* Neuapostolische Kirche
+* Christliche Wissenschaft
+* Unitarier
+* Pietisten
+* Altkatholische Kirchen
+* Anglikanische Kirchen 
