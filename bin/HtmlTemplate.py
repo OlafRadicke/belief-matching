@@ -115,12 +115,10 @@ class HtmlTemplate:
         
     
     def getCompleteSite(self, aktivtab, _appBoxValue ):
-
-        _htmlcode = u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
-        _htmlcode +=    '<html>'
+        
+        _htmlTag = Tag ( "html" )
         _head = Tag ( "head" )
-        #_head.addContent( u'<meta http-equiv="content-type" content="text/html" charset="utf-8" />' )
-       
+        
         # css
         _link = TagSingle ( "link" )
         _link.setAttribute ( "rel", "stylesheet" )
@@ -138,7 +136,7 @@ class HtmlTemplate:
         _charset.setAttribute ( "content", "text/html;  charset=utf-8" )
         _head.addContent ( _charset )
         
-        _htmlcode +=  _head.getHTML ()
+        _htmlTag.addContent ( _head )
         
         _body = Tag ( "body" )
         
@@ -233,8 +231,10 @@ class HtmlTemplate:
         _all.addContent ( _footer )
         
         _body.addContent ( _all )
-        _htmlcode +=  _body.getHTML ()
-        _htmlcode +=    '</html>'
+        _htmlTag.addContent ( _body )
+        
+        _htmlcode = u'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
+        _htmlcode +=  _htmlTag.getHTML ()
         return _htmlcode
         
         
