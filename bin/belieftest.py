@@ -104,8 +104,8 @@ class belieftest:
         #print widgetlist       
         for row in cur:  
             i = row[0]
-            user_answers[str(i)] =  {'answer'   :  str( widgetlist['answer-'   + str(i)] ), \
-                                     'wichtung' :  str( widgetlist['wichtung-' + str(i)] ) }
+            user_answers[str(i)] =  {'answer'   :  str( widgetlist['answer_'   + str(i)] ), \
+                                     'wichtung' :  str( widgetlist['wichtung_' + str(i)] ) }
           
         cur.execute("SELECT denomination_id FROM denominations;") 
         # denomination loop
@@ -150,7 +150,7 @@ class belieftest:
         
         _table.addContent ( _table_titles )
         
-        odd = 0
+        _odd = 0
         for denomination_points_key in denomination_points.keys():
             # Prozent zahlen allgemein
             _all = len ( user_answers.keys() )
@@ -166,11 +166,11 @@ class belieftest:
                 _weighting_relativ =  _sum_denomination_weighting_points / _one_procent             
             
             _row  =  HtmlTemplate.Tag ( "tr" )
-            if odd == 1:
-                _row.setAttribute ( "id", "odd" )
-                odd = 0
+            if _odd == 1:
+                _row.setAttribute ( "id", "oddrow" )
+                _odd = 0
             else:
-                odd = 1
+                _odd = 1
                 
             _col_1 =  HtmlTemplate.Tag ( "td" )
             _col_1.addContent ( self.getDenominationName( denomination_points_key ) )
@@ -250,16 +250,16 @@ class belieftest:
         _table.addContent ( _table_titles )        
     
     
-        odd = 0
+        _odd = 0
         _line_count = 1
         for row in cur:
             _rowTag  =  HtmlTemplate.Tag ( "tr" )
             
-            if odd == 1:
-                _rowTag.setAttribute ( "id", "odd" )
-                odd = 0
+            if _odd == 1:
+                _rowTag.setAttribute ( "id", "oddrow" )
+                _odd = 0
             else:
-                odd = 1
+                _odd = 1
             # column: number
             _col_1 =  HtmlTemplate.Tag ( "td" )
             _col_1.addContent ( str(_line_count) )
@@ -295,7 +295,7 @@ class belieftest:
             _col_4 =  HtmlTemplate.Tag ( "td" )
             
             _select = HtmlTemplate.Tag ( "select" )
-            _select.setAttribute ( "name", u'answer-' + str ( row[0] ) )
+            _select.setAttribute ( "name", u'answer_' + str ( row[0] ) )
             _select.setAttribute ( "size", "1" )
             
             for _optionenline in _answer_optionen :
@@ -311,7 +311,7 @@ class belieftest:
             _col_5 =  HtmlTemplate.Tag ( "td" )
             
             _select_wight = HtmlTemplate.Tag ( "select" )
-            _select_wight.setAttribute ( "name", u'wichtung-' + str ( row[0] ) )
+            _select_wight.setAttribute ( "name", u'wichtung_' + str ( row[0] ) )
             _select_wight.setAttribute ( "size", "1" )
             
             _option_1 = HtmlTemplate.Tag ( "option" )
@@ -329,8 +329,8 @@ class belieftest:
             _table.addContent ( _rowTag )
             
         _form.addContent ( _table )
-        _form.addContent ( u'<br/>' )
-        _form.addContent ( form.Button('Anfrage abschicken').render() )
+        _form.addContent ( u'<br>' )
+        _form.addContent ( form.Button('Auswerten').render() )
         _appbox.addContent ( _form )
             
 

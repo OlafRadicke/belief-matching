@@ -257,7 +257,7 @@ div.appbox tr {
 }
 
 /* --- Jede zweite Zeile ---*/
-div.appbox tr#odd {
+div.appbox tr#oddrow {
     background-color: #F5F5F5;
 }
 
