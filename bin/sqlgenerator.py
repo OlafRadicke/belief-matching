@@ -132,7 +132,13 @@ class sqlgenerator:
         _appbox.addContent ( _section_1 )        
         
         
+        _form = HtmlTemplate.Tag ( "form" )
+        _form.setAttribute ( "method", "POST" )
+        _form.setAttribute ( "name", "test" )
+        _form.setAttribute ( "action", "sqlgenerator" )
+        
         _intro = HtmlTemplate.Tag ( "p" )
+        
         _intro.addContent ( u'''Hier kannst du auf einfache weise den SQL-Code generieren
            um in die Datenbankt Informationen über Konfessionen hinzuzufügen.
            Den generierten SQL-Code kannst du mir dann per E-Mail an ''')
@@ -144,29 +150,29 @@ class sqlgenerator:
         
         _intro.addContent ( u' schicken.' )
         
-        _appbox.addContent ( _intro )
+        _form.addContent ( _intro )
         
-        _form = HtmlTemplate.Tag ( "form" )
-        _form.setAttribute ( "method", "POST" )
-        _form.setAttribute ( "name", "test" )
-        _form.setAttribute ( "action", "sqlgenerator" )
         
-        _form.addContent ( u'<b>Name der Konfession:</b><br>' )
+        _p_2 = HtmlTemplate.Tag ( "p" )
+        _p_2.addContent ( u'<b>Name der Konfession:</b><br>' )
         _donname = HtmlTemplate.TagSingle ( "input" )
         _donname.setAttribute ( "name", "denomination" )
         _donname.setAttribute ( "type", "text" )
         _donname.setAttribute ( "size", "40" )
-        _form.addContent ( _donname )   
-        _form.addContent ( u'<br>' )
+        _p_2.addContent ( _donname )   
+        _p_2.addContent ( u'<br>' )
         
-        _form.addContent ( u'<b>URL zu weiterführenden Informationen:</b><br>' )
+        _p_2.addContent ( u'<b>URL zu weiterführenden Informationen:</b><br>' )
         _donURL = HtmlTemplate.TagSingle ( "input" )
         _donURL.setAttribute ( "name", "denominationurl" )
         _donURL.setAttribute ( "type", "text" )
         _donURL.setAttribute ( "size", "40" )
-        _form.addContent ( _donURL )        
-        _form.addContent ( u'<br><br>' )  
+        _p_2.addContent ( _donURL )        
+        _p_2.addContent ( u'<br><br>' )  
         
+        _form.addContent ( _p_2 )
+        
+        _p_table = HtmlTemplate.Tag ( "p" )
         _table =  HtmlTemplate.Tag ( "table" )
         
         _table_titles =   HtmlTemplate.Tag ( "tr" )
@@ -280,9 +286,13 @@ class sqlgenerator:
             _rowTag.addContent ( _col_5 )    
             _table.addContent ( _rowTag )
             
-        _form.addContent ( _table )
-        _form.addContent ( u'<br>' )
-        _form.addContent ( form.Button('SQL generieren').render() )
+        _p_table.addContent ( _table )
+        _form.addContent (  _p_table )
+        
+        _p_button = HtmlTemplate.Tag ( "p" )
+        _p_button.addContent ( u'<br>' )
+        _p_button.addContent ( form.Button('SQL generieren').render() )
+        _form.addContent ( _p_button )
         _appbox.addContent ( _form )
             
 
