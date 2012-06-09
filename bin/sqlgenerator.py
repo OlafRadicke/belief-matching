@@ -95,7 +95,7 @@ class sqlgenerator:
         _sqlcode += u'     "' + _denomination + '", \n'
         _sqlcode += u'     "' + _denominationURL + '"); \n\n'
         
-        
+
         for row in cur:  
             q_no = row[0]    
             _sqlcode += u'INSERT INTO denomination_answers ( \n'
@@ -192,10 +192,6 @@ class sqlgenerator:
         _title_4.addContent ( u'Ja/Nein' )   
         _table_titles.addContent ( _title_4 )
         
-        _title_5 =   HtmlTemplate.Tag ( "th" )  
-        _title_5.addContent ( u'Gewichtung' )   
-        _table_titles.addContent ( _title_5 )
-        
         _table.addContent ( _table_titles )        
     
     
@@ -263,26 +259,7 @@ class sqlgenerator:
                 
             _col_4.addContent ( _select ) 
             _rowTag.addContent ( _col_4 )            
-
-            # column: wight
-            _col_5 =  HtmlTemplate.Tag ( "td" )
-            
-            _select_wight = HtmlTemplate.Tag ( "select" )
-            _select_wight.setAttribute ( "name", u'wichtung_' + str ( row[0] ) )
-            _select_wight.setAttribute ( "size", "1" )
-            
-            _option_1 = HtmlTemplate.Tag ( "option" )
-            _option_1.setAttribute ( "value","0" )
-            _option_1.addContent ( u'normal' )
-            _select_wight.addContent ( _option_1 )
-            
-            _option_2 = HtmlTemplate.Tag ( "option" )
-            _option_2.setAttribute ( "value","1" )
-            _option_2.addContent ( u'sehr wichtig' )
-            _select_wight.addContent ( _option_2 )
-            
-            _col_5.addContent ( _select_wight ) 
-            _rowTag.addContent ( _col_5 )    
+ 
             _table.addContent ( _rowTag )
             
         _form.addContent (  _table )
