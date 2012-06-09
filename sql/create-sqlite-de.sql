@@ -81,8 +81,8 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 111,
 "Gott",
 "Ich glaube an die Dreifaltigkeit",
-"Die Frage implizieren das Jesus Teil von Gott oder Gott selbst ist, was z.B. 
- die Zeugen Jehovas verneinen werden.");
+"Die Frage impliziert, dass Jesus Teil von Gott oder Gott selbst ist, was z.B. 
+ die Zeugen Jehovas verneinen würden.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 112,
@@ -102,16 +102,16 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 114,
 "Gott",
-"Gott offenbart sich in erster Linie durch die Bibel und Diese überwiegt alles Andere.",
-"Das zielt u.a. auf die Protestanten ab und den Glaubenssatz: <i>allen die Schrift</i>.
- die Quäker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel
- also die Unmittelbare Offenbarung, die dem meisten Gewicht beigemessen wird.");
+"Gott offenbart sich in erster Linie durch die Bibel und diese überwiegt alles Andere.",
+"Das zielt u.a. auf die Protestanten und den Glaubenssatz ab: <i>allen die Schrift</i>.
+ die Quäker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel,
+ also die unmittelbare Offenbarung, der meisten Gewicht beigemessen wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 115,
 "Gott",
-"Gottes offenbart sich nur bestimmten Menschen (Propheten) und diese dienen 
-haben die Aufgabe den Anderen Gotteswillen zu verkünden.",
+"Gott offenbart sich nur bestimmten Menschen (Propheten) und diese 
+haben die Aufgabe den Anderen Gottes willen zu verkünden.",
 "Das ist im Grunde die alt testamentarische Sicht.");
 
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
@@ -128,7 +128,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Taufe",
 "Die Taufe wird äußerlich durch Wasser vollzogen",
 "Einige Konfessionen werden die Taufe als Brauch weiterführen, auch wenn ihr keine
- Relevanz für die Errettung/Erlösung verneint wird. Also er als Segnung verstanden wird.");
+ Relevanz für die Errettung/Erlösung zugesprochen wird. Sie wird als Segnung verstanden.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 123,
@@ -148,7 +148,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 132,
 "Abendmahl",
 "Zum Abendmahl sollten nur Mitglieder der eigenen Konfession zugelassen sein",
-"Die Katholiken lassen z.B. nur Menschen zu, dir ihr Abendmahlverständnis teilen.");
+"Die Katholiken lassen z.B. nur Menschen zu, die ihr Abendmahlsverständnis teilen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 133,
@@ -182,14 +182,14 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 142,
 "Bibel",
-"Ich akzeptiere nur die Bibel als Grundlage des Glaubens und als alleiniger Maßstab.",
-"Das zielt auf das <i>sola scriptura</i>(lat. allein die Schrift) ab, also dienen
- Evangelische Theologie");
+"Ich akzeptiere nur die Bibel als Grundlage des Glaubens und als alleinigen Maßstab.",
+"Das zielt auf das <i>sola scriptura</i>(lat. allein die Schrift) ab, also das Dienen
+ gemäß der Evangelischen Theologie");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 143,
 "Bibel",
-"Für mich gibt es noch über den Bibelkanon hinaus Bücher die von Gott inspiriert sind.",
+"Für mich gibt es noch über den Bibelkanon hinaus Bücher, die von Gott inspiriert sind.",
 "Liberale Quäker und Mormonen dürfen hier zustimmen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -202,7 +202,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 145,
 "Bibel",
 "Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel öffnen.",
-"Gemeint ist, das eine pietistische Position vertreten wird. Dem Wunsch nach 
+"Gemeint ist, dass eine pietistische Position vertreten wird, der Wunsch nach 
 Verifizierbarkeit des persönlichen Glaubens und Handelns. Eine Wahrheit wird der
 Bibel unhinterfragt unterstellt. Diese Wahrheit muss aber entdeckt und verstanden werden.");
 
@@ -225,7 +225,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 151,
 "Gemeinde",
-"Ich glaube an das Priestertum aller und will dass die Gemeinde von allen 
+"Ich glaube an das Priestertum Aller und möchte, dass die Gemeinde von Allen 
  gemeinsam geleitet wird (demokratische Abstimmungenen oder ähnliches).",
 "Der Gegenentwurf wäre eine Hierarchische Organisation.");
 
@@ -234,7 +234,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Gemeinde",
 "Mir ist wichtig, dass eine Gemeinde autonom ist.",
 "Dies wird auf die Ortsgemeinden der beiden großen <i>Volkskirchen</i> nicht zutreffen.
- Bei den Mennoniten ist das z.B. aber sehr ausgeprägt.");
+ Bei den Mennoniten ist das z.B. sehr ausgeprägt.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 153,
@@ -246,7 +246,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 154,
 "Gemeinde",
 "Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglieder aus der 
- Gemeinde ausgeschlossen werden.",
+ Gemeinde ausgeschlossen werden, wie z.B. bei den Zeugen Jehovas",
 "Klassisches Gegenbeispiel ist die katholische Kirche, die Mitglieder maximal
  vom Abendmahl (<i>Exkommunikation</i>) ausschließt, aber niemals 
  vollständig die Mitgliedschaft entzieht.");
@@ -255,12 +255,12 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 155,
 "Gemeinde",
 "Frauen sollen alle Aufgabe in der Gemeinde (einschließlich des Predigen) übernehmen können.",
-"Heute schon fast überall selbstverständlich. Aber nicht z.B. bei der Kath. Kirche.");
+"Heute schon fast überall selbstverständlich. Aber nicht z.B. in der Kath. Kirche und bei den Zeugen Jehovas.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 156,
 "Gemeinde",
-"Zu den Pflichten in der Gemeinde gehört auch das man regelmäßig in Erscheinung 
+"Zu den Pflichten in der Gemeinde gehört auch, dass man regelmäßig in Erscheinung 
  tritt und sich aktiv einbringt.",
 "Gerade in kleineren autonomen Gemeinden wird das unausgesprochen erwartet.");
 
@@ -319,7 +319,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 167,
 "Sexualität",
 "Schwangerschaftsabbrüche lehne ich kategorisch ab.",
-"Extrem Fälle, wo der Tod der Mutter billigend in kauf genommen wird sind hier
+"Extrem Fälle, wo der Tod der Mutter billigend in Kauf genommen wird, sind hier
  nicht gemeint.");
 
 -- ============================= Kat. Gottesdienst beginnend mit 17... =======
@@ -376,7 +376,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 183,
 "Erlösung",
-"Menschen können auch noch nach ihrem Tod Busse tun, um der Verdammnis zu entgehen (Fegefeuer).",
+"Menschen können auch noch nach ihrem Tod Buße tun, um der Verdammnis zu entgehen (Fegefeuer).",
 "");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -404,7 +404,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 187,
 "Erlösung",
 "Es kann nur eine Wahrheit geben und deshalb nur einen Weg zur Erlösung führen.",
-"Hier werden Die zustimmen, die nicht müde werden immer wieder Joh. 14:6 zu
+"Hier werden diejenigen zustimmen, die nicht müde werden immer wieder Joh. 14:6 zu
  zitieren.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -418,9 +418,8 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 189,
 "Erlösung",
 "Eine Erlösung (vom Bösen/ der Sünde) ist schon im Diesseits möglich.",
-"Gemeint ist, das ein Leben ohne Sünde möglich ist. Also an ein <i>Perfektionismus</i>
- geglaubt und angestrebt wird. Zu finden u.a. im Pietismus und konservativen
- Quäkertum.");
+"Gemeint ist, das ein Leben ohne Sünde möglich ist. Hier wird ein <i>Perfektionismus</i>
+ angestrebt, wie er im Pietismus und konservativen Quäkertum. angestrebt wird");
 
 
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============
@@ -429,14 +428,14 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 191,
 "Sonstiges",
 "Politische Aktivitäten oder Themen haben in der Gemeinde keinen Platz.",
-"Der Glaube ist also in erster Linie Privatangelegenheit. Oder Politik werden
- an sich als zu weltlich abgelehnt. ");
+"Der Glaube ist also in erster Linie Privatangelegenheit. Bzw. Politik wird
+ als zu weltlich abgelehnt, wie z.B. bei den Zeugen Jehovas");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 192,
 "Sonstiges",
 "Soziales Engagement (in der Welt) ist existenzieller Bestandteil des Evangeliums.",
-"Die Frage dahinter ist im Grunde, ob man sich von der sündigen Welt abwendet
+"Die Frage dahinter ist im Grunde, ob man sich von der sündigen Welt abwendet,
  weil man sein Heil nur in der eigenen Gemeinschaft erwartet, oder ob man den
  Anspruch oder das Ziel hat, die Sünde in der Welt zu bekämpfen und Gutes zu tun.");
 
@@ -444,7 +443,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 193,
 "Sonstiges",
 "Der Missionsauftrag ist ein wichtiger Bestandteil des Evangeliums.",
-"Die Überzeugung dahinter ist meist, das erst die Bekehrung zur Abkehr von der 
+"Die Überzeugung dahinter ist meistens, dass erst die Bekehrung zur Abkehr von der 
  Sünde führt und das auf diesem Weg die Sünde in der Welt bekämpft wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -463,7 +462,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 196,
 "Sonstiges",
 "Alkohol und/oder andere Drogen versperren den Weg zu spiritueller Entwicklung.",
-"Hier ist gemeint, das Abstinenz spirituell geboten ist.");
+"Hier ist gemeint, dass Abstinenz spirituell geboten ist.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 197,
@@ -475,14 +474,14 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 198,
 "Sonstiges",
 "In Heilgenbilder und -Skulpturen kann ich Halt und Trost finden.",
-"Steht für einigen in Konflikt zu dem Gebot sich keine Abbilder und Götzen zu machen.");
+"Steht für einigen Christen im Konflikt zu dem Gebot, sich keine Abbilder und Götzen zu machen.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 199,
 "Erlösung",
 "Wehrdienst lehne ich ab.",
-"Was nicht heißen muss, das Institutionelle Gewalt (Polizei) zum Aufrechterhaltung 
- des öffentlichen Lebens abgelehnt wird. So fern sie angemessen, gerächt und durch
+"Was nicht heißen muss, dass Institutionelle Gewalt (Polizei) zum Aufrechterhaltung 
+ des öffentlichen Lebens abgelehnt wird, sofern sie angemessen, gerecht und durch
  Gewaltenteilung kontrolliert wird. Dies trifft für kriegerische Auseinandersetzung
  zweier Staaten nicht zu.");
 
