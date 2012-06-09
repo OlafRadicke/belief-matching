@@ -33,7 +33,6 @@ INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, comm
 VALUES ( 113, 6, 0, 
 "Nein. Der persönliche Offenbarung wird keine große Rolle beigemessen.");
 
---"Gott offenbart sich durch die Bibel."
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
 VALUES ( 114, 6, 1, 
 "Die Bibel ist die einzige Grundlage für das theologische Urteilen oder Verurteilen. ");

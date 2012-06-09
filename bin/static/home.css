@@ -338,6 +338,13 @@ div.appbox li{
     margin: 15px;
 }
 
+div.appbox textarea.result {
+    width: 100%; 
+    align: center;
+    background: #F5F5F5;
+    
+}
+
 /* -------- Footer --------------------------------*/
 div.footer {
     align: center;

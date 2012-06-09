@@ -207,7 +207,7 @@ class HtmlTemplate:
         _liste = Tag ( "ul" )
         _liste.setAttribute ( "id", "portal-globalnav" )
         
-        # home 
+        # ######### menu begin ###########################################
         _item_home = Tag ( "li" )
         if ( aktivtab == "home"):
             _item_home.setAttribute ( "class", "tableft_activ" )
@@ -238,13 +238,23 @@ class HtmlTemplate:
 
         _item_database = Tag ( "li" )
         if ( aktivtab == "participate"):
-            _item_database.setAttribute ( "class", "tabright_activ" )
+            _item_database.setAttribute ( "class", "tabmiddle_activ" )
         else:
-            _item_database.setAttribute ( "class", "tabright" )
+            _item_database.setAttribute ( "class", "tabmiddle" )
         _item_database.addContent ( u'<a href="participate">Mitmachen</a>' )
         _liste.addContent ( _item_database )        
         
-        #
+        # sqlgenerator
+
+        _item_database = Tag ( "li" )
+        if ( aktivtab == "sqlgenerator"):
+            _item_database.setAttribute ( "class", "tabright_activ" )
+        else:
+            _item_database.setAttribute ( "class", "tabright" )
+        _item_database.addContent ( u'<a href="sqlgenerator">SQL-Generator</a>' )
+        _liste.addContent ( _item_database )        
+        
+        # ############ menu end #############################################
         
         _menu.addContent ( _liste )
         _all.addContent ( _menu )

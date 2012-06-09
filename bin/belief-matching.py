@@ -26,12 +26,14 @@ import index
 import belieftest
 import datenbasis
 import participate
+import sqlgenerator
 
 urls = (
   '/', 'index.index',
   '/test', 'belieftest.belieftest',
   '/datenbasis','datenbasis.datenbasis',
-  '/participate','participate.participate')
+  '/participate','participate.participate',
+  '/sqlgenerator','sqlgenerator.sqlgenerator')
 
 app = web.application(urls, globals())#, web.reloader)
 render = web.template.render('templates/')
