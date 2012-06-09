@@ -229,7 +229,7 @@ class sqlgenerator:
             _tooltip = HtmlTemplate.Tag ( "a" )
             _tooltip.setAttribute ( "href", "#hint" )
             _tooltip.setAttribute ( "class", "tooltip" )
-            _tooltip.addContent ( u'<b>Aussga:</b> ' + unicode( row[2] ) )
+            _tooltip.addContent ( u'<b>Aussge:</b> ' + unicode( row[2] ) )
             
             _info = HtmlTemplate.Tag ( "span" )
             _info.setAttribute ( "class", "info" )
