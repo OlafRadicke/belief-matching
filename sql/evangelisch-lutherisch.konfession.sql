@@ -39,7 +39,7 @@ VALUES ( 114, 6, 1,
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary) 
 VALUES ( 115, 6, 0, 
-"Dem Prophetisch wird keine große Bedeutung zugeschrieben.");
+"Dem Prophetischen wird keine große Bedeutung zugeschrieben.");
 
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
 
@@ -48,7 +48,7 @@ VALUES ( 121, 6, 1,
 "Die Taufe ist <i>heilig</i> also ein Sakrament und Voraussetzung für die Errettung");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 122, 6, 1, "Ja, aber nicht durch untertauhen.");
+VALUES ( 122, 6, 1, "Ja, aber nicht durch Untertauchen.");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 123, 6, 0, "Die Kindertaufe ist sehr gebräuchlich und die Regel.");
@@ -61,12 +61,12 @@ VALUES ( 131, 6, 1, "Die Gegenwart Christi im Heiligen Abendmahl wird als
  ausgeteilt und empfangen. ");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 132, 6, 1, "Entscheidend ist die Anerkennung der Taufe. Und nicht von 
- allen Konfessionen/Kirchen wird die Taufe anerkannt.");
+VALUES ( 132, 6, 1, "Entscheidend ist die Anerkennung der Taufe. Sie wird nicht von 
+ allen Konfessionen/Kirchen.");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 133, 6, 1, "Ja, nur getaufte sind zugelassen. In der konkreten Praxis
+VALUES ( 133, 6, 1, "Ja, nur Getaufte sind zugelassen. In der konkreten Praxis
  wird davon aber oft abgewichen");
 
 
@@ -98,9 +98,9 @@ VALUES ( 144, 6, 1,
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 145, 6, 0, 
-"Die notwendigkeit einer Auslegung wird zwar bejat, aber aus einer wissenschaftlichen
+"Die Notwendigkeit einer Auslegung wird zwar bejat, aber aus einer wissenschaftlichen
  (historisch-kritischen) Perspektive. Das Konzept - <i>Geist der Bibel</i> - ist
- dem er fremd.");
+ dem fremd.");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 146, 6, 0, 
@@ -135,7 +135,7 @@ VALUES ( 155, 6, 1, "Frauen können alle Ämter bekleiden.");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 156, 6, 0, "Die meisten Mitglieder gehen selten bis gar nicht zum
- Gottesdienst oder beteiligen sich nicht am Gemeinde Leben. Oft werden nur die wichtigen
+ Gottesdienst oder beteiligen sich nicht am Gemeindeleben. Oft werden nur die wichtigen
  Veranstaltungen wahrgenommen: Taufe, Heirat, Weihnachten und Beerdigung...");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
@@ -216,8 +216,8 @@ VALUES ( 186, 6, 0, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 187, 6, 0, "Anderen Gemeinschaften wird nicht grundsätzlich abgesprochen
- das sie erlöst werden könnten. Es gibt aber Glaubensgemeinschaften (die 
+VALUES ( 187, 6, 0, "Anderen Gemeinschaften wird nicht grundsätzlich abgesprochen,
+ dass sie erlöst werden könnten. Es gibt aber Glaubensgemeinschaften (die 
  <i>Friedenskirchen</i>) die im <i>Confessio Augustana</i> verdammt werden. ");
 
 

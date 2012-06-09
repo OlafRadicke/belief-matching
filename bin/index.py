@@ -1,4 +1,3 @@
-
 # -*- coding: utf_8 -*-
 
 #    Copyright (C) 2012  Olaf Radicke
@@ -46,7 +45,7 @@ class index:
         _appbox.addContent ( _h3_aboud )        
         
         _p_1 = HtmlTemplate.Tag ( "p" )
-        _p_1.addContent ( u'''Diese Programm ist ein Tool um herauszufinden mit 
+        _p_1.addContent ( u'''Dieses Programm ist ein Tool, um herauszufinden mit 
             welchen Glaubensgemeinschaften deine eigene Überzeugeng am meisten 
             übereinstimmt. Inspiriert ist das Projekt von dem ''' )
         
@@ -59,9 +58,9 @@ class index:
         
         _p_2 = HtmlTemplate.Tag ( "p" )
         _p_2.addContent ( u'''Es gibt bekanntlich <i>sehr</i> viele verschiedene 
-            Glaubensgemeinschaften. Diese Programm konzentriert sich auf die 
+            Glaubensgemeinschaften. Dieses Programm konzentriert sich auf die 
             christlichen Konfessionen, die im deutschsprachigem Raum anzutreffen 
-            sind. Und auch das dürften schon viele dutzende sein.''' )
+            sind. Und auch das dürften schon viele Dutzende sein.''' )
         _appbox.addContent ( _p_2 )   
 
         _p_3 = HtmlTemplate.Tag ( "p" )
@@ -80,7 +79,7 @@ class index:
             ernst!</b> Ein Computer-Programm' kann nur ein sehr begrenztes 
             Spektrum der realen Welt abstrahieren. Selbstverständlich ist eine 
             (Glaubens-)Gemeinschaft mehr als die Summe ihre Grundsätze. Das 
-            Programm soll viel mehr anregen über die eigenen Anschauungen und 
+            Programm soll viel mehr anregen, über die eigenen Anschauungen und 
             die der anderen nachzudenken; Gemeinsamkeiten aber auch Unterschiede 
             zu entdecken.''' )
         _appbox.addContent ( _p_4 )
@@ -90,10 +89,10 @@ class index:
         _appbox.addContent ( _h3_todo )
         
         _p_5 = HtmlTemplate.Tag ( "p" )
-        _p_5.addContent ( u'''Es wird noch einige Zeit brauchen bis alle - oder 
+        _p_5.addContent ( u'''Es wird noch einige Zeit brauchen, bis alle - oder 
             die meisten - Konfessionen in die Datenbank eingepflegt sind. Du 
             kannst aber mithelfen den Prozess zu beschleunigen und die Quallität 
-            zu verbessern, in dem du deine Anmerkungen und Vorschläge an mich 
+            zu verbessern, indem du deine Anmerkungen und Vorschläge an mich 
             schickst (<a href="mailto:briefkasten@olaf-radicke.de">
             briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen 
             kannst, kannst du auch direkt über 
@@ -102,13 +101,13 @@ class index:
             <a href="http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License">
             GNU Affero General Public License</a>, also also eine freie Software, 
             die du benutzen, verändern und weitergeben darfst. Vorausgesetzt, 
-            das du allen Anderen die selben rechte einräumst.'''  )
+            das du allen Anderen die selben Rechte einräumst.'''  )
         _appbox.addContent ( _p_5 )
 
         _p_6 = HtmlTemplate.Tag ( "p" )
         _p_6.addContent ( u'''Der Name des Projektes <i>belief-matching</i> ist nur ein
-            vorläufiger Arbeitstitel. Die suche nach einem geeigneten Namen ist noch   
-            nicht abgeschlossen und für Vorschläge bin ich hier dankbar.'''   )  
+            vorläufiger Arbeitstitel. Die Suche nach einem geeigneten Namen ist noch   
+            nicht abgeschlossen. Für Vorschläge hierzu bin ich dankbar.'''   )  
         _appbox.addContent ( _p_6 )
 
         htmlcode += self.htemp.getCompleteSite( "home", _appbox )
