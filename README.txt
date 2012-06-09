@@ -17,15 +17,15 @@ Installation:
 
     Neuinstallation:
 
-Als root den Befehl "make" ausführen und danach mit 
+Als root den Befehl "make && make install" ausführen und danach mit 
 "/etc/init.d/belief-matching start" den Server starten. Danach im Browser unter
 "http://localhost/"  aufrufen.
 
     Update
 
 Server stoppen mit: "/etc/init.d/belief-matching stop" dann im Verzeichnis des
-herunter geladenen Programms "make uninstall && make" aufrufen und danach den 
-starten mit: "/etc/init.d/belief-matching start"
+herunter geladenen Programms "make clean && make && make uninstall && make install" 
+aufrufen und danach den starten mit: "/etc/init.d/belief-matching start"
 
 
 TODOs
