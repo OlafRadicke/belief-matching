@@ -172,7 +172,6 @@ class sqlgenerator:
         
         _form.addContent ( _p_2 )
         
-        _p_table = HtmlTemplate.Tag ( "p" )
         _table =  HtmlTemplate.Tag ( "table" )
         
         _table_titles =   HtmlTemplate.Tag ( "tr" )
@@ -286,8 +285,7 @@ class sqlgenerator:
             _rowTag.addContent ( _col_5 )    
             _table.addContent ( _rowTag )
             
-        _p_table.addContent ( _table )
-        _form.addContent (  _p_table )
+        _form.addContent (  _table )
         
         _p_button = HtmlTemplate.Tag ( "p" )
         _p_button.addContent ( u'<br>' )
