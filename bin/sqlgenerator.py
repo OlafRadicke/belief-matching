@@ -106,8 +106,8 @@ class sqlgenerator:
             _sqlcode += u'    VALUES ( \n '
             _sqlcode += u'        ' + str( q_no ) + ', \n'
             _sqlcode += u'        ' + str( _highestID) + ', \n'
-            _sqlcode += u'        ' + str( widgetlist['answer_' + str(q_no)] ) + ', \n'
-            _sqlcode += u'        "' + str( widgetlist['comment_'  + str(q_no)] ) + '"); \n \n'
+            _sqlcode += u'        ' +   widgetlist['answer_' + str(q_no)]  + ', \n'
+            _sqlcode += u'        "' +  widgetlist['comment_'  + str(q_no)]  + '"); \n \n'
 
         _sqlcode += u'COMMIT;; \n\n'
         return _sqlcode

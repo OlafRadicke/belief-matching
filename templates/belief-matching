@@ -13,28 +13,32 @@ cd $BASEPATH
 
 case "$1" in
   start)
-    echo -n "Start belief-maching"
+    echo -n "Start.... "
     nohup python $DAEMON $PORT &>> /var/log/belief-maching.log &
-    echo -n "== Start server ==" >> /var/log/belief-maching.log &
     echo $! > ${PID}
-    echo "."
+    echo "PID: " 
+    cat ${PID}
+    echo "....oky"
+    echo -n "== Start server ==" >> /var/log/belief-maching.log &
     ;;
   stop)
-    echo -n "Stoppe belief-maching"
+    echo -n "Stop.... "
     kill `cat ${PID}`
     echo -n "== Stoppe server ==" >> /var/log/belief-maching.log &
     echo  > ${PID}
     echo "."
     ;;
   restart)
-    echo -n "Stoppe belief-maching"
+    echo -n "Stop.... "
     kill `cat ${PID}`
-    echo "."
-    echo -n "Start hcmt-web"
+    echo "...."
+    echo -n " ...Start "
     nohup python $DAEMON $PORT &>> /var/log/belief-maching.log &
+    echo $! > ${PID}
+    echo "PID: " 
+    cat ${PID}
+    echo "....oky"
     echo -n "== Start server ==" >> /var/log/belief-maching.log &
-    echo  $! > ${PID}
-    echo "."
     ;;
   *)
     echo "Usage: ${0} {start|stop|restart}"
