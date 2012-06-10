@@ -1,7 +1,7 @@
 belief-matching
 ===============
 
-Kleines Web-Programm was dem Besucher eine Glaubensgemeinschaft empfiehlt.
+Kleines Web-Programm das dem Besucher nach der Prüfung seiner Glaubensgrundsätze eine Glaubensgemeinschaft empfiehlt.
 
 Lizenz:
 -------
