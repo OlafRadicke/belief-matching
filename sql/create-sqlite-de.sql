@@ -370,8 +370,10 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 182,
 "Erlösung",
-"Ich glaube, dass es eine Hölle mit ewiger Verdammnis gibt.",
-"");
+"Menschen können verloren gehen, nicht alle Menschen kommen in Gottes Reich",
+"Der Gegenentwurf bzw. Überzeug ist die theologische Lehre von der 
+ Wiederherstellung aller Dinge am Ende der Zeiten. Die s.g. Apokatastasis oder
+ auch <i>Allversöhnung</i>");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 183,
