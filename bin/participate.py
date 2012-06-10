@@ -36,6 +36,7 @@ class participate:
         
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
+        _appbox.setAttribute ( "id", "participate" )
         
         # bild 1
         
