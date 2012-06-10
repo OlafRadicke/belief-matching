@@ -274,7 +274,6 @@ class sqlgenerator:
         _button.setAttribute ( "id", "generieren" )
         _button.setAttribute ( "name", "generieren" )
         _p_button.addContent ( _button )
-        #_p_button.addContent ( form.Button('Generieren').render() )
         _form.addContent ( _p_button )
         _appbox.addContent ( _form )
             
