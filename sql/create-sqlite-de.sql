@@ -174,7 +174,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 141,
 "Bibel",
-"Als <i>bibeltreu</i> kann sich nur jemand bezeichnen, der ich die Bibel wortwörtlich nimmt.",
+"Als <i>bibeltreu</i> kann sich nur jemand bezeichnen, der die Bibel wortwörtlich nimmt.",
 "Quäker werden diese Aussage z.B. verneinen, da sie den <i>Geist der Bibel</i> 
  für entscheidend halten. Nach ihrem Verständnis ist <i>bibeltreu</i> wer in 
  diesem Geist lebt und handelt.");
