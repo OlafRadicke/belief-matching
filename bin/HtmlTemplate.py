@@ -171,6 +171,13 @@ class HtmlTemplate:
         _charset.setAttribute ( "content", "text/html;  charset=utf-8" )
         _head.addContent ( _charset )
         
+        #<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        _link_2 = TagSingle ( "link" )
+        _link_2.setAttribute ( "rel", "shortcut icon" )
+        _link_2.setAttribute ( "href", "static/favicon.ppm" )
+        _link_2.setAttribute ( "type", "image/x-icon" )
+        _head.addContent ( _link_2 )
+        
         _htmlTag.addContent ( _head )
         
         _body = Tag ( "body" )
