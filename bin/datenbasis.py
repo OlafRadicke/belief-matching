@@ -138,6 +138,7 @@ class datenbasis:
         _titleLink.addContent ( self.getUrlOfDenomination ( _id ) )
         _title.addContent ( _titleLink )
         _table_titles.addContent ( _title )
+        _table.addContent ( _table_titles )
             
         for row in cur:
             _row  =  HtmlTemplate.Tag ( "tr" )

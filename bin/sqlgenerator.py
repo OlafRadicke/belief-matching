@@ -235,9 +235,11 @@ class sqlgenerator:
             _col_3.addContent ( _tooltip )
             _col_3.addContent ( "<br>" )
             
+            # column: comment
+            
             _comment = HtmlTemplate.Tag ( "textarea" )
             _comment.setAttribute ( "name", "comment_" + str ( row[0] )  )
-            _comment.setAttribute ( "cols", "40" )
+            _comment.setAttribute ( "cols", "60" )
             _comment.setAttribute ( "rows", "2" )
             _comment.addContent ( u'(Noch) Kein Kommentar' )
             _col_3.addContent ( _comment )
