@@ -139,6 +139,7 @@ class datenbasis:
         _titleLink.addContent ( self.getUrlOfDenomination ( _id ) )
         _title.addContent ( _titleLink )
         _table_titles.addContent ( _title )
+        _title.addContent ( u")" )
         _table.addContent ( _table_titles )
             
         for row in cur:
