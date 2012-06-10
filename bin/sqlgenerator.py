@@ -268,7 +268,13 @@ class sqlgenerator:
         
         _p_button = HtmlTemplate.Tag ( "p" )
         _p_button.addContent ( u'<br>' )
-        _p_button.addContent ( form.Button('Generieren').render() )
+               
+        _button = HtmlTemplate.Tag ( "button" )
+        _button.addContent ( u'SQL-Code Generieren' )
+        _button.setAttribute ( "id", "generieren" )
+        _button.setAttribute ( "name", "generieren" )
+        _p_button.addContent ( _button )
+        #_p_button.addContent ( form.Button('Generieren').render() )
         _form.addContent ( _p_button )
         _appbox.addContent ( _form )
             
