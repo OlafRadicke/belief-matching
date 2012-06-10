@@ -72,6 +72,7 @@ class datenbasis:
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
         _form.setAttribute ( "name", "database" )
+        _form.setAttribute ( "action", "datenbasis" )
         _form.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
        
         _select = HtmlTemplate.Tag ( "select" )
