@@ -26,7 +26,7 @@ class index:
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute('''
-            SELECT denomination_id, denomination 
+            SELECT denomination_id, denomination, url
             FROM denominations 
             ORDER BY denomination;
             ''' )
@@ -69,8 +69,13 @@ class index:
         
         _list = HtmlTemplate.Tag ( "ul" )
         for row in cur:
+            _item_link = HtmlTemplate.Tag ( "a" )
+            _item_link.setAttribute ( "href" , row[2] )
+            _item_link.addContent ( row[1] )
+            
             _item = HtmlTemplate.Tag ( "li" )
-            _item.addContent ( row[1] ) 
+            _item.addContent ( _item_link ) 
+            
             _list.addContent ( _item ) 
         _appbox.addContent ( _list )
         

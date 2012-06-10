@@ -11,7 +11,7 @@ BEGIN;
 -- ################ Eindeutige ID für Konfession setzen #####################
 INSERT INTO denominations ( denomination_id, denomination, url ) VALUES (
 2,
-"Liberale Quaker",
+"Liberale Quäker",
 "http://de.wikipedia.org/wiki/Qu&auml;kertum");
 
 -- ################  Frage mit Konfession verknüpfen. #######################
