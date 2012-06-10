@@ -147,8 +147,11 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 132,
 "Abendmahl",
-"Zum Abendmahl sollten nur Mitglieder der eigenen Konfession zugelassen sein",
-"Die Katholiken lassen z.B. nur Menschen zu, die ihr Abendmahlsverständnis teilen.");
+"Zum Abendmahl sollten nur Mitglieder der eigenen Konfession oder der selben 
+ Überzeugung zugelassen sein",
+"Die Katholiken lassen z.B. nur Menschen zu, die ihr Abendmahlsverständnis teilen.
+ Andere z.B. nur <i>wiedergeborener Christ</i>, also Menschen
+ die ein Bekehrungserlebnis hatten.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 133,
@@ -174,10 +177,8 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 141,
 "Bibel",
-"Als <i>bibeltreu</i> kann sich nur jemand bezeichnen, der die Bibel wortwörtlich nimmt.",
-"Quäker werden diese Aussage z.B. verneinen, da sie den <i>Geist der Bibel</i> 
- für entscheidend halten. Nach ihrem Verständnis ist <i>bibeltreu</i> wer in 
- diesem Geist lebt und handelt.");
+"Ich glaube an die Verbalinspiration der Bibel.",
+"Gemeint ist die Unfehlbarkeit und Widerspruchsfreiheit der Bibel. (Quelle: Wikipedia)");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 142,
@@ -195,16 +196,21 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 144,
 "Bibel",
-"Die Bibel bedarf immer einer Auslegung. Dabei muss der historische Kontext beachtet werden.",
-"Gemeint ist die s.g. <i>historisch-kritischen Exegese</i> des Bibeltextes.");
+"Ich glaube an die Realinspiration der Bibel. Dabei muss der historische Kontext 
+ beachtet werden.",
+"Gemeint ist das nicht die Schrift selbst, wohl aber bestimmte Inhalte oder 
+ Ideen der Schrift (von Gott) inspiriert sind. Also überzeitliche religiöse 
+ ethische Ideen die kein historischen Anspruch haben. (Quelle: Wikipedia)
+ Die s.g. <i>historisch-kritischen Exegese</i> des Bibeltextes wird nicht
+ abgelehnt.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 145,
 "Bibel",
-"Die Bibel bedarf immer einer Auslegung. Dabei muss man sich dem Geist der Bibel öffnen.",
-"Gemeint ist, dass eine pietistische Position vertreten wird, der Wunsch nach 
-Verifizierbarkeit des persönlichen Glaubens und Handelns. Eine Wahrheit wird der
-Bibel unhinterfragt unterstellt. Diese Wahrheit muss aber entdeckt und verstanden werden.");
+"Ich glaube an die Personalinspiration der Bibel.",
+"Gemeint ist das nicht die Schrift, sondern die Autoren der Texte inspiriert 
+ waren (Quelle: Wikipedia). Also nicht wörtlich eingegeben. Die Schrift wird nicht
+ als unfehlbar und widerspruchslos betrachtet. ");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 146,
