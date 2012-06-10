@@ -27,18 +27,34 @@ Server stoppen mit: "/etc/init.d/belief-matching stop" dann im Verzeichnis des
 herunter geladenen Programms "make clean && make && make uninstall && make install" 
 aufrufen und danach den starten mit: "/etc/init.d/belief-matching start"
 
+    logging
+
+Der Server log die Verbindungen nach  /var/log/belief-maching.logging
 
 TODOs
 -----
 
 Konfessionen in die Datenbank einpflegen. Z.B.:
 
+* Evangelisch-lutherische Kirchen
+ - Review / Überprüfung steht noch aus
+* Konservative Quäker
+ - Review / Überprüfung steht noch aus
+* Liberale Quäker
+ - Review / Überprüfung steht noch aus
+* Mennoniten
+ - Review / Überprüfung steht noch aus
+* Reformierte Kirchen
+ - Review / Überprüfung steht noch aus
+* Römisch-katholische Kirche
+ - Review / Überprüfung steht noch aus
+* Zeugen Jehovas
+ - Review / Überprüfung steht noch aus
 * Röm.-Kath.-Kirche 
  - Review / Überprüfung steht noch aus
  - Kommentare fehlen
 * Lutheraner 
  - Review / Überprüfung steht noch aus
-* Reformierten/Calvinismus
 * Baptisten
 * Mormonen
 * Methodisten
