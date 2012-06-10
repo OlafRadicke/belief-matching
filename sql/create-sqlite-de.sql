@@ -398,7 +398,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 185,
 "Erlösung",
-"Wirtschaftlicher Erfolg ist ein Zeichen dafür, dass man in der Gnade Gottes steht.",
+"Wenn man Gottes Gebote befolgt wird man von Gott auch materiell gesegnet werden" ,
 "Hier lautet das Schlagwort: <i>Wohlstandsevangelium</i> (engl.: Prosperity Gospel).
  Der Calvinismus weist z.T. solche Tendenzen auf.");
 
