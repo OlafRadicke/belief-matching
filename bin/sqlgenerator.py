@@ -114,7 +114,7 @@ class sqlgenerator:
         
         
     def GET(self):
-        _answer_optionen = self.getAnswers()
+        _answer_optionen = self.getAnswers ()
         _last_kat = ""
         weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')

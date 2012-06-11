@@ -23,7 +23,7 @@ from web import form
 
 import HtmlTemplate
 
-class datenbasis:    
+class databaseview:    
 
     htemp = HtmlTemplate.HtmlTemplate()  
     
@@ -71,8 +71,8 @@ class datenbasis:
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
-        _form.setAttribute ( "name", "database" )
-        _form.setAttribute ( "action", "datenbasis" )
+        _form.setAttribute ( "name", "databaseview" )
+        _form.setAttribute ( "action", "databaseview" )
         _form.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
        
         _select = HtmlTemplate.Tag ( "select" )
@@ -174,5 +174,25 @@ class datenbasis:
             _table.addContent ( _row )   
 
         _appbox.addContent ( _table )
+        
+        
+        _form = HtmlTemplate.Tag ( "form" )
+        _form.setAttribute ( "method", "POST" )
+        _form.setAttribute ( "name", "databaseedit" )
+        _form.setAttribute ( "action", "databaseedit" )
+        
+        _p_editdb = HtmlTemplate.Tag ( "p" )
+        _p_editdb.addContent ( u'''<b>Du bist nicht mit allen Punkten einverstanden?</b>
+        <br>Dann sende mir deine Liste mit den Änderungswünsche:<br>''')
+               
+        _button = HtmlTemplate.Tag ( "button" )
+        _button.addContent ( u'Liste mit Änderungswünsche erstellen' )
+        _button.setAttribute ( "id", "edit_denomination" )
+        _button.setAttribute ( "name", "edit_denomination" )
+        _button.setAttribute ( "value", _id )
+        _p_editdb.addContent ( _button )
+        _form.addContent ( _p_editdb )
+        _appbox.addContent ( _form )
+        
         htmlcode += self.htemp.getCompleteSite( "datenbasis", _appbox )
         return self.htemp.convertGermanChar( htmlcode )

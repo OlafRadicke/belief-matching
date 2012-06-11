@@ -486,7 +486,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 199,
-"Erlösung",
+"Sonstiges",
 "Wehrdienst lehne ich ab.",
 "Was nicht heißen muss, dass Institutionelle Gewalt (Polizei) zum Aufrechterhaltung 
  des öffentlichen Lebens abgelehnt wird, sofern sie angemessen, gerecht und durch
@@ -495,7 +495,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1910,
-"Erlösung",
+"Sonstiges",
 "Ich schwöre nicht und lege keine Eide ab.",
 "Abgeleitet aus der Bergpredigt: Mt. 5:34.");
 

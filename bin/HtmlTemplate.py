@@ -42,7 +42,13 @@ class Tag:
 
     ## add a content 
     def addContent( self, _cont ):
-        self.m_content.append ( _cont )
+        if isinstance(_cont, Tag ) :
+            self.m_content.append ( _cont )
+            #_outString += "..."
+        elif isinstance(_cont, TagSingle ) :
+            self.m_content.append ( _cont )
+        else:
+            self.m_content.append ( _cont + u'' )
         
     ## add a attribute
     ## @parm _attName name of attribute
@@ -238,7 +244,7 @@ class HtmlTemplate:
             _item_database.setAttribute ( "class", "tabmiddle_activ" )
         else:
             _item_database.setAttribute ( "class", "tabmiddle" )
-        _item_database.addContent ( u'<a href="datenbasis">Datenbasis</a>' )
+        _item_database.addContent ( u'<a href="databaseview">Datenbasis</a>' )
         _liste.addContent ( _item_database )
         
         # participate
