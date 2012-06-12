@@ -67,25 +67,32 @@ class databaseedit:
         for row in cur:
             return row[0] 
         return ""
-
-
-    def GET(self):
+        
+    # formular for editing data.
+    def getSQLResulte ( self, _widgetlist ) :
+        
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
-        _intro = self.getIntro()
-        _appbox.addContent ( _intro )
-        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
-        return self.htemp.convertGermanChar( _htmlcode )
         
-    def POST(self):
+        _p_1 = HtmlTemplate.Tag ( "p" )
+        
+        _editor = HtmlTemplate.Tag ( "textarea" )
+        _editor.setAttribute ( "class", "result"  )
+        #_editor.setAttribute ( "cols", "80" )
+        _editor.setAttribute ( "rows", "40" )
+        #_editor.addContent ( self.getSqlCode() )
+        _editor.addContent ( unicode(_widgetlist) )
+        _p_1.addContent ( _editor )
+        
+        _appbox.addContent ( _p_1 )    
+        
+        
+        
+    # formular for editing data.
+    def getEditForm ( self, _widgetlist ) :
         
         _answer_optionen = self.getAnswers()
-        widgetlist = web.input(groups = []) 
-        print widgetlist
-        _id = widgetlist['edit_denomination']
-        print "Edit: "
-        print self.getDenominationName ( _id )
-        
+        _id = _widgetlist['edit_denomination']
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()  
         cur.execute ( '''
@@ -116,7 +123,7 @@ class databaseedit:
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
         _form.setAttribute ( "name", "test" )
-        _form.setAttribute ( "action", "sqlgenerator" )
+        _form.setAttribute ( "action", "databaseedit" )
         
         _table =  HtmlTemplate.Tag ( "table" )
         
@@ -210,8 +217,39 @@ class databaseedit:
  
             _table.addContent ( _rowTag )
             
+            
         _form.addContent (  _table )
+        
+        _p_editdb = HtmlTemplate.Tag ( "p" )
+        _p_editdb.addContent ( u'''<br>''')
+               
+        _button = HtmlTemplate.Tag ( "button" )
+        _button.addContent ( u'SQL-Code generieren' )
+        _button.setAttribute ( "id", "gen_sql" )
+        _button.setAttribute ( "name", "gen_sql" )
+        _button.setAttribute ( "value", _id )
+        _p_editdb.addContent ( _button )
+        _form.addContent ( _p_editdb )  
 
-        _appbox.addContent ( _table )
-        htmlcode += self.htemp.getCompleteSite( "datenbasis", _appbox )
-        return self.htemp.convertGermanChar( htmlcode )
+        _appbox.addContent ( _form )
+        return _appbox
+
+
+    def GET(self):
+        _appbox = HtmlTemplate.Tag ( "div" )
+        _appbox.setAttribute ( "class", "appbox" )
+        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        return self.htemp.convertGermanChar( _htmlcode )
+        
+    def POST(self):
+        
+        _widgetlist = web.input(groups = []) 
+        _appbox = ""
+        print _widgetlist
+        if "edit_denomination" in _widgetlist:
+            _appbox = self.getEditForm ( _widgetlist )
+        else:
+            return "SQL"
+        
+        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        return self.htemp.convertGermanChar( _htmlcode )
