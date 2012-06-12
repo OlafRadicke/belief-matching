@@ -71,6 +71,42 @@ class databaseedit:
     # formular for editing data.
     def getSQLResulte ( self, _widgetlist ) :
         
+        _id =  _widgetlist['gen_sql']
+        
+        _max_weighting_points = 0
+        max_points = 0
+        denomination_points = dict()
+        denomination_weighting_points = dict()
+        user_answers = dict()
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute("SELECT question_id FROM questions;")  
+        
+        widgetlist = web.input(groups = []) 
+        
+        _sqlcode = u'BEGIN; \n\n'
+        _sqlcode += u'INSERT INTO denominations ( denomination_id, denomination, url ) \n'
+        _sqlcode += u' VALUES ( \n'
+        _sqlcode += u'     ' + str( _id ) + u',  \n'
+        _sqlcode += u'     "' + self.getDenominationName ( _id ) + '", \n'
+        _sqlcode += u'     "' + self.getUrlOfDenomination ( _id ) + '"); \n\n'
+        
+
+        for row in cur:  
+            q_no = row[0]    
+            _sqlcode += u'INSERT INTO denomination_answers ( \n'
+            _sqlcode += u'        question_id, \n'
+            _sqlcode += u'        denomination_id, \n'
+            _sqlcode += u'        answer_nr, \n'
+            _sqlcode += u'        commentary ) \n '
+            _sqlcode += u'    VALUES ( \n '
+            _sqlcode += u'        ' + str( q_no ) + ', \n'
+            _sqlcode += u'        ' + str( _id) + ', \n'
+            _sqlcode += u'        ' +   widgetlist['answer_' + str(q_no)]  + ', \n'
+            _sqlcode += u'        "' +  widgetlist['comment_'  + str(q_no)]  + '"); \n \n'
+
+        _sqlcode += u'COMMIT;; \n\n' 
+        
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         
@@ -81,11 +117,11 @@ class databaseedit:
         #_editor.setAttribute ( "cols", "80" )
         _editor.setAttribute ( "rows", "40" )
         #_editor.addContent ( self.getSqlCode() )
-        _editor.addContent ( unicode(_widgetlist) )
+        _editor.addContent ( unicode( _sqlcode ) )
         _p_1.addContent ( _editor )
         
-        _appbox.addContent ( _p_1 )    
-        
+        _appbox.addContent ( _p_1 )   
+        return _appbox       
         
         
     # formular for editing data.
@@ -249,7 +285,7 @@ class databaseedit:
         if "edit_denomination" in _widgetlist:
             _appbox = self.getEditForm ( _widgetlist )
         else:
-            return "SQL"
+            _appbox = self.getSQLResulte ( _widgetlist )
         
         _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
         return self.htemp.convertGermanChar( _htmlcode )

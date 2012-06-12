@@ -184,8 +184,33 @@ div.appbox {
     margin: 5px 5px 5px 5px;
 }
 
-divappbox#participate {
-    min-height:1050px;
+
+div.appbox:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* div.appbox#participate { */
+div.floatleft {
+/*
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px 5px 5px 5px;  */
+    float: left;
+}
+
+
+/* div.appbox#participate div.col{ */
+div.floatleft div.col{
+    width: 50%; 
+    float: left;
 }
 
 /*----------- Tooltip ---------------*/
@@ -211,10 +236,10 @@ div.appbox .tooltip:hover span.info{
 }
 
 div.appbox a:link{
-color: black;
+    color: black;
 }
 div.appbox a:visited{
-color: black;
+    color: black;
 }
 
 div.appbox table { 
@@ -318,22 +343,15 @@ div.appbox button {
 }
 
 div.appbox img.participate_img {
-    width: 330px; 
+/*     width: 330px;  */
+    width: 90%; 
     border-radius: 10px;
     border-style: solid;
     border-color: #c1c1c1;
-    float: right;
+    float: center;
     margin: 15px;
 }
 
-div.appbox img.participate_img_left{
-    width: 330px; 
-    border-radius: 10px;
-    border-style: solid;
-    border-color: #c1c1c1;
-    float: left;
-    margin: 15px;
-}
 
 
 div.appbox li{
@@ -350,6 +368,7 @@ div.appbox textarea.result {
 
 /* -------- Footer --------------------------------*/
 div.footer {
+/*     width: 100%;  */
     align: center;
     text-align: center;
     padding: 5px;
@@ -361,6 +380,9 @@ div.footer {
     background: -webkit-linear-gradient( top, #373737, #A0A0A0);
     background: -moz-linear-gradient( top, #373737, #A0A0A0);
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
+    
+/*     float: left; */
+/*     float: bottom; */
     
 }
 
