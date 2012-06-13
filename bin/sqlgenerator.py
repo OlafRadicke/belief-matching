@@ -290,7 +290,7 @@ class sqlgenerator:
         
         _editor = HtmlTemplate.Tag ( "textarea" )
         _editor.setAttribute ( "class", "result"  )
-        #_editor.setAttribute ( "cols", "80" )
+        _editor.setAttribute ( "cols", "80" )
         _editor.setAttribute ( "rows", "40" )
         _editor.addContent ( self.getSqlCode() )
         _p_1.addContent ( _editor )

@@ -359,12 +359,24 @@ div.appbox li{
     margin: 15px;
 }
 
-div.appbox textarea.result {
+div.appbox textarea {
     width: 100%; 
-    align: center;
-    background: #F5F5F5;
+/*     align: center; */
+/*     background: #F5F5F5; */
+    background: #c1c1c1;
     
 }
+
+div.appbox textarea.result {
+    width: 100%; 
+/*     rows: 40; */
+/*     align: center; */
+/*     background: #F5F5F5; */
+    background: #FFDDDC;
+    
+}
+
+
 
 /* -------- Footer --------------------------------*/
 div.footer {

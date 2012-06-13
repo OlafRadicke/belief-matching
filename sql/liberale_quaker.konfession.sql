@@ -163,7 +163,7 @@ VALUES ( 173, 2, 1, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 173, 2, 0, "");
+VALUES ( 174, 2, 0, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)

@@ -229,7 +229,7 @@ VALUES ( 173, 7, 0, "Keine Bedeutung");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 173, 7, 0, "Keine zentrale Bedeutung. Oft konservative Musik.");
+VALUES ( 174, 7, 0, "Keine zentrale Bedeutung. Oft konservative Musik.");
 
 
 

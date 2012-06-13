@@ -80,7 +80,11 @@ class databaseedit:
         user_answers = dict()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT question_id FROM questions;")  
+        cur.execute(u'''SELECT question_id ,
+                               kat
+                        FROM questions
+                        ORDER BY questions.kat, 
+                                 question_id ;''')  
         
         widgetlist = web.input(groups = []) 
         
@@ -91,36 +95,52 @@ class databaseedit:
         _sqlcode += u'     "' + self.getDenominationName ( _id ) + '", \n'
         _sqlcode += u'     "' + self.getUrlOfDenomination ( _id ) + '"); \n\n'
         
-
+        _last_category = u''
         for row in cur:  
-            q_no = row[0]    
+            q_no = row[0] 
+            _category_name = unicode( row[1] )
+            if _last_category != _category_name:
+                _last_category = _category_name
+                _sqlcode += u'\n-- ##################### Kategorie : ' 
+                _sqlcode += _category_name + ' #####################\n\n'
+            _answer_key = u'answer_' + unicode( q_no )
+            _comment_key = u'comment_'  + unicode( q_no )
+            
             _sqlcode += u'INSERT INTO denomination_answers ( \n'
             _sqlcode += u'        question_id, \n'
             _sqlcode += u'        denomination_id, \n'
             _sqlcode += u'        answer_nr, \n'
             _sqlcode += u'        commentary ) \n '
             _sqlcode += u'    VALUES ( \n '
-            _sqlcode += u'        ' + str( q_no ) + ', \n'
-            _sqlcode += u'        ' + str( _id) + ', \n'
-            _sqlcode += u'        ' +   widgetlist['answer_' + str(q_no)]  + ', \n'
-            _sqlcode += u'        "' +  widgetlist['comment_'  + str(q_no)]  + '"); \n \n'
+            _sqlcode += u'        ' + unicode( q_no ) + ', \n'
+            _sqlcode += u'        ' + unicode( _id) + ', \n'
+            _sqlcode += u'        ' + unicode(  widgetlist[ _answer_key ] )  + ', \n'
+            _sqlcode += u'        "' + unicode(  widgetlist[ _comment_key] )  + '"); \n \n'
 
         _sqlcode += u'COMMIT;; \n\n' 
         
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         
+        _h2 = HtmlTemplate.Tag ( "h2" )
+        _h2.addContent ( "SQL-Code" )
+        _appbox.addContent ( _h2 )
+        
         _p_1 = HtmlTemplate.Tag ( "p" )
+        _p_1.addContent ( u'''Diesen SQL-Code kannst du an 
+            <a href="mailto:briefkasten@olaf-radicke.de">
+            briefkasten@olaf-radicke.de</a> senden. Möglichst noch mit einem 
+            Kommentar wo die Änderungen sind und warum du die Änderungen wünschst.
+            <b>Vielen Dank!</b>''' )
+        _appbox.addContent ( _p_1 )
         
         _editor = HtmlTemplate.Tag ( "textarea" )
         _editor.setAttribute ( "class", "result"  )
         #_editor.setAttribute ( "cols", "80" )
         _editor.setAttribute ( "rows", "40" )
-        #_editor.addContent ( self.getSqlCode() )
         _editor.addContent ( unicode( _sqlcode ) )
-        _p_1.addContent ( _editor )
-        
-        _appbox.addContent ( _p_1 )   
+        _appbox.addContent ( _editor )
+         
         return _appbox       
         
         
@@ -183,7 +203,7 @@ class databaseedit:
         
         _table.addContent ( _table_titles )        
     
-        _last_kat = ""
+        _last_category = ""
         _odd = 0
         for row in cur:
             _rowTag  =  HtmlTemplate.Tag ( "tr" )
@@ -200,11 +220,11 @@ class databaseedit:
             
             # column: category
             _col_2 =  HtmlTemplate.Tag ( "td" )
-            if _last_kat == row[2] :
+            if _last_category == row[2] :
                 pass
             else:
                 _col_2.addContent ( row[2] ) 
-                _last_kat = row[2]
+                _last_category = row[2]
             _rowTag.addContent ( _col_2 )   
             
             # column: question & comment
@@ -281,7 +301,7 @@ class databaseedit:
         
         _widgetlist = web.input(groups = []) 
         _appbox = ""
-        print _widgetlist
+        #print _widgetlist
         if "edit_denomination" in _widgetlist:
             _appbox = self.getEditForm ( _widgetlist )
         else:
