@@ -286,15 +286,24 @@ class sqlgenerator:
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         
+        _h2 = HtmlTemplate.Tag ( "h2" )
+        _h2.addContent ( "SQL-Code" )
+        _appbox.addContent ( _h2 )
+        
         _p_1 = HtmlTemplate.Tag ( "p" )
+        _p_1.addContent ( u'''Diesen SQL-Code kannst du an 
+            <a href="mailto:briefkasten@olaf-radicke.de">
+            briefkasten@olaf-radicke.de</a> senden. Möglichst noch mit einem 
+            Kommentar wo die Änderungen sind und warum du die Änderungen wünschst.
+            <b>Vielen Dank!</b>''' )
+        _appbox.addContent ( _p_1 )
         
         _editor = HtmlTemplate.Tag ( "textarea" )
         _editor.setAttribute ( "class", "result"  )
         _editor.setAttribute ( "cols", "80" )
         _editor.setAttribute ( "rows", "40" )
         _editor.addContent ( self.getSqlCode() )
-        _p_1.addContent ( _editor )
-        
+        _appbox.addContent ( _editor )
         _appbox.addContent ( _p_1 )
         
         _htmlcode = self.htemp.getCompleteSite( "sqlgenerator", _appbox )
