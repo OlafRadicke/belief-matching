@@ -36,3 +36,12 @@ clean:
 	$(RM) ./bin/*~
 	$(RM) ./bin/*.pyc
 	$(RM) ./bin/*.sqlite
+
+update: 
+	make clean
+	make create-db
+	/etc/init.d/belief-matching stop
+	make uninstall
+	make install
+	/etc/init.d/belief-matching start
+	echo "...update process is ready now."
