@@ -64,10 +64,13 @@ class databaseview:
             hinterlegen willst. Dann nimmt mit mir Kontakt auf: 
             <a href="mailto:briefkasten@olaf-radicke.de">briefkasten@olaf-radicke.de</a>''')
         _intro.addContent ( _p_1 )
-
+        
         _section_2 = HtmlTemplate.Tag ( "h2" )      
+        
+        
+        _p_2 = HtmlTemplate.Tag ( "p" )
         _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
-        _intro.addContent ( _section_2 )
+        _p_2.addContent ( _section_2 )
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
@@ -88,8 +91,9 @@ class databaseview:
         _form.addContent ( _select )
 
         _form.addContent ( form.Button('anzeigen').render() )
+        _p_2.addContent ( _form ) 
         
-        _intro.addContent ( _form ) 
+        _intro.addContent ( _p_2 )
         conn.close()
         return _intro
 
