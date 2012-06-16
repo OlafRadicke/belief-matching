@@ -86,13 +86,14 @@ class databaseview:
         _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
         _intro.addContent ( _section_2 )
         
-        _p_2 = HtmlTemplate.Tag ( "p" )
+        #_p_2 = HtmlTemplate.Tag ( "p" )
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
         _form.setAttribute ( "name", "databaseview" )
         _form.setAttribute ( "action", "databaseview" )
-        _form.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
+        _p_3 = HtmlTemplate.Tag ( "p" )
+        _p_3.addContent ( u'''Wähle die Glaubensgemeinschaft:''')
        
         _select = HtmlTemplate.Tag ( "select" )
         _select.setAttribute ( "name", "glaubensgemeinschaft" )
@@ -111,12 +112,12 @@ class databaseview:
                 _option.addContent ( row[1] )
             _select.addContent ( _option )
             
-        _form.addContent ( _select )
+        _p_3.addContent ( _select )
 
-        _form.addContent ( form.Button('anzeigen').render() )
-        _p_2.addContent ( _form ) 
+        _p_3.addContent ( form.Button('anzeigen').render() )
+        _form.addContent ( _p_3 ) 
         
-        _intro.addContent ( _p_2 )
+        _intro.addContent ( _form )
         conn.close()
         return _intro
 
