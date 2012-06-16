@@ -83,11 +83,10 @@ class databaseview:
         _intro.addContent ( _p_1 )
         
         _section_2 = HtmlTemplate.Tag ( "h2" )      
-        
+        _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
+        _intro.addContent ( _section_2 )
         
         _p_2 = HtmlTemplate.Tag ( "p" )
-        _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
-        _p_2.addContent ( _section_2 )
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
