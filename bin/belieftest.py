@@ -331,9 +331,11 @@ class belieftest:
             _rowTag.addContent ( _col_5 )    
             _table.addContent ( _rowTag )
             
-        _form.addContent ( _table )
-        _form.addContent ( u'<br>' )
-        _form.addContent ( form.Button('Auswerten').render() )
+        _p_form = HtmlTemplate.Tag ( "p" )    
+        _p_form.addContent ( _table )   
+        _p_form.addContent ( u'<br>' )   
+        _p_form.addContent ( form.Button('Auswerten').render() )
+        _form.addContent ( _p_form )
         _appbox.addContent ( _form )
             
 
