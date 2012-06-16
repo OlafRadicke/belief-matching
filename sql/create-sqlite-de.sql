@@ -104,7 +104,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 114,
 "Gott/<br>Christologie",
 "Gott offenbart sich in erster Linie durch die Bibel und diese überwiegt alles Andere.",
-"Das zielt u.a. auf die Protestanten und den Glaubenssatz ab: <i>allen die Schrift</<br>i>.
+"Das zielt u.a. auf die Protestanten und den Glaubenssatz ab: <i>allen die Schrift</i>.
  die Quäker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel,
  also die unmittelbare Offenbarung, der meisten Gewicht beigemessen wird.");
 
