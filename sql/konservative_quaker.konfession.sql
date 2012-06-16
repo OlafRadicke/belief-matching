@@ -158,7 +158,7 @@ VALUES ( 153, 1, 0, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 154, 1, 1, "");
+VALUES ( 2004, 1, 1, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
@@ -166,7 +166,7 @@ VALUES ( 155, 1, 1, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 156, 1, 1, "");
+VALUES ( 2006, 1, 1, "");
 
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)

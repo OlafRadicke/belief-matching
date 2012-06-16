@@ -67,3 +67,26 @@ Konfessionen in die Datenbank einpflegen. Z.B.:
 * Pietisten
 * Altkatholische Kirchen
 * Anglikanische Kirchen 
+
+== Administration / Leitung ==
+
+J) Aussage: Für Leitungs- und Schulungsaufgaben ist eine formelle theologische
+Ausbildung nicht unbedingt erforderlich.
+
+K) Aussage: Frauen können Leitungsaufgaben und geistlichen Ämtern innerhalb der
+Gemeinde bekleiden.
+
+== Mission / Ökumene / Außenbeziehung ==
+
+L) Aussage: Ich halte andere Religionen (z. B. Islam, Buddhismus) und z.T. auch
+bestimmte christlichen Gemeinschaften für Irrwege. Ich glaube
+nicht das eine "Dialog auf Augenhöhe" richtig wäre.
+L) Kommentar: Hier ist die Frage, ob man glaubt, das einem die Begegnung mit
+anderen Überzeugungen im eigenen Glauben befruchtet. Oder ob sie
+vielleicht sogar für gefährlich gehalten werden, wenn sie nicht
+mit der Absicht der Missionierung durchgeführt werden..
+
+
+M) Aussage: Es ist wichtig den eigenen Glauben gegenüber allen nicht- oder
+andersgläubigen zu bezeugen und die (biblische) Erlösungsbotschaft
+zu verbreiten.

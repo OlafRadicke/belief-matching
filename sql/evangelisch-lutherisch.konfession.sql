@@ -128,13 +128,13 @@ VALUES ( 153, 6, 1, "Liturgische Handlungen werden in aller
  vorbehalten.");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 154, 6, 0, "Sehr unwahrscheinlich");
+VALUES ( 2004, 6, 0, "Sehr unwahrscheinlich");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 155, 6, 1, "Frauen können alle Ämter bekleiden.");
 
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 156, 6, 0, "Die meisten Mitglieder gehen selten bis gar nicht zum
+VALUES ( 2006, 6, 0, "Die meisten Mitglieder gehen selten bis gar nicht zum
  Gottesdienst oder beteiligen sich nicht am Gemeindeleben. Oft werden nur die wichtigen
  Veranstaltungen wahrgenommen: Taufe, Heirat, Weihnachten und Beerdigung...");
 

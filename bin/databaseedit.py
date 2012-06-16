@@ -25,9 +25,44 @@ import HtmlTemplate
 
 class databaseedit:    
 
-    htemp = HtmlTemplate.HtmlTemplate()  
+    htemp = HtmlTemplate.HtmlTemplate() 
+    last_category = ""
     
-    # get back a array of anser options
+    # get back a 2D-array of questions
+    # that ist exist not a Answers
+    # @ _id a id of a denomination
+    def getNoAnswers ( self, _id ):
+        _answers = list()
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute( ''' 
+            SELECT question_id, question, kat, commentary
+            FROM questions 
+            WHERE question_id NOT IN (
+                SELECT question_id
+                FROM denomination_answers
+                WHERE denomination_id = ? )
+            ORDER BY question_id ; ''', ( _id ) )
+        for _row_array in cur:
+            _array = list()
+            #questions.question_id,
+            _array.append ( _row_array[0] )
+            #questions.question, 
+            _array.append ( _row_array[1] )
+            #questions.kat,
+            _array.append ( _row_array[2] )
+            #questions.commentary,
+            _array.append ( _row_array[3] )
+            #denomination_answers.answer_nr, 
+            _array.append ( 0 )
+            #denomination_answers.commentary         
+            _array.append ( "" )
+            
+            _answers.append( _array )
+        return _answers    
+        
+    
+    # get back a 2D-array of anser options
     def getAnswers (self):
         _answers = list()
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -36,8 +71,8 @@ class databaseedit:
             SELECT answers_nr, description 
             FROM answers 
             ORDER BY answers_nr ; ''' )
-        for row in cur:
-             _answers.append( [ row[0], row[1] ] )
+        for _row_array in cur:
+             _answers.append( [ _row_array[0], _row_array[1] ] )
         return _answers    
     
     # Gibt den Namen einer Konfessions-id zurück.
@@ -51,8 +86,8 @@ class databaseedit:
             FROM denominations 
             WHERE denomination_id = ?;
             ''', ( _id ) )
-        for row in cur:
-             denominationName = row[0]
+        for _row_array in cur:
+             denominationName = _row_array[0]
         return denominationName    
     
     def getUrlOfDenomination ( self, _id ):
@@ -64,8 +99,8 @@ class databaseedit:
             FROM denominations 
             WHERE denomination_id = ? ;        
         ''', str( _id ) )       
-        for row in cur:
-            return row[0] 
+        for _row_array in cur:
+            return _row_array[0] 
         return ""
         
     # formular for editing data.
@@ -96,9 +131,9 @@ class databaseedit:
         _sqlcode += u'     "' + self.getUrlOfDenomination ( _id ) + '"); \n\n'
         
         _last_category = u''
-        for row in cur:  
-            q_no = row[0] 
-            _category_name = unicode( row[1] )
+        for _row_array in cur:  
+            q_no = _row_array[0] 
+            _category_name = unicode( _row_array[1] )
             if _last_category != _category_name:
                 _last_category = _category_name
                 _sqlcode += u'\n-- ##################### Kategorie : ' 
@@ -111,9 +146,9 @@ class databaseedit:
             _sqlcode += u'        denomination_id, \n'
             _sqlcode += u'        answer_nr, \n'
             _sqlcode += u'        commentary ) \n '
-            _sqlcode += u'    VALUES ( \n '
-            _sqlcode += u'        ' + unicode( q_no ) + ', \n'
-            _sqlcode += u'        ' + unicode( _id) + ', \n'
+            _sqlcode += u'    VALUES ( '
+            _sqlcode += u'        ' + unicode( q_no ) + ', '
+            _sqlcode += u'        ' + unicode( _id) + ', '
             _sqlcode += u'        ' + unicode(  widgetlist[ _answer_key ] )  + ', \n'
             _sqlcode += u'        "' + unicode(  widgetlist[ _comment_key] )  + '"); \n \n'
 
@@ -143,11 +178,79 @@ class databaseedit:
          
         return _appbox       
         
+    # get back a tr-tag
+    # @_row_array 
+    def getEditRow (self, _isOdd, _row_array ):
+        
+        _answer_optionen = self.getAnswers()
+        _rowTag  =  HtmlTemplate.Tag ( "tr" )
+        
+        if int( _isOdd ) == int ( 1 ) :
+            _rowTag.setAttribute ( "class", "oddrow" )
+
+        # column: number
+        _col_1 =  HtmlTemplate.Tag ( "td" )
+        _col_1.addContent ( unicode( _row_array[0] ) )
+        _rowTag.addContent ( _col_1 )  
+        
+        # column: category
+        _col_2 =  HtmlTemplate.Tag ( "td" )
+        if self.last_category == _row_array[2] :
+            pass
+        else:
+            _col_2.addContent ( _row_array[2] ) 
+            _last_category = _row_array[2]
+        _rowTag.addContent ( _col_2 )   
+        
+        # column: question & comment
+        _col_3 =  HtmlTemplate.Tag ( "td" )
+        _tooltip = HtmlTemplate.Tag ( "a" )
+        _tooltip.setAttribute ( "href", "#hint" )
+        _tooltip.setAttribute ( "class", "tooltip" )
+        _tooltip.addContent ( u'<b>Aussge:</b> ' + unicode( _row_array[1] ) )
+        
+        _info = HtmlTemplate.Tag ( "span" )
+        _info.setAttribute ( "class", "info" )
+        _info.addContent ( u'<b>Erläuterung:</b> ')
+        _info.addContent ( unicode ( _row_array[3] ) )
+        _tooltip.addContent ( _info )
+        _col_3.addContent ( _tooltip )
+        _col_3.addContent ( "<br>" )
+        
+        # column: comment
+        
+        _comment = HtmlTemplate.Tag ( "textarea" )
+        _comment.setAttribute ( "name", "comment_" + str ( _row_array[0] )  )
+        _comment.setAttribute ( "cols", "60" )
+        _comment.setAttribute ( "rows", "2" )
+        _comment.addContent ( unicode( _row_array[5] ) )
+        _col_3.addContent ( _comment )
+
+        _rowTag.addContent ( _col_3 )   
+        
+        # column: answer
+        _col_4 =  HtmlTemplate.Tag ( "td" )
+        
+        _select = HtmlTemplate.Tag ( "select" )
+        _select.setAttribute ( "name", u'answer_' + str ( _row_array[0] ) )
+        _select.setAttribute ( "size", "1" )
+        
+        for _optionenline in _answer_optionen :
+            _option = HtmlTemplate.Tag ( "option" )
+            _option.setAttribute ( "value", str ( _optionenline[0] ) )
+            if str(_optionenline[0]) ==  str ( _row_array[4] ) :
+                    _option.setAttribute ( "selected", "selected" )
+            _option.addContent ( unicode( _optionenline[1] ) )
+            _select.addContent ( _option )
+            
+        _col_4.addContent ( _select ) 
+        _rowTag.addContent ( _col_4 )  
+        return _rowTag
+    
         
     # formular for editing data.
     def getEditForm ( self, _widgetlist ) :
         
-        _answer_optionen = self.getAnswers()
         _id = _widgetlist['edit_denomination']
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()  
@@ -161,7 +264,7 @@ class databaseedit:
             FROM denomination_answers, 
                  questions 
             WHERE denomination_answers.denomination_id = ?
-            AND denomination_answers.question_id = questions.question_id
+            AND denomination_answers.question_id = questions.question_id          
             ORDER BY questions.kat, 
                     denomination_answers.answer_nr;
                     ''', (  _id ))
@@ -172,9 +275,9 @@ class databaseedit:
         _appbox.setAttribute ( "class", "appbox" )
         
         _section_1 = HtmlTemplate.Tag ( "h2" )      
-        _section_1.addContent ( u'''SQL-Code-Generator''')
+        _section_1.addContent ( u'''SQL-Code-Generator für ''')
+        _section_1.addContent ( self.getDenominationName ( _id ) )
         _appbox.addContent ( _section_1 )        
-        
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
@@ -203,79 +306,36 @@ class databaseedit:
         
         _table.addContent ( _table_titles )        
     
-        _last_category = ""
+        # loop with exist answers
         _odd = 0
-        for row in cur:
-            _rowTag  =  HtmlTemplate.Tag ( "tr" )
-            
+        _count = 1
+        for _row_array in cur:
+            _count += 1
             if _odd == 1:
-                _rowTag.setAttribute ( "class", "oddrow" )
                 _odd = 0
             else:
                 _odd = 1
-            # column: number
-            _col_1 =  HtmlTemplate.Tag ( "td" )
-            _col_1.addContent ( unicode( row[0] ) )
-            _rowTag.addContent ( _col_1 )  
-            
-            # column: category
-            _col_2 =  HtmlTemplate.Tag ( "td" )
-            if _last_category == row[2] :
-                pass
-            else:
-                _col_2.addContent ( row[2] ) 
-                _last_category = row[2]
-            _rowTag.addContent ( _col_2 )   
-            
-            # column: question & comment
-            _col_3 =  HtmlTemplate.Tag ( "td" )
-            _tooltip = HtmlTemplate.Tag ( "a" )
-            _tooltip.setAttribute ( "href", "#hint" )
-            _tooltip.setAttribute ( "class", "tooltip" )
-            _tooltip.addContent ( u'<b>Aussge:</b> ' + unicode( row[1] ) )
-            
-            _info = HtmlTemplate.Tag ( "span" )
-            _info.setAttribute ( "class", "info" )
-            _info.addContent ( u'<b>Erläuterung:</b> ')
-            _info.addContent ( unicode ( row[3] ) )
-            _tooltip.addContent ( _info )
-            _col_3.addContent ( _tooltip )
-            _col_3.addContent ( "<br>" )
-            
-            # column: comment
-            
-            _comment = HtmlTemplate.Tag ( "textarea" )
-            _comment.setAttribute ( "name", "comment_" + str ( row[0] )  )
-            _comment.setAttribute ( "cols", "60" )
-            _comment.setAttribute ( "rows", "2" )
-            _comment.addContent ( unicode( row[5] ) )
-            _col_3.addContent ( _comment )
-
-            _rowTag.addContent ( _col_3 )   
-            
-            # column: answer
-            _col_4 =  HtmlTemplate.Tag ( "td" )
-            
-            _select = HtmlTemplate.Tag ( "select" )
-            _select.setAttribute ( "name", u'answer_' + str ( row[0] ) )
-            _select.setAttribute ( "size", "1" )
-            
-            for _optionenline in _answer_optionen :
-                _option = HtmlTemplate.Tag ( "option" )
-                _option.setAttribute ( "value", str ( _optionenline[0] ) )
-                if str(_optionenline[0]) ==  str ( row[4] ) :
-                     _option.setAttribute ( "selected", "selected" )
-                _option.addContent ( unicode( _optionenline[1] ) )
-                _select.addContent ( _option )
-                
-            _col_4.addContent ( _select ) 
-            _rowTag.addContent ( _col_4 )            
- 
+            _rowTag  =  self.getEditRow ( _odd, _row_array )
             _table.addContent ( _rowTag )
             
-            
-        _form.addContent (  _table )
+        # loop with not exist answers
         
+        _table.addContent ( u'<th colspan="4">Bisher nicht hinterlegte Aussagen:</th>' )
+        _cur = self.getNoAnswers ( _id )
+        _odd = 0
+        _count = 1
+        for _row_array in _cur:
+            _count += 1
+            if _odd == 1:
+                _odd = 0
+            else:
+                _odd = 1
+            _rowTag  =  self.getEditRow ( _odd, _row_array )
+            _table.addContent ( _rowTag )
+            
+   
+        _form.addContent (  _table )
+
         _p_editdb = HtmlTemplate.Tag ( "p" )
         _p_editdb.addContent ( u'''<br>''')
                
@@ -301,7 +361,6 @@ class databaseedit:
         
         _widgetlist = web.input(groups = []) 
         _appbox = ""
-        #print _widgetlist
         if "edit_denomination" in _widgetlist:
             _appbox = self.getEditForm ( _widgetlist )
         else:

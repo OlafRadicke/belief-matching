@@ -27,6 +27,23 @@ class databaseview:
 
     htemp = HtmlTemplate.HtmlTemplate()  
     
+    def getNoAnswersCount ( self, _id ):
+        print "_id: " + _id
+        _answers = list()
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute( ''' 
+            SELECT count ( question_id )
+            FROM questions 
+            WHERE question_id NOT IN (
+                SELECT question_id
+                FROM denomination_answers
+                WHERE denomination_id = ? )
+            ORDER BY question_id ; ''', ( _id ) )
+        for _row_array in cur:
+            return _row_array[0]
+        return 0      
+    
     def getUrlOfDenomination ( self, _id ):
         
         conn = sqlite3.connect('belief-matching.sqlite')
@@ -40,7 +57,7 @@ class databaseview:
             return row[0] 
         return ""
 
-    def getIntro(self):
+    def getIntro ( self, _preSelect):
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute(''' SELECT denomination_id, 
@@ -83,9 +100,16 @@ class databaseview:
         _select.setAttribute ( "size", "1" )
         
         for row in cur:
-            _option = HtmlTemplate.Tag ( "option" )
-            _option.setAttribute ( "value", str( row[0] ) )
-            _option.addContent ( row[1] )
+            if int(_preSelect) == int(row[0]) :
+                _option = u'<option  ' 
+                _option += u' value="' + unicode ( row[0] ) + '" '
+                _option += u'  selected  >' 
+                _option += row[1]
+                _option += u'</option>'
+            else :
+                _option = HtmlTemplate.Tag ( "option" )
+                _option.setAttribute ( "value", unicode( row[0] ) )
+                _option.addContent ( row[1] )
             _select.addContent ( _option )
             
         _form.addContent ( _select )
@@ -100,7 +124,7 @@ class databaseview:
     def GET(self):
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
-        _intro = self.getIntro()
+        _intro = self.getIntro( 0 )
         _appbox.addContent ( _intro )
         _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
         return self.htemp.convertGermanChar( _htmlcode )
@@ -128,7 +152,7 @@ class databaseview:
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         
-        _intro = self.getIntro()
+        _intro = self.getIntro( _id )
         _appbox.addContent ( _intro )
         _appbox.addContent ( u'<br/>' )
        
@@ -185,12 +209,30 @@ class databaseview:
         _form.setAttribute ( "name", "databaseedit" )
         _form.setAttribute ( "action", "databaseedit" )
         
+        _noAnswersCount = self.getNoAnswersCount ( _id )
+        if _noAnswersCount > 0 :
+            _p_noAnswers = HtmlTemplate.Tag ( "p" )
+            if _noAnswersCount > 2 :
+                _p_noAnswers.addContent ( u'Es gibt noch ' ) 
+                _p_noAnswers.addContent ( unicode ( _noAnswersCount ) ) 
+                _p_noAnswers.addContent ( u''' Aussagen zu der noch keine 
+                Antworten hinterlegt wurde.''' ) 
+            else :
+                _p_noAnswers.addContent ( u'''Es gibt noch eine Aussage zu der 
+                noch keine Antwort hinterlegt wurde.''' ) 
+            _form.addContent ( _p_noAnswers )
+        
+        _h2_editdb = HtmlTemplate.Tag ( "h2" )
+        _h2_editdb.addContent ( u'Änderungswünsche')
+        _form.addContent ( _h2_editdb )
+            
         _p_editdb = HtmlTemplate.Tag ( "p" )
         _p_editdb.addContent ( u'''<b>Du bist nicht mit allen Punkten einverstanden?</b>
-        <br>Dann sende mir deine Liste mit den Änderungswünsche:<br>''')
+        oder es gibt noch Aussage zu denen noch keine Antwort hinterlegt wurde.
+        Dann sende mir deine Liste mit den Änderungswünsche: ''')
                
         _button = HtmlTemplate.Tag ( "button" )
-        _button.addContent ( u'Liste mit Änderungswünsche erstellen' )
+        _button.addContent ( u'Jetzt erstellen' )
         _button.setAttribute ( "id", "edit_denomination" )
         _button.setAttribute ( "name", "edit_denomination" )
         _button.setAttribute ( "value", _id )
