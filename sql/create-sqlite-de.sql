@@ -79,7 +79,7 @@ INSERT INTO answers ( answers_nr, description ) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 111,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Jesus Christus ist als Sohn Gottes eines Wesens mit Gott, dem Vater und Schöpfer 
  der Welt, und wird mit ihm zusammen und dem Heiligen Geist als ein Gott angebetet",
 "Das ist u.a. die Römisch-Katholische Position. Gott ist hier in drei Personen 
@@ -87,13 +87,13 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 112,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Jesus ist nicht Gott sondern nur ein (besonderer) Mensch",
 "Die Dreifaltigkeit wird hier verneint.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 113,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Gott offenbart sich direkt und jedem Menschen.",
 "Das zielt u.a. auf die Auffassungen der Quäker ab. Das sich Gott jedem Menschen
  offenbart, heißt nicht, das jeder Mensch bereit ist, dem Willen Gottes zu folgen.
@@ -102,15 +102,15 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 114,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Gott offenbart sich in erster Linie durch die Bibel und diese überwiegt alles Andere.",
-"Das zielt u.a. auf die Protestanten und den Glaubenssatz ab: <i>allen die Schrift</i>.
+"Das zielt u.a. auf die Protestanten und den Glaubenssatz ab: <i>allen die Schrift</<br>i>.
  die Quäker z.B. werden hier nicht zustimmen. Für sie ist es der Geist der Bibel,
  also die unmittelbare Offenbarung, der meisten Gewicht beigemessen wird.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 115,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Gott offenbart sich nur bestimmten Menschen (Propheten) und diese 
 haben die Aufgabe den Anderen Gottes willen zu verkünden.",
 "Das ist im Grunde die alt testamentarische Sicht.");
@@ -119,14 +119,14 @@ haben die Aufgabe den Anderen Gottes willen zu verkünden.",
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 116,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Ein Mensch kann nur dadurch gerettet werden, dass Jesus für seien Sünden 
  gestorben ist, eine andere Möglichkeit gibt es nicht.",
 "Eine typische evangelikate Position.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 117,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Um gerettet zu werden, muss jemand von der Erlösung durch Jesus gehört haben 
  und diesen Weg persönlich akzeptiert haben.",
 "Eine typische evangelikate Position.");
@@ -134,7 +134,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1108,
-"Gott/Christologie",
+"Gott/<br>Christologie",
 "Ich glaube an ein direkten Eingreifen Gottes in mein Leben.",
 "Wunder werden für möglich oder zumindest nicht ausgeschlossen
  gehalten. Es wird aber auch Gottes Wirken aber auch in alltäglichen
@@ -279,29 +279,29 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 151,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Ich glaube an das Priestertum Aller und möchte, dass die Gemeinde von Allen 
  gemeinsam geleitet wird (demokratische Abstimmungenen oder ähnliches).",
 "Der Gegenentwurf wäre eine Hierarchische Organisation.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 152,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Mir ist wichtig, dass eine Gemeinde autonom ist.",
 "Dies wird auf die Ortsgemeinden der beiden großen <i>Volkskirchen</i> nicht zutreffen.
  Bei den Mennoniten ist das z.B. sehr ausgeprägt.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 153,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Ich glaube, dass ein Gottesdienst und/oder liturgische Handlungen von Priestern 
- (oder anderen Hauptamtlichen) geleitet werden sollte (die geweiht und/oder eine 
+ (oder anderen Hauptamtlichen) <b>geleitet</b> werden sollte (die geweiht und/oder eine 
  theologische Ausbildung haben).",
 "Also keine oder sehr eingeschränkte Leiheinpredigten.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 155,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Frauen sollen alle Aufgabe in der Gemeinde (einschließlich des Predigen) 
  übernehmen können.",
 "Heute schon fast überall selbstverständlich. Aber nicht z.B. in der Kath. 
@@ -309,21 +309,21 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 157,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Die Gemeinde sollte von den Ältesten und/oder Predigern und/oder Diakonen 
- geleitete werden.",
+ <b>geleitete</b> werden.",
 "Also nicht hierarchisch aber auch nicht basisdemokratisch.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 158,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Die Gemeindeleitung sollte von einer autorisierten Institution bestimmt/eingesetzt 
  werden.",
 "Also hierarchische Strukturen und keine autonomen Ortsgemeinden.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1512,
-"Administration/Leitung",
+"Administration/<br>Leitung",
 "Für Liturgische-, Leitungs- und Schulungsaufgaben ist eine formelle theologische
  Ausbildung nicht unbedingt erforderlich.",
 "");
@@ -414,14 +414,14 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 181,
-"Erlösung/Rechtfertigung",
-"Ich glaube, dass für jeden Menschen kommt eine Zeit, wo er von Gott gerichtet wird.",
+"Erlösung/<br>Rechtfertigung",
+"Ich glaube, dass für jeden Menschen eine Zeit kommt, wo er von Gott gerichtet wird.",
 "Der Gegenentwurf ist die s.g. <i>Allaussöhnung</i> (Apokatastasis). Also ein gütiger
  Gott der alles nach sieht.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 182,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Menschen können verloren gehen, nicht alle Menschen kommen in Gottes Reich",
 "Der Gegenentwurf bzw. Überzeug ist die theologische Lehre von der 
  Wiederherstellung aller Dinge am Ende der Zeiten. Die s.g. Apokatastasis oder
@@ -429,13 +429,13 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 183,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Menschen können auch noch nach ihrem Tod Buße tun, um der Verdammnis zu entgehen (Fegefeuer).",
 "");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 184,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Auf die Erlösung hat man keinen Einfluss, sie wird einem durch die Gnade Gottes zuteil.",
 "Gemeint ist hier die <i>Prädestinationslehre</i>. Es liegt allein in der Entscheidung
  Gottes ob man der Sünde verfällt oder errettet wird. Der Gegenentwurf ist die s.g.
@@ -443,34 +443,34 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 185,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Wenn man Gottes Gebote befolgt wird man von Gott auch materiell gesegnet werden" ,
 "Hier lautet das Schlagwort: <i>Wohlstandsevangelium</i> (engl.: Prosperity Gospel).
  Der Calvinismus weist z.T. solche Tendenzen auf.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 186,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Leid ist eine Strafe Gottes.",
 "");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 187,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Es kann nur eine Wahrheit geben und deshalb nur einen Weg zur Erlösung führen.",
 "Hier werden diejenigen zustimmen, die nicht müde werden immer wieder Joh. 14:6 zu
  zitieren.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 188,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Das Reich Gottes ist schon da. Es ist aber (noch) nicht (für alle) sichtbar.",
 "Das entspricht der Auffassung vom Reich Gottes wie es z.B. bei konservativen
  Quäkern zu finden ist.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 189,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Eine Erlösung (vom Bösen/ der Sünde) ist schon im Diesseits möglich.",
 "Gemeint ist, das ein Leben ohne Sünde möglich ist. Hier wird ein <i>Perfektionismus</i>
  angestrebt, wie er im Pietismus und konservativen Quäkertum. angestrebt wird");
@@ -478,7 +478,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1810,
-"Erlösung/Rechtfertigung",
+"Erlösung/<br>Rechtfertigung",
 "Die Sündhaftigkeit und Schuld setzen den Menschen Gottes Zorn und
 Verdammnis aus. Die Erlösung hieraus kann nur durch einen Gnadenakt
 Gottes erfolgen und setzt den Glauben an Jesus Christus, seinen
@@ -525,7 +525,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 196,
 "Sonstiges",
-"Alkohol und/oder andere Drogen versperren den Weg zu spiritueller Entwicklung.",
+"Alkohol sowie andere Drogen versperren den Weg zu spiritueller Entwicklung.",
 "Hier ist gemeint, dass Abstinenz spirituell geboten ist.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -559,7 +559,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 2004, 
-"Gemeinde/Ekklesiologie",
+"Gemeinde/<br>Ekklesiologie",
 "Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglieder aus der 
  Gemeinde ausgeschlossen werden, wie z.B. bei den Zeugen Jehovas",
 "Klassisches Gegenbeispiel ist die katholische Kirche, die Mitglieder maximal
@@ -568,7 +568,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 2006,
-"Gemeinde/Ekklesiologie",
+"Gemeinde/<br><br>Ekklesiologie",
 "Zu den Pflichten in der Gemeinde gehört auch, dass man regelmäßig in Erscheinung 
  tritt und sich aktiv einbringt.",
 "Gerade in kleineren autonomen Gemeinden wird das unausgesprochen erwartet.");
@@ -576,16 +576,17 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 -- 1510
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 2010,
-"Gemeinde/Ekklesiologie",
+"Gemeinde/<br>Ekklesiologie",
 "Wichtig ist einer persönlichen, bewussten Entscheidung für den
- christlichen Glauben und einer persönlichen Beziehung zu Jesus
- Christus, die auch im Alltag Auswirkungen auf das persönliche Handeln
- haben muss. Eine formale Kirchenmitgliedschaft allein genüge nicht.",
+ (christlichen) Glauben und einer persönlichen Beziehung zu Jesus
+ Christus (wie ich ihn verstehe), die auch im Alltag Auswirkungen 
+ auf das persönliche Handeln haben muss. Eine formale Kirchenmitgliedschaft 
+ allein genüge nicht.",
 "");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1511,
-"Gemeinde/Ekklesiologie",
+"Gemeinde/<br>Ekklesiologie",
 "Eine Kirchenmitgliedschaft allein genüge nicht, es bedarf einer
  persönlichen Abkehr vom alten Leben und einer Hinwendung zu Jesus
  Christus (Bekehrung). Diese bewusste Entscheidung wird in Form

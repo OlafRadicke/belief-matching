@@ -2,102 +2,525 @@ BEGIN;
 
 INSERT INTO denominations ( denomination_id, denomination, url ) 
  VALUES ( 
-     2,  
-     "Liberale Quäker", 
-     "http://de.wikipedia.org/wiki/Quäkertum"); 
-
-
--- ##################### Kategorie : Abendmahl #####################
+     8,  
+     "Evangelikale Gemeinden", 
+     "http://de.wikipedia.org/wiki/Evangelikalismus"); 
 
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         131,         2,         2, 
-        "Definitiv: nein. "); 
+     VALUES ( 
+         111, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         132,         2,         2, 
-        "Hat praktisch keine Bedeutung."); 
+     VALUES ( 
+         112, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         133,         2,         2, 
-        "Hat praktisch keine Bedeutung."); 
+     VALUES ( 
+         113, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         134,         2,         1, 
-        "Es wird auch nicht begangen. Eine Teilname ist aber nicht untersagt und steht jedem Frei."); 
+     VALUES ( 
+         114, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         135,         2,         0, 
-        "Hat keinerlei Bedeutung für Liberale Quäker"); 
- 
-
--- ##################### Kategorie : Administration/Leitung #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         151,         2,         1, 
-        "Es wird im Konsens entschieden."); 
+     VALUES ( 
+         115, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         152,         2,         2, 
-        "In Deutschland sind sie das nicht, aber in der Regel ist die Struktur so angelegt."); 
+     VALUES ( 
+         116, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         153,         2,         0, 
-        "Es gibt kein Klerus. "); 
+     VALUES ( 
+         117, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         155,         2,         1, 
-        "Es herrscht völlige Gleichstellung."); 
+     VALUES ( 
+         121, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         157,         2,         0, 
-        "Es gibt Älteste und s.g. <i>Schreiber</> die aber nur administrativ und seelsorgerisch tätig sind. Die Leitung liegt bei der s.g. Monatsversammlung an der alle beteiligt sind."); 
+     VALUES ( 
+         122, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         158,         2,         0, 
+     VALUES ( 
+         123, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         131, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         132, 
+        8, 
+        1, 
+        "Genauer: Man muss ein s.g. <i>wiedergeborener Christ</i> sein."); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         133, 
+        8, 
+        1, 
+        "Die Taufe ist eng verbunden mit der Bekehrung bei Evangelikalen. Die (kinder-)Taufe allein genügt aber nicht."); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         134, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         135, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         141, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         142, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         143, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         144, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         145, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         146, 
+        8, 
+        2, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         147, 
+        8, 
+        0, 
+        "Die Evolution-Theorie wird meist komplett verworfen. Zum Teil wird das Konzept des Intelligent Design (engl. „intelligenter Entwurf“, „intelligente Gestaltung“; abgekürzt ID) vertreten."); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         148, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         149, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         151, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         152, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         153, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         155, 
+        8, 
+        3, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         157, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         158, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         161, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         162, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         163, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         164, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         165, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         166, 
+        8, 
+        2, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         167, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         171, 
+        8, 
+        3, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         173, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         174, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         175, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         176, 
+        8, 
+        2, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         181, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         182, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         183, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         184, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES ( 
+         185, 
+        8, 
+        2, 
         ""); 
  
 INSERT INTO denomination_answers ( 
@@ -105,488 +528,242 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1512,         2,         1, 
-        "Das liberale Quäkertum ist sehr geprägt durch Leihen, was aber nicht ausschließt das es nicht auch ausgebildete Theologen gibt. Doppelmitgliedschaften sind nicht selten. Deshalb kann es sein, das jemand evangelischer Pfarrer und liberaler Quäker ist."); 
- 
-
--- ##################### Kategorie : Bibel #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         141,         2,         0, 
-        "Für viele hat die Bibel überhaupt keine Bedeutung mehr."); 
+     VALUES ( 
+         186, 
+        8, 
+        2, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         142,         2,         0, 
-        "Für viele hat die Bibel überhaupt keine Bedeutung mehr."); 
+     VALUES ( 
+         187, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         143,         2,         1, 
-        "Freie Entscheidung jeden Einzelnen was ihn inspiriert. Es gibt aber keinen Konsens welche Schriften verpflichten sind, wie z.B. bei den Mormonen."); 
+     VALUES ( 
+         188, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         144,         2,         2, 
-        "Für viele hat die Bibel überhaupt keine Bedeutung mehr."); 
+     VALUES ( 
+         189, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         145,         2,         2, 
-        "Für viele hat die Bibel überhaupt keine Bedeutung mehr."); 
+     VALUES ( 
+         191, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         146,         2,         0, 
-        "Für viele hat die Bibel überhaupt keine Bedeutung mehr."); 
+     VALUES ( 
+         192, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         147,         2,         3, 
-        "Unter liberalen Quäkern gibt es verschiedenste Anschauung zu dem Thema."); 
+     VALUES ( 
+         193, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         148,         2,         2, 
-        "Die Bibel wird zumeist als ein Buch unter vielen betrachtet. Und das meist skeptisch. Der Umgang damit fällt recht unterschiedlich aus."); 
+     VALUES ( 
+         194, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         149,         2,         2, 
-        ""); 
- 
-
--- ##################### Kategorie : Erlösung/Rechtfertigung #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         181,         2,         0, 
-        ""); 
+     VALUES ( 
+         195, 
+        8, 
+        3, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         182,         2,         0, 
-        ""); 
+     VALUES ( 
+         196, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         183,         2,         2, 
-        ""); 
+     VALUES ( 
+         197, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         184,         2,         0, 
-        ""); 
+     VALUES ( 
+         198, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         185,         2,         0, 
-        ""); 
+     VALUES ( 
+         199, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         186,         2,         0, 
-        ""); 
+     VALUES ( 
+         1108, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         187,         2,         2, 
-        ""); 
+     VALUES ( 
+         1204, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         188,         2,         2, 
-        ""); 
+     VALUES ( 
+         1511, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         189,         2,         2, 
-        ""); 
+     VALUES ( 
+         1512, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1810,         2,         0, 
-        "Diese Vorstellung ist liberalen Quäkern völlig fremd."); 
- 
-
--- ##################### Kategorie : Gemeinde/Ekklesiologie #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         1511,         2,         0, 
-        ""); 
+     VALUES ( 
+         1810, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2004,         2,         2, 
-        ""); 
+     VALUES ( 
+         1910, 
+        8, 
+        0, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2006,         2,         2, 
-        "Es gibt nicht wenige die jahrelang nicht in Erscheinung treten."); 
+     VALUES ( 
+         2004, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2010,         2,         1, 
-        "Ja, in so fern noch an Jesus Christus geglaubt wird."); 
- 
-
--- ##################### Kategorie : Gott/Christologie #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         111,         2,         2, 
-        ""); 
+     VALUES ( 
+         2006, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         112,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         113,         2,         1, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         114,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         115,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         116,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         117,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         1108,         2,         2, 
-        "Es gibt sehr esoterische Ansichten unter liberalen Quäkern. Da verschwimmt z.T. der Begriff von Gott selbst bis zur Unkenntlichkeit."); 
- 
-
--- ##################### Kategorie : Gottesdienst #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         171,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         173,         2,         1, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         174,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         175,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         176,         2,         2, 
-        ""); 
- 
-
--- ##################### Kategorie : Sexualität #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         161,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         162,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         163,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         164,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         165,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         166,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         167,         2,         0, 
-        ""); 
- 
-
--- ##################### Kategorie : Sonstiges #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         191,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         192,         2,         1, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         193,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         194,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         195,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         196,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         197,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         198,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         199,         2,         1, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         1910,         2,         1, 
-        ""); 
- 
-
--- ##################### Kategorie : Taufe #####################
-
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         121,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         122,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         123,         2,         2, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         1204,         2,         0, 
-        ""); 
+     VALUES ( 
+         2010, 
+        8, 
+        1, 
+        "(Noch) Kein Kommentar"); 
  
 COMMIT;; 
 

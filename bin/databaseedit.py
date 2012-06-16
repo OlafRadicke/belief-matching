@@ -190,7 +190,7 @@ class databaseedit:
 
         # column: number
         _col_1 =  HtmlTemplate.Tag ( "td" )
-        _col_1.addContent ( unicode( _row_array[0] ) )
+        _col_1.addContent ( '<small>' + unicode( _row_array[0] ) + '</small>' )
         _rowTag.addContent ( _col_1 )  
         
         # column: category
@@ -199,7 +199,7 @@ class databaseedit:
             pass
         else:
             _col_2.addContent ( _row_array[2] ) 
-            _last_category = _row_array[2]
+            self.last_category = _row_array[2]
         _rowTag.addContent ( _col_2 )   
         
         # column: question & comment
@@ -320,8 +320,9 @@ class databaseedit:
             
         # loop with not exist answers
         
-        _table.addContent ( u'<th colspan="4">Bisher nicht hinterlegte Aussagen:</th>' )
         _cur = self.getNoAnswers ( _id )
+        if len( _cur ) > 0 :
+            _table.addContent ( u'<th colspan="4">Bisher nicht hinterlegte Aussagen:</th>' )
         _odd = 0
         _count = 1
         for _row_array in _cur:

@@ -20,6 +20,7 @@ install:
 
 create-db:
 	cat ./sql/create-sqlite-de.sql                  | sqlite3 ./bin/belief-matching.sqlite
+	cat ./sql/evangelikale_gemeinden.konfession.sql | sqlite3 ./bin/belief-matching.sqlite
 	cat ./sql/evangelisch-lutherisch.konfession.sql | sqlite3 ./bin/belief-matching.sqlite
 	cat ./sql/konservative_quaker.konfession.sql    | sqlite3 ./bin/belief-matching.sqlite
 	cat ./sql/liberale_quaker.konfession.sql        | sqlite3 ./bin/belief-matching.sqlite
