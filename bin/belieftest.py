@@ -119,16 +119,13 @@ class belieftest:
             # user answer loop
             for user_answer_key in user_answers.keys() :
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
-
-                if user_answers [ user_answer_key ] [ "answer" ] == deno_answer :
-                    if user_answers [ user_answer_key ] [ "wichtung" ] == "1" :
-                        denomination_points [ str(_denomination_id) ] = \
-                            int( denomination_points [ str(_denomination_id) ]) + 1
+                _user_answer = user_answers [ user_answer_key ] [ "answer" ]
+                if (int(_user_answer) == int(deno_answer)) or ( int(deno_answer) == 3) :
+                    denomination_points [ str(_denomination_id) ] = \
+                        int( denomination_points [ str(_denomination_id) ]) + 1
+                    if int(user_answers [ user_answer_key ] [ "wichtung" ]) == 1 :
                         denomination_weighting_points [ str(_denomination_id) ] = \
                             int( denomination_weighting_points [ str(_denomination_id) ] ) + 1
-                    else:
-                        denomination_points [ str(_denomination_id) ] = \
-                            int( denomination_points [ str(_denomination_id) ] ) + 1
                             
         for _key in user_answers.keys() :
             if int( user_answers [_key][ "wichtung" ] ) == 1 :

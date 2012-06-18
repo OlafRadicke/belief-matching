@@ -269,13 +269,13 @@ class sqlgenerator:
             _col_4 =  HtmlTemplate.Tag ( "td" )
             
             _select = HtmlTemplate.Tag ( "select" )
-            _select.setAttribute ( "name", u'answer_' + str ( row[0] ) )
+            _select.setAttribute ( "name", u'answer_' + unicode ( row[0] ) )
             _select.setAttribute ( "size", "1" )
             
-            for _optionenline in _answer_optionen :
+            for _optionenline in _sqlBackend.getAnswersDescriptions () :
                 _option = HtmlTemplate.Tag ( "option" )
-                _option.setAttribute ( "value", str ( _optionenline[0] ) )
-                _option.addContent ( _optionenline[1] )
+                _option.setAttribute ( "value", unicode ( _optionenline[0] ) )
+                _option.addContent ( _optionenline[3] )
                 _select.addContent ( _option )
                 
             _col_4.addContent ( _select ) 
