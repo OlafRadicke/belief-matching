@@ -22,6 +22,7 @@ import web
 from web import form
 
 import HtmlTemplate
+import SQLBackend
 
 class databaseview:    
 
@@ -58,6 +59,7 @@ class databaseview:
         return ""
 
     def getIntro ( self, _preSelect):
+        _sqlBackend = SQLBackend.SQLBackend()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute(''' SELECT denomination_id, 
@@ -81,6 +83,23 @@ class databaseview:
             hinterlegen willst. Dann nimmt mit mir Kontakt auf: 
             <a href="mailto:briefkasten@olaf-radicke.de">briefkasten@olaf-radicke.de</a>''')
         _intro.addContent ( _p_1 )
+        
+
+        _section_glossar = HtmlTemplate.Tag ( "h3" )      
+        _section_glossar.addContent ( u'''Glossar - Erleuterung zu den Aussagen.''')
+        _intro.addContent ( _section_glossar )
+        
+        _p_liste = HtmlTemplate.Tag ( "p" )
+        _list = HtmlTemplate.Tag ( "ul" )
+        for _row in _sqlBackend.getAnswersDescriptions () :
+            _item = HtmlTemplate.Tag ( "li" )
+            _item.addContent ( u'<b>' + unicode(_row[3]) + ':</b> ')
+            _item.addContent ( unicode(_row[4]) )
+            _list.addContent ( _item )
+            
+        _p_liste.addContent ( _list )
+        _intro.addContent ( _p_liste )         
+        
         
         _section_2 = HtmlTemplate.Tag ( "h2" )      
         _section_2.addContent ( u'''Hinterlegte Datensätze ansehen''')
@@ -137,11 +156,14 @@ class databaseview:
         cur.execute ( '''
             SELECT questions.question, 
                    denomination_answers.answer_nr, 
-                   denomination_answers.commentary
+                   denomination_answers.commentary,
+                   answers.deno_statement
             FROM denomination_answers, 
-                 questions 
+                 questions,
+                 answers
             WHERE denomination_answers.denomination_id = ?
             AND denomination_answers.question_id = questions.question_id
+            AND denomination_answers.answer_nr = answers.answers_nr
             ORDER BY denomination_answers.answer_nr, 
                     questions.kat, 
                     questions.question;
@@ -175,16 +197,16 @@ class databaseview:
             _col =  HtmlTemplate.Tag ( "td" )
             if int(row[1]) == 0:
                 _row.setAttribute ( "class", "no" )
-                _col.addContent ( u'<b>Trift nicht zu:</b> ')
+                _col.addContent ( u'<b>' + unicode ( row[3] ) + ':</b> ')
             elif int(row[1]) == 1:
                 _row.setAttribute ( "class", "yes" )
-                _col.addContent ( u'<b>Trift zu:</b> ')
+                _col.addContent ( u'<b>' + unicode ( row[3] ) + ':</b> ')
             elif int(row[1]) == 2:
                 _row.setAttribute ( "class", "void" )
-                _col.addContent ( u'<b>Persönliche Entscheidung:</b> ')
+                _col.addContent ( u'<b>' + unicode ( row[3] ) + ':</b> ')
             else:
                 _row.setAttribute ( "class", "void" )
-                _col.addContent ( u'<b>Keine Aussage:</b> ') 
+                _col.addContent ( u'<b>' + unicode ( row[3] ) + ':</b> ') 
                 
             _tooltip = HtmlTemplate.Tag ( "a" )
             _tooltip.setAttribute ( "href", "#hint" )

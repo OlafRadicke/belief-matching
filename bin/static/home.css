@@ -283,10 +283,10 @@ div.appbox td {
     margin: 10px;
 }
 
-div.appbox form{
+/*div.appbox form{
     align: center;
     text-align: center;
-}
+}*/
 
 /* --------- Prozentbalken ----------------*/
 div.appbox td.tabpoints {
@@ -355,7 +355,7 @@ div.appbox img.participate_img {
 
 
 div.appbox li{
-    width: 50%; 
+    width: 75%; 
     margin: 15px;
 }
 

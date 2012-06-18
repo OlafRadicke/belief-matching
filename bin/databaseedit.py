@@ -68,7 +68,7 @@ class databaseedit:
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute( ''' 
-            SELECT answers_nr, description 
+            SELECT answers_nr, deno_statement 
             FROM answers 
             ORDER BY answers_nr ; ''' )
         for _row_array in cur:

@@ -35,9 +35,16 @@ CREATE TABLE weightings (
     description         TEXT    NOT NULL
 );
 
+-- user_statement mögliche Aussage des users
+-- user_description kurze Beschreibung der selben
+-- deno_statement mögliche Aussage der Konfession
+-- user_description kurze Beschreibung der selben
 CREATE TABLE answers (
     answers_nr        INTEGER PRIMARY KEY NOT NULL,
-    description       TEXT    NOT NULL
+    user_statement         TEXT    NOT NULL,
+    user_description       TEXT    NOT NULL,
+    deno_statement         TEXT    NOT NULL,
+    deno_description       TEXT    NOT NULL
 );
 
 -- ###########################################################################
@@ -58,21 +65,64 @@ INSERT INTO weightings ( weighting_nr, description ) VALUES (
 
 -- ############ Answers ##################################################
 
-INSERT INTO answers ( answers_nr, description ) VALUES (
+    
+INSERT INTO answers ( 
+    answers_nr, 
+    user_statement,   
+    user_description,
+    deno_statement,
+    deno_description
+) 
+VALUES (
 0,
-"trifft NICHT zu");
+"trifft NICHT zu",
+"Die angegeben Aussage wird vom Benutzer verneint.",
+"trifft NICHT zu",
+"Die angegeben Aussage wird vom der Konfession verneint."
+);
 
-INSERT INTO answers ( answers_nr, description ) VALUES (
+INSERT INTO answers ( 
+    answers_nr, 
+    user_statement,   
+    user_description,
+    deno_statement,
+    deno_description
+) VALUES (
 1,
-"trifft zu");
+"trifft zu",
+"Der gemachten Aussage wird vom Benutzer zugestimmt.",
+"trifft zu",
+"Der gemachten Aussage wird vom der Konfession zugestimmt.");
 
-INSERT INTO answers ( answers_nr, description ) VALUES (
+INSERT INTO answers ( 
+    answers_nr, 
+    user_statement,   
+    user_description,
+    deno_statement,
+    deno_description
+)  VALUES (
 2,
-"Persönliche Entscheidung");
+"Persönliche Entscheidung",
+"Der Benutzer möchte des es Jedem selbst überlassen bleibt zu entscheiden.",
+"Persönliche Entscheidung",
+"Die Konfession überlässt es jedem Mitglied darüber selber zu entscheiden."
+);
 
-INSERT INTO answers ( answers_nr, description ) VALUES (
+INSERT INTO answers ( 
+    answers_nr, 
+    user_statement,   
+    user_description,
+    deno_statement,
+    deno_description
+) VALUES (
 3,
-"Keine Meinung");
+"Keine Meinung",
+"Der Benutzer hat keine eigenen Meinung und würde die Auffassung der jeweiligen 
+ Konfession mittragen/akzeptieren.",
+"Ja und Nein",
+"Wenn die Ortsgemeinden sehr autonom sind, kann die Antwort unterschiedlich 
+ ausfallen. ");
+
 
 -- ##################### insert questions ####################################
 -- ======= kat "Gott" beginnend mit 11... ====================================

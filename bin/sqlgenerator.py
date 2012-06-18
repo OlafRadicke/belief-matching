@@ -23,6 +23,7 @@ import web
 from web import form
 
 import HtmlTemplate
+import SQLBackend
 
 class sqlgenerator:
     
@@ -34,7 +35,7 @@ class sqlgenerator:
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute( ''' 
-            SELECT answers_nr, description 
+            SELECT answers_nr, deno_statement 
             FROM answers 
             ORDER BY answers_nr ; ''' )
         for row in cur:
@@ -114,6 +115,7 @@ class sqlgenerator:
         
         
     def GET(self):
+        _sqlBackend = SQLBackend.SQLBackend()
         _answer_optionen = self.getAnswers ()
         _last_kat = ""
         weightingsDict = self.getWeightings ()
@@ -149,9 +151,26 @@ class sqlgenerator:
         _intro.addContent ( _mail )
         
         _intro.addContent ( u' schicken.' )
-        
         _form.addContent ( _intro )
         
+        _section_glossar = HtmlTemplate.Tag ( "h3" )      
+        _section_glossar.addContent ( u'''Glossar - Erleuterung zu den Aussagen.''')
+        _form.addContent ( _section_glossar )    
+        
+        _p_liste = HtmlTemplate.Tag ( "p" )
+        _list = HtmlTemplate.Tag ( "ul" )
+        for _row in _sqlBackend.getAnswersDescriptions () :
+            _item = HtmlTemplate.Tag ( "li" )
+            _item.addContent ( u'<b>' + unicode(_row[3]) + ':</b> ')
+            _item.addContent ( unicode(_row[4]) )
+            _list.addContent ( _item )
+            
+        _p_liste.addContent ( _list )
+        _form.addContent ( _p_liste )          
+        
+        _section_newdata = HtmlTemplate.Tag ( "h2" )      
+        _section_newdata.addContent ( u'''Der neuer Datensatz''')
+        _form.addContent ( _section_newdata )        
         
         _p_2 = HtmlTemplate.Tag ( "p" )
         _p_2.addContent ( u'<b>Name der Konfession:</b><br>' )
