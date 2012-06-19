@@ -55,7 +55,7 @@ INSERT INTO denomination_answers (
         "Ja, das trifft hier zu."); 
  
 
--- ##################### Kategorie : Administration/Leitung #####################
+-- ##################### Kategorie : Administration/<br>Leitung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -99,16 +99,6 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         157,         6,         0, 
         "Die Gemeinden werden von Hauptamtlichen (Pfarrern) geleitet."); 
- 
--- INSERT INTO denomination_answers ( 
---         question_id, 
---         denomination_id, 
---         answer_nr, 
---         commentary ) 
---      VALUES (         158,         6,         1, 
---         "In Deutschland oder Österreich werden die lutherischen 
---  Landeskirchen von einem Bischof oder einer Bischöfin geleitet, der bzw. die 
---  über das Ordinationsrecht und die Lehraufsicht verfügt. "); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -197,7 +187,7 @@ INSERT INTO denomination_answers (
         ""); 
  
 
--- ##################### Kategorie : Erlösung/Rechtfertigung #####################
+-- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -284,8 +274,29 @@ INSERT INTO denomination_answers (
      VALUES (         1810,         6,         1, 
         ""); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1811,         6,         0, 
+        ""); 
+ 
 
--- ##################### Kategorie : Gemeinde/Ekklesiologie #####################
+-- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
+
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         2006,         6,         0, 
+        "Die meisten Mitglieder gehen selten bis gar nicht zum
+ Gottesdienst oder beteiligen sich nicht am Gemeindeleben. Oft werden nur die wichtigen
+ Veranstaltungen wahrgenommen: Taufe, Heirat, Weihnachten und Beerdigung..."); 
+ 
+
+-- ##################### Kategorie : Gemeinde/<br>Ekklesiologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -308,21 +319,11 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2006,         6,         0, 
-        "Die meisten Mitglieder gehen selten bis gar nicht zum
- Gottesdienst oder beteiligen sich nicht am Gemeindeleben. Oft werden nur die wichtigen
- Veranstaltungen wahrgenommen: Taufe, Heirat, Weihnachten und Beerdigung..."); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
      VALUES (         2010,         6,         0, 
         ""); 
  
 
--- ##################### Kategorie : Gott/Christologie #####################
+-- ##################### Kategorie : Gott/<br>Christologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -377,7 +378,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         117,         6,         3, 
+     VALUES (         117,         6,         1, 
         ""); 
  
 INSERT INTO denomination_answers ( 
@@ -440,7 +441,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         161,         6,         3, 
+     VALUES (         161,         6,         2, 
         "Die Frage ist de facto bedeutungslos und Privatangelegenheit
  der Mitglieder."); 
  
@@ -483,7 +484,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         166,         6,         3, 
+     VALUES (         166,         6,         2, 
         "Nein, das ist die Privatentscheidung der Mitglieder."); 
  
 INSERT INTO denomination_answers ( 
@@ -491,7 +492,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         167,         6,         3, 
+     VALUES (         167,         6,         2, 
         "Nein, das ist die Privatentscheidung der Mitglieder."); 
  
 
@@ -577,6 +578,30 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         1910,         6,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1911,         6,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1912,         6,         1, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1913,         6,         1, 
         ""); 
  
 

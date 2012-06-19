@@ -47,6 +47,14 @@ CREATE TABLE answers (
     deno_description       TEXT    NOT NULL
 );
 
+-- Speichert das datum des letzten Updates
+CREATE TABLE version (
+    id_nr             INTEGER PRIMARY KEY NOT NULL,
+    update_date       TEXT    NOT NULL
+);
+
+INSERT INTO version ( update_date ) VALUES ( date( 'now' ) );
+
 -- ###########################################################################
 -- ##-----------------------------------------------------------------------##
 -- ##------------------ inserts --------------------------------------------##
@@ -616,7 +624,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1911,
 "Sonstiges",
-"Ich glaube, in der ausbürgern des Lehramt ist der Papstes unfehlbar.",
+"Ich glaube, in der Ausübung des Lehramt ist der Papstes unfehlbar.",
 "");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (

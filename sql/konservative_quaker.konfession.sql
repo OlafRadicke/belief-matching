@@ -50,7 +50,7 @@ INSERT INTO denomination_answers (
         "Die Abendmalfeier hat für Quäker im Allgemeinen keine Bedeutung"); 
  
 
--- ##################### Kategorie : Administration/Leitung #####################
+-- ##################### Kategorie : Administration/<br>Leitung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -96,14 +96,6 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         157,         1,         0, 
         ""); 
- 
--- INSERT INTO denomination_answers ( 
---         question_id, 
---         denomination_id, 
---         answer_nr, 
---         commentary ) 
---      VALUES (         158,         1,         0, 
---         ""); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -196,7 +188,7 @@ INSERT INTO denomination_answers (
         ""); 
  
 
--- ##################### Kategorie : Erlösung/Rechtfertigung #####################
+-- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -278,8 +270,27 @@ INSERT INTO denomination_answers (
      VALUES (         1810,         1,         0, 
         ""); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1811,         1,         0, 
+        ""); 
+ 
 
--- ##################### Kategorie : Gemeinde/Ekklesiologie #####################
+-- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
+
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         2006,         1,         1, 
+        ""); 
+ 
+
+-- ##################### Kategorie : Gemeinde/<br>Ekklesiologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -302,19 +313,11 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2006,         1,         1, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
      VALUES (         2010,         1,         1, 
         ""); 
  
 
--- ##################### Kategorie : Gott/Christologie #####################
+-- ##################### Kategorie : Gott/<br>Christologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -462,7 +465,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         164,         1,         2, 
+     VALUES (         164,         1,         3, 
         ""); 
  
 INSERT INTO denomination_answers ( 
@@ -572,6 +575,30 @@ INSERT INTO denomination_answers (
      VALUES (         1910,         1,         1, 
         ""); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1911,         1,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1912,         1,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1913,         1,         1, 
+        ""); 
+ 
 
 -- ##################### Kategorie : Taufe #####################
 
@@ -588,7 +615,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         122,         1,         3, 
+     VALUES (         122,         1,         1, 
         "Die Taufe hat für Quäker im Allgemeinen keine Bedeutung"); 
  
 INSERT INTO denomination_answers ( 
@@ -596,7 +623,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         123,         1,         3, 
+     VALUES (         123,         1,         1, 
         "Die Taufe hat für Quäker im Allgemeinen keine Bedeutung"); 
  
 INSERT INTO denomination_answers ( 
@@ -604,7 +631,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1204,         1,         3, 
+     VALUES (         1204,         1,         1, 
         ""); 
  
 COMMIT;; 

@@ -41,6 +41,7 @@ clean:
 update: 
 	make clean
 	make create-db
+	git log -n 1 --date=short | grep Date | cut -d :  -f 2
 	/etc/init.d/belief-matching stop
 	make uninstall
 	make install

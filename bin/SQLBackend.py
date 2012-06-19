@@ -33,3 +33,15 @@ class SQLBackend :
                 deno_description
             FROM answers; ''' )
         return _cur   
+        
+
+    ## get back descriptions of answers
+    def getDateOfLastUpdate ( self ):
+        _conn = sqlite3.connect('belief-matching.sqlite')
+        _cur = _conn.cursor()
+        _cur.execute( 'select update_date FROM version;' )
+        for _row in _cur :
+            return _row [ 0 ]
+        
+        return u'unbekannt'      
+        

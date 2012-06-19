@@ -50,7 +50,7 @@ INSERT INTO denomination_answers (
         "Hat keinerlei Bedeutung für Liberale Quäker"); 
  
 
--- ##################### Kategorie : Administration/Leitung #####################
+-- ##################### Kategorie : Administration/<br>Leitung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -91,14 +91,6 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         157,         2,         0, 
         "Es gibt Älteste und s.g. <i>Schreiber</> die aber nur administrativ und seelsorgerisch tätig sind. Die Leitung liegt bei der s.g. Monatsversammlung an der alle beteiligt sind."); 
- 
--- INSERT INTO denomination_answers ( 
---         question_id, 
---         denomination_id, 
---         answer_nr, 
---         commentary ) 
---      VALUES (         158,         2,         0, 
---         ""); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -184,7 +176,7 @@ INSERT INTO denomination_answers (
         ""); 
  
 
--- ##################### Kategorie : Erlösung/Rechtfertigung #####################
+-- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -266,8 +258,27 @@ INSERT INTO denomination_answers (
      VALUES (         1810,         2,         0, 
         "Diese Vorstellung ist liberalen Quäkern völlig fremd."); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1811,         2,         0, 
+        ""); 
+ 
 
--- ##################### Kategorie : Gemeinde/Ekklesiologie #####################
+-- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
+
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         2006,         2,         2, 
+        "Es gibt nicht wenige die jahrelang nicht in Erscheinung treten."); 
+ 
+
+-- ##################### Kategorie : Gemeinde/<br>Ekklesiologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -290,19 +301,11 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         2006,         2,         2, 
-        "Es gibt nicht wenige die jahrelang nicht in Erscheinung treten."); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
      VALUES (         2010,         2,         1, 
         "Ja, in so fern noch an Jesus Christus geglaubt wird."); 
  
 
--- ##################### Kategorie : Gott/Christologie #####################
+-- ##################### Kategorie : Gott/<br>Christologie #####################
 
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -551,6 +554,30 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         1910,         2,         1, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1911,         2,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1912,         2,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1913,         2,         1, 
         ""); 
  
 

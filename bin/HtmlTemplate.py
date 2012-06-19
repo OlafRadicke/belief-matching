@@ -16,7 +16,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import string 
-
+import SQLBackend
 
 
 class Tag:
@@ -156,6 +156,7 @@ class HtmlTemplate:
         
     
     def getCompleteSite(self, aktivtab, _appBoxValue ):
+        _sqlBackend = SQLBackend.SQLBackend()
         
         _htmlTag = Tag ( "html" )
         _head = Tag ( "head" )
@@ -203,6 +204,9 @@ class HtmlTemplate:
         _h3 = Tag ( "h3" )
         _h3.addContent ( u'<i>BELIEF MATCHING</i> (beta)' )
         _bannerbox.addContent ( _h3 )
+        
+        _bannerbox.addContent ( u'Letztes Update: ' )
+        _bannerbox.addContent ( _sqlBackend.getDateOfLastUpdate() )
         
         _all.addContent ( _bannerbox )
 
