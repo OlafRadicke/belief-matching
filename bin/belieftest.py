@@ -120,7 +120,10 @@ class belieftest:
             for user_answer_key in user_answers.keys() :
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
                 _user_answer = user_answers [ user_answer_key ] [ "answer" ]
-                if (int(_user_answer) == int(deno_answer)) or ( int(deno_answer) == 3) :
+                if ( int ( _user_answer )   == int ( deno_answer ) ) \
+                  or ( int ( deno_answer)   == 3 ) \
+                  or ( int ( _user_answer ) == 3 ) :
+                        
                     denomination_points [ str(_denomination_id) ] = \
                         int( denomination_points [ str(_denomination_id) ]) + 1
                     if int(user_answers [ user_answer_key ] [ "wichtung" ]) == 1 :
