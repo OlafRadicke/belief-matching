@@ -545,6 +545,31 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  Beichte die Sünden vergeben kann.",
 "");
 
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1812,
+"Erlösung/<br>Rechtfertigung",
+"Ich glaube an die Erbsünde, die durch den Sündenfall Adams und Evas herbeigeführt 
+ worden ist, und an dem seither jeder Mensch als Nachfahre dieser Ureltern teilhabe.",
+"Durch die Taufe kommt es zu keiner Aufhebung der Erbsünde; der Christ wird von 
+ Gott gerecht gesprochen (Rechtfertigungslehre), nicht gerecht gemacht. Besonders 
+ im Calvinismus wird betont, dass die menschliche Natur an und für sich bereits 
+ sündig sei, noch vor jeder konkreten Tat. (Wikipedia)");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1813,
+"Erlösung/<br>Rechtfertigung",
+"Durch den Opfertod Jesus wurde die Erbsünde für alle Menschen vorbehaltlos und 
+ bedingungslos gesühnt. Heute müssen sich die Menschen nur noch für die von ihnen
+ selbst gemachten Sünden vor Gott rechtfertigen.",
+"Die Erbsünde selber wird nicht in Frage gestellt. Nur deren heutige Relevanz.");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1814,
+"Erlösung/<br>Rechtfertigung",
+"Ich glaube an die Erbsünde. Erlösung findet der Mensch durch das Sakrament der 
+ Taufe, da der Getaufte dann nicht mehr der Erbsünde unterliegt.",
+"");
+
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (

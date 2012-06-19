@@ -68,7 +68,7 @@ class belieftest:
             FROM weightings 
             ORDER BY weighting_nr ASC; ''')
         for row in cur:
-             weightingsNames [ str(row[0]) ] = str(row[1]) 
+             weightingsNames [ unicode(row[0]) ] = unicode(row[1]) 
         return weightingsNames        
         
     # gibt die Antwort einer Konfession auf eine Frage zurück.
@@ -86,7 +86,7 @@ class belieftest:
         # set default value
         _denomination_answer = "2"
         for row in cur:
-            _denomination_answer = str(row[0])
+            _denomination_answer = unicode(row[0])
         return _denomination_answer
         
     # vergleicht die Antworten des Benutzer mit den der Konfessionen.
@@ -102,11 +102,10 @@ class belieftest:
         cur.execute("SELECT question_id FROM questions;")  
         
         widgetlist = web.input(groups = []) 
-        #print widgetlist       
         for row in cur:  
             i = row[0]
-            user_answers[str(i)] =  {'answer'   :  str( widgetlist['answer_'   + str(i)] ), \
-                                     'wichtung' :  str( widgetlist['wichtung_' + str(i)] ) }
+            user_answers[unicode(i)] =  {'answer'   :  unicode( widgetlist[ u'answer_'   + unicode(i)] ), \
+                                     'wichtung' :  unicode( widgetlist[ u'wichtung_' + unicode(i)] ) }
           
         cur.execute( '''SELECT denomination_id 
                         FROM denominations
@@ -114,8 +113,8 @@ class belieftest:
         # denomination loop
         for row in cur:  
             _denomination_id = row[0]
-            denomination_points [ str(_denomination_id) ] = 0
-            denomination_weighting_points [ str(_denomination_id) ] = 0
+            denomination_points [ unicode(_denomination_id) ] = 0
+            denomination_weighting_points [ unicode(_denomination_id) ] = 0
             # user answer loop
             for user_answer_key in user_answers.keys() :
                 deno_answer = self.getAnswersOfDenomination( _denomination_id, user_answer_key )
@@ -124,11 +123,11 @@ class belieftest:
                   or ( int ( deno_answer)   == 3 ) \
                   or ( int ( _user_answer ) == 3 ) :
                         
-                    denomination_points [ str(_denomination_id) ] = \
-                        int( denomination_points [ str(_denomination_id) ]) + 1
+                    denomination_points [ unicode(_denomination_id) ] = \
+                        int( denomination_points [ unicode(_denomination_id) ]) + 1
                     if int(user_answers [ user_answer_key ] [ "wichtung" ]) == 1 :
-                        denomination_weighting_points [ str(_denomination_id) ] = \
-                            int( denomination_weighting_points [ str(_denomination_id) ] ) + 1
+                        denomination_weighting_points [ unicode(_denomination_id) ] = \
+                            int( denomination_weighting_points [ unicode(_denomination_id) ] ) + 1
                             
         for _key in user_answers.keys() :
             if int( user_answers [_key][ "wichtung" ] ) == 1 :
@@ -183,20 +182,20 @@ class belieftest:
             _col_2.setAttribute ( "class", "tabpoints" )
             _bar_le = HtmlTemplate.Tag ( "div" )
             _bar_le.setAttribute ( "class", "points" )
-            _bar_le.setAttribute ( "style", 'width:' + str ( int ( _relativ ) ) + '%;' )
+            _bar_le.setAttribute ( "style", 'width:' + unicode ( int ( _relativ ) ) + '%;' )
             _bar_le.addContent ( u'&nbsp;' )
             _col_2.addContent ( _bar_le )
-            _col_2.addContent ( str ( int ( _relativ ) ) + ' %' )
+            _col_2.addContent ( unicode ( int ( _relativ ) ) + ' %' )
             _row.addContent ( _col_2 )
 
             _col_3 = HtmlTemplate.Tag ( "td" )
             _col_3.setAttribute ( "class", "tabpoints-weighting" )
             _bar_ri = HtmlTemplate.Tag ( "div" )
             _bar_ri.setAttribute ( "class", "points-weighting" )
-            _bar_ri.setAttribute ( "style", 'width:' + str ( int ( _weighting_relativ ) ) + '%;' )
+            _bar_ri.setAttribute ( "style", 'width:' + unicode ( int ( _weighting_relativ ) ) + '%;' )
             _bar_ri.addContent ( u'&nbsp;' )
             _col_3.addContent ( _bar_ri )
-            _col_3.addContent ( str ( int ( _weighting_relativ ) ) + ' %' )
+            _col_3.addContent ( unicode ( int ( _weighting_relativ ) ) + ' %' )
             _row.addContent ( _col_3 )
             
             _table.addContent ( _row)
@@ -281,7 +280,7 @@ class belieftest:
                 _odd = 1
             # column: number
             _col_1 =  HtmlTemplate.Tag ( "td" )
-            _col_1.addContent ( str(_line_count) )
+            _col_1.addContent ( unicode(_line_count) )
             _rowTag.addContent ( _col_1 )            
             _line_count = _line_count + 1
             
@@ -314,12 +313,12 @@ class belieftest:
             _col_4 =  HtmlTemplate.Tag ( "td" )
             
             _select = HtmlTemplate.Tag ( "select" )
-            _select.setAttribute ( "name", u'answer_' + str ( row[0] ) )
+            _select.setAttribute ( "name", u'answer_' + unicode ( row[0] ) )
             _select.setAttribute ( "size", "1" )
             
             for _optionenline in _answer_optionen :
                 _option = HtmlTemplate.Tag ( "option" )
-                _option.setAttribute ( "value", str ( _optionenline[0] ) )
+                _option.setAttribute ( "value", unicode ( _optionenline[0] ) )
                 _option.addContent ( _optionenline[1] )
                 _select.addContent ( _option )
                 
@@ -330,7 +329,7 @@ class belieftest:
             _col_5 =  HtmlTemplate.Tag ( "td" )
             
             _select_wight = HtmlTemplate.Tag ( "select" )
-            _select_wight.setAttribute ( "name", u'wichtung_' + str ( row[0] ) )
+            _select_wight.setAttribute ( "name", u'wichtung_' + unicode ( row[0] ) )
             _select_wight.setAttribute ( "size", "1" )
             
             _option_1 = HtmlTemplate.Tag ( "option" )
@@ -347,7 +346,8 @@ class belieftest:
             _rowTag.addContent ( _col_5 )    
             _table.addContent ( _rowTag )
             
-        _appbox.addContent ( _table  )
+        #_appbox.addContent ( _table  )
+        _form.addContent ( _table  )
         _p_form = HtmlTemplate.Tag ( "p" )    
         #_p_form.addContent ( _table )   
         _p_form.addContent ( u'<br>' )   
