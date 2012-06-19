@@ -157,7 +157,6 @@ class sqlgenerator:
         _section_glossar.addContent ( u'''Glossar - Erleuterung zu den Aussagen.''')
         _form.addContent ( _section_glossar )    
         
-        _p_liste = HtmlTemplate.Tag ( "p" )
         _list = HtmlTemplate.Tag ( "ul" )
         for _row in _sqlBackend.getAnswersDescriptions () :
             _item = HtmlTemplate.Tag ( "li" )
@@ -165,8 +164,7 @@ class sqlgenerator:
             _item.addContent ( unicode(_row[4]) )
             _list.addContent ( _item )
             
-        _p_liste.addContent ( _list )
-        _form.addContent ( _p_liste )          
+        _form.addContent ( _list )          
         
         _section_newdata = HtmlTemplate.Tag ( "h2" )      
         _section_newdata.addContent ( u'''Der neuer Datensatz''')
