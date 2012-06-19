@@ -89,7 +89,7 @@ class databaseview:
         _section_glossar.addContent ( u'''Glossar - Erleuterung zu den Aussagen.''')
         _intro.addContent ( _section_glossar )
         
-        _p_liste = HtmlTemplate.Tag ( "p" )
+
         _list = HtmlTemplate.Tag ( "ul" )
         for _row in _sqlBackend.getAnswersDescriptions () :
             _item = HtmlTemplate.Tag ( "li" )
@@ -97,8 +97,8 @@ class databaseview:
             _item.addContent ( unicode(_row[4]) )
             _list.addContent ( _item )
             
-        _p_liste.addContent ( _list )
-        _intro.addContent ( _p_liste )         
+
+        _intro.addContent ( _list )         
         
         
         _section_2 = HtmlTemplate.Tag ( "h2" )      
