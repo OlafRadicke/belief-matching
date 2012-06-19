@@ -146,6 +146,7 @@ class databaseview:
         _intro = self.getIntro( 0 )
         _appbox.addContent ( _intro )
         _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self):
@@ -263,4 +264,5 @@ class databaseview:
         _appbox.addContent ( _form )
         
         htmlcode += self.htemp.getCompleteSite( "datenbasis", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( htmlcode )

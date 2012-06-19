@@ -17,6 +17,7 @@
 
 import HtmlTemplate
 import sqlite3
+import web
 
 class index:
     
@@ -118,4 +119,5 @@ class index:
         htmlcode += self.htemp.getCompleteSite( "home", _appbox )
         #return self.htemp.convertGermanChar( htmlcode )
         #print htmlcode
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return htmlcode

@@ -296,6 +296,7 @@ class sqlgenerator:
             
 
         _htmlcode = self.htemp.getCompleteSite( "sqlgenerator", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self): 
@@ -324,4 +325,5 @@ class sqlgenerator:
         _appbox.addContent ( _p_1 )
         
         _htmlcode = self.htemp.getCompleteSite( "sqlgenerator", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )

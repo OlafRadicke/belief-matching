@@ -37,9 +37,8 @@ urls = (
   '/participate','participate.participate',
   '/sqlgenerator','sqlgenerator.sqlgenerator')
 
-app = web.application(urls, globals())#, web.reloader)
-render = web.template.render('templates/')
 
+app = web.application(urls, globals())#, web.reloader)
 
 
 htemp = HtmlTemplate.HtmlTemplate()

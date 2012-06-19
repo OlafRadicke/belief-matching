@@ -357,6 +357,7 @@ class belieftest:
             
 
         _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self): 
@@ -366,4 +367,5 @@ class belieftest:
         _table = self.matchingTable()
         _appbox.addContent ( _table )
         _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )

@@ -356,6 +356,7 @@ class databaseedit:
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self):
@@ -368,4 +369,5 @@ class databaseedit:
             _appbox = self.getSQLResulte ( _widgetlist )
         
         _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
