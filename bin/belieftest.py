@@ -227,7 +227,7 @@ class belieftest:
         _section_glossar.addContent ( u'''Glossar - Erleuterung zu den Aussagen.''')
         _appbox.addContent ( _section_glossar )
         
-        _p_liste = HtmlTemplate.Tag ( "p" )
+
         _list = HtmlTemplate.Tag ( "ul" )
         for _row in _sqlBackend.getAnswersDescriptions () :
             _item = HtmlTemplate.Tag ( "li" )
@@ -235,8 +235,7 @@ class belieftest:
             _item.addContent ( unicode(_row[2]) )
             _list.addContent ( _item )
             
-        _p_liste.addContent ( _list )
-        _appbox.addContent ( _p_liste )          
+        _appbox.addContent ( _list )          
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
@@ -348,8 +347,9 @@ class belieftest:
             _rowTag.addContent ( _col_5 )    
             _table.addContent ( _rowTag )
             
+        _appbox.addContent ( _table  )
         _p_form = HtmlTemplate.Tag ( "p" )    
-        _p_form.addContent ( _table )   
+        #_p_form.addContent ( _table )   
         _p_form.addContent ( u'<br>' )   
         _p_form.addContent ( form.Button('Auswerten').render() )
         _form.addContent ( _p_form )
