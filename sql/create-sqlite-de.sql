@@ -364,12 +364,12 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  <b>geleitete</b> werden.",
 "Also nicht hierarchisch aber auch nicht basisdemokratisch.");
 
-INSERT INTO questions (question_id, kat, question, commentary) VALUES (
-158,
-"Administration/<br>Leitung",
-"Die Gemeindeleitung sollte von einer autorisierten Institution bestimmt/eingesetzt 
- werden.",
-"Also hierarchische Strukturen und keine autonomen Ortsgemeinden.");
+-- INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+-- 158,
+-- "Administration/<br>Leitung",
+-- "Die Gemeindeleitung sollte von einer autorisierten Institution bestimmt/eingesetzt 
+--  werden.",
+-- "Also hierarchische Strukturen und keine autonomen Ortsgemeinden.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1512,
@@ -536,6 +536,14 @@ stellvertretenden Opfertod und seine Auferstehung sowie die Bekehrung
 und Wiedergeburt durch den Heiligen Geist voraus. ",
 "");
 
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1811,
+"Erlösung/<br>Rechtfertigung",
+"Ich glaube das ein geweihter Priester in Stellvertretung für Gott, nach der
+ Beichte die Sünden vergeben kann.",
+"");
+
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -604,6 +612,27 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Sonstiges",
 "Ich schwöre nicht und lege keine Eide ab.",
 "Abgeleitet aus der Bergpredigt: Mt. 5:34.");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1911,
+"Sonstiges",
+"Ich glaube, in der ausbürgern des Lehramt ist der Papstes unfehlbar.",
+"");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1912,
+"Sonstiges",
+"Ich glaube, an die jungfräuliche Empfängnis.",
+"Also, das Maria nicht von einem Mann/Menschen schwanger war oder je mit
+ einem Mann geschlafen hat, bevor Sie Jesus ausgetragen hat.");
+
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1913,
+"Sonstiges",
+"Die Verehrung von Heiligen und die bitte um Fürsprache der Selben halte ich 
+ für falsch.",
+"Die Frage impliziert, das man bestimmte verstorbene für Heilige hält.");
 
 -- ==================== Kat Gemeinde/Ekklesiologie beginnend mit 20... =====================
 

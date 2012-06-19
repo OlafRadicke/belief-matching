@@ -92,13 +92,13 @@ INSERT INTO denomination_answers (
      VALUES (         157,         2,         0, 
         "Es gibt Älteste und s.g. <i>Schreiber</> die aber nur administrativ und seelsorgerisch tätig sind. Die Leitung liegt bei der s.g. Monatsversammlung an der alle beteiligt sind."); 
  
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         158,         2,         0, 
-        ""); 
+-- INSERT INTO denomination_answers ( 
+--         question_id, 
+--         denomination_id, 
+--         answer_nr, 
+--         commentary ) 
+--      VALUES (         158,         2,         0, 
+--         ""); 
  
 INSERT INTO denomination_answers ( 
         question_id, 

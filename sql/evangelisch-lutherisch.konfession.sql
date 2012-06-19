@@ -100,15 +100,15 @@ INSERT INTO denomination_answers (
      VALUES (         157,         6,         0, 
         "Die Gemeinden werden von Hauptamtlichen (Pfarrern) geleitet."); 
  
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         158,         6,         1, 
-        "In Deutschland oder Österreich werden die lutherischen 
- Landeskirchen von einem Bischof oder einer Bischöfin geleitet, der bzw. die 
- über das Ordinationsrecht und die Lehraufsicht verfügt. "); 
+-- INSERT INTO denomination_answers ( 
+--         question_id, 
+--         denomination_id, 
+--         answer_nr, 
+--         commentary ) 
+--      VALUES (         158,         6,         1, 
+--         "In Deutschland oder Österreich werden die lutherischen 
+--  Landeskirchen von einem Bischof oder einer Bischöfin geleitet, der bzw. die 
+--  über das Ordinationsrecht und die Lehraufsicht verfügt. "); 
  
 INSERT INTO denomination_answers ( 
         question_id, 

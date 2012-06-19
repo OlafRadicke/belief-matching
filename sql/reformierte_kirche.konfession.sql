@@ -180,8 +180,8 @@ VALUES ( 157, 7, 0, "Die Gemeinden werden von Hauptamtlichen (Pfarrern) geleitet
  bzw. betreut.");
 
 
-INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 158, 7, 0, "Nein, die Gemeinden entscheiden selbst über ihre Ämterbesetzungen.");
+-- INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
+-- VALUES ( 158, 7, 0, "Nein, die Gemeinden entscheiden selbst über ihre Ämterbesetzungen.");
 
 -- ==================== Kat. Sexualität beginnend mit 16... ===================
 

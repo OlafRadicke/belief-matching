@@ -127,8 +127,8 @@ VALUES ( 2006, 3, 2, "");
 INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
 VALUES ( 157, 3, 0, "");
 
-INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
-VALUES ( 158, 3, 0, "");
+-- INSERT INTO denomination_answers ( question_id, denomination_id, answer_nr, commentary)
+-- VALUES ( 158, 3, 0, "");
 
 -- ==================== Kat. Sexualität beginnend mit 16... ===================
 

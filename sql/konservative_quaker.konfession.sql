@@ -97,13 +97,13 @@ INSERT INTO denomination_answers (
      VALUES (         157,         1,         0, 
         ""); 
  
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         158,         1,         0, 
-        ""); 
+-- INSERT INTO denomination_answers ( 
+--         question_id, 
+--         denomination_id, 
+--         answer_nr, 
+--         commentary ) 
+--      VALUES (         158,         1,         0, 
+--         ""); 
  
 INSERT INTO denomination_answers ( 
         question_id, 

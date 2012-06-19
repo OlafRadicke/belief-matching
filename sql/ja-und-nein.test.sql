@@ -325,16 +325,16 @@ INSERT INTO denomination_answers (
         3, 
         "(Noch) Kein Kommentar"); 
  
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES ( 
-         158, 
-        9, 
-        3, 
-        "(Noch) Kein Kommentar"); 
+-- INSERT INTO denomination_answers ( 
+--         question_id, 
+--         denomination_id, 
+--         answer_nr, 
+--         commentary ) 
+--      VALUES ( 
+--          158, 
+--         9, 
+--         3, 
+--         "(Noch) Kein Kommentar"); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
