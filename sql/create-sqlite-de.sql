@@ -173,14 +173,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 haben die Aufgabe den Anderen Gottes willen zu verkünden.",
 "Das ist im Grunde die alt testamentarische Sicht.");
 
--- neu
-
-INSERT INTO questions (question_id, kat, question, commentary) VALUES (
-116,
-"Gott/<br>Christologie",
-"Ein Mensch kann nur dadurch gerettet werden, dass Jesus für seien Sünden 
- gestorben ist, eine andere Möglichkeit gibt es nicht.",
-"Eine typische evangelikate Position.");
+-- 116 gelöscht
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 117,

@@ -365,14 +365,7 @@ INSERT INTO denomination_answers (
         "Quäker glauben schon, das es ausgewählte Menschen gibt, die besonders befähigt
  sind zum Lehr- und Predigt-Amt, aber die Fähigkeit Gottes Willen zuerkennen
  haben grundsätzlich erst mal alle Menschen, ist die Auffassung der Quäker."); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         116,         1,         0, 
-        ""); 
+
  
 INSERT INTO denomination_answers ( 
         question_id, 

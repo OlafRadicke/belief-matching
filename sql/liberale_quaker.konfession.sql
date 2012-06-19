@@ -352,14 +352,6 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         116,         2,         0, 
-        ""); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
      VALUES (         117,         2,         0, 
         ""); 
  
