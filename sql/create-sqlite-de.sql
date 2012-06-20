@@ -169,7 +169,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 115,
 "Gott/<br>Christologie",
-"Gott offenbart sich nur bestimmten Menschen (Propheten) und diese 
+"Gott offenbart sich nur oder vor allem bestimmten Menschen (Propheten) und diese 
 haben die Aufgabe den Anderen Gottes willen zu verkünden.",
 "Das ist im Grunde die alt testamentarische Sicht.");
 
@@ -481,8 +481,9 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 183,
 "Erlösung/<br>Rechtfertigung",
-"Menschen können auch noch nach ihrem Tod Buße tun, um der Verdammnis zu entgehen (Fegefeuer).",
-"");
+"Menschen können auch noch nach ihrem Tod (in irgend einer Form) Buße tun (oder
+geläutert werden) um der Verdammnis zu entgehen.",
+"Z.B. durch ein Fegefeuer wie bei den Katholiken.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 184,
@@ -666,7 +667,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 2004, 
 "Gemeinde/<br>Ekklesiologie",
 "Bei (wiederholten) Verfehlungen sollten (uneinsichtige) Mitglieder aus der 
- Gemeinde ausgeschlossen werden, wie z.B. bei den Zeugen Jehovas",
+ Gemeinde ausgeschlossen werden.",
 "Klassisches Gegenbeispiel ist die katholische Kirche, die Mitglieder maximal
  vom Abendmahl (<i>Exkommunikation</i>) ausschließt, aber niemals 
  vollständig die Mitgliedschaft entzieht.");
