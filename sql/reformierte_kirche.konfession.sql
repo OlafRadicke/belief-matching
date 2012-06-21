@@ -291,6 +291,30 @@ INSERT INTO denomination_answers (
      VALUES (         1811,         7,         0, 
         ""); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1812,         7,         1, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1813,         7,         0, 
+        ""); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1814,         7,         1, 
+        ""); 
+ 
 
 -- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
 
@@ -374,14 +398,6 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         115,         7,         0, 
         "Dem Prophetisch wird keine große Bedeutung zugeschrieben."); 
- 
-INSERT INTO denomination_answers ( 
-        question_id, 
-        denomination_id, 
-        answer_nr, 
-        commentary ) 
-     VALUES (         116,         7,         2, 
-        ""); 
  
 INSERT INTO denomination_answers ( 
         question_id, 

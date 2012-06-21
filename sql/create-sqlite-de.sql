@@ -550,7 +550,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1812,
 "Erlösung/<br>Rechtfertigung",
 "Ich glaube an die Erbsünde, die durch den Sündenfall Adams und Evas herbeigeführt 
- worden ist, und an dem seither jeder Mensch als Nachfahre dieser Ureltern teilhat.",
+ worden ist, und an dem ich und jeder Mensch als Nachfahre dieser Ureltern teilhat.",
 "Durch die Taufe kommt es zu keiner Aufhebung der Erbsünde; der Christ wird von 
  Gott gerecht gesprochen (Rechtfertigungslehre), nicht gerecht gemacht. Besonders 
  im Calvinismus wird betont, dass die menschliche Natur an und für sich bereits 

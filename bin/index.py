@@ -31,7 +31,7 @@ class index:
             FROM denominations 
             ORDER BY denomination;
             ''' )
-  
+        _deno_list = cur.fetchall()
         htmlcode = ""
         
         _appbox = HtmlTemplate.Tag ( "div" )
@@ -65,11 +65,13 @@ class index:
         _appbox.addContent ( _p_2 )   
 
         _p_3 = HtmlTemplate.Tag ( "p" )
-        _p_3.addContent ( u'Bisher wurden die folgenden Konfessionen in die Datenbank eingepflegt:' )
+        _p_3.addContent ( u'Bisher wurden die folgenden ' )
+        _p_3.addContent ( unicode (  len( _deno_list ) ) )
+        _p_3.addContent ( u' Konfessionen in die Datenbank eingepflegt:' )
         _appbox.addContent ( _p_3 )   
         
         _list = HtmlTemplate.Tag ( "ul" )
-        for row in cur:
+        for row in _deno_list:
             _item_link = HtmlTemplate.Tag ( "a" )
             _item_link.setAttribute ( "href" , row[2] )
             _item_link.addContent ( row[1] )
