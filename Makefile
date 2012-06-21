@@ -28,7 +28,7 @@ create-db:
 	cat ./sql/reformierte_kirche.konfession.sql     | sqlite3 ./bin/belief-matching.sqlite
 	cat ./sql/roemisch-katholische.konfession.sql   | sqlite3 ./bin/belief-matching.sqlite
 	cat ./sql/zeugen_jehovas.konfession.sql         | sqlite3 ./bin/belief-matching.sqlite
-	cat ./sql/kirche_jesu_christi_der_heiligen_der_letzten_tage.konfeion.sql | sqlite3 ./bin/belief-matching.sqlite
+	cat ./sql/kirche_jesu_christi_der_heiligen_der_letzten_tage.konfession.sql | sqlite3 ./bin/belief-matching.sqlite
 
 uninstall:
 	$(RM) -R $(BINPATH)

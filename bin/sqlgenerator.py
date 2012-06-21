@@ -93,8 +93,8 @@ class sqlgenerator:
         _sqlcode += u'INSERT INTO denominations ( denomination_id, denomination, url ) \n'
         _sqlcode += u' VALUES ( \n'
         _sqlcode += u'     ' + str( _highestID) + u',  \n'
-        _sqlcode += u'     "' + _denomination + '", \n'
-        _sqlcode += u'     "' + _denominationURL + '"); \n\n'
+        _sqlcode += u'     \'' + _denomination + '\', \n'
+        _sqlcode += u'     \'' + _denominationURL + '\'); \n\n'
         
 
         for row in cur:  
@@ -108,7 +108,7 @@ class sqlgenerator:
             _sqlcode += u'        ' + str( q_no ) + ', \n'
             _sqlcode += u'        ' + str( _highestID) + ', \n'
             _sqlcode += u'        ' +   widgetlist['answer_' + str(q_no)]  + ', \n'
-            _sqlcode += u'        "' +  widgetlist['comment_'  + str(q_no)]  + '"); \n \n'
+            _sqlcode += u'        \'' +  widgetlist['comment_'  + str(q_no)]  + '\'); \n \n'
 
         _sqlcode += u'COMMIT;; \n\n'
         return _sqlcode

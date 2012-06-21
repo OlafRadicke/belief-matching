@@ -127,8 +127,8 @@ class databaseedit:
         _sqlcode += u'INSERT INTO denominations ( denomination_id, denomination, url ) \n'
         _sqlcode += u' VALUES ( \n'
         _sqlcode += u'     ' + str( _id ) + u',  \n'
-        _sqlcode += u'     "' + self.getDenominationName ( _id ) + '", \n'
-        _sqlcode += u'     "' + self.getUrlOfDenomination ( _id ) + '"); \n\n'
+        _sqlcode += u'     \'' + self.getDenominationName ( _id ) + '\', \n'
+        _sqlcode += u'     \'' + self.getUrlOfDenomination ( _id ) + '\'); \n\n'
         
         _last_category = u''
         for _row_array in cur:  
@@ -150,7 +150,7 @@ class databaseedit:
             _sqlcode += u'        ' + unicode( q_no ) + ', '
             _sqlcode += u'        ' + unicode( _id) + ', '
             _sqlcode += u'        ' + unicode(  widgetlist[ _answer_key ] )  + ', \n'
-            _sqlcode += u'        "' + unicode(  widgetlist[ _comment_key] )  + '"); \n \n'
+            _sqlcode += u'        \'' + unicode(  widgetlist[ _comment_key] )  + '\'); \n \n'
 
         _sqlcode += u'COMMIT;; \n\n' 
         
