@@ -187,6 +187,14 @@ INSERT INTO denomination_answers (
      VALUES (         149,         1,         2, 
         ''); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1410,         1,         0, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
@@ -448,6 +456,15 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         176,         1,         0, 
         ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1707,         1,         0, 
+        'Die frühen Quäker trugen beton schlichte Kleidung, meist in Grautönen.
+ Hute gibt es dies <i>"Quäkeruniformen"</i> nichtmehr.'); 
  
 
 -- ##################### Kategorie : Sexualität #####################

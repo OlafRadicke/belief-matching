@@ -175,6 +175,14 @@ INSERT INTO denomination_answers (
      VALUES (         149,         8,         1, 
         '(Noch) Kein Kommentar'); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1410,         8,         0, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
@@ -429,6 +437,14 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         176,         8,         2, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1707,         8,         3, 
+        ''); 
  
 
 -- ##################### Kategorie : Sexualität #####################

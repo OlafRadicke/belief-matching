@@ -44,4 +44,19 @@ class SQLBackend :
             return _row [ 0 ]
         
         return u'unbekannt'      
+
+    # Gibt den Namen einer Konfessions-id zurück.
+    def getDenominationName (self, _id):
         
+        denominationName = "unbekannter Name"
+        conn = sqlite3.connect('belief-matching.sqlite')
+        cur = conn.cursor()
+        cur.execute( '''
+            SELECT denomination 
+            FROM denominations 
+            WHERE denomination_id=?;''', (_id , ) )
+            
+        for row in cur:
+             denominationName = row[0]
+        conn.close()   
+        return denominationName

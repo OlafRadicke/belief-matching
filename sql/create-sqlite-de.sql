@@ -326,6 +326,17 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "");
 
 
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1410,
+"Bibel",
+"Ich glaube das über die Bibel hinaus noch wichtige Lehren mündlich weiter gegeben
+ wurden und werden. Deshalb ist mir wichtig das ich meine Kirche in der apostolische 
+ Nachfolge (Sukzession) steht.",
+"Die apostolische Sukzession sieht die Kontinuität zwischen Urkirche und heutiger 
+ Kirche (bzw. der eigenen Konfessionskirche) dadurch gewährleistet, dass eine 
+ Kette von Handauflegungen ausgehend von den Aposteln über viele Bischöfe 
+ vergangener Tage bis hin zu den heutigen Bischöfen angenommen wird. (aus Wikipedia)");
+
 -- =================== Administration/Leitung beginnend mit 15...===============
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -460,6 +471,15 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Gottesdienst",
 "In <i>Zungenreden</i> ist für mich ein Zeichen der Gnadengabe des Heiligen Geistes.",
 "");
+
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1707,
+"Gottesdienst",
+"Eine gewisse Kleiderordnung im Gottesdienst ist mir schon wichtig.",
+"Gemeint kann sein: das Männer die Kopfbekleidung abnehmen, Frauen Kopftücher
+ tragen, das die Beine mit Stoff bedeckt sind oder das einfach eine angemessen
+ feierliche Kleidung erwartet wird.");
 
 -- ====================== Kat. Erlösung/Rechtfertigung beginnend mit 18... ==================
 

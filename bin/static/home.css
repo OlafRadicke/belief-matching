@@ -184,6 +184,20 @@ div.appbox {
     margin: 5px 5px 5px 5px;
 }
 
+div.appbox:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+div.appbox a:link{
+    color: black;
+}
+div.appbox a:visited{
+    color: black;
+}
 
 div.appbox:after {
     content: ".";
@@ -193,21 +207,25 @@ div.appbox:after {
     visibility: hidden;
 }
 
-/* div.appbox#participate { */
-div.floatleft {
-/*
-    background-color: #FFFFFF;
+/* Info Bo */
+div.appbox div.infobox{
+    border-radius: 5px;
     border-style: solid;
-    border-color: #c1c1c1;
-    border-color: rgba( 192, 192, 192, .90 );
-    border-radius: 10px;
-    padding: 20px;
-    margin: 5px 5px 5px 5px;  */
+    border-color: black;
+    background-color: #FFF819;
+    padding: 10px;
+/*     margin: 0px 600px 0px 0px; */
+    width:65%;
+/*     float: center; */
+    text-align: center;
+    align: center;
+}
+
+div.floatleft {
     float: left;
 }
 
 
-/* div.appbox#participate div.col{ */
 div.floatleft div.col{
     width: 50%; 
     float: left;
@@ -217,10 +235,12 @@ div.floatleft div.col{
 div.appbox a.tooltip {
     text-decoration:none;
 }
+
 div.appbox .tooltip span.info{
     display:none;
     
 }
+
 div.appbox .tooltip:hover span.info{
     display:block;
     position:absolute; 
@@ -235,12 +255,7 @@ div.appbox .tooltip:hover span.info{
     background-color: #FFFFFF;
 }
 
-div.appbox a:link{
-    color: black;
-}
-div.appbox a:visited{
-    color: black;
-}
+
 
 div.appbox table { 
     width:100%;

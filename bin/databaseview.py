@@ -29,7 +29,6 @@ class databaseview:
     htemp = HtmlTemplate.HtmlTemplate()  
     
     def getNoAnswersCount ( self, _id ):
-        print "_id: " + _id
         _answers = list()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
@@ -40,7 +39,7 @@ class databaseview:
                 SELECT question_id
                 FROM denomination_answers
                 WHERE denomination_id = ? )
-            ORDER BY question_id ; ''', ( _id ) )
+            ORDER BY question_id ; ''', ( _id, ) )
         for _row_array in cur:
             return _row_array[0]
         return 0      
@@ -53,7 +52,7 @@ class databaseview:
             SELECT url
             FROM denominations 
             WHERE denomination_id = ? ;        
-        ''', str( _id ) )       
+        ''', ( _id, ) )    
         for row in cur:
             return row[0] 
         return ""
@@ -168,7 +167,7 @@ class databaseview:
             ORDER BY denomination_answers.answer_nr, 
                     questions.kat, 
                     questions.question;
-                    ''', (  _id ))
+                    ''', (  _id, ) )
 
         htmlcode = ""
         
@@ -235,14 +234,18 @@ class databaseview:
         _noAnswersCount = self.getNoAnswersCount ( _id )
         if _noAnswersCount > 0 :
             _p_noAnswers = HtmlTemplate.Tag ( "p" )
-            if _noAnswersCount > 2 :
-                _p_noAnswers.addContent ( u'Es gibt noch ' ) 
-                _p_noAnswers.addContent ( unicode ( _noAnswersCount ) ) 
-                _p_noAnswers.addContent ( u''' Aussagen zu der noch keine 
+            _infoBox = HtmlTemplate.Tag ( "div" )
+            _infoBox.setAttribute ( "class", "infobox" )
+            if _noAnswersCount > 1 :
+                _infoBox.addContent ( u'Es gibt noch ' ) 
+                _infoBox.addContent ( unicode ( _noAnswersCount ) ) 
+                _infoBox.addContent ( u''' Aussagen zu der noch keine 
                 Antworten hinterlegt wurde.''' ) 
             else :
-                _p_noAnswers.addContent ( u'''Es gibt noch eine Aussage zu der 
+                _infoBox.addContent ( u'''Es gibt noch eine Aussage zu der 
                 noch keine Antwort hinterlegt wurde.''' ) 
+                
+            _p_noAnswers.addContent ( _infoBox )
             _form.addContent ( _p_noAnswers )
         
         _h2_editdb = HtmlTemplate.Tag ( "h2" )

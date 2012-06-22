@@ -186,6 +186,14 @@ INSERT INTO denomination_answers (
      VALUES (         149,         6,         2, 
         ''); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1410,         6,         0, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
@@ -447,6 +455,14 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         176,         6,         0, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1707,         6,         0, 
         ''); 
  
 

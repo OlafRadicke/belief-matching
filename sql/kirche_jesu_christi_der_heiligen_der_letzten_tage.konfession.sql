@@ -175,6 +175,14 @@ INSERT INTO denomination_answers (
      VALUES (         149,         9,         1, 
         '(Noch) Kein Kommentar'); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1410,         9,         0, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Erlösung/<br>Rechtfertigung #####################
 
@@ -432,6 +440,14 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         176,         9,         1, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1707,         9,         1, 
+        'In der Kleidung soll sich die Wertschätzung des Gottesdienstes widerspiegeln.  Das gilt besonders für die Mitglieder die den Gottesdienst inhaltlich und rituell gestalten.'); 
  
 
 -- ##################### Kategorie : Sexualität #####################

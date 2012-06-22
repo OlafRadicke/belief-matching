@@ -42,7 +42,7 @@ class databaseedit:
                 SELECT question_id
                 FROM denomination_answers
                 WHERE denomination_id = ? )
-            ORDER BY question_id ; ''', ( _id ) )
+            ORDER BY question_id ; ''', ( _id, ) )
         for _row_array in cur:
             _array = list()
             #questions.question_id,
@@ -85,7 +85,7 @@ class databaseedit:
             SELECT denomination 
             FROM denominations 
             WHERE denomination_id = ?;
-            ''', ( _id ) )
+            ''', ( _id, ) )
         for _row_array in cur:
              denominationName = _row_array[0]
         return denominationName    
@@ -98,7 +98,7 @@ class databaseedit:
             SELECT url
             FROM denominations 
             WHERE denomination_id = ? ;        
-        ''', str( _id ) )       
+        ''', ( _id, ) )       
         for _row_array in cur:
             return _row_array[0] 
         return ""
@@ -267,7 +267,7 @@ class databaseedit:
             AND denomination_answers.question_id = questions.question_id          
             ORDER BY questions.kat, 
                     denomination_answers.answer_nr;
-                    ''', (  _id ))
+                    ''', (  _id, ))
 
         htmlcode = ""
         

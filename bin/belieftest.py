@@ -42,22 +42,8 @@ class belieftest:
              _answers.append( [ row[0], row[1] ] )
         return _answers
  
-    # Gibt den Namen einer Konfessions-id zurück.
-    def getDenominationName (self, _id):
         
-        denominationName = "unbekannter Name"
-        conn = sqlite3.connect('belief-matching.sqlite')
-        cur = conn.cursor()
-        cur.execute( '''
-            SELECT denomination 
-            FROM denominations 
-            WHERE denomination_id = ?;
-            ''', ( _id ) )
-        for row in cur:
-             denominationName = row[0]
-        return denominationName
-        
-    # Gibt ein dict zurück mit gewichtungsnummer und gewichtungsbeschreibung.   
+    # Gibt ein dict zurück mit allen gewichtungsnummer und gewichtungsbeschreibung.   
     def getWeightings ( self ):
         
         weightingsNames = dict()
@@ -131,7 +117,6 @@ class belieftest:
                             
         for _key in user_answers.keys() :
             if int( user_answers [_key][ "wichtung" ] ) == 1 :
-                print "....true"
                 _max_weighting_points = _max_weighting_points + 1        
                 
         _table = HtmlTemplate.Tag ( "table" )
@@ -175,7 +160,7 @@ class belieftest:
                 _odd = 1
                 
             _col_1 =  HtmlTemplate.Tag ( "td" )
-            _col_1.addContent ( self.getDenominationName( denomination_points_key ) )
+            _col_1.addContent ( SQLBackend.SQLBackend().getDenominationName( denomination_points_key ) )
             _row.addContent ( _col_1 )
             
             _col_2 = HtmlTemplate.Tag ( "td" )
