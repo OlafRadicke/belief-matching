@@ -199,39 +199,7 @@ div.appbox a:visited{
     color: black;
 }
 
-div.appbox:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-
-/* Info Bo */
-div.appbox div.infobox{
-    border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-    background-color: #FFF819;
-    padding: 10px;
-/*     margin: 0px 600px 0px 0px; */
-    width:65%;
-/*     float: center; */
-    text-align: center;
-    align: center;
-}
-
-div.floatleft {
-    float: left;
-}
-
-
-div.floatleft div.col{
-    width: 50%; 
-    float: left;
-}
-
-/*----------- Tooltip ---------------*/
+/*---------------------------------- Tooltip begin --------------------------*/
 div.appbox a.tooltip {
     text-decoration:none;
 }
@@ -254,8 +222,7 @@ div.appbox .tooltip:hover span.info{
     border-color: rgba( 192, 192, 192, .90 );
     background-color: #FFFFFF;
 }
-
-
+/*---------------------------------- Tooltip end --------------------------*/
 
 div.appbox table { 
     width:100%;
@@ -275,22 +242,6 @@ div.appbox th {
 div.appbox tr { 
     background-color: #FFFFFF;
 }
-
-/* --- Jede zweite Zeile ---*/
-div.appbox tr.oddrow {
-    background-color: #F5F5F5;
-}
-
-/* --- verschiedene Antworten ---*/
-div.appbox tr.yes {
-    background-color: #D9FFD3;
-}
-div.appbox tr.no {
-    background-color: #FFDDDC;
-}
-div.appbox tr.void {
-    background-color: #EBEBEB;
-}
 div.appbox td { 
     vertical-align: top; 
     text-align: left;
@@ -298,10 +249,10 @@ div.appbox td {
     margin: 10px;
 }
 
-/*div.appbox form{
-    align: center;
-    text-align: center;
-}*/
+/* --- Jede zweite Zeile ---*/
+div.appbox tr.oddrow {
+    background-color: #F5F5F5;
+}
 
 /* --------- Prozentbalken ----------------*/
 div.appbox td.tabpoints {
@@ -357,41 +308,11 @@ div.appbox button {
     text-align: center;
 }
 
-div.appbox img.participate_img {
-/*     width: 330px;  */
-    width: 90%; 
-    border-radius: 10px;
-    border-style: solid;
-    border-color: #c1c1c1;
-    float: center;
-    margin: 15px;
-}
-
-
-
-div.appbox li{
-    width: 75%; 
-    margin: 15px;
-}
-
 div.appbox textarea {
     width: 100%; 
-/*     align: center; */
-/*     background: #F5F5F5; */
     background: #c1c1c1;
     
 }
-
-div.appbox textarea.result {
-    width: 100%; 
-/*     rows: 40; */
-/*     align: center; */
-/*     background: #F5F5F5; */
-    background: #FFDDDC;
-    
-}
-
-
 
 /* -------- Footer --------------------------------*/
 div.footer {

@@ -144,7 +144,7 @@ class databaseview:
         _appbox.setAttribute ( "class", "appbox" )
         _intro = self.getIntro( 0 )
         _appbox.addContent ( _intro )
-        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "databaseview", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
@@ -233,7 +233,7 @@ class databaseview:
         
         _noAnswersCount = self.getNoAnswersCount ( _id )
         if _noAnswersCount > 0 :
-            _p_noAnswers = HtmlTemplate.Tag ( "p" )
+            
             _infoBox = HtmlTemplate.Tag ( "div" )
             _infoBox.setAttribute ( "class", "infobox" )
             if _noAnswersCount > 1 :
@@ -245,8 +245,7 @@ class databaseview:
                 _infoBox.addContent ( u'''Es gibt noch eine Aussage zu der 
                 noch keine Antwort hinterlegt wurde.''' ) 
                 
-            _p_noAnswers.addContent ( _infoBox )
-            _form.addContent ( _p_noAnswers )
+            _form.addContent ( _infoBox )
         
         _h2_editdb = HtmlTemplate.Tag ( "h2" )
         _h2_editdb.addContent ( u'Änderungswünsche')
@@ -266,6 +265,6 @@ class databaseview:
         _form.addContent ( _p_editdb )
         _appbox.addContent ( _form )
         
-        htmlcode += self.htemp.getCompleteSite( "datenbasis", _appbox )
+        htmlcode += self.htemp.getCompleteSite( "databaseview", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( htmlcode )

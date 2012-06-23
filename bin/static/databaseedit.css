@@ -102,7 +102,7 @@ div.mainmenue li.tableft_activ {
     background: -ms-linear-gradient( top, #fff, #c1c1c1);
 }
 
-/* ---------  mainmenu -----------------*/
+/* ---------  middle -----------------*/
 
 div.mainmenue li.tabmiddle {
     display: inline-block;
@@ -172,7 +172,7 @@ div.mainmenue li a span {
     padding: 0px;
 }
 
-/* ---------------------------------------- application box ----------------*/
+/* ----- application box ----------------*/
 
 div.appbox {
     background-color: #FFFFFF;
@@ -180,7 +180,7 @@ div.appbox {
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     border-radius: 10px;
-    padding: 40px;
+    padding: 20px;
     margin: 5px 5px 5px 5px;
 }
 
@@ -207,28 +207,127 @@ div.appbox:after {
     visibility: hidden;
 }
 
-div.floatleft {
-    float: left;
+/* Info Bo */
+div.appbox div.infobox{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    background-color: #FFF819;
+    padding: 10px;
+    width:65%;
+    text-align: center;
+    align: center;
 }
 
+/*div.floatleft {
+    float: left;
+}
 
 div.floatleft div.col{
     width: 50%; 
     float: left;
+}*/
+
+/*----------- Tooltip begin ---------------*/
+div.appbox a.tooltip {
+    text-decoration:none;
 }
 
+div.appbox .tooltip span.info{
+    display:none;
+    
+}
 
-div.appbox img.participate_img {
-/*     width: 330px;  */
-    width: 90%; 
+div.appbox .tooltip:hover span.info{
+    display:block;
+    position:absolute; 
+    width:400px; 
+/*     height:200px; */
+    padding: 5px;
     border-radius: 10px;
     border-style: solid;
     border-color: #c1c1c1;
-    float: center;
-    margin: 15px;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-color: rgba( 192, 192, 192, .90 );
+    background-color: #FFFFFF;
 }
 
-/* ----------------------------------- Footer --------------------------------*/
+/*----------- Tooltip ende ---------------*/
+
+div.appbox table { 
+    width:100%;
+    border-spacing:0px;
+    border-radius: 5px;     
+    background-color:  #FFFFFF;         
+    border-top:1px solid #686868;    
+    border-left:1px solid #686868;
+    border-right:1px solid #686868;
+    border-bottom:1px solid #686868;
+}
+
+div.appbox th { 
+    background-color: #C3C4FF;
+}
+
+div.appbox tr { 
+    background-color: #FFFFFF;
+}
+
+/*/* --- Jede zweite Zeile ---*/
+div.appbox tr.oddrow {
+    background-color: #F5F5F5;
+}*/
+
+/* --- verschiedene Antworten ---*/
+div.appbox tr.yes {
+    background-color: #D9FFD3;
+}
+div.appbox tr.no {
+    background-color: #FFDDDC;
+}
+div.appbox tr.void {
+    background-color: #EBEBEB;
+}
+
+div.appbox td { 
+    vertical-align: top; 
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*div.appbox form{
+    align: center;
+    text-align: center;
+}*/
+
+
+div.appbox button {
+    align: center;
+    text-align: center;
+}
+
+/*
+div.appbox li{
+    width: 75%; 
+    margin: 15px;
+}*/
+
+div.appbox textarea {
+    width: 100%; 
+    background: #c1c1c1;
+    
+}
+
+div.appbox textarea.result {
+    width: 100%; 
+    background: #FFDDDC;
+    
+}
+
+
+
+/* -------- Footer --------------------------------*/
 div.footer {
 /*     width: 100%;  */
     align: center;

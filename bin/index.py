@@ -70,7 +70,7 @@ class index:
         _p_3.addContent ( u' Konfessionen in die Datenbank eingepflegt:' )
         _appbox.addContent ( _p_3 )   
         
-        _list = HtmlTemplate.Tag ( "ul" )
+        _list = HtmlTemplate.Tag ( "ol" )
         for row in _deno_list:
             _item_link = HtmlTemplate.Tag ( "a" )
             _item_link.setAttribute ( "href" , row[2] )

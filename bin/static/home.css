@@ -180,8 +180,8 @@ div.appbox {
     border-color: #c1c1c1;
     border-color: rgba( 192, 192, 192, .90 );
     border-radius: 10px;
-    padding: 20px;
-    margin: 5px 5px 5px 5px;
+    padding: 40px;
+    margin: 5px;
 }
 
 div.appbox:after {

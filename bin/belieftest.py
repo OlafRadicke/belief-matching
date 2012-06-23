@@ -222,8 +222,8 @@ class belieftest:
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
-        _form.setAttribute ( "name", "test" )
-        _form.setAttribute ( "action", "test" )
+        _form.setAttribute ( "name", "belieftest" )
+        _form.setAttribute ( "action", "belieftest" )
         
         _table =  HtmlTemplate.Tag ( "table" )
         
@@ -335,7 +335,14 @@ class belieftest:
         _p_form = HtmlTemplate.Tag ( "p" )    
         #_p_form.addContent ( _table )   
         _p_form.addContent ( u'<br>' )   
-        _p_form.addContent ( form.Button('Auswerten').render() )
+        
+        _button = HtmlTemplate.Tag ( "button" )
+        _button.addContent ( u'Auswerten' )
+        _button.setAttribute ( "id", "okay" )
+        _button.setAttribute ( "name", "okay" )
+        _p_form.addContent ( _button )
+        
+        #_p_form.addContent ( form.Button('Auswerten').render() )
         _form.addContent ( _p_form )
         _appbox.addContent ( _form )
             
