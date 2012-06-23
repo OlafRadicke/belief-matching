@@ -31,7 +31,7 @@ import databaseedit
 
 urls = (
   '/', 'index.index',
-  '/test', 'belieftest.belieftest',
+  '/belieftest', 'belieftest.belieftest',
   '/databaseview','databaseview.databaseview',
   '/databaseedit','databaseedit.databaseedit',
   '/participate','participate.participate',

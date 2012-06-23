@@ -164,7 +164,7 @@ class HtmlTemplate:
         # css
         _link = TagSingle ( "link" )
         _link.setAttribute ( "rel", "stylesheet" )
-        _link.setAttribute ( "href", "static/home.css" )
+        _link.setAttribute ( "href", "static/" + aktivtab + ".css" )
         _link.setAttribute ( "type", "text/css" )
         #_link.setAttribute ( "charset", "utf-8" )
         _head.addContent ( _link )
@@ -235,11 +235,11 @@ class HtmlTemplate:
         
         # test
         _item_test = Tag ( "li" )
-        if ( aktivtab == "test"):
+        if ( aktivtab == "belieftest"):
             _item_test.setAttribute ( "class", "tabmiddle_activ" )
         else:
             _item_test.setAttribute ( "class", "tabmiddle" )
-        _item_test.addContent ( u'<a href="test">Test</a>' )
+        _item_test.addContent ( u'<a href="belieftest">Test</a>' )
         _liste.addContent ( _item_test )
             
         # database

@@ -182,7 +182,6 @@ class belieftest:
             _col_3.addContent ( _bar_ri )
             _col_3.addContent ( unicode ( int ( _weighting_relativ ) ) + ' %' )
             _row.addContent ( _col_3 )
-            
             _table.addContent ( _row)
               
         return _table
@@ -341,7 +340,7 @@ class belieftest:
         _appbox.addContent ( _form )
             
 
-        _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "belieftest", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
@@ -351,6 +350,6 @@ class belieftest:
         _appbox.setAttribute ( "class", "appbox" )
         _table = self.matchingTable()
         _appbox.addContent ( _table )
-        _htmlcode = self.htemp.getCompleteSite( "test", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "belieftest", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )

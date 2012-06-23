@@ -1,0 +1,430 @@
+body {
+    align: center;
+    color: Black;
+/*     font: 69% Arial; */
+    font: 100% Arial; 
+    margin: 5;
+    padding: 0;
+    background: #000080;
+    background:  -moz-linear-gradient(top, #000080, #B3D7FF);
+    background:  -webkit-gradient(linear, left top, left bottom, from(#000080), to(#B3D7FF));
+}
+body p {
+    text-align: justify
+}
+
+/* ------------ banner -----------------*/
+
+div.bannerbox {
+    align: center;
+    text-align: center;
+}
+
+div.bannerbox {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-color: rgba( 192, 192, 192, .90 );
+    background-color: #FFFFFF;
+    padding: 0px;
+    margin: 15px 5px 5px 5px;
+}
+
+div.bannerbox img{
+    width: 100%;
+    align: center;
+}
+
+/* ----------- line ---------------------*/
+div.line {
+/*     background: black; */
+    background: #c1c1c1;
+    padding: 2px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+div.small_line {
+/*     background: black; */
+    background: #c1c1c1;
+    padding: 1px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+/* --------------- main menue -------------------- */
+div.mainmenue{
+    text-align: center;
+    padding: 0px;
+    margin: 5px;
+}
+
+div.mainmenue ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -------- left -----------------*/
+
+
+div.mainmenue li.tableft {
+    display: inline-block;
+    padding: 0 0 0 0 ;
+    margin:  0px  ;
+    background:black;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
+}
+
+div.mainmenue li.tableft_activ {
+    display: inline-block;
+    margin: 0px ;
+    background: #c1c1c1;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+}
+
+/* ---------  middle -----------------*/
+
+div.mainmenue li.tabmiddle {
+    display: inline-block;
+    padding: 0 0 0 0 ;
+    background:#373737;
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
+}
+
+div.mainmenue li.tabmiddle_activ {
+    display: inline-block;
+    background: #c1c1c1;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+}
+/* ---------------- right ---------------- */
+
+div.mainmenue li.tabright {
+    display: inline-block;
+    padding: 0 0 0 0 ;
+    background:#373737;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);
+}
+
+div.mainmenue li.tabright_activ {
+    display: inline-block;
+    padding-left: 0px;
+    background: #c1c1c1;
+    margin: 0px ;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+}
+
+div.mainmenue li a {
+    display: block;
+    color:#fff;
+    text-decoration: none;
+    padding: 0px 0px 0px 0px;
+    margin: 5px;
+}
+
+div.mainmenue li a span {
+    display: block;
+    margin: 0;
+    padding: 0px;
+}
+
+/* ----- application box ----------------*/
+
+div.appbox {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px 5px 5px 5px;
+}
+
+div.appbox:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+div.appbox a:link{
+    color: black;
+}
+div.appbox a:visited{
+    color: black;
+}
+
+div.appbox:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* Info Bo */
+div.appbox div.infobox{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    background-color: #FFF819;
+    padding: 10px;
+/*     margin: 0px 600px 0px 0px; */
+    width:65%;
+/*     float: center; */
+    text-align: center;
+    align: center;
+}
+
+div.floatleft {
+    float: left;
+}
+
+
+div.floatleft div.col{
+    width: 50%; 
+    float: left;
+}
+
+/*----------- Tooltip ---------------*/
+div.appbox a.tooltip {
+    text-decoration:none;
+}
+
+div.appbox .tooltip span.info{
+    display:none;
+    
+}
+
+div.appbox .tooltip:hover span.info{
+    display:block;
+    position:absolute; 
+    width:400px; 
+/*     height:200px; */
+    padding: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-color: rgba( 192, 192, 192, .90 );
+    background-color: #FFFFFF;
+}
+
+
+
+div.appbox table { 
+    width:100%;
+    border-spacing:0px;
+    border-radius: 5px;     
+    background-color:  #FFFFFF;         
+    border-top:1px solid #686868;    
+    border-left:1px solid #686868;
+    border-right:1px solid #686868;
+    border-bottom:1px solid #686868;
+}
+
+div.appbox th { 
+    background-color: #C3C4FF;
+}
+
+div.appbox tr { 
+    background-color: #FFFFFF;
+}
+
+/* --- Jede zweite Zeile ---*/
+div.appbox tr.oddrow {
+    background-color: #F5F5F5;
+}
+
+/* --- verschiedene Antworten ---*/
+div.appbox tr.yes {
+    background-color: #D9FFD3;
+}
+div.appbox tr.no {
+    background-color: #FFDDDC;
+}
+div.appbox tr.void {
+    background-color: #EBEBEB;
+}
+div.appbox td { 
+    vertical-align: top; 
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*div.appbox form{
+    align: center;
+    text-align: center;
+}*/
+
+/* --------- Prozentbalken ----------------*/
+div.appbox td.tabpoints {
+    align: right;
+    text-align: right;
+}
+
+div.appbox div.points {
+    align: right;
+    text-align: right;
+    float:right;
+    color:#fff;
+    padding-right: 15px;
+    margin-right: -15px;
+    background:#373737;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.appbox td.tabpoints-weighting {
+    align: left;
+    text-align: left;
+}
+
+div.appbox div.points-weighting {
+    text-align: left;
+    text-align: left;
+    float:left;
+    background:#373737;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+
+div.appbox button {
+    align: center;
+    text-align: center;
+}
+
+div.appbox img.participate_img {
+/*     width: 330px;  */
+    width: 90%; 
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    float: center;
+    margin: 15px;
+}
+
+
+
+div.appbox li{
+    width: 75%; 
+    margin: 15px;
+}
+
+div.appbox textarea {
+    width: 100%; 
+/*     align: center; */
+/*     background: #F5F5F5; */
+    background: #c1c1c1;
+    
+}
+
+div.appbox textarea.result {
+    width: 100%; 
+/*     rows: 40; */
+/*     align: center; */
+/*     background: #F5F5F5; */
+    background: #FFDDDC;
+    
+}
+
+
+
+/* -------- Footer --------------------------------*/
+div.footer {
+/*     width: 100%;  */
+    align: center;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    color:#fff;
+    background: #373737;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+    
+/*     float: left; */
+/*     float: bottom; */
+    
+}
+
+div.footer li a {
+    color:#fff;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-color: rgba( 192, 192, 192, .90 );
+    border-radius: 10px;
+}
+
+div.footer  a:link{
+    color: #fff;
+}
+div.footer  a:visited{
+    color: #fff;
+}
