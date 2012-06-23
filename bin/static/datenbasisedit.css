@@ -9,7 +9,6 @@ body {
     background:  -moz-linear-gradient(top, #000080, #B3D7FF);
     background:  -webkit-gradient(linear, left top, left bottom, from(#000080), to(#B3D7FF));
 }
-
 body p {
     text-align: justify
 }
@@ -53,7 +52,6 @@ div.small_line {
     margin: 5px 5px 5px 5px;
     border-radius: 5px;
 }
-
 /* --------------- main menue -------------------- */
 div.mainmenue{
     text-align: center;
@@ -209,7 +207,7 @@ div.appbox:after {
     visibility: hidden;
 }
 
-/* Info Box */
+/* Info Bo */
 div.appbox div.infobox{
     border-radius: 5px;
     border-style: solid;
@@ -223,7 +221,7 @@ div.appbox div.infobox{
     align: center;
 }
 
-/*div.floatleft {
+div.floatleft {
     float: left;
 }
 
@@ -231,9 +229,9 @@ div.appbox div.infobox{
 div.floatleft div.col{
     width: 50%; 
     float: left;
-}*/
+}
 
-/*----------- Tooltip begin ---------------*/
+/*----------- Tooltip ---------------*/
 div.appbox a.tooltip {
     text-decoration:none;
 }
@@ -257,7 +255,7 @@ div.appbox .tooltip:hover span.info{
     background-color: #FFFFFF;
 }
 
-/* --------- tooltip end -------------------*/
+
 
 div.appbox table { 
     width:100%;
@@ -300,13 +298,81 @@ div.appbox td {
     margin: 10px;
 }
 
+/*div.appbox form{
+    align: center;
+    text-align: center;
+}*/
+
+/* --------- Prozentbalken ----------------*/
+div.appbox td.tabpoints {
+    align: right;
+    text-align: right;
+}
+
+div.appbox div.points {
+    align: right;
+    text-align: right;
+    float:right;
+    color:#fff;
+    padding-right: 15px;
+    margin-right: -15px;
+    background:#373737;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
+div.appbox td.tabpoints-weighting {
+    align: left;
+    text-align: left;
+}
+
+div.appbox div.points-weighting {
+    text-align: left;
+    text-align: left;
+    float:left;
+    background:#373737;
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background: linear-gradient( top, #373737, #A0A0A0);
+    background: -webkit-linear-gradient( top, #373737, #A0A0A0);
+    background: -moz-linear-gradient( top, #373737, #A0A0A0);
+    background: -ms-linear-gradient( top, #373737, #A0A0A0);
+}
+
 
 div.appbox button {
     align: center;
     text-align: center;
 }
 
+div.appbox img.participate_img {
+/*     width: 330px;  */
+    width: 90%; 
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    float: center;
+    margin: 15px;
+}
 
+
+
+div.appbox li{
+    width: 75%; 
+    margin: 15px;
+}
 
 div.appbox textarea {
     width: 100%; 
@@ -324,6 +390,7 @@ div.appbox textarea.result {
     background: #FFDDDC;
     
 }
+
 
 
 /* -------- Footer --------------------------------*/

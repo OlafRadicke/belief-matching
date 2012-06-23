@@ -355,7 +355,7 @@ class databaseedit:
     def GET(self):
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
-        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
@@ -368,6 +368,6 @@ class databaseedit:
         else:
             _appbox = self.getSQLResulte ( _widgetlist )
         
-        _htmlcode = self.htemp.getCompleteSite( "datenbasis", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
