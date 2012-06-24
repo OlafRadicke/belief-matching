@@ -207,8 +207,8 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         183,         9,         0, 
-        '(Noch) Kein Kommentar'); 
+     VALUES (         183,         9,         1, 
+        'Siehe "Das terrestriale Reich" http://de.mormonwiki.com/Plan_der_Erl%C3%B6sung'); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -299,6 +299,14 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         1814,         9,         0, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1815,         9,         0, 
         ''); 
  
 
@@ -397,6 +405,14 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         1108,         9,         1, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1109,         9,         0, 
+        ''); 
  
 
 -- ##################### Kategorie : Gottesdienst #####################
@@ -581,7 +597,7 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         199,         9,         0, 
-        '(Noch) Kein Kommentar'); 
+        'Während sich die Mormonen in Iowa aufhielten, wurden die Kirchenführer von Anwerbern der US-Armee aufgefordert, ein Kontingent Männer für den Einsatz im Krieg gegen Mexiko abzustellen, der im Mai 1846 begonnen hatte. Diese Männer, die als das Mormonenbataillon bekannt wurden, sollten durch den südlichen Teil des Landes nach Kalifornien marschieren. Ihnen wurden Sold, Kleidung und Verpflegung zugesagt. Brigham Young ermunterte die Männer, sich einschreiben zu lassen, damit auf diese Weise Geld beschafft werden konnte, das man für die Sammlung der Armen aus Nauvoo und für die Unterstützung der Soldatenfamilien verwenden konnte. Diese Zusammenarbeit mit dem Staat war außerdem ein Beweis dafür, daß die Mitglieder der Mormonenkirche ihrem Land treu waren. (Aus: http://de.mormonwiki.com/Das_Mormonenbataillon)'); 
  
 INSERT INTO denomination_answers ( 
         question_id, 
@@ -614,6 +630,22 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         1913,         9,         1, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1914,         9,         0, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1915,         9,         0, 
+        ''); 
  
 
 -- ##################### Kategorie : Taufe #####################

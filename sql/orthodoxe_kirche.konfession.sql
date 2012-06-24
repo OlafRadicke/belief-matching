@@ -298,6 +298,14 @@ INSERT INTO denomination_answers (
      VALUES (         1814,         10,         0, 
         '(Noch) Kein Kommentar'); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1815,         10,         0, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
 
@@ -394,6 +402,14 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         1108,         10,         0, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1109,         10,         0, 
+        ''); 
  
 
 -- ##################### Kategorie : Gottesdienst #####################
@@ -611,6 +627,22 @@ INSERT INTO denomination_answers (
         commentary ) 
      VALUES (         1913,         10,         0, 
         '(Noch) Kein Kommentar'); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1914,         10,         0, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1915,         10,         0, 
+        ''); 
  
 
 -- ##################### Kategorie : Taufe #####################

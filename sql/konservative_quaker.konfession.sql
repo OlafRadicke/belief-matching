@@ -310,6 +310,14 @@ INSERT INTO denomination_answers (
      VALUES (         1814,         1,         0, 
         ''); 
  
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1815,         1,         2, 
+        ''); 
+ 
 
 -- ##################### Kategorie : Gemeinde/<br><br>Ekklesiologie #####################
 
@@ -412,6 +420,14 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         1108,         1,         1, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1109,         1,         0, 
         ''); 
  
 
@@ -630,6 +646,22 @@ INSERT INTO denomination_answers (
         answer_nr, 
         commentary ) 
      VALUES (         1913,         1,         1, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1914,         1,         0, 
+        ''); 
+ 
+INSERT INTO denomination_answers ( 
+        question_id, 
+        denomination_id, 
+        answer_nr, 
+        commentary ) 
+     VALUES (         1915,         1,         0, 
         ''); 
  
 

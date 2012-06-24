@@ -182,7 +182,6 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  und diesen Weg persönlich akzeptiert haben.",
 "Eine typische evangelikate Position.");
 
-
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1108,
 "Gott/<br>Christologie",
@@ -191,6 +190,13 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  gehalten. Es wird aber auch Gottes Wirken aber auch in alltäglichen
  Begebenheitenentdecken gesehen. ");
 
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1109,
+"Gott/<br>Christologie",
+"Ich erwarten die baldige Wiederkunft Christi.",
+"Gemeint ist hier ein Kollektives allgemein wahrnehmbar Ereignis. Und keine 
+ persönliche Offenbarung. Also das Anbrechen des Reich Gottes, das für Alles
+ sichtbar sein wird.");
 
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -376,13 +382,6 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  <b>geleitete</b> werden.",
 "Also nicht hierarchisch aber auch nicht basisdemokratisch.");
 
--- INSERT INTO questions (question_id, kat, question, commentary) VALUES (
--- 158,
--- "Administration/<br>Leitung",
--- "Die Gemeindeleitung sollte von einer autorisierten Institution bestimmt/eingesetzt 
---  werden.",
--- "Also hierarchische Strukturen und keine autonomen Ortsgemeinden.");
-
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1512,
 "Administration/<br>Leitung",
@@ -508,10 +507,12 @@ geläutert werden) um der Verdammnis zu entgehen.",
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 184,
 "Erlösung/<br>Rechtfertigung",
-"Auf die Erlösung hat man keinen Einfluss, sie wird einem durch die Gnade Gottes zuteil.",
+"Auf die Erlösung hat man keinen Einfluss, sie wird einem <b>allein</b> durch 
+ die Gnade Gottes zuteil.",
 "Gemeint ist hier die <i>Prädestinationslehre</i>. Es liegt allein in der Entscheidung
- Gottes ob man der Sünde verfällt oder errettet wird. Der Gegenentwurf ist die s.g.
- <i>Werkgerechtigkeit</i>");
+ Gottes ob man der Sünde verfällt oder errettet wird. Der Gegenentwurf ist das 
+ jeder Mensch die freie Wahl hat, Gutes zu tun und dadurch vor Gott gerecht wird.
+ Die wird zum Teil als <i>Werkgerechtigkeit</i> bezeichnet.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 185,
@@ -590,6 +591,19 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Ich glaube an die Erbsünde. Erlösung findet der Mensch durch das Sakrament der 
  Taufe, da der Getaufte dann nicht mehr der Erbsünde unterliegt.",
 "");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1815,
+"Erlösung/<br>Rechtfertigung",
+"Der ist Tod ein Zustand des Schlafs. Ein Mensch erlebt die Zeit seines Todes 
+ nicht bewusst. Die Menschen kommen <b>nicht</b> direkt nach dem Tod in den Himmel oder 
+ in die Hölle. Diese Zeit endet mit der Auferstehung die (im Falle der Gerechten) 
+ zur Wiederkunft Christi bzw. (im Falle der Gottlosen) nach dem Millennium 
+ geschieht. Es schließt sich dann das Jüngste Gericht an. Dieses endet für die 
+ Gottlosen nicht mit einer ewigen Qual in einer feurigen Hölle, sondern mit der 
+ endgültigen Vernichtung bzw. Auslöschung",
+"Diese Position wird u.a. von den Siebenten-Tags-Adventisten vertreten und
+ gegründet mit den Bibelstellen: Koh 9:5+6+10, 1 Thess 4:13, Offb 20 EU");
 
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============
 
@@ -673,13 +687,30 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Also, das Maria nicht von einem Mann/Menschen schwanger war oder je mit
  einem Mann geschlafen hat, bevor Sie Jesus ausgetragen hat.");
 
-
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1913,
 "Sonstiges",
 "Die Verehrung von Heiligen und die bitte um Fürsprache der Selben halte ich 
  für falsch.",
 "Die Frage impliziert, das man bestimmte verstorbene für Heilige hält.");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1914,
+"Sonstiges",
+"Der Sabbat (Samstag statt des Sonntag) ist ein verbindlicher Ruhetag. Die 
+ Einhaltung ist Zeichen der Treue gegenüber den Geboten Gottes. Seine Einhaltung
+ wird in der Endzeit zum Prüfstein des wahren Glaubens an Gott werden.",
+"");
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1915,
+"Sonstiges",
+"Einige biblischen Speisegebote sollten auch von
+ Christen eingehalten werden.",
+"Adventisten essen daher beispielsweise kein Schweinefleisch, kein Kaninchen 
+ und keine Schalentiere (Muscheln, Krabben). Viele Siebenten-Tags-Adventisten 
+ ernähren sich vegetarisch (fleischlos). (Wikipedia). Vgl.  3. Mose, Kapitel 11 
+ vs. Mat. 15:11");
 
 -- ==================== Kat Gemeinde/Ekklesiologie beginnend mit 20... =====================
 
@@ -716,10 +747,9 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 "Eine Kirchenmitgliedschaft allein genüge nicht, es bedarf einer
  persönlichen Abkehr vom alten Leben und einer Hinwendung zu Jesus
  Christus (Bekehrung). Diese bewusste Entscheidung wird in Form
- eines persönlichen Gebets vollzogen, das als Lebensübergabe bezeichnet
+ eines persönlichen Gebets vollzogen, das auch als Lebensübergabe bezeichnet
  wird.",
 "");
-
 
 
 COMMIT;
