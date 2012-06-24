@@ -15,6 +15,7 @@ install:
 	cp ./bin/static/favicon.ico            $(BINPATH)static/
 	cp ./bin/static/favicon.ico            $(BINPATH)
 	cp ./bin/static/favicon.ppm            $(BINPATH)static/
+	cp ./bin/static/*.css                  $(BINPATH)static/
 	cp ./templates/belief-matching    /etc/init.d/belief-matching
 	chmod a+x /etc/init.d/belief-matching
 
