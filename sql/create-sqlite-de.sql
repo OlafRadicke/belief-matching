@@ -83,9 +83,9 @@ INSERT INTO answers (
 ) 
 VALUES (
 0,
-"trifft NICHT zu",
+"Trifft NICHT zu",
 "Die angegeben Aussage wird vom Benutzer verneint.",
-"trifft NICHT zu",
+"Trifft NICHT zu",
 "Die angegeben Aussage wird vom der Konfession verneint."
 );
 
@@ -97,9 +97,9 @@ INSERT INTO answers (
     deno_description
 ) VALUES (
 1,
-"trifft zu",
+"Trifft zu",
 "Der gemachten Aussage wird vom Benutzer zugestimmt.",
-"trifft zu",
+"Trifft zu",
 "Der gemachten Aussage wird vom der Konfession zugestimmt.");
 
 INSERT INTO answers ( 
