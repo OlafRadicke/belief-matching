@@ -37,6 +37,8 @@ TODOs
 
 Konfessionen in die Datenbank einpflegen. Z.B.:
 
+* Evangelikale Gemeinden
+ - Review / Überprüfung steht noch aus
 * Evangelisch-lutherische Kirchen
  - Review / Überprüfung steht noch aus
 * Konservative Quäker
@@ -58,8 +60,10 @@ Konfessionen in die Datenbank einpflegen. Z.B.:
  - Review / Überprüfung steht noch aus
 * Baptisten
 * Mormonen
+ - Review / Überprüfung steht noch aus
 * Methodisten
 * Orthodoxe Kirchen
+ - Review / Überprüfung steht noch aus
 * Pfingstbewegung
 * Neuapostolische Kirche
 * Christliche Wissenschaft
@@ -67,6 +71,8 @@ Konfessionen in die Datenbank einpflegen. Z.B.:
 * Pietisten
 * Altkatholische Kirchen
 * Anglikanische Kirchen 
+* Siebenten-Tags-Adventisten
+ - Review / Überprüfung steht noch aus
 
 == Administration / Leitung ==
 
