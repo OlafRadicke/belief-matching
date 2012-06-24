@@ -114,7 +114,11 @@ class belieftest:
                     if int(user_answers [ user_answer_key ] [ "wichtung" ]) == 1 :
                         denomination_weighting_points [ unicode(_denomination_id) ] = \
                             int( denomination_weighting_points [ unicode(_denomination_id) ] ) + 1
-                            
+        # sort key list
+        _sorted_points_keys = list ()
+        for key, value in sorted(denomination_points.iteritems(), key=lambda (k,v): (v,k)):
+            _sorted_points_keys.append ( key )
+        
         for _key in user_answers.keys() :
             if int( user_answers [_key][ "wichtung" ] ) == 1 :
                 _max_weighting_points = _max_weighting_points + 1        
@@ -138,7 +142,8 @@ class belieftest:
         _table.addContent ( _table_titles )
         
         _odd = 0
-        for denomination_points_key in denomination_points.keys():
+        #for denomination_points_key in denomination_points.keys():
+        for denomination_points_key in _sorted_points_keys: 
             # Prozent zahlen allgemein
             _all = len ( user_answers.keys() )
             _sum_denomination_points = int ( denomination_points [denomination_points_key] )
