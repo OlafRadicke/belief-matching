@@ -4,6 +4,13 @@ belief-matching
 Kleines Web-Programm das dem Besucher nach der Prüfung seiner Glaubensgrundsätze 
 eine Glaubensgemeinschaft empfiehlt.
 
+URL/Website:
+------------
+
+DEMO: http://konfessionsvergleich.the-independent-friend.de/
+SourceCode: https://github.com/OlafRadicke/belief-matching
+
+
 Lizenz:
 -------
 
