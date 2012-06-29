@@ -19,6 +19,7 @@ import HtmlTemplate
 import VisitLog
 import sqlite3
 import web
+import SQLBackend
 
 class index:
     
@@ -27,6 +28,7 @@ class index:
     def GET(self):
         _ip = unicode ( web.ctx['ip'] )
         VisitLog.VisitLog().write ( _ip, 'index' )
+        SQLBackend.SQLBackend().getVisitStatistic ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute('''

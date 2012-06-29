@@ -4,7 +4,7 @@ LOGDIR="/var/belief-matching/"
 all: clean create-db
 
 install:
-	if [ ! -d $(LOGDIR) ]; then mkdir -p $(LOGDIR) fi
+	if [ ! -d $(LOGDIR) ]; then mkdir -p $(LOGDIR); fi
 	mkdir -p                               $(BINPATH)
 	cp ./bin/*.py                          $(BINPATH)
 	cp ./bin/*.sqlite                      $(BINPATH)
