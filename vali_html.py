@@ -1,3 +1,6 @@
+
+# -*- coding: utf_8 -*-
+
 # from http://maestric.com/doc/python/recursive_w3c_html_validator
 # Author: Jérôme Jaglale 
 
