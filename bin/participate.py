@@ -17,6 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import HtmlTemplate
+import VisitLog
 import sqlite3
 import web
 
@@ -25,6 +26,8 @@ class participate:
     htemp = HtmlTemplate.HtmlTemplate()
     
     def GET(self):
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'Mitarbeitsinfo' )
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
         cur.execute('''

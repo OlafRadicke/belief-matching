@@ -81,6 +81,11 @@ Konfessionen in die Datenbank einpflegen. Z.B.:
 * Siebenten-Tags-Adventisten
  - Review / Überprüfung steht noch aus
 
+IP-Logging?
+-----------
+
+unicode ( web.ctx['ip'] )
+
 == Administration / Leitung ==
 
 J) Aussage: Für Leitungs- und Schulungsaufgaben ist eine formelle theologische

@@ -23,6 +23,7 @@ from web import form
 
 import HtmlTemplate
 import SQLBackend
+import VisitLog
 
 class databaseview:    
 
@@ -140,6 +141,8 @@ class databaseview:
         return _intro
 
     def GET(self):
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'Datenbasisstart' )
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         _intro = self.getIntro( 0 )
@@ -149,6 +152,8 @@ class databaseview:
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self):
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'Datenbasisabfrage' )
         widgetlist = web.input(groups = []) 
         _id = widgetlist['glaubensgemeinschaft']
         conn = sqlite3.connect('belief-matching.sqlite')

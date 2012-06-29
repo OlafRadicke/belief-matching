@@ -22,6 +22,7 @@ import web
 from web import form
 
 import HtmlTemplate
+import VisitLog
 
 class databaseedit:    
 
@@ -353,6 +354,8 @@ class databaseedit:
 
 
     def GET(self):
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'Datenbearbeitungsstart' )
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
         _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )
@@ -364,8 +367,12 @@ class databaseedit:
         _widgetlist = web.input(groups = []) 
         _appbox = ""
         if "edit_denomination" in _widgetlist:
+            _ip = unicode ( web.ctx['ip'] )
+            VisitLog.VisitLog().write ( _ip, 'Datenbearbeitungsauswahl' )
             _appbox = self.getEditForm ( _widgetlist )
         else:
+            _ip = unicode ( web.ctx['ip'] )
+            VisitLog.VisitLog().write ( _ip, 'DatenbearbeitungsSQLCode' )
             _appbox = self.getSQLResulte ( _widgetlist )
         
         _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )

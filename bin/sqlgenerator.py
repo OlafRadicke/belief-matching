@@ -24,6 +24,7 @@ from web import form
 
 import HtmlTemplate
 import SQLBackend
+import VisitLog
 
 class sqlgenerator:
     
@@ -115,6 +116,9 @@ class sqlgenerator:
         
         
     def GET(self):
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'Neuer Datensatz' )
+        
         _sqlBackend = SQLBackend.SQLBackend()
         _answer_optionen = self.getAnswers ()
         _last_kat = ""
@@ -300,6 +304,8 @@ class sqlgenerator:
         return self.htemp.convertGermanChar( _htmlcode )
         
     def POST(self): 
+        _ip = unicode ( web.ctx['ip'] )
+        VisitLog.VisitLog().write ( _ip, 'SQL-Code des Neuer Datensatzes' )
 
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
