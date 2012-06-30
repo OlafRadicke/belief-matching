@@ -198,6 +198,16 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  persönliche Offenbarung. Also das Anbrechen des Reich Gottes, das für Alles
  sichtbar sein wird.");
 
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1110,
+"Gott/<br>Christologie",
+"Ich glaube das der Himmlische Vater einst sterblich war, so wie wir jetzt.",
+"Dies Erkenntnis wurde dem Propheten Joseph Smith, offenbar. Selbiger wird aber
+ nicht von allen als solcher anerkannt. Die Offenbarungen von J.S. lassen sich 
+ nicht durch den Biblekanon der wie ihn die meisten Christen anerkennen, stützen.");
+
+
+
 -- ======== Kat "Taufe" beginnend mit 12... ==================================
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 121,
@@ -559,7 +569,6 @@ stellvertretenden Opfertod und seine Auferstehung sowie die Bekehrung
 und Wiedergeburt durch den Heiligen Geist voraus. ",
 "");
 
-
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 1811,
 "Erlösung/<br>Rechtfertigung",
@@ -604,6 +613,17 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  endgültigen Vernichtung bzw. Auslöschung",
 "Diese Position wird u.a. von den Siebenten-Tags-Adventisten vertreten und
  gegründet mit den Bibelstellen: Koh 9:5+6+10, 1 Thess 4:13, Offb 20 EU");
+
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1816,
+"Erlösung/<br>Rechtfertigung",
+"Meine Vorstellung vom jüngsten Gericht ist, dass jeder dem Reich zugeteilt wird, 
+ das er verdient hat. Es gibt vier Orte, wohin wir zugeteilt werden können: 
+ das celestiale Reich; das terrestriale Reich, das telestiale Reich, und die 
+ äußere Finsternis (das Reich Satans). ",
+'Diese Vorstellung wird von den Mormonen vertreten. Mehr Details dazu unter:
+ <i>"Plan der Erlösung"</i> im Wiki der Mormonen http://de.mormonwiki.com/');
 
 -- ========================= Kat. Sonstiges beginnend mit 19... ==============
 
@@ -711,6 +731,13 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
  und keine Schalentiere (Muscheln, Krabben). Viele Siebenten-Tags-Adventisten 
  ernähren sich vegetarisch (fleischlos). (Wikipedia). Vgl.  3. Mose, Kapitel 11 
  vs. Mat. 15:11");
+
+
+INSERT INTO questions (question_id, kat, question, commentary) VALUES (
+1916,
+"Sonstiges",
+"Ich glaube das wir vor unserer Geburt schon ein vorirdische Leben hatten.",
+"");
 
 -- ==================== Kat Gemeinde/Ekklesiologie beginnend mit 20... =====================
 
