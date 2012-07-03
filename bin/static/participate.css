@@ -226,6 +226,9 @@ div.appbox img.participate_img {
     border-color: #c1c1c1;
     float: center;
     margin: 15px;
+    -moz-box-shadow: 15px 15px 15px rgba(0,0,0, .25);
+    -webkit-box-shadow: 15px 15px 15px rgba(0,0,0, .25);
+    box-shadow: 15px 15px 15px rgba(0,0,0, .25);
 }
 
 /* ----------------------------------- Footer --------------------------------*/
