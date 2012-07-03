@@ -30,7 +30,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         133,         8,         1, 
+     VALUES (         133,         8,         3, 
         'Die Taufe ist eng verbunden mit der Bekehrung bei Evangelikalen. Die (kinder-)Taufe allein genügt aber nicht.'); 
  
 INSERT INTO denomination_answers ( 
@@ -57,7 +57,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         151,         8,         0, 
+     VALUES (         151,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -65,7 +65,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         152,         8,         1, 
+     VALUES (         152,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -89,7 +89,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         157,         8,         1, 
+     VALUES (         157,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -132,7 +132,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         144,         8,         0, 
+     VALUES (         144,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -140,7 +140,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         145,         8,         1, 
+     VALUES (         145,         8,         2, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -156,7 +156,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         147,         8,         0, 
+     VALUES (         147,         8,         2, 
         'Die Evolution-Theorie wird meist komplett verworfen. Zum Teil wird das Konzept des Intelligent Design (engl. „intelligenter Entwurf“, „intelligente Gestaltung“; abgekürzt ID) vertreten.'); 
  
 INSERT INTO denomination_answers ( 
@@ -231,7 +231,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         186,         8,         2, 
+     VALUES (         186,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -247,7 +247,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         188,         8,         1, 
+     VALUES (         188,         8,         2, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -255,7 +255,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         189,         8,         1, 
+     VALUES (         189,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -295,7 +295,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1814,         8,         1, 
+     VALUES (         1814,         8,         0, 
         ''); 
  
 INSERT INTO denomination_answers ( 
@@ -303,7 +303,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1815,         8,         0, 
+     VALUES (         1815,         8,         2, 
         ''); 
  
 INSERT INTO denomination_answers ( 
@@ -451,7 +451,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         174,         8,         1, 
+     VALUES (         174,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -545,7 +545,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         191,         8,         1, 
+     VALUES (         191,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -593,7 +593,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         197,         8,         0, 
+     VALUES (         197,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -609,7 +609,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         199,         8,         0, 
+     VALUES (         199,         8,         2, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -617,7 +617,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         1910,         8,         0, 
+     VALUES (         1910,         8,         2, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 
@@ -676,7 +676,7 @@ INSERT INTO denomination_answers (
         denomination_id, 
         answer_nr, 
         commentary ) 
-     VALUES (         121,         8,         1, 
+     VALUES (         121,         8,         3, 
         '(Noch) Kein Kommentar'); 
  
 INSERT INTO denomination_answers ( 

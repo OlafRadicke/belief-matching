@@ -169,8 +169,8 @@ class databaseview:
             WHERE denomination_answers.denomination_id = ?
             AND denomination_answers.question_id = questions.question_id
             AND denomination_answers.answer_nr = answers.answers_nr
-            ORDER BY denomination_answers.answer_nr, 
-                    questions.kat, 
+            ORDER BY questions.kat,
+                    denomination_answers.answer_nr, 
                     questions.question;
                     ''', (  _id, ) )
 

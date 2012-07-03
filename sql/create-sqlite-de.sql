@@ -359,8 +359,8 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 151,
 "Administration/<br>Leitung",
 "Ich glaube an das Priestertum Aller und möchte, dass die Gemeinde von Allen 
- gemeinsam geleitet wird (demokratische Abstimmungenen oder ähnliches).",
-"Der Gegenentwurf wäre eine Hierarchische Organisation.");
+ gemeinsam geleitet wird (demokratische Abstimmungen oder ähnliches).",
+"Der Gegenentwurf wäre eine hierarchische Organisation.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 152,
@@ -389,7 +389,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 157,
 "Administration/<br>Leitung",
 "Die Gemeinde sollte von den Ältesten und/oder Predigern und/oder Diakonen 
- <b>geleitete</b> werden.",
+ <b>geleitet</b> werden.",
 "Also nicht hierarchisch aber auch nicht basisdemokratisch.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -404,7 +404,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 161,
 "Sexualität",
-"Sex vor der Ehe lehene ich ab.",
+"Sex vor der Ehe lehne ich ab.",
 "");
        
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
@@ -652,7 +652,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 194,
 "Sonstiges",
-"Ich glaube an Geistheilung.",
+"Ich glaube das Heilung durch Glaube/Gebet/Gott möglich ist.",
 "Also Teufelsaustreibung und/oder Wunderheilung.");
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
