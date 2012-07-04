@@ -219,14 +219,6 @@ div.appbox div.infobox{
     align: center;
 }
 
-/*div.floatleft {
-    float: left;
-}
-
-div.floatleft div.col{
-    width: 50%; 
-    float: left;
-}*/
 
 /*----------- Tooltip begin ---------------*/
 div.appbox a.tooltip {
@@ -265,28 +257,18 @@ div.appbox table {
     border-bottom:1px solid #686868;
 }
 
-div.appbox th { 
-    background-color: #C3C4FF;
-}
-
-div.appbox tr { 
-    background-color: #FFFFFF;
-}
-
-/*/* --- Jede zweite Zeile ---*/
+/* --- Jede zweite Zeile ---*/
 div.appbox tr.oddrow {
     background-color: #F5F5F5;
-}*/
+}
 
-/* --- verschiedene Antworten ---*/
-div.appbox tr.yes {
-    background-color: #D9FFD3;
-}
-div.appbox tr.no {
-    background-color: #FFDDDC;
-}
-div.appbox tr.void {
-    background-color: #EBEBEB;
+div.appbox th { 
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+    padding: 10px;
+    margin: 10px;
 }
 
 div.appbox td { 
@@ -296,22 +278,22 @@ div.appbox td {
     margin: 10px;
 }
 
-/*div.appbox form{
+div.appbox td.category{ 
     align: center;
     text-align: center;
-}*/
-
+    color:#fff;
+    background: #373737;
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);    
+}
 
 div.appbox button {
     align: center;
     text-align: center;
 }
 
-/*
-div.appbox li{
-    width: 75%; 
-    margin: 15px;
-}*/
 
 div.appbox textarea {
     width: 100%; 

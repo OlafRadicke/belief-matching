@@ -194,14 +194,6 @@ class databaseedit:
         _col_1.addContent ( '<small>' + unicode( _row_array[0] ) + '</small>' )
         _rowTag.addContent ( _col_1 )  
         
-        # column: category
-        _col_2 =  HtmlTemplate.Tag ( "td" )
-        if self.last_category == _row_array[2] :
-            pass
-        else:
-            _col_2.addContent ( _row_array[2] ) 
-            self.last_category = _row_array[2]
-        _rowTag.addContent ( _col_2 )   
         
         # column: question & comment
         _col_3 =  HtmlTemplate.Tag ( "td" )
@@ -293,10 +285,6 @@ class databaseedit:
         _title_1.addContent ( u'ID' )   
         _table_titles.addContent ( _title_1 )
         
-        _title_2 =   HtmlTemplate.Tag ( "th" )  
-        _title_2.addContent ( u'Kategorie' )   
-        _table_titles.addContent ( _title_2 )
-        
         _title_3 =   HtmlTemplate.Tag ( "th" )  
         _title_3.addContent ( u'Kommentar zu Aussage' )   
         _table_titles.addContent ( _title_3 )
@@ -310,7 +298,14 @@ class databaseedit:
         # loop with exist answers
         _odd = 0
         _count = 1
+        _last_kat = u''
         for _row_array in cur:
+            if _last_kat != _row_array[2] :
+                _table.addContent (  u'''<tr><td class="category" colspan="3">
+                    ''' + unicode ( _row_array[2] ) + u'''</td></tr>''' )
+                _last_kat = unicode ( _row_array[2] )
+    
+            
             _count += 1
             if _odd == 1:
                 _odd = 0
@@ -323,10 +318,16 @@ class databaseedit:
         
         _cur = self.getNoAnswers ( _id )
         if len( _cur ) > 0 :
-            _table.addContent ( u'<th colspan="4">Bisher nicht hinterlegte Aussagen:</th>' )
+            _table.addContent ( u'<tr><th colspan="4">Bisher nicht hinterlegte Aussagen:</th></tr>' )
         _odd = 0
         _count = 1
         for _row_array in _cur:
+            if _last_kat != _row_array[2] :
+                _table.addContent (  u'''<tr><td class="category" colspan="3">
+                    ''' + unicode ( _row_array[2] ) + u'''</td></tr>''' )
+                _last_kat = unicode ( _row_array[2] )
+ 
+            
             _count += 1
             if _odd == 1:
                 _odd = 0
@@ -358,7 +359,7 @@ class databaseedit:
         VisitLog.VisitLog().write ( _ip, 'Datenbearbeitungsstart' )
         _appbox = HtmlTemplate.Tag ( "div" )
         _appbox.setAttribute ( "class", "appbox" )
-        _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "databaseedit", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )
         
@@ -375,6 +376,6 @@ class databaseedit:
             VisitLog.VisitLog().write ( _ip, 'DatenbearbeitungsSQLCode' )
             _appbox = self.getSQLResulte ( _widgetlist )
         
-        _htmlcode = self.htemp.getCompleteSite( "datenbasisedit", _appbox )
+        _htmlcode = self.htemp.getCompleteSite( "databaseedit", _appbox )
         web.header('Content-Type','text/html; charset=utf-8', unique=True)
         return self.htemp.convertGermanChar( _htmlcode )

@@ -201,9 +201,9 @@ class sqlgenerator:
         _title_1.addContent ( u'Nr.' )   
         _table_titles.addContent ( _title_1 )
         
-        _title_2 =   HtmlTemplate.Tag ( "th" )  
-        _title_2.addContent ( u'Kategorie' )   
-        _table_titles.addContent ( _title_2 )
+        #_title_2 =   HtmlTemplate.Tag ( "th" )  
+        #_title_2.addContent ( u'Kategorie' )   
+        #_table_titles.addContent ( _title_2 )
         
         _title_3 =   HtmlTemplate.Tag ( "th" )  
         _title_3.addContent ( u'Kommentar zu Aussage' )   
@@ -219,6 +219,11 @@ class sqlgenerator:
         _odd = 0
         _line_count = 1
         for row in cur:
+            if _last_kat != row[1] :
+                _table.addContent (  u'''<tr><td class="category" colspan="3">
+                    ''' + unicode ( row[1] ) + u'''</td></tr>''' )
+                _last_kat = unicode ( row[1] )           
+            
             _rowTag  =  HtmlTemplate.Tag ( "tr" )
             
             if _odd == 1:
@@ -233,13 +238,13 @@ class sqlgenerator:
             _line_count = _line_count + 1
             
             # column: category
-            _col_2 =  HtmlTemplate.Tag ( "td" )
-            if _last_kat == row[1] :
-                pass
-            else:
-                _col_2.addContent ( row[1] ) 
-                _last_kat = row[1]
-            _rowTag.addContent ( _col_2 )   
+            #_col_2 =  HtmlTemplate.Tag ( "td" )
+            #if _last_kat == row[1] :
+                #pass
+            #else:
+                #_col_2.addContent ( row[1] ) 
+                #_last_kat = row[1]
+            #_rowTag.addContent ( _col_2 )   
             
             # column: question & comment
             _col_3 =  HtmlTemplate.Tag ( "td" )

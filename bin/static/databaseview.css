@@ -262,8 +262,15 @@ div.appbox table {
     border-bottom:1px solid #686868;
 }
 
+
 div.appbox th { 
-    background-color: #C3C4FF;
+    background-color: #c1c1c1;
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+    padding: 10px;
+    margin: 10px;
 }
 
 div.appbox tr { 

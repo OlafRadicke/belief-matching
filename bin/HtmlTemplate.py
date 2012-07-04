@@ -244,7 +244,7 @@ class HtmlTemplate:
             
         # database
         _item_database = Tag ( "li" )
-        if ( aktivtab == "databaseview" or aktivtab == "datenbasisedit" ):
+        if ( aktivtab == "databaseview" or aktivtab == "databaseedit" ):
             _item_database.setAttribute ( "class", "tabmiddle_activ" )
         else:
             _item_database.setAttribute ( "class", "tabmiddle" )

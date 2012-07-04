@@ -269,11 +269,6 @@ div.appbox table {
     border-right:1px solid #686868;
     border-bottom:1px solid #686868;
 }
-
-div.appbox th { 
-    background-color: #C3C4FF;
-}
-
 div.appbox tr { 
     background-color: #FFFFFF;
 }
@@ -293,6 +288,17 @@ div.appbox tr.no {
 div.appbox tr.void {
     background-color: #EBEBEB;
 }
+
+div.appbox th { 
+    background: linear-gradient( top, #fff, #c1c1c1);
+    background: -webkit-linear-gradient( top, #fff, #c1c1c1);
+    background: -moz-linear-gradient( top, #fff, #c1c1c1);
+    background: -ms-linear-gradient( top, #fff, #c1c1c1);
+    padding: 10px;
+    margin: 10px;
+}
+
+
 div.appbox td { 
     vertical-align: top; 
     text-align: left;
@@ -300,6 +306,17 @@ div.appbox td {
     margin: 10px;
 }
 
+
+div.appbox td.category{ 
+    align: center;
+    text-align: center;
+    color:#fff;
+    background: #373737;
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);    
+}
 
 div.appbox button {
     align: center;
