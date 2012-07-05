@@ -294,6 +294,18 @@ div.appbox td {
     margin: 10px;
 }
 
+div.appbox td.category{ 
+    align: center;
+    text-align: center;
+    color:#fff;
+    background: #373737;
+    background: linear-gradient( top, #A0A0A0, #373737);
+    background: -webkit-linear-gradient( top, #A0A0A0, #373737);
+    background: -moz-linear-gradient( top, #A0A0A0, #373737);
+    background: -ms-linear-gradient( top, #A0A0A0, #373737);    
+}
+
+
 /*div.appbox form{
     align: center;
     text-align: center;

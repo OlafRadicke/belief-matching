@@ -162,7 +162,8 @@ class databaseview:
             SELECT questions.question, 
                    denomination_answers.answer_nr, 
                    denomination_answers.commentary,
-                   answers.deno_statement
+                   answers.deno_statement,
+                   questions.kat
             FROM denomination_answers, 
                  questions,
                  answers
@@ -197,7 +198,13 @@ class databaseview:
         _title.addContent ( u")" )
         _table.addContent ( _table_titles )
             
+        _last_kat = u''    
         for row in cur:
+            if _last_kat != row[4] :
+                _table.addContent (  u'''<tr><td class="category">
+                    ''' + unicode ( row[4] ) + u'''</td></tr>''' )
+                _last_kat = unicode ( row[4] )
+            
             _row  =  HtmlTemplate.Tag ( "tr" )
             _col =  HtmlTemplate.Tag ( "td" )
             if int(row[1]) == 0:
