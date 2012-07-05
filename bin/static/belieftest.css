@@ -225,7 +225,7 @@ div.appbox .tooltip:hover span.info{
 /*---------------------------------- Tooltip end --------------------------*/
 
 div.appbox table { 
- /*   width:100%;*/
+    width:100%;
     border-spacing:0px;
     border-radius: 5px;     
     background-color:  #FFFFFF;         
@@ -279,13 +279,18 @@ div.appbox td.tabpoints {
     text-align: right;
 }
 
+div.appbox td.tabpoints-weighting {
+    align: left;
+    text-align: left;
+}
+
 div.appbox div.points {
     align: right;
     text-align: right;
     float:right;
     color:#fff;
     padding-right: 15px;
-    margin-right: -15px;
+    margin-right: -5px;
     background:#373737;
     -moz-border-radius-topleft:5px;
     -moz-border-radius-bottomleft:5px;
@@ -299,15 +304,12 @@ div.appbox div.points {
     background: -ms-linear-gradient( top, #373737, #A0A0A0);
 }
 
-div.appbox td.tabpoints-weighting {
-    align: left;
-    text-align: left;
-}
 
 div.appbox div.points-weighting {
     text-align: left;
     text-align: left;
     float:left;
+/*     margin-left: 5px; */
     background:#373737;
     -moz-border-radius-topright:5px;
     -moz-border-radius-bottomright:5px;

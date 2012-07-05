@@ -339,14 +339,14 @@ INSERT INTO denomination_answers (
  
 
 -- ##################### Kategorie : Gemeinde/<br>Ekklesiologie #####################
-
+/*
 INSERT INTO denomination_answers ( 
         question_id, 
         denomination_id, 
         answer_nr, 
         commentary ) 
      VALUES (         1511,         1,         0, 
-        ''); 
+        '');*/ 
  
 INSERT INTO denomination_answers ( 
         question_id, 
