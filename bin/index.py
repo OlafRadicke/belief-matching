@@ -107,8 +107,15 @@ class index:
             kannst aber mithelfen den Prozess zu beschleunigen und die Quallität 
             zu verbessern, indem du deine Anmerkungen und Vorschläge an mich 
             schickst (<a href="mailto:briefkasten@olaf-radicke.de">
-            briefkasten@olaf-radicke.de</a>. Oder wenn du sogar mit SQL umgehen 
-            kannst, kannst du auch direkt über 
+            briefkasten@olaf-radicke.de</a>. Oder du Machst ein so genanntes 
+            <i>Ticket</i> auf unter: <a href="http://sourceforge.net/p/belief-matching/tickets/">
+            http://sourceforge.net/p/belief-matching/tickets/</a> Hier werden
+            Änderungswünsche gesammelt und bearbeitet. Da kannst du (und andere)
+            verfolgen, was deinen Änderungswünsche geworden ist.
+            <br><br>
+            
+            
+            Oder wenn du sogar mit SQL umgehen kannst, kannst du auch direkt über 
             <a href="https://github.com/OlafRadicke/belief-matching">GitHub</a> 
             am Code mitarbeiten. Die Software steht unter der 
             <a href="http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License">

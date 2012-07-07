@@ -216,16 +216,14 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 'Bibel > Stellenwert',
 'Die Bibel ist der verbindliche Maßstab des Glaubens und der
  Lebensführung, an dem sich alles andere messen müsse. ',
-'Das zielt auf das <i>sola scriptura</i>(lat. allein die Schrift) ab, also das Dienen
- gemäß der Evangelischen Theologie');
+'Das zielt auf das <i>sola scriptura</i>(lat. allein die Schrift) ab. ');
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 143,
 'Bibel > Stellenwert',
-'Für mich gibt es noch über den Bibelkanon hinaus Bücher, die von Gott inspiriert sind.',
-'Liberale Quäker und Mormonen dürfen hier zustimmen.');
-
-
+'Für mich gibt es noch über den Bibelkanon hinaus Bücher, die von Gott inspiriert 
+ sind.',
+'');
 
 -- ========================= C =================================================
 
@@ -236,8 +234,7 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 'Christologie',
 'Jesus Christus ist als Sohn Gottes eines Wesens mit Gott, dem Vater und Schöpfer 
  der Welt, und wird mit ihm zusammen und dem Heiligen Geist als ein Gott angebetet',
-'Das ist u.a. die Römisch-Katholische Position. Gott ist hier in drei Personen 
- einer.');
+'');
 
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 112,
@@ -289,7 +286,9 @@ INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 INSERT INTO questions (question_id, kat, question, commentary) VALUES (
 199,
 'Friedenszeugnis / Wehrdienst',
-'Wehrdienst lehne ich ab.',
+'Wehrdienst lehne ich kategorisch ab. Ich möchte nicht das Wehrangehörige in 
+ meine Gemeinde aufgenommen werden. Bzw. Mitglieder die sich militärischen oder
+ paramilitärischen Gruppen anschließen sollten ausgeschlossen werden.',
 'Was nicht heißen muss, dass Institutionelle Gewalt (Polizei) zum Aufrechterhaltung 
  des öffentlichen Lebens abgelehnt wird, sofern sie angemessen, gerecht und durch
  Gewaltenteilung kontrolliert wird. Dies trifft für kriegerische Auseinandersetzung

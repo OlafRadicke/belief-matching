@@ -167,6 +167,10 @@ class databaseedit:
             <a href="mailto:briefkasten@olaf-radicke.de">
             briefkasten@olaf-radicke.de</a> senden. Möglichst noch mit einem 
             Kommentar wo die Änderungen sind und warum du die Änderungen wünschst.
+            Oder du Machst ein so genanntes <i>Ticket</i> auf unter: 
+            <a href="http://sourceforge.net/p/belief-matching/tickets/">
+            http://sourceforge.net/p/belief-matching/tickets/</a>
+            <br>
             <b>Vielen Dank!</b>''' )
         _appbox.addContent ( _p_1 )
         
