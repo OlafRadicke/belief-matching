@@ -226,6 +226,15 @@ div.appbox div.infobox{
     align: center;
 }
 
+div.appbox div.whitebox{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    padding: 5px;
+    margin: 1px;
+}
+
 /*----------- Tooltip begin ---------------*/
 div.appbox a.tooltip {
     text-decoration:none;
