@@ -65,11 +65,11 @@ INSERT INTO version ( update_date ) VALUES ( date( 'now' ) );
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
 0,
-"normal");
+"Nicht heilsrelevant");
 
 INSERT INTO weightings ( weighting_nr, description ) VALUES (
 1,
-"sehr wichtig");
+"Heilsrelevant");
 
 -- ############ Answers ##################################################
 

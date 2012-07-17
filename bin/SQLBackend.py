@@ -121,11 +121,6 @@ class SQLBackend :
             FROM visits
             WHERE year=?
             ORDER BY month;''', ( unicode ( _year ), ) ) 
-        #_sqlcode = "SELECT DISTINCT month "
-        #_sqlcode += " FROM visits"
-        #_sqlcode += " WHERE year='" +  _year  + "';"
-        #print "_sqlcode: " + _sqlcode
-        #cur.execute( _sqlcode ) 
         for _item in cur :
             _listOfMonth.append ( _item[0] )
         conn.close ()
@@ -149,3 +144,19 @@ class SQLBackend :
             _listOfDays.append ( _item[0] )
         conn.close ()
         return _listOfDays   
+        
+        
+        
+    ## get all existed weightings with value
+    def getDictOfWeightings ( self ) :
+        _dictOfWeightings = dict ()
+        conn = sqlite3.connect( 'belief-matching.sqlite' )
+        cur = conn.cursor()
+        cur.execute( '''SELECT description, weighting_nr
+            FROM weightings
+            ORDER BY description ASC;''' ) 
+        #cur.commit ()
+        for _item in cur :
+            _dictOfWeightings [ unicode( _item[0] ) ] = _item[1]
+        conn.close ()
+        return _dictOfWeightings        

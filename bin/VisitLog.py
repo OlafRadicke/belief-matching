@@ -49,7 +49,7 @@ class VisitLog:
         
     def createDB ( self ):
         #os.path.exists ( self.logDir )
-        
+        print self.logFileDB
         _conn = sqlite3.connect ( self.logFileDB )
         _cur = _conn.cursor()
         _cur.execute( ''' 

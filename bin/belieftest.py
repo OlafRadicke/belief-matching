@@ -112,7 +112,7 @@ class belieftest:
                         
                     denomination_points [ unicode(_denomination_id) ] = \
                         int( denomination_points [ unicode(_denomination_id) ]) + 1
-                    if int(user_answers [ user_answer_key ] [ "wichtung" ]) == 1 :
+                    if int( user_answers [ user_answer_key ] [ "wichtung" ] ) == 1 :
                         denomination_weighting_points [ unicode(_denomination_id) ] = \
                             int( denomination_weighting_points [ unicode(_denomination_id) ] ) + 1
         # sort key list
@@ -202,6 +202,8 @@ class belieftest:
         weightingsDict = self.getWeightings ()
         conn = sqlite3.connect('belief-matching.sqlite')
         cur = conn.cursor()
+        _weightings = _sqlBackend.getDictOfWeightings()
+        
         cur.execute( '''
             SELECT question_id, kat, question, commentary 
             FROM questions 
@@ -226,7 +228,19 @@ class belieftest:
             _item.addContent ( unicode(_row[2]) )
             _list.addContent ( _item )
             
-        _appbox.addContent ( _list )          
+        _appbox.addContent ( _list ) 
+        _appbox.addContent ( u'''<p>Mit <b><i>Heilsrelevant</i></b> ist gemeint, 
+            das eine Aussage als <b><i>zentrale Glaubensaussage</i></b> verstanden wird. Und das
+            deren Beantwortung (positiv oder negativ) entscheidend dafür ist, ob
+            man sich vor Gott gerechtfertigt glaubt und sich damit die Erlösung
+            verspricht. Ohne zu konkretisieren, was unter <i>Erlösung, Rechtfertigung,
+            Errettung, bzw. Verdammnis, Verwerfung </i> oder der gleichen Wörter 
+            zu verstehen ist. Hier wurde <i>"Heilsrelevant"</i> verwendet. Es 
+            hätte aber auch durch eine andere Begrifflichkeit ausgedrückt werden können.
+            Auch durch abgemilderte bzw. neutralere Begriffe wie: <i>"entscheidend"</i> und <i>"nicht
+            entscheidend"</i>. Da es sich hier aber um ausschließlich christliche
+            oder christlichen Ursprüngen entstammenden Glaubensgemeinschaften handelt,
+            wurden hier bewusst kein <i>weltanschaulich neutraler"</i> Begriff verwandt.</p>''' ) 
         
         _form = HtmlTemplate.Tag ( "form" )
         _form.setAttribute ( "method", "POST" )
@@ -316,15 +330,12 @@ class belieftest:
             _select_wight.setAttribute ( "name", u'wichtung_' + unicode ( row[0] ) )
             _select_wight.setAttribute ( "size", "1" )
             
-            _option_1 = HtmlTemplate.Tag ( "option" )
-            _option_1.setAttribute ( "value","0" )
-            _option_1.addContent ( u'normal' )
-            _select_wight.addContent ( _option_1 )
+            for _key in _weightings.keys  () :
+                _option_1 = HtmlTemplate.Tag ( "option" )
+                _option_1.setAttribute ( "value", unicode ( _weightings[_key] ) )
+                _option_1.addContent ( unicode ( _key ) )
+                _select_wight.addContent ( _option_1 )
             
-            _option_2 = HtmlTemplate.Tag ( "option" )
-            _option_2.setAttribute ( "value","1" )
-            _option_2.addContent ( u'sehr wichtig' )
-            _select_wight.addContent ( _option_2 )
             
             _col_5.addContent ( _select_wight ) 
             _rowTag.addContent ( _col_5 )    
